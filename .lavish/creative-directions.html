@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make a Mark Brussels, creative directions</title>
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=big-shoulders-display:300,500,600,700|bebas-neue:400|oswald:300,500|plus-jakarta-sans:400,500,600,700|work-sans:400,500|caveat:500,700">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :where(.grid, .flex, .layout-grid, .layout-flex) > *,
+  :where([style*="display: grid"], [style*="display:grid"], [style*="display: flex"], [style*="display:flex"]) > * { min-width: 0; }
+  :where(p, h1, h2, h3, h4, h5, h6, li, dd, blockquote, figcaption, td, th, .badge, .label) { overflow-wrap: anywhere; }
+  :where(img, svg, video, canvas, iframe) { max-width: 100%; height: auto; }
+
+  :root {
+    --cream: #F5E2CA;
+    --cream-2: #EED7B8;
+    --red: #C33F40;
+    --red-2: #D14B4C;
+    --ink: #1E1A16;
+    --muted: #6B615A;
+    --paper: #FBF7F1;
+    --line: #E4D9CB;
+    --green: #2E6B4E;
+    --green-2: #3C8A64;
+    --display: "Big Shoulders Display", "Bebas Neue", Impact, sans-serif;
+    --body: "Plus Jakarta Sans", "Work Sans", system-ui, sans-serif;
+    --hand: "Caveat", "Segoe Print", cursive;
+  }
+  html { background: var(--paper); color: var(--ink); }
+  body { margin: 0; font-family: var(--body); font-size: 15px; line-height: 1.55; }
+  a { color: var(--red); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  .hd { padding: 44px 0 20px; border-bottom: 1px solid var(--line); }
+  .kicker { font-family: var(--body); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+  h1 { font-family: var(--display); font-weight: 600; font-size: clamp(40px, 6vw, 68px); line-height: .95; letter-spacing: .01em; text-transform: uppercase; margin: 8px 0 12px; color: var(--ink); }
+  h2 { font-family: var(--display); font-weight: 600; font-size: 38px; line-height: 1; text-transform: uppercase; margin: 0 0 6px; letter-spacing: .01em; }
+  h3 { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+  p { margin: 0 0 10px; }
+  .lede { font-size: 17px; max-width: 760px; color: var(--ink); }
+  .sec { padding: 40px 0 28px; border-bottom: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 18px; }
+  .sec-head .num { font-family: var(--display); font-weight: 300; font-size: 54px; line-height: 1; color: var(--red); }
+  .sec-head .sub { color: var(--muted); max-width: 680px; }
+  .grid { display: grid; gap: 20px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .dirs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 760px) { .dirs { grid-template-columns: 1fr; } }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+  .card.rec { border: 2px solid var(--red); }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: var(--cream); color: var(--red); }
+  .tag.dark { background: var(--ink); color: var(--cream); }
+  .tag.green { background: #dcefe4; color: var(--green); }
+  .small { font-size: 13px; color: var(--muted); }
+  ul { padding-left: 18px; margin: 6px 0 10px; }
+  li { margin: 3px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .tablewrap { overflow-x: auto; }
+
+  /* swatches and type specimens */
+  .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+  .sw { width: 112px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); font-size: 11px; }
+  .sw i { display: block; height: 58px; }
+  .sw b { display: block; padding: 6px 8px 1px; }
+  .sw span { display: block; padding: 0 8px 7px; color: var(--muted); }
+  .spec { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: #fff; }
+  .spec .big { font-family: var(--display); font-weight: 600; font-size: 56px; line-height: .95; text-transform: uppercase; color: var(--red); letter-spacing: .01em; }
+  .spec .alt1 { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 56px; line-height: .95; color: var(--red); letter-spacing: .02em; }
+  .spec .alt2 { font-family: "Oswald", sans-serif; font-weight: 500; font-size: 48px; line-height: 1; text-transform: uppercase; color: var(--red); }
+  .spec .bodyx { font-family: "Plus Jakarta Sans", sans-serif; font-size: 15px; }
+  .spec .bodyy { font-family: "Work Sans", sans-serif; font-size: 15px; }
+
+  /* mockup frame: 1200 px design scaled to fit */
+  .frame { position: relative; width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #ddd; }
+  .frame .stage { position: absolute; left: 0; top: 0; width: 1200px; transform-origin: 0 0; }
+  .frame .bar { height: 26px; background: #e9e4dc; display: flex; align-items: center; gap: 6px; padding: 0 10px; border-bottom: 1px solid #d8d2c8; }
+  .frame .bar i { width: 9px; height: 9px; border-radius: 50%; background: #c9c2b7; display: block; }
+  .frame .bar span { font-size: 10px; color: #7a7167; margin-left: 8px; }
+  .frame .holder { position: relative; overflow: hidden; }
+
+  /* shared mock styles (site design system) */
+  .m { font-family: var(--body); color: var(--ink); background: var(--cream); width: 1200px; }
+  .m .nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 40px; }
+  .m .wm { font-family: var(--display); font-weight: 600; text-transform: uppercase; font-size: 22px; color: var(--red); letter-spacing: .02em; }
+  .m .burger { width: 40px; height: 40px; border-radius: 50%; background: var(--red); display: grid; place-items: center; }
+  .m .burger i { display: block; width: 16px; height: 2px; background: var(--cream); box-shadow: 0 -5px 0 var(--cream), 0 5px 0 var(--cream); }
+  .m .navlinks { display: flex; gap: 26px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--red); }
+  .m .h1 { font-family: var(--display); font-weight: 600; text-transform: uppercase; color: var(--red); line-height: .9; letter-spacing: .01em; }
+  .m .h2 { font-family: var(--display); font-weight: 600; text-transform: uppercase; line-height: .92; letter-spacing: .01em; }
+  .m .pill { display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid currentColor; border-radius: 999px; padding: 10px 18px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+  .m .pill.solid { background: var(--red); color: var(--cream); border-color: var(--red); }
+  .m .polaroid { position: absolute; background: var(--cream); padding: 8px 8px 8px; box-shadow: 0 14px 30px rgba(60,30,20,.22); }
+  .m .polaroid img { display: block; object-fit: cover; }
+  .m .duo img { filter: grayscale(1) contrast(1.05); }
+  .m .duo::after { content: ""; position: absolute; inset: 8px; background: rgba(121,26,27,.28); mix-blend-mode: multiply; pointer-events: none; }
+  .m .block { margin: 0 24px 24px; border-radius: 18px; padding: 56px 56px; }
+  .m .block.red { background: var(--red); color: var(--cream); }
+  .m .block.red .h2 { color: var(--cream); }
+  .m .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .m .tile { background: var(--red-2); border-radius: 10px; min-height: 150px; display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 600; text-transform: uppercase; font-size: 34px; line-height: 1; color: var(--cream); padding: 16px; }
+  .m .tile.photo { position: relative; overflow: hidden; padding: 0; }
+  .m .tile.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+  .m .tile.photo::after { content: ""; position: absolute; inset: 0; background: rgba(121,26,27,.3); mix-blend-mode: multiply; }
+  .m .num { font-family: var(--display); font-weight: 300; font-size: 64px; line-height: 1; }
+  .m .foot { padding: 20px 40px 28px; display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--red); font-weight: 600; }
+
+  /* choice forms */
+  form.q { margin-top: 18px; background: #fff; border: 1px dashed var(--red); border-radius: 12px; padding: 16px 18px; }
+  form.q legend, form.q .qt { font-weight: 700; margin-bottom: 8px; }
+  form.q label { display: flex; gap: 8px; align-items: flex-start; margin: 5px 0; cursor: pointer; }
+  form.q input[type=radio], form.q input[type=checkbox] { margin-top: 3px; accent-color: var(--red); }
+  form.q textarea { width: 100%; min-height: 56px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; margin-top: 8px; resize: vertical; }
+  form.q button { margin-top: 10px; background: var(--red); color: #fff; border: 0; border-radius: 999px; padding: 9px 16px; font: inherit; font-weight: 700; font-size: 13px; cursor: pointer; }
+  form.q .state { font-size: 12px; color: var(--muted); margin-left: 10px; }
+  form.q .state.queued { color: var(--green); font-weight: 700; }
+  .opts { display: flex; gap: 14px; flex-wrap: wrap; }
+  .opts label { flex: 1 1 200px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; counter-reset: st; }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; position: relative; }
+  .step::before { counter-increment: st; content: counter(st, decimal-leading-zero); font-family: var(--display); font-weight: 300; font-size: 40px; line-height: 1; color: var(--red); display: block; margin-bottom: 4px; }
+  .step.now { border-color: var(--red); background: var(--cream); }
+  .foot-note { padding: 30px 0 60px; color: var(--muted); font-size: 13px; }
+  @media (max-width: 720px) { .m .navlinks { display: none; } }
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="kicker">Make a Mark Brussels, website preparation</div>
+    <h1>Creative directions to pick from</h1>
+    <p class="lede">The brief: rebuild the Brussels site in Astro, in the look and feel of the international Make a Mark site, fonts from bunny.net, deployed on Netlify. Below are the raw inputs, four visual directions for the same Brussels content, and five smaller decisions. Each decision has a form. Pick, add a note if you want, press queue, then Send to Agent. Nothing gets built until you have picked.</p>
+    <p class="small">Mockups are live HTML in the candidate fonts, not screenshots, so what you see is close to what Astro will render. Copy is taken verbatim from the current Google Doc. Photos are the nine Instagram stories embedded in that doc.</p>
+  </div>
+</header>
+
+<!-- ============ INPUTS ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">00</span><div><h2>What we are working with</h2><div class="sub">The international site, the Brussels content, and the assets that exist today.</div></div></div>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>The international site</h3>
+        <img src="assets/intl-home.png" alt="letsmakeamark.org homepage" style="border-radius:8px;border:1px solid var(--line);margin:6px 0 10px;">
+        <p class="small">Cream and brick red only. Condensed uppercase display type for every heading, a plain sans for body. Black and white photos with a maroon tint, shown as tilted polaroids. Sections alternate cream and red rounded blocks. Numbered cards, pill buttons, a burger nav. Mood: bold, warm, handmade.</p>
+      </div>
+      <div class="card">
+        <h3>The Brussels content</h3>
+        <p class="small">About 600 words in a Google Doc. One page, five parts:</p>
+        <ul class="small">
+          <li><b>Edition hero.</b> Special edition 2026, Make a Mark for the Planet, 20 to 21 March, central case Klimaatzaak. Applications closed. Instagram link.</li>
+          <li><b>Info for Makers.</b> Friday evening kick-off, Saturday marathon, selection process, March briefing.</li>
+          <li><b>Past organisations.</b> 56 names, from 100PAP to Zwanger in Brussel.</li>
+          <li><b>FAQ.</b> Five questions, including the "is this really a Google Doc" joke.</li>
+          <li><b>Organisers.</b> Gwen Dubois and Piet Lambrecht, contact email.</li>
+        </ul>
+        <p class="small">There is no page for organisations that want to apply, no editions archive, no team section. The Bruzz article adds facts we can use: 12-hour marathon, about 10 organisations and 60 creatives per edition, Muntpunt venue, evening presentations at Beursschouwburg.</p>
+      </div>
+      <div class="card">
+        <h3>Assets in hand</h3>
+        <div style="display:flex;gap:10px;align-items:flex-start;margin:6px 0 10px;">
+          <img src="assets/logo-brussels.png" alt="Hand-drawn Make a Mark Brussels logo" style="width:46%;background:#fff;border:1px solid var(--line);border-radius:8px;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:54%;">
+            <img src="assets/story-3.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+            <img src="assets/story-9.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+            <img src="assets/story-4.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+            <img src="assets/story-6.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+            <img src="assets/story-7.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+            <img src="assets/story-8.jpg" alt="" style="border-radius:4px;aspect-ratio:9/16;object-fit:cover;">
+          </div>
+        </div>
+        <p class="small">One hand-drawn logo: the international wordmark with a marker "Brussels" and a sketched globe. Nine Instagram stories from other people's accounts, 640 by 1138 pixels, with overlaid text. Good for mood, weak as hero material: low resolution, portrait only, and rights sit with the photographers. The international site has no logo file; its wordmark is live text.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:20px;">
+      <div class="card">
+        <h3>Palette borrowed from the international site</h3>
+        <div class="swatches">
+          <div class="sw"><i style="background:#F5E2CA"></i><b>#F5E2CA</b><span>cream, page</span></div>
+          <div class="sw"><i style="background:#C33F40"></i><b>#C33F40</b><span>red, blocks</span></div>
+          <div class="sw"><i style="background:#D14B4C"></i><b>#D14B4C</b><span>red, headings</span></div>
+          <div class="sw"><i style="background:#1E1A16"></i><b>#1E1A16</b><span>ink, rare</span></div>
+          <div class="sw"><i style="background:#2E6B4E"></i><b>#2E6B4E</b><span>climate green, optional</span></div>
+        </div>
+        <p class="small" style="margin-top:10px;">Two colours carry the whole international site. Green is not part of it. It only appears in direction C below, as a per-edition colour.</p>
+      </div>
+      <div class="card">
+        <h3>Type on bunny.net</h3>
+        <p class="small">The international site uses Humane (display) and General Sans (body). Neither is on bunny.net, which mirrors Google Fonts. Closest matches, rendered live:</p>
+        <div class="spec">
+          <div class="big">Big Shoulders Display</div>
+          <div class="alt1">Bebas Neue</div>
+          <div class="alt2">Oswald</div>
+          <p class="bodyx" style="margin-top:12px;">Plus Jakarta Sans for body copy. Hundreds of creatives have made social-profits look fabulous.</p>
+          <p class="bodyy" style="margin:0;">Work Sans as the alternative. Hundreds of creatives have made social-profits look fabulous.</p>
+        </div>
+        <p class="small" style="margin-top:8px;">Big Shoulders Display is the closest to Humane: tall, condensed, and it comes in thin to black weights so the light stat numbers work too. Bebas Neue is punchier but single weight. Oswald is the safe, more generic option.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECISION 1: DIRECTION ============ -->
+<section class="sec" id="direction">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01</span><div><h2>The main decision: which direction</h2><div class="sub">Same content, same Astro build, four different attitudes. Each mockup shows the hero and one section at desktop width. All four keep the international skeleton: cream page, red blocks, condensed uppercase headings, pill buttons.</div></div></div>
+
+    <div class="grid dirs">
+
+      <!-- A -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="margin:0;">A. The faithful sibling</h3><span class="tag">Lowest risk</span></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>makeamark.brussels</span></div><div class="holder"><div class="stage"><div class="m">
+          <div class="nav"><div class="wm">Make a Mark</div><div class="navlinks"><span>Makers</span><span>Organisations</span><span>Past editions</span><span>FAQ</span></div><div class="burger"><i></i></div></div>
+          <div style="position:relative;height:560px;">
+            <div class="polaroid duo" style="left:60px;top:40px;transform:rotate(-7deg);"><img src="assets/story-3.jpg" style="width:230px;height:230px;" alt=""></div>
+            <div class="polaroid duo" style="right:70px;top:70px;transform:rotate(6deg);"><img src="assets/story-9.jpg" style="width:250px;height:200px;" alt=""></div>
+            <div class="polaroid duo" style="left:480px;top:410px;transform:rotate(-3deg);"><img src="assets/story-5.jpg" style="width:210px;height:130px;" alt=""></div>
+            <div style="text-align:center;padding-top:110px;">
+              <div class="h1" style="font-size:126px;">Make a Mark<br>Brussels</div>
+              <p style="max-width:460px;margin:22px auto 0;color:var(--red);font-size:18px;font-style:italic;">A make-a-thon where creatives give social-profits a day of design work. Eighth edition: Make a Mark for the Planet, 20 and 21 March 2026.</p>
+            </div>
+          </div>
+          <div class="block red">
+            <div style="text-align:center;margin-bottom:34px;">We believe that design and creativity are for everyone.</div>
+            <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:50px;align-items:start;">
+              <div>
+                <div class="h2" style="font-size:80px;margin-bottom:26px;">Info for Makers</div>
+                <p style="font-size:16px;line-height:1.6;">On Friday we all come together to plan and get to know each other. To make sure everyone can go in turbo creative mode Saturday. You'll spend the whole of Saturday, collaborating in a team, tackling a creative challenge for Klimaatzaak.</p>
+                <span class="pill" style="margin-top:14px;">Applications are closed for 2026</span>
+              </div>
+              <div class="tiles">
+                <div class="tile photo"><img src="assets/story-2.jpg" alt=""></div>
+                <div class="tile">8<br>editions</div>
+                <div class="tile photo"><img src="assets/story-9.jpg" alt=""></div>
+                <div class="tile">56<br>social-profits</div>
+                <div class="tile photo"><img src="assets/story-6.jpg" alt=""></div>
+                <div class="tile">100s<br>of makers</div>
+              </div>
+            </div>
+          </div>
+          <div class="foot"><span>Make a Mark Brussels</span><span>Makers · Organisations · Past editions · FAQ</span></div>
+        </div></div></div></div>
+        <p class="small" style="margin-top:12px;"><b>What it is.</b> The international homepage with Brussels words in it. Tilted duotone polaroids, red story block with stat tiles, the belief line, the pill button.</p>
+        <p class="small"><b>Gains.</b> Instantly reads as part of the family. Cheapest to build and to keep consistent. Nothing to invent.</p>
+        <p class="small"><b>Costs.</b> Nothing says Brussels except the word. The hand-drawn logo has no place. The duotone treatment hides the colourful, messy energy visible in the stories.</p>
+      </div>
+
+      <!-- B -->
+      <div class="card rec">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="margin:0;">B. Marker on the family template</h3><span class="tag dark">Recommended</span></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>makeamark.brussels</span></div><div class="holder"><div class="stage"><div class="m">
+          <div class="nav"><div class="wm">Make a Mark</div><div class="navlinks"><span>Makers</span><span>Organisations</span><span>Past editions</span><span>FAQ</span></div><div class="burger"><i></i></div></div>
+          <div style="position:relative;height:640px;">
+            <img src="assets/logo-brussels.png" alt="" style="position:absolute;left:70px;top:10px;width:250px;mix-blend-mode:multiply;transform:rotate(-4deg);">
+            <div class="polaroid" style="right:60px;top:40px;transform:rotate(5deg);"><img src="assets/story-9.jpg" style="width:230px;height:180px;" alt=""></div>
+            <div style="position:absolute;left:0;right:0;top:270px;text-align:center;">
+              <div class="h1" style="font-size:140px;">For the planet</div>
+              <svg viewBox="0 0 520 26" width="520" height="26" style="display:block;margin:-6px auto 0;"><path d="M6 16 C 90 4, 170 22, 260 12 S 430 4, 514 14" fill="none" stroke="#1E1A16" stroke-width="5" stroke-linecap="round"/></svg>
+              <p style="max-width:520px;margin:18px auto 0;color:var(--red);font-size:18px;">The eighth edition of our make-a-thon puts climate communication at the centre. Central case: Klimaatzaak. Friday evening 20 March and all day Saturday 21 March.</p>
+              <div style="margin-top:22px;font-family:var(--hand);font-size:34px;color:var(--ink);transform:rotate(-2deg);">→ Applications are closed for 2026 ←</div>
+              <div style="margin-top:6px;font-family:var(--hand);font-size:26px;color:var(--ink);">bring your creative friends and colleagues too!</div>
+            </div>
+          </div>
+          <div class="block red" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding-top:50px;">
+            <div style="grid-column:1/-1;"><div class="h2" style="font-size:80px;">Info for Makers</div></div>
+            <div><div class="num">01</div><div class="h2" style="font-size:34px;margin:14px 0 10px;">Friday evening</div><p style="font-size:15px;">We all come together to plan and get to know each other, so everyone can go in turbo creative mode on Saturday.</p></div>
+            <div><div class="num">02</div><div class="h2" style="font-size:34px;margin:14px 0 10px;">All day Saturday</div><p style="font-size:15px;">Collaborate in a team on a creative challenge for Klimaatzaak. WiFi, food, drinks and great company provided.</p></div>
+            <div><div class="num">03</div><div class="h2" style="font-size:34px;margin:14px 0 10px;">Selected in advance</div><p style="font-size:15px;">We form the most effective teams and let you know end of January. Briefing with your organisation first week of March.</p></div>
+          </div>
+          <div class="foot"><span>Make a Mark Brussels</span><span>Makers · Organisations · Past editions · FAQ</span></div>
+        </div></div></div></div>
+        <p class="small" style="margin-top:12px;"><b>What it is.</b> Direction A's skeleton, with the hand-drawn logo as the Brussels signature. Black marker becomes the third colour: one scribbled underline per page, handwritten asides, the arrows that are already in the copy. Photos stay warm cream polaroids but keep their colour.</p>
+        <p class="small"><b>Gains.</b> Still unmistakably Make a Mark, but this one is from Brussels. The logo finally has a home. The marker matches the sketch photos and the "creative marathon" story. Cheap: two SVG scribbles and one handwriting font.</p>
+        <p class="small"><b>Costs.</b> Handwriting is easy to overdo. Needs a rule: one scribble per section, never for body text. The logo is a 1000 pixel PNG, ideally redrawn as SVG.</p>
+      </div>
+
+      <!-- C -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="margin:0;">C. The edition poster</h3><span class="tag green">Boldest</span></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>makeamark.brussels</span></div><div class="holder"><div class="stage"><div class="m">
+          <div class="nav" style="background:var(--green);color:var(--cream);"><div class="wm" style="color:var(--cream);">Make a Mark Brussels</div><div class="navlinks" style="color:var(--cream);"><span>Makers</span><span>Organisations</span><span>Past editions</span><span>FAQ</span></div><div class="burger" style="background:var(--cream);"><i style="background:var(--green);box-shadow:0 -5px 0 var(--green),0 5px 0 var(--green);"></i></div></div>
+          <div style="background:var(--green);color:var(--cream);padding:30px 40px 70px;position:relative;">
+            <div style="display:flex;justify-content:space-between;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;"><span>Special edition 2026</span><span>Brussels · 20 &amp; 21 March</span></div>
+            <div class="h1" style="color:var(--cream);font-size:200px;margin-top:20px;">Make a Mark<br>for the planet</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:end;">
+              <p style="font-size:18px;line-height:1.55;max-width:480px;">Our central case is Klimaatzaak, a landmark climate case with impact far beyond Belgium. The climate crisis is pushed to the background. We need your brainpower to break through this trend.</p>
+              <div style="text-align:right;"><span class="pill" style="border-color:var(--cream);">Applications are closed for 2026</span></div>
+            </div>
+            <div style="position:absolute;right:60px;top:52px;font-family:var(--display);font-weight:300;font-size:120px;line-height:1;opacity:.55;">08</div>
+          </div>
+          <div class="block red" style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;">
+            <div><div class="h2" style="font-size:76px;margin-bottom:22px;">Eight editions,<br>one city</div><p style="font-size:16px;line-height:1.6;">In the past years hundreds of creatives have made social-profits look fabulous with a day of voluntary design work. Every year a new colour, the same red underneath.</p><span class="pill" style="margin-top:12px;">Past editions</span></div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+              <div class="tile" style="font-size:22px;min-height:90px;background:#B7362F;">2019</div><div class="tile" style="font-size:22px;min-height:90px;background:#3E5F9E;">2020</div><div class="tile" style="font-size:22px;min-height:90px;background:#C98A1E;">2022</div><div class="tile" style="font-size:22px;min-height:90px;background:#7A4A8C;">2023</div>
+              <div class="tile" style="font-size:22px;min-height:90px;background:#2A7C8C;">2024</div><div class="tile" style="font-size:22px;min-height:90px;background:#B5573A;">2025</div><div class="tile" style="font-size:22px;min-height:90px;background:var(--green);">2026</div><div class="tile" style="font-size:22px;min-height:90px;background:var(--red-2);opacity:.5;">?</div>
+            </div>
+          </div>
+          <div class="foot"><span>Make a Mark Brussels</span><span>Makers · Organisations · Past editions · FAQ</span></div>
+        </div></div></div></div>
+        <p class="small" style="margin-top:12px;"><b>What it is.</b> The site is an annual poster. The hero takes the colour of this year's theme, climate green for 2026, in giant type. Red and cream return below the fold and hold everything permanent: makers, organisations, FAQ. Next year the hero repaints.</p>
+        <p class="small"><b>Gains.</b> Strongest reason to come back each year. Matches how the doc is already written: edition first, the rest second. Editions archive becomes a natural feature.</p>
+        <p class="small"><b>Costs.</b> Drifts furthest from the family look; a first-time visitor sees green before red. Needs a colour decision every year, and a past-editions page with real content, which does not exist yet. Photos would need to be colour, not duotone.</p>
+      </div>
+
+      <!-- D -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="margin:0;">D. The stories wall</h3><span class="tag">Most photographic</span></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>makeamark.brussels</span></div><div class="holder"><div class="stage"><div class="m">
+          <div class="nav"><div class="wm">Make a Mark Brussels</div><div class="navlinks"><span>Makers</span><span>Organisations</span><span>Past editions</span><span>FAQ</span></div><div class="burger"><i></i></div></div>
+          <div style="padding:30px 40px 0;text-align:center;">
+            <div class="h1" style="font-size:118px;">Hundreds of creatives.<br>One day. Brussels.</div>
+            <p style="max-width:520px;margin:18px auto 0;color:var(--red);font-size:18px;">Since 2016 makers, designers and developers have given 56 social-profits a day of their talent. Eighth edition: Make a Mark for the Planet, 20 and 21 March 2026.</p>
+          </div>
+          <div style="display:flex;gap:14px;padding:36px 0 10px 24px;overflow:hidden;">
+            <img src="assets/story-3.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:rotate(-2deg);" alt="">
+            <img src="assets/story-9.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:translateY(22px) rotate(1deg);" alt="">
+            <img src="assets/story-4.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:rotate(-1deg);" alt="">
+            <img src="assets/story-6.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:translateY(18px) rotate(2deg);" alt="">
+            <img src="assets/story-7.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:rotate(-2deg);" alt="">
+            <img src="assets/story-8.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:translateY(20px) rotate(1deg);" alt="">
+            <img src="assets/story-2.jpg" style="width:190px;height:338px;object-fit:cover;border-radius:12px;transform:rotate(-1deg);" alt="">
+          </div>
+          <div style="text-align:center;padding:26px 0 30px;"><span class="pill">See their work on Instagram</span></div>
+          <div class="block red" style="display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;">
+            <div><div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:14px;">Special edition 2026</div><div class="h2" style="font-size:78px;margin-bottom:20px;">Make a Mark<br>for the planet</div><p style="font-size:16px;line-height:1.6;">Our central case is Klimaatzaak, a landmark climate case with impact far beyond Belgium. Friday evening 20 March and all day Saturday 21 March.</p><span class="pill" style="margin-top:12px;">Applications are closed for 2026</span></div>
+            <div class="polaroid" style="position:relative;transform:rotate(3deg);justify-self:center;"><img src="assets/story-5.jpg" style="width:300px;height:300px;" alt=""></div>
+          </div>
+          <div class="foot"><span>Make a Mark Brussels</span><span>Makers · Organisations · Past editions · FAQ</span></div>
+        </div></div></div></div>
+        <p class="small" style="margin-top:12px;"><b>What it is.</b> The event sells itself through the people in it. A strip of portrait photos in the Instagram story format leads; colour, not duotone. The edition sits second, in the red block. Type and layout stay within the family.</p>
+        <p class="small"><b>Gains.</b> Shows the vibe rather than describing it, which is what the FAQ's Bruzz link is trying to do. Directly reuses the format the community already produces every edition.</p>
+        <p class="small"><b>Costs.</b> Lives or dies on photo quality and rights. The current nine are low resolution with baked-in text from other accounts. Needs a small photo collection per edition, which is an organisational ask, not a design one.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;background:var(--cream);border-color:var(--cream-2);">
+      <h3>Why B is the recommendation</h3>
+      <p class="small">A is safe but anonymous. C and D are ideas about content that does not exist yet: an editions archive, a photo library. B uses only what is already on the table, the family look plus the one asset that is truly Brussels, and it leaves the door open: the edition colour from C can be added later as an accent, and the stories strip from D can slot into the Instagram section once there are good photos. If you prefer C or D, the honest answer is that the site will launch with placeholders in those spots.</p>
+    </div>
+
+    <form class="q" data-lavish-question="direction" onsubmit="queue(event,'direction','Creative direction')">
+      <div class="qt">Your pick for the creative direction</div>
+      <div class="opts">
+        <label><input type="radio" name="direction" value="A faithful sibling"> <span><b>A</b> Faithful sibling</span></label>
+        <label><input type="radio" name="direction" value="B marker on the family template" checked> <span><b>B</b> Marker on the family template</span></label>
+        <label><input type="radio" name="direction" value="C edition poster"> <span><b>C</b> Edition poster</span></label>
+        <label><input type="radio" name="direction" value="D stories wall"> <span><b>D</b> Stories wall</span></label>
+      </div>
+      <textarea name="note" placeholder="Optional: what to keep from the other directions, what to drop, anything the mockups got wrong."></textarea>
+      <button type="submit">Queue this answer</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DECISION 2: STRUCTURE ============ -->
+<section class="sec" id="structure">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02</span><div><h2>One page or several</h2><div class="sub">The content is short. The question is whether to give organisations and past editions their own URLs.</div></div></div>
+    <div class="grid g3">
+      <div class="card rec">
+        <span class="tag dark">Recommended</span>
+        <h3 style="margin-top:10px;">One long page with anchors</h3>
+        <p class="small">Home holds everything: hero, for makers, for organisations, past organisations, FAQ, organisers. Nav links scroll. Matches the international site and the doc. One extra route, <b>/editions/2026</b>, only if direction C is chosen.</p>
+        <ul class="small"><li>Fastest to build and to keep updated.</li><li>Every visitor sees the edition call, whatever they came for.</li><li>Past organisations become a long scrolling list, which is fine at 56 names.</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag">Alternative</span>
+        <h3 style="margin-top:10px;">Home plus three pages</h3>
+        <p class="small">Home is the edition pitch. Separate pages for <b>Makers</b>, <b>Organisations</b> (how to apply, what to expect, who came before), and <b>Past editions</b>. FAQ and organisers stay on home.</p>
+        <ul class="small"><li>Cleaner deep links to send to a social-profit or a sponsor.</li><li>Only worth it if the organisations page gets real content. Today it has none.</li><li>About twice the layout work.</li></ul>
+      </div>
+      <div class="card">
+        <h3>Either way, in Astro</h3>
+        <p class="small">Content lives in content collections: one file per edition, one JSON of past organisations, one markdown for FAQ. Sections are components. Switching from one page to several later is a routing change, not a rewrite. So this choice is not permanent.</p>
+      </div>
+    </div>
+    <form class="q" data-lavish-question="structure" onsubmit="queue(event,'structure','Site structure')">
+      <div class="qt">Site structure</div>
+      <div class="opts">
+        <label><input type="radio" name="structure" value="one long page with anchors" checked> <span>One long page with anchors</span></label>
+        <label><input type="radio" name="structure" value="home plus makers, organisations and past editions pages"> <span>Home plus three pages</span></label>
+      </div>
+      <textarea name="note" placeholder="Optional note"></textarea>
+      <button type="submit">Queue this answer</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DECISION 3: HERO FOCUS ============ -->
+<section class="sec" id="hero">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03</span><div><h2>What the hero leads with</h2><div class="sub">The doc opens with the 2026 edition. The international site opens with what Make a Mark is. Both are valid; they serve different visitors.</div></div></div>
+    <div class="grid g3">
+      <div class="card rec">
+        <span class="tag dark">Recommended</span>
+        <h3 style="margin-top:10px;">Edition first, evergreen second</h3>
+        <p class="small">Hero: "Make a Mark for the Planet", dates, application status. Directly under it, one sentence on what Make a Mark Brussels is, then the stats. This is what mockups B, C and D do.</p>
+        <p class="small">Fits a site that is mostly visited in the weeks around the call for makers. The status pill (open, closed, selected) is the most important element on the page, so it sits at the top.</p>
+      </div>
+      <div class="card">
+        <h3>Evergreen first, edition as a banner</h3>
+        <p class="small">Hero: "Make a Mark Brussels" wordmark and the belief line, as in mockup A. The edition is a red banner or a pinned card just below.</p>
+        <p class="small">Better for the eleven months a year when there is no call. Weaker when there is one.</p>
+      </div>
+      <div class="card">
+        <h3>Application status as data</h3>
+        <p class="small">Whatever you choose, the status becomes a field in the edition file: <b>open</b>, <b>closed</b>, <b>selected</b>, <b>done</b>. The hero pill, its link and its wording follow from that one value, so the organisers change one line, not the page.</p>
+      </div>
+    </div>
+    <form class="q" data-lavish-question="hero" onsubmit="queue(event,'hero','Hero focus')">
+      <div class="qt">Hero focus</div>
+      <div class="opts">
+        <label><input type="radio" name="hero" value="edition first, evergreen second" checked> <span>Edition first</span></label>
+        <label><input type="radio" name="hero" value="evergreen first, edition banner"> <span>Evergreen first</span></label>
+      </div>
+      <textarea name="note" placeholder="Optional note"></textarea>
+      <button type="submit">Queue this answer</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DECISION 4: PHOTOS ============ -->
+<section class="sec" id="photos">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">04</span><div><h2>Photo treatment</h2><div class="sub">The international site tints every photo maroon over black and white. The Brussels stories are loud and colourful.</div></div></div>
+    <div class="grid g3">
+      <div class="card">
+        <div style="display:flex;gap:8px;">
+          <div class="m duo polaroid" style="position:relative;display:inline-block;padding:6px;box-shadow:none;border:1px solid var(--line);"><img src="assets/story-9.jpg" style="width:120px;height:120px;object-fit:cover;display:block;" alt=""></div>
+          <div class="m duo polaroid" style="position:relative;display:inline-block;padding:6px;box-shadow:none;border:1px solid var(--line);"><img src="assets/story-6.jpg" style="width:120px;height:120px;object-fit:cover;display:block;" alt=""></div>
+        </div>
+        <h3 style="margin-top:10px;">Duotone, like the family</h3>
+        <p class="small">Every photo grayscale with a red multiply layer. Hides low quality and mismatched sources, which is a real advantage with the current material. Loses the colour and the pinned text.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:8px;">
+          <div class="m polaroid" style="position:relative;display:inline-block;padding:6px;box-shadow:none;border:1px solid var(--line);"><img src="assets/story-9.jpg" style="width:120px;height:120px;object-fit:cover;display:block;" alt=""></div>
+          <div class="m polaroid" style="position:relative;display:inline-block;padding:6px;box-shadow:none;border:1px solid var(--line);"><img src="assets/story-6.jpg" style="width:120px;height:120px;object-fit:cover;display:block;" alt=""></div>
+        </div>
+        <h3 style="margin-top:10px;">Full colour</h3>
+        <p class="small">Honest and lively, but the cream and red palette then competes with whatever colour is in the photo. Needs curated photos.</p>
+      </div>
+      <div class="card rec">
+        <span class="tag dark">Recommended</span>
+        <h3 style="margin-top:10px;">Mixed by role</h3>
+        <p class="small">Duotone for photos that sit inside red blocks and hero polaroids, where they are texture. Colour for the Instagram strip, where they are content. One CSS class decides.</p>
+      </div>
+    </div>
+    <form class="q" data-lavish-question="photos" onsubmit="queue(event,'photos','Photo treatment')">
+      <div class="qt">Photo treatment</div>
+      <div class="opts">
+        <label><input type="radio" name="photos" value="duotone everywhere"> <span>Duotone everywhere</span></label>
+        <label><input type="radio" name="photos" value="full colour everywhere"> <span>Full colour</span></label>
+        <label><input type="radio" name="photos" value="mixed: duotone in blocks and hero, colour in the instagram strip" checked> <span>Mixed by role</span></label>
+      </div>
+      <textarea name="note" placeholder="Optional note"></textarea>
+      <button type="submit">Queue this answer</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DECISION 5: TYPE ============ -->
+<section class="sec" id="type">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">05</span><div><h2>Type pairing</h2><div class="sub">All from bunny.net. The mockups above use the first option.</div></div></div>
+    <div class="grid g3">
+      <div class="card rec"><span class="tag dark">Recommended</span><div class="spec" style="margin-top:10px;"><div class="big">Make a Mark<br>for the planet</div><p class="bodyx" style="margin:10px 0 0;">Plus Jakarta Sans. Hundreds of creatives have made social-profits look fabulous with a day of voluntary design work.</p></div><p class="small" style="margin-top:8px;">Big Shoulders Display + Plus Jakarta Sans. Closest to Humane and General Sans, with thin weights for the big numbers.</p></div>
+      <div class="card"><div class="spec"><div class="alt1">Make a Mark<br>for the planet</div><p class="bodyy" style="margin:10px 0 0;">Work Sans. Hundreds of creatives have made social-profits look fabulous with a day of voluntary design work.</p></div><p class="small" style="margin-top:8px;">Bebas Neue + Work Sans. More poster, less refined. Single weight, so stat numbers are as heavy as titles.</p></div>
+      <div class="card"><div class="spec"><div class="alt2">Make a Mark<br>for the planet</div><p class="bodyx" style="margin:10px 0 0;">Plus Jakarta Sans. Hundreds of creatives have made social-profits look fabulous with a day of voluntary design work.</p></div><p class="small" style="margin-top:8px;">Oswald + Plus Jakarta Sans. Safest rendering at small sizes, but reads more generic and less like the international site.</p></div>
+    </div>
+    <form class="q" data-lavish-question="type" onsubmit="queue(event,'type','Type pairing')">
+      <div class="qt">Type pairing</div>
+      <div class="opts">
+        <label><input type="radio" name="type" value="Big Shoulders Display + Plus Jakarta Sans" checked> <span>Big Shoulders Display + Plus Jakarta Sans</span></label>
+        <label><input type="radio" name="type" value="Bebas Neue + Work Sans"> <span>Bebas Neue + Work Sans</span></label>
+        <label><input type="radio" name="type" value="Oswald + Plus Jakarta Sans"> <span>Oswald + Plus Jakarta Sans</span></label>
+      </div>
+      <textarea name="note" placeholder="Optional note"></textarea>
+      <button type="submit">Queue this answer</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DECISION 6: LANGUAGE + EDITING ============ -->
+<section class="sec" id="ops">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">06</span><div><h2>Languages and who edits the site</h2><div class="sub">Two practical questions that shape the Astro setup more than the design.</div></div></div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>Languages</h3>
+        <p class="small">The doc is English only. Brussels is bilingual and the case is named in three languages. The international site is English.</p>
+        <p class="small"><b>Recommendation:</b> launch in English, but keep every string in the content files so French and Dutch can be added as translated files later without touching components. Astro's i18n routing can be turned on at that point.</p>
+        <form class="q" data-lavish-question="languages" onsubmit="queue(event,'languages','Languages')">
+          <div class="qt">Languages at launch</div>
+          <label><input type="radio" name="languages" value="English only, i18n-ready content files" checked> <span>English only, structured so FR and NL can follow</span></label>
+          <label><input type="radio" name="languages" value="English, French and Dutch from launch"> <span>English, French and Dutch from day one (you provide the translations)</span></label>
+          <textarea name="note" placeholder="Optional note"></textarea>
+          <button type="submit">Queue this answer</button><span class="state">not queued</span>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Who updates the site, and how</h3>
+        <p class="small">Today the organisers edit a Google Doc. After the move, someone has to change the edition text, the application status and the list of organisations once or twice a year.</p>
+        <p class="small"><b>Recommendation:</b> markdown and JSON files in the repository, deployed by Netlify on every push. You edit them, or the organisers edit through GitHub's web editor. No CMS to maintain. Keep the FAQ joke and answer it honestly: "Not any more. It was, for seven years."</p>
+        <form class="q" data-lavish-question="editing" onsubmit="queue(event,'editing','Content editing')">
+          <div class="qt">Content editing</div>
+          <label><input type="radio" name="editing" value="markdown and json in the repo, edited via git or github web" checked> <span>Files in the repo, no CMS</span></label>
+          <label><input type="radio" name="editing" value="Decap CMS on top of the repo for the organisers"> <span>Files in the repo plus Decap CMS so organisers get a form</span></label>
+          <label><input type="radio" name="editing" value="keep the google doc as content source, fetched at build time"> <span>Keep the Google Doc as source, fetched at build time</span></label>
+          <textarea name="note" placeholder="Optional note"></textarea>
+          <button type="submit">Queue this answer</button><span class="state">not queued</span>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN QUESTIONS ============ -->
+<section class="sec" id="open">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">07</span><div><h2>Things only you can answer</h2><div class="sub">Not blocking for the spec, but each one changes a section of the site.</div></div></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Question</th><th>Why it matters</th><th>Assumed for now</th></tr></thead>
+      <tbody>
+        <tr><td>Are there better photos than the nine Instagram stories, and do we have permission to use them?</td><td>Decides how much any direction can lean on photography.</td><td>Use the nine as placeholders, swap later.</td></tr>
+        <tr><td>How do makers apply when applications are open? A Google Form link, an email, a form on the site?</td><td>Decides whether the status pill links out or opens a Netlify form.</td><td>Link to an external form URL stored in the edition file.</td></tr>
+        <tr><td>Should organisations be able to apply on the site?</td><td>Creates the missing "for organisations" section.</td><td>A short section with the email as the call to action.</td></tr>
+        <tr><td>Which domain? Is there an existing one?</td><td>Netlify config and the wordmark in the nav.</td><td>Placeholder until known.</td></tr>
+        <tr><td>Should the logo be redrawn as SVG, and by whom?</td><td>Direction B depends on the hand-drawn mark holding up at any size.</td><td>Trace the PNG to SVG during the build.</td></tr>
+        <tr><td>Is 2016 the first edition?</td><td>Used in the "since" line of directions C and D.</td><td>Eighth edition in 2026; Bruzz said five years in 2023; so 2018 or 2019 with a gap. Verify.</td></tr>
+      </tbody>
+    </table></div>
+    <form class="q" data-lavish-question="open" onsubmit="queue(event,'open','Open questions')">
+      <div class="qt">Answers to any of the above</div>
+      <textarea name="note" placeholder="Photos, application method, organisations, domain, logo, first edition year."></textarea>
+      <button type="submit">Queue these answers</button><span class="state">not queued</span>
+    </form>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section class="sec" id="workflow">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">08</span><div><h2>The workflow from here</h2><div class="sub">Compact on purpose. Five steps, each in its own cleared session, heavy reasoning only in the first two.</div></div></div>
+    <div class="steps">
+      <div class="step now"><h3>Explore</h3><p class="small">This page. You pick directions. Done in this session.</p></div>
+      <div class="step"><h3>Spec</h3><p class="small">One design document: chosen direction, page structure, content model, tokens, components, Netlify setup. Written from your picks, reviewed by you. Same session as this, after your answers.</p></div>
+      <div class="step"><h3>Plan</h3><p class="small">An implementation plan with small tasks: scaffold, tokens and fonts, content collections, each section as a component, images, deploy. New session, Sonnet.</p></div>
+      <div class="step"><h3>Build</h3><p class="small">Sonnet subagents execute tasks in parallel where independent, one screenshot pass at the end against the mockup. New session.</p></div>
+      <div class="step"><h3>Deploy</h3><p class="small">Netlify site linked to the repo, build command and redirects in netlify.toml, custom domain when you have it.</p></div>
+    </div>
+    <p class="small" style="margin-top:14px;">Fixed regardless of your picks: Astro with static output, fonts self-served via fonts.bunny.net, images through Astro's image pipeline, no client JavaScript beyond the FAQ accordion and the mobile nav, content in collections so a new edition is a new file.</p>
+  </div>
+</section>
+
+<div class="wrap foot-note">Sources: the Google Doc "Make a Mark Brussels Website", letsmakeamark.org as of today, the Bruzz article of 19 March 2023, klimaatzaak.eu. Type rendered from fonts.bunny.net.</div>
+
+<script>
+  // scale each 1200px mock to its frame width
+  function fit() {
+    document.querySelectorAll('.frame').forEach(function (f) {
+      var holder = f.querySelector('.holder'), stage = f.querySelector('.stage');
+      var w = f.clientWidth, s = w / 1200;
+      stage.style.transform = 'scale(' + s + ')';
+      holder.style.height = (stage.offsetHeight * s) + 'px';
+    });
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  document.fonts && document.fonts.ready.then(fit);
+  setTimeout(fit, 1200);
+
+  // queue one prompt per question on submit; radios only change local state
+  function queue(ev, key, title) {
+    ev.preventDefault();
+    var form = ev.currentTarget, fd = new FormData(form);
+    var choice = fd.get(key), note = (fd.get('note') || '').trim();
+    var text = title + ': ' + (choice || '(no option, note only)') + (note ? '. Note: ' + note : '');
+    if (!choice && !note) { return; }
+    if (window.lavish && window.lavish.queuePrompt) {
+      window.lavish.queuePrompt(text, { tag: 'choice', text: text, element: form, queueKey: key, data: { question: key, answer: choice, note: note } });
+    }
+    var st = form.querySelector('.state'); st.textContent = 'queued: ' + (choice || 'note'); st.className = 'state queued';
+  }
+</script>
+</body>
+</html>
