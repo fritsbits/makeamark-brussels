@@ -1,7 +1,7 @@
 # Make a Mark Brussels website, design spec
 
 Date: 2026-09-01
-Status: draft for review
+Status: approved 2026-09-01, implementation plan at `docs/superpowers/plans/2026-09-01-makeamark-brussels-website.md`
 Source of picks: `.lavish/creative-directions.html`, decisions queued by Frederik on 2026-09-01.
 
 ## What we are building
@@ -32,11 +32,11 @@ Deferred, not in this build: better photos (Frederik asks the co-organisers), th
 One route, `/`. Sections in order, each with an id used by the nav:
 
 1. **Nav.** Wordmark "Make a Mark Brussels" left, links right: Makers, Organisations, FAQ, About. Burger on mobile. Sticky.
-2. **Hero** (`#top`). Headline "Hundreds of creatives. One day. Brussels." One paragraph: since 2016 makers, designers and developers have given 56 social-profits a day of their talent. No button; the stories strip is the call to look.
+2. **Hero** (`#top`). Headline "Hundreds of creatives. One day. Brussels." One paragraph: since 2016 makers, designers and developers have given 55 social-profits a day of their talent. No button; the stories strip is the call to look.
 3. **Stories strip.** Seven to nine portrait photos, 9:16, full colour, slight alternating rotation, horizontal scroll on mobile, fits the container on desktop. Below it a pill button "See their work on Instagram" linking to instagram.com/lets_makeamarkbxl.
 4. **Edition block** (`#edition`). Red rounded block. Kicker "Special edition 2026". Heading "Make a Mark for the Planet". Dates, the Klimaatzaak paragraph, the "can we count on you" line. Status pill (see below). One duotone polaroid on the right.
 5. **Info for Makers** (`#makers`). Cream. Heading plus three numbered cards, 01 Friday evening, 02 All day Saturday, 03 Selected in advance, using the copy from the doc. Last line: "Please make sure you can make it."
-6. **Past organisations** (`#organisations`). Red block. Heading "56 social-profits made their mark". The full list as an inline, comma-free flow of names, each a small cream pill. The "hundreds of creatives have made social-profits look fabulous" sentence as intro.
+6. **Past organisations** (`#organisations`). Red block. Heading "55 social-profits made their mark". The full list as an inline, comma-free flow of names, each a small cream pill. The "hundreds of creatives have made social-profits look fabulous" sentence as intro.
 7. **FAQ** (`#faq`). Cream. Five questions as native `details` elements styled like the international accordion, numbered 01 to 05. The Google Doc question stays, answered: "Not any more. It was, for seven years." The Bruzz and global-site links stay.
 8. **About the organisers** (`#about`). Cream, two columns on desktop. Gwen Dubois and Piet Lambrecht with their links, the contact email as a pill button, the hand-drawn logo at the side.
 9. **Footer.** Red. Wordmark, the four nav links, Instagram, email, "Part of the global Make a Mark movement" linking to letsmakeamark.org.
@@ -61,8 +61,8 @@ For 2026 the status is `closed`. The organisers change one word to reopen the ca
 Astro content collections under `src/content/`, typed with `zod` schemas.
 
 - `editions/2026.md`. Frontmatter: `year`, `title` ("Make a Mark for the Planet"), `kicker` ("Special edition 2026"), `dates` (human string), `startDate`, `endDate`, `status`, `applyUrl` (optional), `case` (name, url), `photo` (path). Body: the edition paragraphs. The site renders the edition with the highest year.
-- `organisations.json`. Array of `{ name, url? }`. 56 entries from the doc.
-- `faq.json`. Array of `{ question, answer }` with markdown allowed in answers.
+- `organisations.json`. Array of `{ id, name, url? }`. 55 entries from the doc (the list reads "Kind, Ouder en Kanker" as one organisation).
+- `faq/01-google-doc.md` to `05-your-city.md`. One markdown file per question, frontmatter `question` and `order`, the answer as the body so links render.
 - `site.json`. `name`, `domain`, `instagram`, `email`, `firstEditionYear`, `organisers: [{ name, role, url }]`, `hero: { headline, intro }`, nav labels, footer strings.
 - `stories/`. The photo files plus `stories.json` with `{ file, credit, alt }` per photo. Launch with the nine stories from the doc as placeholders; the strip reads the JSON, so swapping photos is a file change.
 
@@ -73,7 +73,7 @@ Language readiness: `site.json`, `faq.json` and the edition body hold every visi
 Tokens, as CSS custom properties in one `tokens.css`:
 
 - Colours: cream `#F5E2CA` page, red `#C33F40` blocks, red-2 `#D14B4C` headings on cream, ink `#1E1A16` for body text and links on cream, cream for headings and pills on red, cream-light `#FFF6EA` for body text on red. Photo tint `rgba(121,26,27,.3)`.
-- Type: Big Shoulders Display 600 for all headings, uppercase, letter-spacing 0.01em, line-height 0.9 to 0.95. Weight 300 for the big numbers on cards. Plus Jakarta Sans 400 for body, 600 uppercase with 0.12em tracking for nav, pills and kickers. Loaded with one `link` to `https://fonts.bunny.net/css?family=big-shoulders-display:300,600|plus-jakarta-sans:400,600` plus a preconnect. Fallback stack: Impact and system-ui.
+- Type: Big Shoulders Display 600 for all headings, uppercase, letter-spacing 0.01em, line-height 0.9 to 0.95. Weight 300 for the big numbers on cards. Plus Jakarta Sans 400 for body, 600 uppercase with 0.12em tracking for nav, pills and kickers. Loaded through Astro's Fonts API with `fontProviders.bunny()`, which fetches the files from bunny.net at build time and serves them with the site, so visitors never call a third party. Fallback stack: Impact and system-ui, with Astro's generated size-adjusted fallbacks.
 - Scale: hero headline clamp 56px to 118px, section headings clamp 40px to 78px, body 17px, small 13px.
 - Shape: blocks radius 18px with 24px outer margin, cards 10px, pills fully round, polaroid 8px cream padding with a soft brown drop shadow.
 - Spacing: sections 96px vertical on desktop, 56px on mobile. Container max 1360px with 40px gutters.
@@ -84,7 +84,7 @@ Components, one Astro file each under `src/components/`: `Nav`, `Hero`, `Stories
 
 ## Technical setup
 
-- Astro 5, static output, TypeScript strict, no UI framework. Client JavaScript only for the mobile nav toggle; the FAQ uses `details` and needs none.
+- Astro 7, static output, TypeScript strict, no UI framework. Client JavaScript only for the mobile nav toggle; the FAQ uses `details` and needs none.
 - Images through `astro:assets` with `Image` components, widths generated for the strip and polaroids, `loading="lazy"` below the fold, `alt` from `stories.json`.
 - `@astrojs/sitemap` and a hand-written `robots.txt`. Meta title, description, Open Graph image (a rendered 1200 by 630 card in the edition colours, static file).
 - `netlify.toml`: build `npm run build`, publish `dist`, Node 22. Domain and HTTPS configured in Netlify's UI, outside the repo.
