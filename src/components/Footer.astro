@@ -1,0 +1,26 @@
+---
+import { site } from '../lib/site';
+---
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="footer__wordmark h-display">{site.name}</div>
+      <a class="footer__global" href={site.globalSiteUrl} rel="noopener" target="_blank">{site.footer.globalLabel}</a>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href={site.instagramUrl} rel="noopener" target="_blank">{site.footer.instagramLabel}</a>
+      <a href={`mailto:${site.email}`}>{site.footer.emailLabel}</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer { background: var(--red); color: var(--cream-light); margin: 0 var(--block-margin) var(--block-margin); border-radius: var(--radius-block); padding: 40px 0; }
+  .footer__inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+  .footer__wordmark { font-size: 22px; color: var(--cream); }
+  .footer__global { display: block; margin-top: 8px; font-size: var(--fs-small); color: var(--cream-light); }
+  .footer__links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer__links a { font-size: 12px; font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; text-decoration: none; color: var(--cream-light); }
+  .footer__links a:hover, .footer__links a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+</style>

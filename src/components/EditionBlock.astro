@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import StatusPill from './StatusPill.astro';
+import Polaroid from './Polaroid.astro';
+import { storyImage } from '../lib/stories';
+
+const editions = await getCollection('editions');
+const edition = editions.sort((a, b) => b.data.year - a.data.year)[0];
+if (!edition) throw new Error('No edition found in src/content/editions');
+const { Content } = await render(edition);
+const d = edition.data;
+---
+<section id="edition" class="block block--red edition">
+  <div class="container edition__grid">
+    <div class="edition__text">
+      <p class="kicker">{d.kicker}</p>
+      <h2 class="h-display edition__title">{d.title}</h2>
+      <p class="edition__dates">{d.dates}</p>
+      <div class="edition__body"><Content /></div>
+      <p class="edition__cta">{d.callToAction}</p>
+      <StatusPill status={d.status} year={d.year} applyUrl={d.applyUrl} />
+    </div>
+    <div class="edition__photo">
+      <Polaroid src={storyImage(d.photo)} alt={d.photoAlt} width={420} height={420} rotate={3} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .edition__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+  .edition__title { font-size: var(--fs-h2); margin: 14px 0 18px; }
+  .edition__dates { font-weight: 600; margin-bottom: 20px; }
+  .edition__body :global(a) { color: var(--cream); }
+  .edition__cta { font-weight: 600; margin: 8px 0 22px; }
+  .edition__photo { justify-self: center; max-width: 440px; width: 100%; }
+  @media (max-width: 860px) {
+    .edition__grid { grid-template-columns: 1fr; }
+    .edition__photo { max-width: 320px; }
+  }
+</style>

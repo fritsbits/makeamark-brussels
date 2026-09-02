@@ -1,0 +1,26 @@
+:root {
+  --cream: #F5E2CA;
+  --cream-light: #FFF6EA;
+  --red: #C33F40;
+  --red-2: #D14B4C;
+  --ink: #1E1A16;
+  --tint: rgba(121, 26, 27, 0.3);
+
+  --radius-block: 18px;
+  --radius-card: 10px;
+  --radius-pill: 999px;
+
+  --container: 1360px;
+  --gutter: clamp(20px, 3vw, 40px);
+  --block-margin: clamp(12px, 2vw, 24px);
+  --section-y: clamp(56px, 8vw, 96px);
+
+  --fs-hero: clamp(56px, 9vw, 118px);
+  --fs-h2: clamp(40px, 6vw, 78px);
+  --fs-h3: clamp(26px, 3vw, 34px);
+  --fs-num: clamp(48px, 5vw, 64px);
+  --fs-body: 17px;
+  --fs-small: 13px;
+
+  --track-caps: 0.12em;
+}

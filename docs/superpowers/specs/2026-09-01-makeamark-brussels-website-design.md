@@ -1,7 +1,7 @@
 # Make a Mark Brussels website, design spec
 
 Date: 2026-09-01
-Status: approved 2026-09-01, implementation plan at `docs/superpowers/plans/2026-09-01-makeamark-brussels-website.md`
+Status: approved 2026-09-01, amended 2026-09-02 after the whole-branch review (contrast, strip, status labels), implementation plan at `docs/superpowers/plans/2026-09-01-makeamark-brussels-website.md`
 Source of picks: `.lavish/creative-directions.html`, decisions queued by Frederik on 2026-09-01.
 
 ## What we are building
@@ -33,7 +33,7 @@ One route, `/`. Sections in order, each with an id used by the nav:
 
 1. **Nav.** Wordmark "Make a Mark Brussels" left, links right: Makers, Organisations, FAQ, About. Burger on mobile. Sticky.
 2. **Hero** (`#top`). Headline "Hundreds of creatives. One day. Brussels." One paragraph: since 2016 makers, designers and developers have given 55 social-profits a day of their talent. No button; the stories strip is the call to look.
-3. **Stories strip.** Seven to nine portrait photos, 9:16, full colour, slight alternating rotation, horizontal scroll on mobile, fits the container on desktop. Below it a pill button "See their work on Instagram" linking to instagram.com/lets_makeamarkbxl.
+3. **Stories strip.** Seven to nine portrait photos, 9:16, full colour, slight alternating rotation. The strip bleeds past the viewport on every width and scrolls horizontally: touch on mobile, a thin red scrollbar and keyboard focus on pointer devices. Below it a pill button "See their work on Instagram" linking to instagram.com/lets_makeamarkbxl.
 4. **Edition block** (`#edition`). Red rounded block. Kicker "Special edition 2026". Heading "Make a Mark for the Planet". Dates, the Klimaatzaak paragraph, the "can we count on you" line. Status pill (see below). One duotone polaroid on the right.
 5. **Info for Makers** (`#makers`). Cream. Heading plus three numbered cards, 01 Friday evening, 02 All day Saturday, 03 Selected in advance, using the copy from the doc. Last line: "Please make sure you can make it."
 6. **Past organisations** (`#organisations`). Red block. Heading "55 social-profits made their mark". The full list as an inline, comma-free flow of names, each a small cream pill. The "hundreds of creatives have made social-profits look fabulous" sentence as intro.
@@ -54,7 +54,7 @@ The edition file carries one `status` field. Everything about the call follows f
 | `selected` | Makers have been selected, see you in March | none |
 | `done` | Read about the 2026 edition on Instagram | Instagram |
 
-For 2026 the status is `closed`. The organisers change one word to reopen the call next year, and add a new edition file to change the year.
+For 2026 the status is `closed`. The organisers change one word to reopen the call next year, and add a new edition file to change the year. The schema rejects `open` without an `applyUrl`, so a half-edited file fails the build instead of telling makers the call is closed. The four pill labels live in `site.json` under `edition.statusLabels`, with `{year}` as the placeholder.
 
 ## Content model
 
@@ -63,10 +63,10 @@ Astro content collections under `src/content/`, typed with `zod` schemas.
 - `editions/2026.md`. Frontmatter: `year`, `title` ("Make a Mark for the Planet"), `kicker` ("Special edition 2026"), `dates` (human string), `startDate`, `endDate`, `status`, `applyUrl` (optional), `case` (name, url), `photo` (path). Body: the edition paragraphs. The site renders the edition with the highest year.
 - `organisations.json`. Array of `{ id, name, url? }`. 55 entries from the doc (the list reads "Kind, Ouder en Kanker" as one organisation).
 - `faq/01-google-doc.md` to `05-your-city.md`. One markdown file per question, frontmatter `question` and `order`, the answer as the body so links render.
-- `site.json`. `name`, `domain`, `instagram`, `email`, `firstEditionYear`, `organisers: [{ name, role, url }]`, `hero: { headline, intro }`, nav labels, footer strings.
+- `site.json`. `name`, `domain`, `instagramUrl`, `email`, `firstEditionYear`, `meta`, `nav`, `hero`, `makers` (steps), `organisations` (heading, intro), `faq` (heading), `about` (organisers with name, role, url), `footer`, `edition.statusLabels`. Validated by a zod schema in `src/lib/site.ts`.
 - `stories/`. The photo files plus `stories.json` with `{ file, credit, alt }` per photo. Launch with the nine stories from the doc as placeholders; the strip reads the JSON, so swapping photos is a file change.
 
-Language readiness: `site.json`, `faq.json` and the edition body hold every visible string. A French version later is `site.fr.json` and `editions/2026.fr.md`, with Astro's i18n routing switched on. No component holds copy.
+Language readiness: `site.json`, the FAQ files and the edition body hold every visible string. A French version later is `site.fr.json` and `editions/2026.fr.md`, with Astro's i18n routing switched on. No component holds copy.
 
 ## Visual system
 
@@ -93,7 +93,7 @@ Components, one Astro file each under `src/components/`: `Nav`, `Hero`, `Stories
 ## Accessibility and performance
 
 - Skip link, landmarks, one `h1`, headings in order, nav as `nav` with `aria-current` when a section is in view is out of scope; plain anchors are enough.
-- Colour contrast, measured: cream `#F5E2CA` on red `#C33F40` is 4.05, enough for headings and pills (large text needs 3.0) but under the 4.5 body text needs. Body copy inside red blocks therefore uses a lighter cream `#FFF6EA` (4.78 on red). Red-2 `#D14B4C` on cream is 3.45, so it is used for headings only; links and body on cream use ink. Small uppercase labels on red use weight 600.
+- Colour contrast, measured: cream `#F5E2CA` on red `#C33F40` is 4.05, enough for headings and pills (large text needs 3.0) but under the 4.5 body text needs. Body copy and any text under 18px inside red blocks (footer links, organisation pills) therefore use a lighter cream `#FFF6EA` (4.78 on red); headings and pill labels in red blocks stay cream. Red-2 `#D14B4C` on cream is 3.45, so it is used for headings, the wordmark and the FAQ numerals only; body, links, nav links and pill labels on cream use ink. Pills on cream keep a red outline with ink text and turn red with cream text on hover. Small uppercase labels on red use weight 600.
 - `prefers-reduced-motion` disables the rotation transitions on the strip.
 - Target: no layout shift from fonts (use `font-display: swap` from bunny plus size-adjusted fallbacks), total page under 1 MB with the nine placeholder photos.
 

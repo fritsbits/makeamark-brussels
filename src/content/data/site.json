@@ -1,0 +1,60 @@
+{
+  "name": "Make a Mark Brussels",
+  "shortName": "Make a Mark",
+  "domain": "https://letsmakeamark.brussels",
+  "instagramUrl": "https://www.instagram.com/lets_makeamarkbxl/",
+  "email": "makeamarkbxl@gmail.com",
+  "globalSiteUrl": "https://www.letsmakeamark.org/",
+  "firstEditionYear": 2016,
+  "meta": {
+    "title": "Make a Mark Brussels",
+    "description": "A make-a-thon where hundreds of creatives give Brussels social-profits a day of voluntary design work. Eighth edition: Make a Mark for the Planet, 20 and 21 March 2026."
+  },
+  "nav": [
+    { "label": "Makers", "href": "#makers" },
+    { "label": "Organisations", "href": "#organisations" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "About", "href": "#about" }
+  ],
+  "hero": {
+    "headline": "Hundreds of creatives. One day. Brussels.",
+    "intro": "Make a Mark Brussels is a make-a-thon. Since 2016, hundreds of creatives have made Brussels social-profits look fabulous with a day of voluntary design work.",
+    "instagramLabel": "See their work on Instagram"
+  },
+  "makers": {
+    "heading": "Info for Makers",
+    "steps": [
+      { "title": "Friday evening", "text": "We all come together to plan and get to know each other. To make sure everyone can go in turbo creative mode Saturday." },
+      { "title": "All day Saturday", "text": "You'll spend the whole of Saturday collaborating in a team, tackling a creative challenge for the central case. We'll provide WiFi, food, drinks, and great company to keep you energized throughout the day." },
+      { "title": "Selected in advance", "text": "We select Makers in advance, ensuring we form the most effective teams to tackle the challenges. We'll let you know at the end of January if you got selected. A few weeks after that you'll meet your team members and the organisation to discuss their challenge, in a one-hour meeting on an evening in the first week of March." }
+    ],
+    "closing": "Please make sure you can make it."
+  },
+  "organisations": {
+    "heading": "55 social-profits made their mark",
+    "intro": "In the past years hundreds of creatives have made social-profits look fabulous with a day of voluntary design work. These are the previous social organisations that were helped."
+  },
+  "faq": { "heading": "FAQ" },
+  "edition": {
+    "statusLabels": {
+      "open": "Apply as a Maker",
+      "closed": "Applications are closed for {year}",
+      "selected": "Makers have been selected, see you in March",
+      "done": "Read about the {year} edition on Instagram"
+    }
+  },
+  "about": {
+    "heading": "About the organisers",
+    "intro": "This is already the 8th edition of Make a Mark Brussels.",
+    "organisers": [
+      { "name": "Gwen Dubois", "role": "The instigator. An interior architect and creative activist from Jette.", "url": "https://www.gwentibold.com/" },
+      { "name": "Piet Lambrecht", "role": "Organising it from the start with Gwen. Until recently he led the communication of Muntpunt.", "url": "https://www.brusseleir.eu/neus/piet-lambrechts-brussel-komen-kijken-en-het-willen-zien/" }
+    ],
+    "contactLabel": "Contact us"
+  },
+  "footer": {
+    "globalLabel": "Part of the global Make a Mark movement",
+    "instagramLabel": "Instagram",
+    "emailLabel": "Email"
+  }
+}
