@@ -47,6 +47,6 @@ test('the status pill reads closed for 2026', () => {
   assert.ok(html.includes('Applications are closed for 2026'));
 });
 
-test('five faq items', () => {
-  assert.equal((html.match(/<details/g) ?? []).length, 5);
+test('four faq items', () => {
+  assert.equal((html.match(/<details/g) ?? []).length, 4);
 });
