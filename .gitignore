@@ -21,3 +21,6 @@ pnpm-debug.log*
 scratch-astro/
 
 .screenshots/
+
+# Local Netlify folder
+.netlify
