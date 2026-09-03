@@ -1,40 +1,85 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
-import StatusPill from './StatusPill.astro';
-import Polaroid from './Polaroid.astro';
-import { storyImage } from '../lib/stories';
+import { photo } from '../lib/photos';
+import { statusPill } from '../lib/edition-status';
+import { site } from '../lib/site';
 
 const editions = await getCollection('editions');
 const edition = editions.sort((a, b) => b.data.year - a.data.year)[0];
 if (!edition) throw new Error('No edition found in src/content/editions');
 const { Content } = await render(edition);
 const d = edition.data;
+const status = statusPill({
+  status: d.status,
+  year: d.year,
+  applyUrl: d.applyUrl,
+  instagramUrl: site.instagramUrl,
+  labels: site.edition.statusLabels,
+});
+const open = d.status === 'open';
+
+// ink extent at 100px, as in the headline, so the date fills the measure
+const WHEN = { left: 5, right: 394.55 };
+const WHEN_SIZE = 10000 / WHEN.right;
+const WHEN_STYLE = `--size: ${WHEN_SIZE.toFixed(3)}cqw; --lead: ${((-WHEN.left * WHEN_SIZE) / 100).toFixed(3)}cqw`;
+
 ---
-<section id="edition" class="block block--red edition">
-  <div class="container edition__grid">
-    <div class="edition__text">
-      <p class="kicker">{d.kicker}</p>
-      <h2 class="h-display edition__title">{d.title}</h2>
-      <p class="edition__dates">{d.dates}</p>
-      <div class="edition__body"><Content /></div>
-      <p class="edition__cta">{d.callToAction}</p>
-      <StatusPill status={d.status} year={d.year} applyUrl={d.applyUrl} />
-    </div>
-    <div class="edition__photo">
-      <Polaroid src={storyImage(d.photo)} alt={d.photoAlt} width={420} height={420} rotate={3} />
+<section id="edition" class="band edition">
+  {/* the date owns this block at the page's largest scale, across the whole
+      measure; the theme names it on the label line above */}
+  <div class="container edition__top">
+    <h2 class="label edition__kicker">{d.kicker} — {d.title}</h2>
+    <p class="h-display edition__when" style={WHEN_STYLE}>{d.datesShort}</p>
+    {!open && <p class="label edition__status">{status.label}</p>}
+    {open && <a class="btn edition__apply" href={status.href}>{status.label}</a>}
+  </div>
+  <div class="container edition__body">
+    <div class="edition__copy">
+      <Content />
+      {open && <p class="edition__cta">{d.callToAction}</p>}
     </div>
   </div>
 </section>
+<figure class="edition__photo">
+  <Image src={photo(d.photo)} alt={d.photoAlt} widths={[760, 1200, 1600]} sizes="100vw" />
+  <figcaption class="label container edition__caption">{d.photoAlt} — photographed by @brion.dominique</figcaption>
+</figure>
 
 <style>
-  .edition__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
-  .edition__title { font-size: var(--fs-h2); margin: 14px 0 18px; }
-  .edition__dates { font-weight: 600; margin-bottom: 20px; }
-  .edition__body :global(a) { color: var(--cream); }
-  .edition__cta { font-weight: 600; margin: 8px 0 22px; }
-  .edition__photo { justify-self: center; max-width: 440px; width: 100%; }
-  @media (max-width: 860px) {
-    .edition__grid { grid-template-columns: 1fr; }
-    .edition__photo { max-width: 320px; }
+  .edition { overflow: hidden; }
+  /* the container is the measure, so the date can be sized to fill it */
+  /* the band that names the event gets the most air on the page */
+  .edition__top { container-type: inline-size; padding-top: clamp(72px, 10vw, 168px); }
+  .edition__body { margin-top: clamp(22px, 2.6vw, 36px); padding-bottom: clamp(48px, 6vw, 88px); }
+
+  .edition__kicker { margin: 0 0 clamp(12px, 1.4vw, 18px); }
+  .edition__status { margin: clamp(14px, 1.6vw, 22px) 0 0; color: var(--cream); }
+  .edition__when { display: block; font-size: var(--size); line-height: 0.86; margin: clamp(10px, 1.2vw, 16px) 0 0 var(--lead); white-space: nowrap; }
+
+  /* the one fact a maker needs, set at the band's second scale */
+  /* two columns, so the band uses the canvas it is given */
+  .edition__copy { columns: 2; column-gap: clamp(32px, 4vw, 72px); }
+  .edition__copy :global(p) { margin: 0 0 1em; break-inside: avoid; }
+  .edition__copy :global(a) { color: var(--cream); text-decoration-thickness: 1.5px; }
+  .edition__cta { font-weight: 600; margin: 1em 0 clamp(20px, 2.4vw, 30px); max-width: var(--measure-narrow); }
+
+  /* a full-bleed beat between the red band and the cream that follows */
+  .edition__photo { margin: 0; }
+  .edition__caption { color: var(--ink); opacity: 0.7; margin: 12px auto 0; }
+  .edition__photo img {
+    display: block;
+    width: 100%;
+    height: clamp(300px, 38vw, 548px);
+    object-fit: cover;
+    object-position: 50% 46%;
+  }
+
+  @media (max-width: 900px) {
+    .edition__top { padding-top: var(--pad-mid); }
+    .edition__body { padding-bottom: var(--pad-mid); }
+    /* two columns of prose in a phone's width is unreadable */
+    .edition__copy { columns: 1; }
+    .edition__photo img { height: clamp(220px, 56vw, 320px); }
   }
 </style>

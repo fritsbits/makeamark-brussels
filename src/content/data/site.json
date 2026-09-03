@@ -3,6 +3,7 @@
   "shortName": "Make a Mark",
   "domain": "https://letsmakeamark.brussels",
   "instagramUrl": "https://www.instagram.com/lets_makeamarkbxl/",
+  "bruzzUrl": "https://www.bruzz.be/samenleving/creatieve-marathon-make-mark-maakt-brussel-opnieuw-een-beetje-beter-2023-03-19",
   "email": "makeamarkbxl@gmail.com",
   "globalSiteUrl": "https://www.letsmakeamark.org/",
   "firstEditionYear": 2016,
@@ -11,15 +12,16 @@
     "description": "A make-a-thon where hundreds of creatives give Brussels social-profits a day of voluntary design work. Eighth edition: Make a Mark for the Planet, 20 and 21 March 2026."
   },
   "nav": [
+    { "label": "Edition", "href": "#edition" },
     { "label": "Makers", "href": "#makers" },
-    { "label": "Organisations", "href": "#organisations" },
-    { "label": "FAQ", "href": "#faq" },
-    { "label": "About", "href": "#about" }
+    { "label": "Organisations", "href": "#organisations" }
   ],
   "hero": {
     "headline": "Hundreds of creatives. One day. Brussels.",
+    "lines": ["Hundreds of", "creatives.", "One day."],
     "intro": "Make a Mark Brussels is a make-a-thon. Since 2016, hundreds of creatives have made Brussels social-profits look fabulous with a day of voluntary design work.",
-    "instagramLabel": "See their work on Instagram"
+    "instagramLabel": "See their work on Instagram",
+    "bruzzLabel": "Watch the Bruzz report"
   },
   "makers": {
     "heading": "Info for Makers",
@@ -28,13 +30,14 @@
       { "title": "All day Saturday", "text": "You'll spend the whole of Saturday collaborating in a team, tackling a creative challenge for the central case. We'll provide WiFi, food, drinks, and great company to keep you energized throughout the day." },
       { "title": "Selected in advance", "text": "We select Makers in advance, ensuring we form the most effective teams to tackle the challenges. We'll let you know at the end of January if you got selected. A few weeks after that you'll meet your team members and the organisation to discuss their challenge, in a one-hour meeting on an evening in the first week of March." }
     ],
-    "closing": "Please make sure you can make it."
+    "closing": "Please make sure you can make it.",
+    "note": "Makers don't get paid. Not in money, anyway. You get drinks, delicious snacks and good vibes."
   },
   "organisations": {
     "heading": "55 social-profits made their mark",
-    "intro": "In the past years hundreds of creatives have made social-profits look fabulous with a day of voluntary design work. These are the previous social organisations that were helped."
+    "headingLines": ["55 social-profits", "made their mark"],
+    "note": "Organisations pay nothing to take part. The Makers gift their time and talent to help Brussels. No strings attached."
   },
-  "faq": { "heading": "FAQ" },
   "edition": {
     "statusLabels": {
       "open": "Apply as a Maker",
@@ -44,7 +47,7 @@
     }
   },
   "about": {
-    "heading": "About the organisers",
+    "heading": "Organised by",
     "intro": "This is already the 8th edition of Make a Mark Brussels.",
     "organisers": [
       { "name": "Gwen Dubois", "role": "The instigator. An interior architect and creative activist from Jette.", "url": "https://www.gwentibold.com/" },
@@ -54,6 +57,8 @@
   },
   "footer": {
     "globalLabel": "Part of the global Make a Mark movement",
+    "cityLine": "Want to organise Make a Mark in your own city? It already happens in tens of cities. The guides and checklists are on the global site.",
+    "cityLabel": "Start one in your city",
     "instagramLabel": "Instagram",
     "emailLabel": "Email"
   }

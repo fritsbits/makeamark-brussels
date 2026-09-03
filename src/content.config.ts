@@ -8,7 +8,9 @@ const editions = defineCollection({
     year: z.number().int(),
     kicker: z.string(),
     title: z.string(),
+    titleLines: z.array(z.string()),
     dates: z.string(),
+    datesShort: z.string(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date(),
     status: z.enum(['open', 'closed', 'selected', 'done']),
@@ -29,12 +31,5 @@ const organisations = defineCollection({
   }),
 });
 
-const faq = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/faq' }),
-  schema: z.object({
-    question: z.string(),
-    order: z.number().int(),
-  }),
-});
 
-export const collections = { editions, organisations, faq };
+export const collections = { editions, organisations };

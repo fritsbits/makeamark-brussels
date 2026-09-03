@@ -1,25 +1,83 @@
 ---
 import { getCollection } from 'astro:content';
 import { site } from '../lib/site';
-const organisations = (await getCollection('organisations')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'en', { sensitivity: 'base' }));
+
+// ink extents at font-size 100px, as in the hero, so the statement fills its
+// column on both margins instead of ragging out
+const ink: Record<string, { left: number; right: number; over: number }> = {
+  '55 social-profits': { left: 4.9, right: 536.7, over: 0 },
+  'made their mark': { left: 4.95, right: 516.05, over: 0 },
+};
+const fallback = { left: 4.9, right: 540, over: 0 };
+const organisations = (await getCollection('organisations')).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name, 'en', { sensitivity: 'base' })
+);
 ---
-<section id="organisations" class="block block--red orgs">
-  <div class="container">
-    <h2 class="h-display orgs__heading">{site.organisations.heading}</h2>
-    <p class="orgs__intro">{site.organisations.intro}</p>
-    <ul class="orgs__list" role="list">
-      {organisations.map((org) => (
-        <li class="org">{org.data.url ? <a href={org.data.url} rel="noopener" target="_blank">{org.data.name}</a> : org.data.name}</li>
+<section id="organisations" class="band-ink orgs">
+  <div class="orgs__wrap">
+    {/* the count lives inside the sentence, at scale: one statement, no
+        floating numeral looking for a baseline to sit on */}
+    <div class="orgs__head spine">
+      <h2 class="h-display orgs__heading spine__left">
+        {site.organisations.headingLines.map((line) => {
+          const m = ink[line] ?? fallback;
+          const size = 10000 / m.right;
+          return (
+            <span
+              class="orgs__line"
+              style={`--size: ${size.toFixed(3)}cqw; --lead: ${((-(m.left + m.over) * size) / 100).toFixed(3)}cqw`}
+            >{line}</span>
+          );
+        })}
+      </h2>
+    </div>
+    <!-- an index: one name to a line, in columns, so the count is legible and
+         no separator can strand itself at a line end -->
+    <p class="orgs__roll h-display">
+      {organisations.map((org, i) => (
+        <>
+          {i > 0 && ' '}
+          <span class="org">
+            {org.data.url
+              ? <a href={org.data.url} rel="noopener" target="_blank">{org.data.name}</a>
+              : org.data.name}
+          </span>
+        </>
       ))}
-    </ul>
+    </p>
+    <p class="orgs__note">{site.organisations.note}</p>
   </div>
 </section>
 
 <style>
-  .orgs__heading { font-size: var(--fs-h2); max-width: 12ch; }
-  .orgs__intro { max-width: 600px; margin: 20px 0 32px; }
-  .orgs__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-  .org { border: 1.5px solid var(--cream); border-radius: var(--radius-pill); padding: 8px 14px; font-size: 14px; color: var(--cream-light); }
-  .org a { color: inherit; text-decoration: none; }
-  .org a:hover, .org a:focus-visible { text-decoration: underline; }
+  /* the densest band on the page: the list is crushed, not aired out */
+  .orgs { padding-block: clamp(52px, 6.4vw, 96px) clamp(48px, 6vw, 88px); }
+  .orgs__note { margin-inline: var(--edge); }
+  /* the statement fills the spine's left column exactly, both margins, the
+     same grammar the headline uses */
+  .orgs__head { margin-bottom: clamp(26px, 3.2vw, 46px); }
+  .orgs__heading { container-type: inline-size; color: var(--cream); margin: 0; }
+  .orgs__line { display: block; font-size: var(--size); line-height: 0.86; white-space: nowrap; margin-left: var(--lead); }
+
+  /* one block, at a size where the density is the image; each name is
+     unbreakable and the gap does the separating, so nothing strands */
+  .orgs__roll {
+    padding: clamp(20px, 2.4vw, 32px) 0 0;
+    margin: 0 var(--edge);
+    font-size: clamp(24px, 3.4vw, 48px);
+    line-height: 1.08;
+    word-spacing: 0.72em;
+    color: var(--cream);
+  }
+  .org { display: inline-block; white-space: nowrap; word-spacing: normal; }
+  .org a { text-decoration: none; color: inherit; }
+  .org a:hover, .org a:focus-visible { text-decoration: underline; text-underline-offset: 0.16em; }
+
+  .orgs__note {
+    max-width: var(--measure-wide);
+    margin-top: clamp(22px, 2.4vw, 32px);
+  }
+
+
+
 </style>

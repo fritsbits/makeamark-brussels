@@ -9,13 +9,13 @@ test('one h1', () => {
 });
 
 test('every section anchor exists once', () => {
-  for (const id of ['top', 'edition', 'makers', 'organisations', 'faq', 'about']) {
+  for (const id of ['top', 'edition', 'makers', 'organisations', 'about']) {
     assert.equal((html.match(new RegExp(`id="${id}"`, 'g')) ?? []).length, 1, id);
   }
 });
 
 test('nav links point at sections', () => {
-  for (const href of ['#makers', '#organisations', '#faq', '#about']) {
+  for (const href of ['#edition', '#makers', '#organisations']) {
     assert.ok(html.includes(`href="${href}"`), href);
   }
 });
@@ -47,6 +47,12 @@ test('the status pill reads closed for 2026', () => {
   assert.ok(html.includes('Applications are closed for 2026'));
 });
 
-test('four faq items', () => {
-  assert.equal((html.match(/<details/g) ?? []).length, 4);
+test('the answers folded out of the faq are still on the page', () => {
+  for (const phrase of [
+    'drinks, delicious snacks and good vibes',
+    'Organisations pay nothing to take part',
+    'organise Make a Mark in your own city',
+  ]) {
+    assert.ok(html.includes(phrase), phrase);
+  }
 });

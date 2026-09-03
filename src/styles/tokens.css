@@ -2,25 +2,44 @@
   --cream: #F5E2CA;
   --cream-light: #FFF6EA;
   --red: #C33F40;
-  --red-2: #D14B4C;
+  --red-2: #C33F40;
   --ink: #1E1A16;
-  --tint: rgba(121, 26, 27, 0.3);
+  --rule: rgba(30, 26, 22, 0.24);
+  --rule-cream: rgba(245, 226, 202, 0.32);
 
-  --radius-block: 18px;
-  --radius-card: 10px;
-  --radius-pill: 999px;
 
   --container: 1360px;
-  --gutter: clamp(20px, 3vw, 40px);
-  --block-margin: clamp(12px, 2vw, 24px);
-  --section-y: clamp(56px, 8vw, 96px);
+  --gutter: clamp(20px, 3.4vw, 52px);
+  /* distance from a container edge out to the viewport edge, for elements
+     that are meant to run off the page */
+  --bleed: calc(var(--gutter) + (100vw - min(100vw, var(--container))) / 2);
+  /* distance from the viewport edge in to the content margin */
+  --edge: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+  --spine-gap: clamp(28px, 3.4vw, 52px);
 
-  --fs-hero: clamp(56px, 9vw, 118px);
-  --fs-h2: clamp(40px, 6vw, 78px);
-  --fs-h3: clamp(26px, 3vw, 34px);
-  --fs-num: clamp(48px, 5vw, 64px);
-  --fs-body: 17px;
+  /* three deliberate section rhythms rather than one padding everywhere */
+  /* breaks come from colour and scale, so the padding stays modest */
+  --pad-loose: clamp(52px, 6.4vw, 96px);
+  --pad-mid: clamp(40px, 4.6vw, 68px);
+  --pad-tight: clamp(28px, 3.2vw, 44px);
+
+  /* poster scale: the hero and the edition title carry the page */
+  --fs-hero: clamp(52px, 20.4vw, 294px);
+  --fs-date: clamp(52px, 11.4vw, 164px);
+  /* The condensed face is spent in three places only: the hero, the edition
+     title, and the wall of names. Everywhere else, headings are labels set in
+     the grotesque, so the display type still lands when it appears. */
+  --fs-h3: clamp(24px, 3vw, 42px);
+  --fs-h4: clamp(19px, 1.9vw, 26px);
+  --fs-h2: clamp(30px, 4.2vw, 60px);
+  --fs-lead: clamp(21px, 2.2vw, 31px);
+  --fs-label: 13px;
+  --fs-roll: clamp(21px, 2.1vw, 30px);
+  --fs-body: 20px;
+  --measure-narrow: 46ch;
+  --measure-wide: 62ch;
   --fs-small: 13px;
 
-  --track-caps: 0.12em;
+  --track-caps: 0.13em;
+  --lead-poster: 0.9;
 }

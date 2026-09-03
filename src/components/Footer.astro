@@ -1,26 +1,91 @@
 ---
 import { site } from '../lib/site';
+const { heading, intro, organisers, contactLabel } = site.about;
+
+// ink extent at 100px, as elsewhere, so the sign-off fills the measure
+const MARK = { left: 4.95, right: 677.9 };
+const MARK_SIZE = 10000 / MARK.right;
+const SIGN_STYLE = `--size: ${MARK_SIZE.toFixed(3)}cqw; --lead: ${((-MARK.left * MARK_SIZE) / 100).toFixed(3)}cqw`;
+
 ---
-<footer class="footer">
+<footer id="about" class="footer">
   <div class="container footer__inner">
-    <div>
-      <div class="footer__wordmark h-display">{site.name}</div>
-      <a class="footer__global" href={site.globalSiteUrl} rel="noopener" target="_blank">{site.footer.globalLabel}</a>
+    <div class="footer__who">
+      <h2 class="label footer__label">{heading}</h2>
+      <p class="footer__intro">{intro}</p>
+      <ul class="footer__people" role="list">
+        {organisers.map((person) => (
+          <li>
+            <a href={person.url} rel="noopener" target="_blank">{person.name}</a>
+            {' '}<span>{person.role}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="footer__city">{site.footer.cityLine}</p>
+      <div class="footer__actions">
+        <a class="link" href={`mailto:${site.email}`}>{contactLabel}</a>
+        <a class="link" href={site.globalSiteUrl} rel="noopener" target="_blank">{site.footer.cityLabel}</a>
+      </div>
     </div>
-    <nav class="footer__links" aria-label="Footer">
-      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
-      <a href={site.instagramUrl} rel="noopener" target="_blank">{site.footer.instagramLabel}</a>
-      <a href={`mailto:${site.email}`}>{site.footer.emailLabel}</a>
-    </nav>
+  </div>
+  <div class="container footer__colophon">
+    <p class="footer__credit">
+      <a href={site.globalSiteUrl} rel="noopener" target="_blank">{site.footer.globalLabel}</a>.
+      Photographs from past editions by @brion.dominique and @dieter.daniels.
+    </p>
+  </div>
+  {/* the page closes on the name it opened with, at the same measure */}
+  <div class="container footer__sign">
+    <p class="h-display footer__wordmark" style={SIGN_STYLE}>{site.name}</p>
   </div>
 </footer>
 
 <style>
-  .footer { background: var(--red); color: var(--cream-light); margin: 0 var(--block-margin) var(--block-margin); border-radius: var(--radius-block); padding: 40px 0; }
-  .footer__inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-  .footer__wordmark { font-size: 22px; color: var(--cream); }
-  .footer__global { display: block; margin-top: 8px; font-size: var(--fs-small); color: var(--cream-light); }
-  .footer__links { display: flex; gap: 22px; flex-wrap: wrap; }
-  .footer__links a { font-size: 12px; font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; text-decoration: none; color: var(--cream-light); }
-  .footer__links a:hover, .footer__links a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+  .footer {
+    background: var(--red);
+    color: var(--cream-light);
+    padding-block: var(--pad-mid) clamp(24px, 2.8vw, 40px);
+  }
+  .footer a { color: var(--cream-light); }
+  .footer :focus-visible { outline-color: var(--cream); }
+
+  .footer__label { color: var(--cream); margin: 0 0 clamp(14px, 1.6vw, 20px); }
+  .footer__inner { display: grid; gap: clamp(28px, 3.4vw, 48px); }
+  .footer__intro { max-width: var(--measure-wide); margin: 0 0 18px; }
+  /* the two organisers sit side by side under one heading, so this block does
+     not repeat the title-left / prose-right split used three times above */
+  .footer__people {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 48px);
+  }
+  /* the nav drops to the baseline of the first body line, not the label's cap */
+  .footer__people li { margin-bottom: 10px; }
+  .footer__people a { font-weight: 600; color: var(--cream); }
+  /* both columns start on the same line: the label's own height plus its margin */
+  .footer__city { max-width: var(--measure-wide); margin: 0 0 18px; }
+  .footer__actions { display: flex; gap: clamp(22px, 3vw, 48px); flex-wrap: wrap; }
+  .footer__city p { margin: 0 0 16px; }
+
+
+  /* flush to the bottom edge, so the clipped descender reads as a decision */
+  .footer__sign { container-type: inline-size; margin-top: clamp(40px, 5vw, 76px); margin-bottom: -0.12em; }
+  .footer__wordmark {
+    display: block;
+    font-size: var(--size);
+    line-height: 0.84;
+    white-space: nowrap;
+    color: var(--cream);
+    margin: 0 0 0 var(--lead);
+  }
+  .footer__credit { margin: clamp(26px, 3vw, 40px) 0 clamp(10px, 1.2vw, 16px); font-size: var(--fs-small); opacity: 0.9; }
+
+  @media (max-width: 760px) {
+    .footer__people { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    }
 </style>

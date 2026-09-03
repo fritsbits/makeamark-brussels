@@ -3,10 +3,8 @@ import { site } from '../lib/site';
 ---
 <header class="nav">
   <div class="container nav__inner">
-    <a class="nav__wordmark h-display" href="#top">{site.name}</a>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
-      <i></i>
-    </button>
+    <a class="nav__wordmark" href="#top">{site.name}</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">Menu</button>
     <nav id="nav-links" class="nav__links" aria-label="Sections">
       {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
@@ -14,17 +12,58 @@ import { site } from '../lib/site';
 </header>
 
 <style>
-  .nav { position: sticky; top: 0; z-index: 50; background: var(--cream); }
-  .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; }
-  .nav__wordmark { font-size: 22px; color: var(--red-2); text-decoration: none; }
-  .nav__links { display: flex; gap: 28px; }
-  .nav__links a { font-size: 12px; font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; text-decoration: none; color: var(--ink); }
+  .nav { background: var(--cream); }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 15px; }
+    /* one voice across the bar: the wordmark differs from the links by weight
+     and colour, not by typeface */
+  .nav__wordmark {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    color: var(--red);
+    text-decoration: none;
+  }
+  .nav__links { display: flex; gap: clamp(18px, 2vw, 30px); }
+  .nav__links a {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+  }
   .nav__links a:hover, .nav__links a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
-  .nav__toggle { display: none; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--red); cursor: pointer; place-items: center; }
-  .nav__toggle i { display: block; width: 16px; height: 2px; background: var(--cream); box-shadow: 0 -5px 0 var(--cream), 0 5px 0 var(--cream); }
+  /* a word, not a rounded icon: nothing else on this page is a circle */
+  .nav__toggle {
+    display: none;
+    border: 0;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
   @media (max-width: 760px) {
-    .nav__toggle { display: grid; }
-    .nav__links { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--cream); border-bottom: 1px solid rgba(30,26,22,.12); padding: 8px var(--gutter) 16px; }
+    .nav__inner { align-items: center; }
+    .nav__toggle { display: block; }
+    .nav__links {
+      display: none;
+      position: absolute; left: 0; right: 0; top: 100%;
+      flex-direction: column; gap: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 8px var(--gutter) 16px;
+    }
     .nav__links a { padding: 12px 0; font-size: 14px; }
     .nav.is-open .nav__links { display: flex; }
   }
@@ -33,6 +72,7 @@ import { site } from '../lib/site';
 <script>
   const nav = document.querySelector<HTMLElement>('.nav');
   const toggle = document.querySelector<HTMLButtonElement>('.nav__toggle');
+
   if (nav && toggle) {
     toggle.addEventListener('click', () => {
       const open = nav.classList.toggle('is-open');

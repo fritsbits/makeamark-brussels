@@ -3,24 +3,18 @@ import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
-import StoriesStrip from '../components/StoriesStrip.astro';
 import EditionBlock from '../components/EditionBlock.astro';
 import MakersInfo from '../components/MakersInfo.astro';
 import Organisations from '../components/Organisations.astro';
-import Faq from '../components/Faq.astro';
-import About from '../components/About.astro';
 import { site } from '../lib/site';
 ---
 <Base title={site.meta.title} description={site.meta.description}>
   <Nav />
   <main id="main" tabindex="-1">
     <Hero />
-    <StoriesStrip />
     <EditionBlock />
     <MakersInfo />
     <Organisations />
-    <Faq />
-    <About />
   </main>
   <Footer />
 </Base>
