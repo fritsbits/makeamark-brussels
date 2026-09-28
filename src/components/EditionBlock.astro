@@ -9,6 +9,10 @@ const edition = editions.sort((a, b) => b.data.year - a.data.year)[0];
 if (!edition) throw new Error('No edition found in src/content/editions');
 const { Content } = await render(edition);
 const d = edition.data;
+// keep the photo's own proportions: a square crop would cut the edges off a group shot
+const photo = storyImage(d.photo);
+const photoWidth = 440;
+const photoHeight = Math.round((photoWidth * photo.height) / photo.width);
 ---
 <section id="edition" class="block block--red edition">
   <div class="container edition__grid">
@@ -21,7 +25,7 @@ const d = edition.data;
       <StatusPill status={d.status} year={d.year} applyUrl={d.applyUrl} />
     </div>
     <div class="edition__photo">
-      <Polaroid src={storyImage(d.photo)} alt={d.photoAlt} width={420} height={420} rotate={3} />
+      <Polaroid src={photo} alt={d.photoAlt} width={photoWidth} height={photoHeight} rotate={3} />
     </div>
   </div>
 </section>

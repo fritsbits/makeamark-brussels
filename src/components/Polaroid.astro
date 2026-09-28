@@ -14,7 +14,7 @@ const { src, alt, width, height, rotate = 0, duo = true } = Astro.props;
 ---
 <figure class="polaroid" style={`--rot: ${rotate}deg`}>
   <div class:list={['polaroid__photo', { duo }]}>
-    <Image src={src} alt={alt} width={width} height={height} />
+    <Image src={src} alt={alt} width={width} height={height} densities={[1, 2]} />
   </div>
 </figure>
 
