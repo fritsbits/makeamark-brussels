@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { site, stories } from '../lib/site';
+import { storyImage } from '../lib/stories';
+import Pill from './Pill.astro';
+---
+<section class="strip" aria-label="Photos from past editions">
+  <ul class="strip__list" role="list" tabindex="0">
+    {stories.map((story, i) => (
+      <li class="strip__item" style={`--rot: ${[-2, 1, -1, 2, -2, 1, -1, 2, -1][i % 9]}deg; --lift: ${i % 2 ? '18px' : '0px'}`}>
+        <Image src={storyImage(story.file)} alt={story.alt} width={320} height={569} widths={[240, 320, 480]} sizes="(max-width: 760px) 150px, 190px" loading={i < 4 ? 'eager' : 'lazy'} />
+        <span class="visually-hidden">Photo by {story.credit}</span>
+      </li>
+    ))}
+  </ul>
+  <div class="strip__cta">
+    <Pill href={site.instagramUrl}>{site.hero.instagramLabel}</Pill>
+  </div>
+</section>
+
+<style>
+  .strip { padding-block: clamp(8px, 2.5vw, 24px) 0; }
+  .strip__list {
+    list-style: none; margin: 0;
+    /* the scroll container clips both axes, so leave room for the tilt, the lift and the shadow */
+    padding: 20px var(--gutter) 56px;
+    display: flex; gap: clamp(10px, 1.2vw, 16px);
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* the list is focusable so the overflow can be scrolled from the keyboard */
+  .strip__list:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+  /* touch devices scroll by swiping, so the bar is only noise there */
+  @media (hover: none) {
+    .strip__list { scrollbar-width: none; }
+    .strip__list::-webkit-scrollbar { display: none; }
+  }
+  @media (hover: hover) {
+    /* the bar sits under the 56px the tilt, lift and shadow need; shrinking that padding clips the photos */
+    .strip__list { scrollbar-width: thin; scrollbar-color: var(--red) transparent; }
+  }
+  .strip__item {
+    flex: 0 0 clamp(150px, 13vw, 190px);
+    aspect-ratio: 9 / 16;
+    border-radius: 12px; overflow: hidden;
+    transform: rotate(var(--rot)) translateY(var(--lift));
+    scroll-snap-align: center;
+    box-shadow: 0 10px 24px rgba(60, 30, 20, 0.18);
+  }
+  .strip__item img { width: 100%; height: 100%; object-fit: cover; }
+  .strip__cta { text-align: center; margin-top: clamp(0px, 1vw, 8px); color: var(--ink); }
+  /* safe centring: falls back to start when the row overflows, so the first photo stays reachable */
+  @media (min-width: 1360px) { .strip__list { justify-content: safe center; } }
+  @media (prefers-reduced-motion: reduce) { .strip__item { transform: none; } }
+</style>

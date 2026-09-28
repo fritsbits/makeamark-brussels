@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from 'astro:content';
+import { site } from '../lib/site';
+const entries = (await getCollection('faq')).sort((a, b) => a.data.order - b.data.order);
+const items = await Promise.all(entries.map(async (entry) => ({ entry, Content: (await render(entry)).Content })));
+---
+<section id="faq" class="faq container">
+  <h2 class="h-display faq__heading">{site.faq.heading}</h2>
+  <div class="faq__list">
+    {items.map(({ entry, Content }, i) => (
+      <details class="faq__item">
+        <summary class="faq__summary">
+          <span class="h-display h-display--light faq__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <span class="faq__question">{entry.data.question}</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__answer"><Content /></div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .faq { padding-block: var(--section-y); }
+  .faq__heading { font-size: var(--fs-h2); color: var(--red-2); margin-bottom: clamp(20px, 3vw, 36px); }
+  .faq__item { border-top: 1px solid rgba(195, 63, 64, 0.35); }
+  .faq__item:last-child { border-bottom: 1px solid rgba(195, 63, 64, 0.35); }
+  .faq__summary { display: grid; grid-template-columns: 64px minmax(0, 1fr) 32px; align-items: center; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; }
+  .faq__summary::-webkit-details-marker { display: none; }
+  .faq__num { font-size: 40px; color: var(--red-2); }
+  .faq__question { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: clamp(20px, 2.2vw, 28px); line-height: 1; color: var(--red-2); }
+  .faq__icon { width: 28px; height: 28px; border: 1.5px solid var(--red-2); border-radius: 50%; position: relative; }
+  .faq__icon::before, .faq__icon::after { content: ""; position: absolute; background: var(--red-2); left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .faq__icon::before { width: 12px; height: 1.5px; }
+  .faq__icon::after { width: 1.5px; height: 12px; }
+  .faq__item[open] .faq__icon::after { display: none; }
+  .faq__answer { padding: 0 0 22px 80px; max-width: 680px; }
+  .faq__answer :global(a) { color: var(--ink); }
+  @media (max-width: 760px) {
+    .faq__summary { grid-template-columns: 40px minmax(0, 1fr) 28px; }
+    .faq__num { font-size: 28px; }
+    .faq__answer { padding-left: 56px; }
+  }
+</style>
