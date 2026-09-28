@@ -12,7 +12,8 @@ import { site } from '../lib/site';
 </header>
 
 <style>
-  .nav { background: var(--cream); }
+  /* the mobile menu hangs from the bar, so the bar is its containing block */
+  .nav { position: relative; background: var(--cream); }
   .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 15px; }
     /* one voice across the bar: the wordmark differs from the links by weight
      and colour, not by typeface */
@@ -25,6 +26,14 @@ import { site } from '../lib/site';
     line-height: 1;
     color: var(--red);
     text-decoration: none;
+  }
+  /* 12px caps are too small to hit; the pseudo-element takes each target to
+     40px tall, inside the bar's padding and short of the gap between links */
+  .nav__wordmark, .nav__links a, .nav__toggle { position: relative; }
+  .nav__wordmark::after, .nav__links a::after, .nav__toggle::after {
+    content: '';
+    position: absolute;
+    inset: -14px -8px;
   }
   .nav__links { display: flex; gap: clamp(18px, 2vw, 30px); }
   .nav__links a {
@@ -57,15 +66,27 @@ import { site } from '../lib/site';
     .nav__inner { align-items: center; }
     .nav__toggle { display: block; }
     .nav__links {
-      display: none;
       position: absolute; left: 0; right: 0; top: 100%;
       flex-direction: column; gap: 0;
       background: var(--cream);
       border-bottom: 1px solid var(--rule);
       padding: 8px var(--gutter) 16px;
+      /* a short drop rather than a pop; closing is quicker and hides once faded */
+      visibility: hidden;
+      opacity: 0;
+      translate: 0 -6px;
+      transition: opacity 140ms cubic-bezier(0.2, 0, 0, 1), translate 140ms cubic-bezier(0.2, 0, 0, 1), visibility 0s linear 140ms;
     }
-    .nav__links a { padding: 12px 0; font-size: 14px; }
-    .nav.is-open .nav__links { display: flex; }
+    .nav__links a { padding: 14px 0; font-size: 14px; }
+    /* the rows are already 42px tall; the stacked targets must not overlap */
+    .nav__links a::after { content: none; }
+    .nav.is-open .nav__links {
+      visibility: visible;
+      opacity: 1;
+      translate: 0 0;
+      transition-duration: 200ms, 200ms, 0s;
+      transition-delay: 0s;
+    }
   }
 </style>
 

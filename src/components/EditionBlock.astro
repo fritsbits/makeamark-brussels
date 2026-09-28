@@ -73,6 +73,9 @@ const WHEN_STYLE = `--size: ${WHEN_SIZE.toFixed(3)}cqw; --lead: ${((-WHEN.left *
     height: clamp(300px, 38vw, 548px);
     object-fit: cover;
     object-position: 50% 46%;
+    /* an inset hairline gives the photo an edge where it meets the cream */
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -1px;
   }
 
   @media (max-width: 900px) {
