@@ -51,7 +51,9 @@
     "intro": "This is already the 8th edition of Make a Mark Brussels.",
     "organisers": [
       { "name": "Gwen Dubois", "role": "The instigator. An interior architect and creative activist from Jette.", "url": "https://www.gwentibold.com/" },
-      { "name": "Piet Lambrecht", "role": "Organising it from the start with Gwen. Until recently he led the communication of Muntpunt.", "url": "https://www.brusseleir.eu/neus/piet-lambrechts-brussel-komen-kijken-en-het-willen-zien/" }
+      { "name": "Piet Lambrecht", "role": "Organising it from the start with Gwen. Until recently he led the communication of Muntpunt.", "url": "https://www.brusseleir.eu/neus/piet-lambrechts-brussel-komen-kijken-en-het-willen-zien/" },
+      { "name": "Frederik Vincx", "role": "A Maker at many editions before he joined the organisers. He builds digital products for social organisations in Brussels.", "url": "https://frederikvincx.com/" },
+      { "name": "Bernard Polet", "role": "A Maker at many editions before he joined the organisers. He founded //gaggarin//, a gallery in the Brussels Canal Zone.", "url": "https://www.linkedin.com/in/bernardpolet" }
     ],
     "contactLabel": "Contact us"
   },

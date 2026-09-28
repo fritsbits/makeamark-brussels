@@ -52,7 +52,7 @@ const SIGN_STYLE = `--size: ${MARK_SIZE.toFixed(3)}cqw; --lead: ${((-MARK.left *
   .footer__label { color: var(--cream); margin: 0 0 clamp(14px, 1.6vw, 20px); }
   .footer__inner { display: grid; gap: clamp(28px, 3.4vw, 48px); }
   .footer__intro { max-width: var(--measure-wide); margin: 0 0 18px; }
-  /* the two organisers sit side by side under one heading, so this block does
+  /* the organisers sit two to a row under one heading, so this block does
      not repeat the title-left / prose-right split used three times above */
   .footer__people {
     list-style: none;
@@ -60,10 +60,9 @@ const SIGN_STYLE = `--size: ${MARK_SIZE.toFixed(3)}cqw; --lead: ${((-MARK.left *
     padding: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 48px);
+    /* rows sit closer than columns, so the four read as one group of pairs */
+    gap: clamp(16px, 1.8vw, 24px) clamp(20px, 3vw, 48px);
   }
-  /* the nav drops to the baseline of the first body line, not the label's cap */
-  .footer__people li { margin-bottom: 10px; }
   .footer__people a { font-weight: 600; color: var(--cream); }
   /* both columns start on the same line: the label's own height plus its margin */
   .footer__city { max-width: var(--measure-wide); margin: 0 0 18px; }
