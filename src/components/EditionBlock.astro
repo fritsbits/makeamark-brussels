@@ -21,7 +21,7 @@ const photoHeight = Math.round((photoWidth * photo.height) / photo.width);
       <h2 class="h-display edition__title">{d.title}</h2>
       <p class="edition__dates">{d.dates}</p>
       <div class="edition__body"><Content /></div>
-      <p class="edition__cta">{d.callToAction}</p>
+      {d.callToAction && <p class="edition__cta">{d.callToAction}</p>}
       <StatusPill status={d.status} year={d.year} applyUrl={d.applyUrl} />
     </div>
     <div class="edition__photo">

@@ -43,8 +43,9 @@ test('55 organisations are listed', () => {
   assert.equal((html.match(/class="org"/g) ?? []).length, 55);
 });
 
-test('the status pill reads closed for 2026', () => {
-  assert.ok(html.includes('Applications are closed for 2026'));
+test('the 2026 edition is over, so the status pill points to Instagram', () => {
+  assert.ok(html.includes('Read about the 2026 edition on Instagram'));
+  assert.ok(!html.includes('Applications are closed for 2026'));
 });
 
 test('four faq items', () => {

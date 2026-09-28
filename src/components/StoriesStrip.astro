@@ -19,7 +19,8 @@ import Pill from './Pill.astro';
 </section>
 
 <style>
-  .strip { padding-block: clamp(8px, 2.5vw, 24px) 0; }
+  /* the bottom padding keeps the Instagram pill off the red block that follows */
+  .strip { padding-block: clamp(8px, 2.5vw, 24px) clamp(32px, 4.5vw, 56px); }
   .strip__list {
     list-style: none; margin: 0;
     /* the scroll container clips both axes, so leave room for the tilt, the lift and the shadow */

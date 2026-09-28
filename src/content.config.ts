@@ -16,7 +16,7 @@ const editions = defineCollection({
     case: z.object({ name: z.string(), url: z.url() }),
     photo: z.string(),
     photoAlt: z.string(),
-    callToAction: z.string(),
+    callToAction: z.string().optional(),
   }).refine((d) => d.status !== 'open' || !!d.applyUrl, { message: 'status: open requires applyUrl', path: ['applyUrl'] }),
 });
 

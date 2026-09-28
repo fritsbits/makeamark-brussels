@@ -31,6 +31,7 @@ const { heading, intro, organisers, contactLabel } = site.about;
   .about__people li { margin-bottom: 12px; }
   .about__people a { font-weight: 600; color: var(--ink); }
   .about__contact { color: var(--ink); }
-  .about__logo { justify-self: center; max-width: 420px; width: 100%; mix-blend-mode: multiply; }
+  /* the drawing is cut off at the globe's base, so it stands on the footer: bottom-aligned and pulled through the section's bottom padding */
+  .about__logo { justify-self: center; align-self: end; margin-bottom: calc(-1 * var(--section-y)); max-width: 420px; width: 100%; mix-blend-mode: multiply; }
   @media (max-width: 860px) { .about { grid-template-columns: 1fr; } .about__logo { max-width: 280px; } }
 </style>
