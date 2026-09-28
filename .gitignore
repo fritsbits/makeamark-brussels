@@ -24,3 +24,5 @@ scratch-astro/
 
 # Local Netlify folder
 .netlify
+
+.critique/
