@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-lavish-annotate="off">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make a Mark · Titles with more meaning</title>
+  <style>
+    @font-face{font-family:"Big Shoulders Display";src:url("assets/copywriting-benefits/big-shoulders-600.woff2") format("woff2");font-weight:600;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url("assets/copywriting-benefits/plus-jakarta-400.woff2") format("woff2");font-weight:400;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url("assets/copywriting-benefits/plus-jakarta-600.woff2") format("woff2");font-weight:600;font-display:swap}
+    :root{--red:#c33f40;--red-head:#d14b4c;--cream:#f5e2ca;--light:#fff6ea;--inset:#ebd5bb;--rule:#dfc3a3;--ink:#1e1a16;--muted:#1e1a16;--display:"Big Shoulders Display",sans-serif;--body:"Plus Jakarta Sans",Arial,sans-serif}
+    *{box-sizing:border-box}html{background:var(--cream);color:var(--ink);font-family:var(--body);scroll-behavior:smooth}body{margin:0;line-height:1.6}button,input,textarea{font:inherit}button{cursor:pointer}a{color:var(--ink);text-underline-offset:3px}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.mast{border-bottom:1px solid var(--rule);padding:20px 0;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.status{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+    .hero{padding:clamp(56px,9vw,112px) 0 52px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:var(--ink);margin:0 0 16px}.hero h1,.section-title,.proposal h3{font-family:var(--display);font-weight:600;text-transform:uppercase;line-height:.92;letter-spacing:.01em;margin:0}.hero h1{font-size:clamp(72px,10.5vw,150px);max-width:900px}.hero h1 em{color:var(--ink);font-style:normal}.dek{font-size:17px;max-width:68ch;margin:24px 0 0}
+    .section{padding:56px 0;border-top:1px solid var(--rule)}.section-head{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:28px}.section-title{font-size:clamp(40px,6vw,78px)}.section-head p{margin:0;max-width:62ch;color:var(--muted)}.contrast{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.copy-card{background:var(--light);border:1px solid var(--rule);border-radius:10px;padding:22px;min-width:0}.label{font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--muted);margin:0 0 12px}.copy-card blockquote{font-family:var(--display);font-size:34px;line-height:1.3;margin:0}.copy-card p:last-child{margin-bottom:0}.deck{padding:20px 0 4px;font-size:17px;max-width:70ch}.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}.proposal{background:var(--light);border:1px solid var(--rule);border-radius:10px;padding:24px;min-width:0;display:flex;flex-direction:column}.proposal .label{margin-bottom:14px}.proposal h3{font-size:34px;margin-bottom:16px}.proposal p{margin:0 0 14px;max-width:58ch}.proposal .rationale{color:var(--muted);font-size:14px;margin-top:auto;padding-top:12px}.row{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-top:1px solid var(--rule);margin-top:14px}.row input{margin-top:5px;accent-color:var(--red);flex:none}.row strong{display:block}.row small{display:block;color:var(--muted);margin-top:3px}.comparison{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}.comparison .proposal{background:transparent}.footnote{padding:28px;background:var(--inset);border-radius:10px;margin-top:28px}.footnote h3{font-family:var(--display);text-transform:uppercase;font-size:26px;margin:0 0 8px}.footnote p{margin:0;max-width:80ch}.decision{padding:56px 0 88px;border-top:1px solid var(--rule)}.decision form{background:var(--ink);color:var(--light);padding:clamp(24px,5vw,52px);border-radius:10px}.decision h2{font:600 clamp(40px,6vw,78px)/.92 var(--display);text-transform:uppercase;margin:0 0 12px}.decision form>p{max-width:70ch;color:var(--cream)}.questions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0}.question{background:var(--ink);padding:18px;border:0;margin:0;border-radius:10px;min-width:0}.question h3{font-size:14px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 8px;color:var(--cream)}.question .small{color:var(--cream);font-size:14px;margin:0 0 10px}.question label{display:flex;gap:8px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--rule);font-size:14px}.question input[type=radio]{accent-color:var(--red);flex:none;margin-top:5px}.question input[type=text]{width:100%;margin-top:7px;padding:10px;border:1px solid var(--rule);border-radius:10px;background:#1e1a16;color:white}.notes{display:block;font-weight:700;margin:20px 0 8px}.decision :focus-visible{outline:3px solid var(--cream);outline-offset:3px}.decision textarea{display:block;width:100%;min-height:90px;padding:12px;border:1px solid var(--rule);border-radius:10px;background:#1e1a16;color:white;resize:vertical}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px}.actions button{background:var(--cream);color:var(--ink);border:0;border-radius:999px;padding:12px 20px;font-weight:800}.receipt{font-size:14px;color:var(--cream)}.sources{border-top:1px solid var(--rule);margin-top:34px;padding-top:20px;color:var(--cream);font-size:14px}.sources a{color:var(--cream);text-decoration:underline}.footer{padding:24px 0 36px;color:var(--muted);font-size:14px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:760px){.section-head{grid-template-columns:1fr;gap:12px}.contrast,.grid,.comparison{grid-template-columns:1fr}.questions{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1180px)}.mast{align-items:flex-start;flex-direction:column;gap:4px}}
+  </style>
+</head>
+<body>
+  <header class="wrap mast"><div class="brand">Make a Mark Brussels · Copy decision</div><div class="status">Analysis · Owner selection pending</div></header>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Make it clear<br>who gets to <em>make</em><br>a difference.</h1>
+      <p class="dek">Makers want to put creative skills to meaningful use and meet their peers. Social organisations want a maker team’s help to move a long-waiting project forward. The copy can name both benefits—and show who does what.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">The title gap</h2><p>The current headlines point toward the event, but leave some of its value for the body copy to explain. The organisation title names a challenge without naming the maker team’s role.</p></div>
+      <div class="contrast">
+        <article class="copy-card"><p class="label">Current homepage</p><blockquote>One day.<br>Many ways<br>to make a mark.</blockquote><p class="deck">Memorable, but the audience and useful exchange are not explicit in the headline.</p></article>
+        <article class="copy-card"><p class="label">Current audience titles</p><blockquote>Makers: “A day for your creative skills.”</blockquote><p class="deck">A warm invitation, but it could name the meaningful project and peer connection sooner.</p><blockquote style="margin-top:28px">Organisations: “Bring one real communication challenge.”</blockquote><p class="deck">Names what the organisation brings, but not the creative help it receives.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">Make the exchange visible</h2><p>Keep makers and social organisations equally present on the homepage. On each audience page, lead with the benefit that matters most to that reader.</p></div>
+      <article class="proposal">
+        <p class="label">Homepage · recommended starting point</p>
+        <h3>Make something useful together.</h3>
+        <p><strong>Makers bring creative skills. Social organisations bring a challenge worth taking on. Together, they make practical work for Brussels.</strong></p>
+        <p class="rationale">A shared headline keeps both audiences in view; the supporting sentence explains their distinct contributions. “Practical work” avoids guaranteeing a finished deliverable.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">For makers</h2><p>Pair contribution and connection: use your skills for a worthwhile project, alongside other makers.</p></div>
+      <div class="grid">
+        <article class="proposal"><p class="label">Recommended</p><h3>Put your creative skills to work on a project that matters.</h3><p>Spend a day making something useful with a Brussels social organisation—and meet other makers while you do.</p><p class="rationale">States purpose in the title, then brings peer connection into the first supporting sentence.</p></article>
+        <article class="proposal"><p class="label">More concrete</p><h3>Make useful work with a Brussels social organisation.</h3><p>Bring your creative skills to a real communication or design challenge, alongside other makers.</p><p class="rationale">Explains the activity quickly. Less emotional, and peer connection becomes secondary.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">For social organisations</h2><p>Make the handoff clear: the organisation brings the project; makers take on the creative work and help bring it forward.</p></div>
+      <div class="grid">
+        <article class="proposal"><p class="label">Recommended</p><h3>Get a maker team to bring a long-waiting project to life.</h3><p>Bring a communication or design project you’ve been waiting to take on. Makers will help shape it into a practical direction or first materials.</p><p class="rationale">Names the benefit and the team doing the creative work, while keeping the deliverable modest.</p></article>
+        <article class="proposal"><p class="label">More direct</p><h3>Let a maker team take on your communication challenge.</h3><p>Tell us what your organisation has been meaning to make. We’ll match it with makers who can help shape the work.</p><p class="rationale">Plain and action-oriented. “Take on” may sound like the makers work independently, so the lead should retain organisation input and feedback.</p></article>
+      </div>
+      <aside class="footnote"><h3>Keep the promise in bounds</h3><p>The current page says teams work towards a “practical direction or first materials.” Keep that scope until 2027 outcomes are confirmed. The project brief mentions usable results, but its source capture is marked unverified.</p></aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2 class="section-title">Why this direction</h2><p>The maker and organisation motivations are supported by historical evidence and owner direction. Treat them as useful hypotheses, not proven preferences for every current applicant.</p></div>
+      <div class="comparison">
+        <article class="proposal"><p class="label">Makers</p><h3>Meaningful use + creative company</h3><p>A 2023 BRUZZ report describes participants using their skills for socially meaningful work, meeting like-minded people, and feeling part of a close-knit community.</p><p class="rationale">Historical report from one edition; current audience research could change the emphasis.</p></article>
+        <article class="proposal"><p class="label">Organisations</p><h3>Creative help for work on hold</h3><p>The report describes organisations with limited time or resources for design and marketing. The owner’s recent feedback sharpens the invitation: they want a maker team to make or develop a project they have waited to pursue.</p><p class="rationale">Historical evidence plus direct owner direction. Avoid implying a guaranteed final product.</p></article>
+      </div>
+    </section>
+
+    <section class="decision">
+      <form id="review" data-lavish-question="copywriting-benefits">
+        <h2>Which wording feels right?</h2>
+        <p>Selections stay local until you queue your answer. Choose the recommended title, the alternative, or write a new direction for each audience. You can mix and match.</p>
+        <div class="questions">
+          <fieldset class="question"><legend class="sr-only">Homepage title choices</legend><h3>Homepage title</h3><p class="small">What should the shared headline lead with?</p><label><input type="radio" name="home" value="recommended" checked><span><strong>Make something useful together.</strong><small>Shared benefit, warm and plain.</small></span></label><label><input type="radio" name="home" value="alternative"><span><strong>Creative skills for real challenges.</strong><small>More explicit, less human.</small></span></label><label><input type="radio" name="home" value="custom"><span>Neither / custom wording</span></label><label for="home-custom">Write an alternate title</label><input id="home-custom" type="text" name="home_custom" placeholder="Your wording"></fieldset>
+          <fieldset class="question"><legend class="sr-only">Maker title choices</legend><h3>Maker title</h3><p class="small">Which maker motivation should be most prominent?</p><label><input type="radio" name="maker" value="recommended" checked><span><strong>Put your creative skills to work on a project that matters.</strong><small>Purpose first; peer connection in the lead.</small></span></label><label><input type="radio" name="maker" value="alternative"><span><strong>Make useful work with a Brussels social organisation.</strong><small>Concrete activity first.</small></span></label><label><input type="radio" name="maker" value="custom"><span>Neither / custom wording</span></label><label for="maker-custom">Write an alternate title</label><input id="maker-custom" type="text" name="maker_custom" placeholder="Your wording"></fieldset>
+          <fieldset class="question"><legend class="sr-only">Organisation title choices</legend><h3>Organisation title</h3><p class="small">How explicit should the maker team's role be?</p><label><input type="radio" name="org" value="recommended" checked><span><strong>Get a maker team to bring a long-waiting project to life.</strong><small>Benefit and maker role are explicit.</small></span></label><label><input type="radio" name="org" value="alternative"><span><strong>Let a maker team take on your communication challenge.</strong><small>Shorter, more functional.</small></span></label><label><input type="radio" name="org" value="custom"><span>Neither / custom wording</span></label><label for="org-custom">Write an alternate title</label><input id="org-custom" type="text" name="org_custom" placeholder="Your wording"></fieldset>
+        </div>
+        <label class="notes" for="notes">What would you keep, change, or combine?</label>
+        <textarea id="notes" name="notes" placeholder="For example: keep the maker title, soften ‘long-waiting’, and use the more direct organisation alternative."></textarea>
+        <div class="actions"><button type="submit">Queue copy choices</button><span class="receipt" id="receipt" role="status" aria-live="polite">Nothing queued yet.</span></div>
+        <div class="sources">Sources: <a href="../docs/raw/2026-10-18-bruzz-make-a-mark-2023.md">BRUZZ 2023 report capture</a> · <a href="../docs/raw/2026-10-19-organisation-invitation-direction.md">Owner’s organisation invitation direction</a> · <a href="../docs/raw/2026-10-19-maker-hero-lead-request.md">Maker lead request</a> · <a href="../docs/wiki/strategy/10-tone-of-voice.md">Tone of voice</a>. Proposal only; public copy remains unchanged.</div>
+      </form>
+    </section>
+  </main>
+  <footer class="wrap footer">Make a Mark Brussels · two-ink broadsheet palette, cream paper and red display type.</footer>
+  <script>
+    const form=document.querySelector('#review'),receipt=document.querySelector('#receipt');
+    form.addEventListener('change',()=>{receipt.textContent='Choices updated locally. Queue them when ready.'});
+    form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form);const answer={homepage:data.get('home'),homepage_custom:data.get('home_custom').trim(),maker:data.get('maker'),maker_custom:data.get('maker_custom').trim(),organisation:data.get('org'),organisation_custom:data.get('org_custom').trim(),notes:data.get('notes').trim()};const prompt='Review the proposed audience-led title copy. Use these selections to revise/approve copy proposals in docs/wiki/build/28-copywriting-benefits.md. Do not implement until the selected wording is clear; if any custom wording is supplied, use it. Keep maker and social organisations co-primary, preserve the owner direction that maker teams do the creative work for organisation projects, avoid unverified deliverable promises, and update B-021/index/log when selection is processed.\n\n'+JSON.stringify(answer,null,2);if(!window.lavish?.queuePrompt){receipt.textContent='Open this page in Lavish to queue the choice, or copy this selection into chat: '+JSON.stringify(answer);return}window.lavish.queuePrompt(prompt,{tag:'copy-choice',text:'Audience-led titles: homepage, maker and organisation',queueKey:'copywriting-benefits',element:form,data:answer});receipt.textContent='Queued. Use Send to Agent in Lavish to submit your choices.'});
+  </script>
+</body>
+</html>

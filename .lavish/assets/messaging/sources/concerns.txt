@@ -1,0 +1,45 @@
+docs/wiki/build/01-build-concerns.md
+
+1  ---
+2  title: Build concerns
+3  tags: [concerns, build, website]
+4  sources:
+5    - "../../raw/2026-10-18-admin-review-request.md"
+6    - "../../raw/2026-10-18-all-photo-treatment-selection.md"
+7    - "../../ux/_scope.md"
+8    - "../../raw/2026-10-18-airtable-forms.md"
+9    - "../../raw/2026-10-18-airtable-data-model.md"
+10    - "../../raw/2026-10-18-laravel-data-migration-direction.md"
+11    - "../../raw/2026-10-18-application-privacy-requirements.md"
+12    - "../../raw/2026-10-18-application-operations-update.md"
+13    - "../../raw/2026-10-18-application-provider-handling.md"
+14    - "../../raw/2026-10-18-application-privacy-decision-instruction.md"
+15    - "../../raw/2026-10-18-risoprint-tool-request.md"
+16    - "../../raw/2026-10-18-site-risoprint-selection.md"
+17    - "../../raw/2026-10-18-homepage-photo-reveal-selection.md"
+18  phase: Build
+19  updated: 2026-10-18
+20  ---
+21  
+22  # Build concerns
+23  
+24  B-005 treatment update: the [monochrome selection](11-site-photo-treatments.md#current-monochrome-treatment)
+25  supersedes the earlier Riso selection on the public homepage. The owner then
+26  extended the hero styling and group rollover to every photo. All 12 photos
+27  share one component; the local tool and saved preset remain available.
+28  [All-photo selection](../../raw/2026-10-18-all-photo-treatment-selection.md).
+29  
+30  **Status:** 4 Open · 5 Partly · 1 Closed
+31  
+32  | ID | Concern | Why it remains open | Next step |
+33  | --- | --- | --- | --- |
+34  | B-008 | Partly: what review, selection and matching workflow must the admin support? | Nine screenshots establish visible tasks/fields, but not criteria, transitions, rating rules, assignment constraints or agreed scope. Filament is owner-selected. [Discovery](30-admin-discovery.md) | Walk through real organisation/maker decisions and a team; agree essential tasks/rules before sitemap and wireframes. |
+35  | B-009 | Partly: what may each organiser do? | Frederik is super admin; Piet, Gwen and Bernard also need individual admin accounts for matchmaking. Detailed review/edit/selection/export/deletion and account-management rights are unknown. [Owner request](../../raw/2026-10-18-admin-review-request.md); [discovery](30-admin-discovery.md) | Agree permissions and account lifecycle; collect account emails when ready for implementation. |
+36  | B-010 | Which selection communications belong in the admin? | A supplied screenshot shows an acceptance automation marked off; it does not establish actual use or a current requirement. Separate from B-002's provider/receipt/internal-alert configuration. [Review](30-admin-discovery.md#screenshot-inventory) | Confirm actual messages, templates, sending authority and manual/automatic/resend/change behavior before scoping communication actions. |
+37  | B-006 | Partly: which global-site surface refinements should Brussels adopt? | The owner requested tonal variation and temporary international photography. An initial [homepage refinement](12-global-design-review.md#initial-homepage-implementation) is implemented and browser-verified; the broader recommendations remain for review. | Review the running homepage before extending the direction further. |
+38  | B-007 | Which sourced Brussels photos will replace the temporary international images? | The owner has no suitable photos yet and asked to use global-site images temporarily. Source URLs and temporary flags are recorded in homepage content. [Implementation](12-global-design-review.md#initial-homepage-implementation) | Replace both hero images, alt text and source caption with locally sourced/credited photography before public launch. |
+39  | B-001 | Partly: which application fields are collected, required, or deferred? | Both forms validate the captured fields; requiredness still follows historical screenshots rather than a current reviewer audit. The owner removed the dietary-requirements question. Signup is open. [Airtable forms; Scope; Owner decisions; Application intake] | Review requiredness and remove fields not needed for selection or event preparation. |
+40  | B-002 | Partly: what privacy notice, lawful basis, recipients, and rights-request process govern applications? | The notice records legitimate interests for current applications and a three-year limit with annual review. Public provider terms have been checked, but account-specific server region, backups, Forge DPA, one.com email product, forwarding destination, and Google account remain unverified. Annual review/deletion is not automated; future self-service accounts need a separate review. [Application privacy and retention; provider source review] | Verify account-level provider settings/contracts and establish an annual manual review before production email; revisit purpose and notice before adding self-service reuse/accounts. |
+41  | B-003 | How do Edition status values map to the three public phases? | The owner set the 2027 edition to `open`. The captured historic statuses still do not distinguish signup closed from after-event. [Scope; Airtable data model] | Define the two post-open status values and test their public behavior before those phases. |
+42  | B-004 | Is the Airtable migration complete across records, fields, links, and attachments? | The inspected data model is a read-only interface capture, not a full export. No complete import inventory is available. [Airtable data model; migration direction] | Compare a full export against the import and record field, relationship, and attachment coverage. |
+43  | B-005 | Closed: can the requested risoprint treatment be configured and reused? | Resolved with a local browser tool, supplied sample, adjustable controls, reusable settings and PNG export. The owner selected a saved treatment for the homepage group photo only, then chose an expanding original-photo reveal and requested a larger frame. [Tool request](../../raw/2026-10-18-risoprint-tool-request.md); [site selection](../../raw/2026-10-18-site-risoprint-selection.md); [reveal selection](../../raw/2026-10-18-homepage-photo-reveal-selection.md) | Resolution: [tool record](10-risoprint-tool.md) and [selected photo treatments](11-site-photo-treatments.md). The larger frame and reveal pass running desktop, mobile, reduced-motion and no-JavaScript checks. Two earlier PHP application-state assertions remain separate from these checks. Public sitemap is unchanged. |

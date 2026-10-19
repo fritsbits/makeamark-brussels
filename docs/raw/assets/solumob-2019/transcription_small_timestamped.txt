@@ -1,0 +1,22 @@
+AUTOMATISCH TRANSCRIPT — niet handmatig gecontroleerd tegen de audio.
+Lokaal mlx-whisper 0.4.3; model mlx-community/whisper-small-mlx; taal Nederlands geforceerd.
+Namen, muziek en Franse spraak kunnen verkeerd herkend zijn. Geen publiceerbare citaten zonder broncontrole.
+Alleen spraakvensters opgenomen; volledig automatisch modelresultaat staat in transcription_small_raw.json.
+
+[00:19.700–00:22.840] [automatisch; onzeker] Vandaag is het Make a Mark in Muntpunt in Brussel.
+[00:23.300–00:24.020] [automatisch; onzeker] Hallo Jens.
+[00:24.020–00:29.020] [automatisch; onzeker] Op 11 uur gaan we met een 50-tal creatieve mensen proberen
+[00:29.020–00:31.660] [automatisch; onzeker] problemen van lokale nonprofits op te lossen.
+[00:47.300–00:51.420] [automatisch; onzeker] Ik ben de Sine de Bertin en ik ben de responsabel van de SBR Surinameau Volontaire.
+[00:51.420–00:54.880] [automatisch; onzeker] Ik ben Tegy en ik ben chauffeur en accompagnateur.
+[00:55.140–00:55.620] [automatisch; onzeker] Ik ben Solimop.
+[00:56.220–00:57.260] [automatisch; onzeker] Analys, kleren maken.
+[00:57.580–00:58.400] [automatisch; onzeker] En dan op weg weg.
+[01:54.660–01:55.660] [automatisch; onzeker] Gas geven!
+[02:04.300–02:07.480] [automatisch; onzeker] Nog een kwartier te gaan en we zijn al gered.
+[02:48.160–02:49.160] [automatisch; onzeker] We hebben het best.
+[02:50.420–02:51.040] [automatisch; onzeker] Weet je Mark?
+[02:51.540–02:52.260] [automatisch; onzeker] Die kan mij zien.
+[02:52.560–02:56.740] [automatisch; onzeker] Dat straf mag op nog geen acht uur kunnen doen om op alle vz2 te helpen.
+[02:57.320–02:58.900] [automatisch; onzeker] Dat zou pak meer moeten gebeuren.
+[02:59.620–03:00.300] [automatisch; onzeker] Tot volgend jaar.

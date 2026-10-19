@@ -1,0 +1,55 @@
+resources/views/audience.blade.php
+
+1  <x-layouts.app :site="$site" :page-title="$pageTitle" :page-description="$pageDescription">
+2      @include('sections.nav')
+3      <main id="main" tabindex="-1">
+4          <section class="audience-hero container">
+5              <a class="back-link kicker" href="/">← Back to the edition</a>
+6              <p class="kicker">{{ $audience === 'makers' ? 'For makers' : 'For social organisations' }} · 27 March 2027</p>
+7              @if ($audience === 'makers')
+8                  <flux:heading level="1" class="h-display audience-hero__title">A day for your creative skills.</flux:heading>
+9                  <flux:text class="audience-hero__intro">Work with a team on a real challenge from a Brussels social organisation. Bring your perspective, your craft, and a willingness to make together.</flux:text>
+10              @else
+11                  <flux:heading level="1" class="h-display audience-hero__title">Bring one real communication challenge.</flux:heading>
+12                  <flux:text class="audience-hero__intro">Spend a day working alongside a team of makers on a challenge your organisation is ready to tackle.</flux:text>
+13              @endif
+14              @if ($edition['status'] === 'open')
+15                  <x-pill :href="$applicationUrl" :solid="true">Start your application</x-pill>
+16              @else
+17                  <p class="audience-hero__notice">{{ $edition['pill']['label'] }}. Application details will be published here when they are ready.</p>
+18              @endif
+19          </section>
+20  
+21          <section class="commitment container">
+22              <div class="commitment__lead">
+23                  <p class="kicker">Before you decide</p>
+24                  @if ($audience === 'makers')
+25                      <flux:heading level="2" class="h-display">Bring a full day, and your point of view.</flux:heading>
+26                      <p>Participation is voluntary. Makers are selected in advance and matched to a challenge. The event takes place on Saturday 27 March 2027.</p>
+27                  @else
+28                      <flux:heading level="2" class="h-display">Bring the people and context only you have.</flux:heading>
+29                      <p>Organisations take part for free. Plan to share the background, materials, and decisions a maker team needs to work on your challenge.</p>
+30                  @endif
+31              </div>
+32              <div class="commitment__steps">
+33                  <article><span class="commitment__number h-display">01</span><h3 class="h-display">Apply</h3><p>{{ $audience === 'makers' ? 'Tell us about your work, skills, and availability.' : 'Tell us about your organisation, the people you work with, and one challenge.' }}</p></article>
+34                  <article><span class="commitment__number h-display">02</span><h3 class="h-display">Hear from the team</h3><p>Applications are reviewed and teams are planned before the event. Applying does not guarantee selection.</p></article>
+35                  <article><span class="commitment__number h-display">03</span><h3 class="h-display">Make together</h3><p>Selected makers and organisations work together on the day, with time to understand the challenge and share ideas.</p></article>
+36              </div>
+37          </section>
+38  
+39          <section class="audience-cta block block--red">
+40              <div class="container audience-cta__inner">
+41                  <div><p class="kicker">The 2027 edition</p><h2 class="h-display">Saturday 27 March 2027</h2></div>
+42                  @if ($edition['status'] === 'open')
+43                      <x-pill :href="$applicationUrl">Start your application</x-pill>
+44                  @else
+45                      <p>{{ $edition['pill']['label'] }}. We’ll share the application here when it is ready.</p>
+46                  @endif
+47              </div>
+48          </section>
+49  
+50          @include('sections.faq')
+51      </main>
+52      @include('sections.footer')
+53  </x-layouts.app>

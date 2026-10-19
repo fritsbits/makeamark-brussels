@@ -1,0 +1,57 @@
+<x-layouts.app :site="$site" :page-title="$pageTitle" :page-description="$pageDescription">
+    @include('sections.nav')
+    <main id="main" class="distilled {{ $audience === 'makers' ? 'makers-page' : '' }}" tabindex="-1">
+        <section class="audience-hero container">
+            <a class="back-link" href="/">Back to the edition</a>
+            <flux:heading level="1" class="h-display audience-hero__title">{{ $audience === 'makers' ? 'A day for your creative skills.' : 'Bring one real communication challenge.' }}</flux:heading>
+            @if ($audience === 'makers')
+                <flux:text class="audience-hero__intro">Use your creative skills on a local project and meet other makers. Your team could work on a visual identity, a campaign, communications strategy or digital materials.</flux:text>
+            @else
+                <flux:text class="audience-hero__intro">Work with a team of makers on one challenge. It could be a visual identity, a campaign, communications strategy or social media assets. Together, you'll work towards a practical direction or first materials.</flux:text>
+            @endif
+            <flux:text>{{ $edition['dates'] }} · Brussels</flux:text>
+            @if ($edition['status'] === 'open')
+                <x-pill :href="$applicationUrl" :solid="true">Start your application</x-pill>
+            @else
+                <flux:text>{{ $edition['pill']['label'] }}</flux:text>
+            @endif
+        </section>
+
+        <section class="commitment container">
+            <div class="commitment__lead">
+                <flux:heading level="2" class="h-display">What you commit to</flux:heading>
+                @if ($audience === 'makers')
+                    <flux:text>Volunteer a full day and join a planning meeting beforehand. We select makers and match teams in advance.</flux:text>
+                @else
+                    <flux:text>Taking part is free. Prepare your brief and materials, join a planning meeting, and take part in feedback and the evening presentation.</flux:text>
+                @endif
+            </div>
+            <div class="commitment__steps">
+                <article><span class="commitment__number h-display">01</span><flux:heading level="3" class="h-display">Apply</flux:heading><flux:text>{{ $audience === 'makers' ? 'Tell us about your skills, show examples of your work and share your availability.' : 'Tell us about your organisation and the challenge you want to work on.' }}</flux:text></article>
+                <article><span class="commitment__number h-display">02</span><flux:heading level="3" class="h-display">Selection and preparation</flux:heading><flux:text>Applying does not guarantee selection. We review applications, match teams and arrange a planning meeting before the event.</flux:text></article>
+                <article><span class="commitment__number h-display">03</span><flux:heading level="3" class="h-display">The day</flux:heading><flux:text>Work with your team on the brief, share feedback and present the work in the evening.</flux:text></article>
+            </div>
+        </section>
+
+        <section id="faq" class="faq container">
+            <flux:heading level="2" class="h-display faq__heading">{{ $audience === 'makers' ? 'Do makers get paid?' : 'Do organisations need to pay?' }}</flux:heading>
+            <flux:text>{{ $audience === 'makers' ? 'No. Makers volunteer their time and skills.' : 'No. Organisations take part for free.' }}</flux:text>
+        </section>
+
+        <section id="application" class="application application--inline container" aria-labelledby="application-heading" tabindex="-1">
+            @if ($audience === 'makers')
+                <div class="application__intro">
+                    <flux:heading level="2" id="application-heading" class="h-display application__title">Maker application</flux:heading>
+                    @unless ($submitted)
+                        @include('applications.context')
+                    @endunless
+                    @include('applications.privacy-note')
+                </div>
+            @else
+                <flux:heading level="2" id="application-heading" class="h-display application__title">Organisation application</flux:heading>
+            @endif
+            @include('applications.intake', ['introRendered' => $audience === 'makers'])
+        </section>
+    </main>
+    @include('sections.footer')
+</x-layouts.app>

@@ -1,0 +1,30 @@
+resources/content/faq/01-paid.json
+{
+  "question": "Do Makers get paid for the day of work?",
+  "order": 1,
+  "body": "Kind of. In drinks, delicious snacks and good vibes."
+}
+
+
+resources/content/faq/02-organisations-pay.json
+{
+  "question": "Do organisations need to pay to participate?",
+  "order": 2,
+  "body": "Nope. The Makers gift their time and talent to help Brussels. No strings attached."
+}
+
+
+resources/content/faq/03-bruzz.json
+{
+  "question": "Is there a Bruzz article with video that can give me a sense of the vibe of the event?",
+  "order": 3,
+  "body": "Yes, there is. [You can find it here](https://www.bruzz.be/samenleving/creatieve-marathon-make-mark-maakt-brussel-opnieuw-een-beetje-beter-2023-03-19)."
+}
+
+
+resources/content/faq/04-your-city.json
+{
+  "question": "Would you like to organize Make a Mark in your city?",
+  "order": 4,
+  "body": "Go for it! It's already happening in tens of cities around the globe. You can find guides and checklists on the [global website of Make a Mark](https://www.letsmakeamark.org/)."
+}

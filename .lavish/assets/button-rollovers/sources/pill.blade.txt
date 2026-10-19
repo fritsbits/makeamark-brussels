@@ -1,0 +1,6 @@
+@props(['href' => null, 'solid' => false])
+@if ($href)
+    <flux:button :href="$href" variant="ghost" :class="$solid ? 'pill pill--solid' : 'pill'" :target="str_starts_with($href, 'http') ? '_blank' : null" :rel="str_starts_with($href, 'http') ? 'noopener' : null">{{ $slot }}</flux:button>
+@else
+    <span class="pill"><span>{{ $slot }}</span></span>
+@endif

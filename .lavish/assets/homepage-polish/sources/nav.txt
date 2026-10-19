@@ -1,0 +1,14 @@
+resources/views/sections/nav.blade.php
+Captured 18 October 2026
+
+0001  <header class="nav" x-data="{ open: false }" :class="{ 'is-open': open }" @keydown.escape.window="open = false">
+0002      <div class="container nav__inner">
+0003          <a class="nav__wordmark h-display" href="/">{{ $site['name'] }}</a>
+0004          <flux:button class="nav__toggle" variant="ghost" aria-expanded="false" ::aria-expanded="open.toString()" aria-controls="nav-links" aria-label="Menu" @click="open = !open"><i aria-hidden="true"></i></flux:button>
+0005          <nav id="nav-links" class="nav__links" aria-label="Sections">
+0006              @foreach ($site['nav'] as $item)
+0007                  <a href="{{ str_starts_with($item['href'], '#') && ! request()->routeIs('home') ? '/'.$item['href'] : $item['href'] }}" @click="open = false">{{ $item['label'] }}</a>
+0008              @endforeach
+0009          </nav>
+0010      </div>
+0011  </header>

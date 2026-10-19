@@ -1,0 +1,32 @@
+[
+  {
+    "device": "desktop",
+    "current": {
+      "width": 1440,
+      "overflow": 0,
+      "formWidth": 760,
+      "firstFieldWidth": 620,
+      "backLinkMargin": "96px",
+      "submitRadius": "0px"
+    },
+    "proposed": {
+      "overflow": 0,
+      "formWidth": 736.890625
+    }
+  },
+  {
+    "device": "mobile",
+    "current": {
+      "width": 390,
+      "overflow": 0,
+      "formWidth": 350,
+      "firstFieldWidth": 350,
+      "backLinkMargin": "48px",
+      "submitRadius": "0px"
+    },
+    "proposed": {
+      "overflow": 0,
+      "formWidth": 350
+    }
+  }
+]

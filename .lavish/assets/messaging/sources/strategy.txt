@@ -1,0 +1,97 @@
+docs/ux/_strategy.md
+
+1  ---
+2  title: Make a Mark Brussels website — Strategy
+3  tags: [ux, strategy, site-level]
+4  sources:
+5    - "../wiki/discovery/10-discovery.md"
+6    - "../wiki/strategy/01-strategy-concerns.md"
+7    - "../raw/2026-10-18-airtable-forms.md"
+8    - "../raw/2026-10-18-airtable-data-model.md"
+9    - "../raw/2026-10-18-laravel-data-migration-direction.md"
+10    - "../raw/2026-10-18-bruzz-make-a-mark-2023.md"
+11    - "../raw/2026-10-18-additional-mam-materials.md"
+12  phase: Strategy
+13  updated: 2026-10-18
+14  status: owner directions recorded; ready to guide Scope
+15  ---
+16  
+17  # Strategy
+18  
+19  ## Digital mission
+20  
+21  Help Brussels social-profit organisations and creative makers understand how to
+22  apply to a Make a Mark edition, submit a useful application, and know what
+23  happens next.
+24  
+25  This is a working synthesis of the five directions selected by the owner in
+26  Lavish, not a separately approved tagline.
+27  
+28  ## Audiences and needs
+29  
+30  1. **Social-profit organisations and creative makers are co-primary applicants.**
+31     The owner chose balanced framing because both apply and the team outcome
+32     depends on both.
+33  2. **Makers are the person-signup audience for this version.** A separate youth
+34     signup is outside this scope until the 2027 youth role is defined.
+35  3. **Young people remain important stakeholders** in the 2027 edition, but the
+36     supplied project brief does not settle their participation route.
+37  
+38  The current needs model is provisional. Historical reporting suggests makers
+39  may value local social impact and peer connection, while organisations may
+40  need help turning communication challenges into a focused brief; one maker
+41  described an earlier event as overwhelming. These observations are historical,
+42  not representative current research. Validate the jobs, concerns, and language
+43  with current applicants before treating them as facts. [Discovery synthesis;
+44  BRUZZ report; 2020 Maker Packet]
+45  
+46  ## Product outcome
+47  
+48  The owner selected **review-ready applications across both tracks** as the
+49  candidate North Star. Track maker and organisation counts separately by
+50  edition. The current Airtable capture shows fields and linked records relevant
+51  to applications and matching, but does not define what “review-ready” means;
+52  Scope must define that criterion with the application reviewers. [Airtable data
+53  model capture]
+54  
+55  ## Website role and lifecycle
+56  
+57  The website is an **edition-cycle guide**: it supports signup-open, signups-
+58  closed, and after-event states for an edition. During signup it serves separate
+59  maker and organisation applications. When signups are closed it must explain
+60  what happens to applicants. After the event it should show results and offer
+61  future interest. Signup administration in the website is explicitly later.
+62  The supplied forms and Airtable record model establish two application tracks,
+63  edition relationships, a past organisation future-interest form, and maker
+64  future-interest records; they do not establish current phase switching or
+65  submission behavior. [Owner brief; form capture; data model capture]
+66  
+67  ## Success and limits
+68  
+69  Near-term success is review-ready applications received by the edition deadline,
+70  tracked separately for makers and organisations. Attendance, useful outputs,
+71  and impact matter to the programme but are not attributable to the website
+72  alone. No target values or reviewer definition are yet established.
+73  
+74  This version uses the Airtable model as its migration starting point, imports
+75  all Airtable content into Laravel, and retires Airtable as the ongoing system.
+76  A website admin for managing signups is out of scope for the first version.
+77  Consent, retention, edition-phase rules, exact form requiredness, and
+78  submission confirmations remain Scope decisions. [Owner migration direction;
+79  Airtable form capture; Airtable data model capture]
+80  
+81  ## Decisions recorded
+82  
+83  - Person signup: makers only.
+84  - Priority: organisations and makers are co-primary.
+85  - Product role: edition-cycle guide.
+86  - Candidate North Star: review-ready applications across both tracks.
+87  - After-event priority: show results and invite future interest.
+88  
+89  ## Sources
+90  
+91  - [Discovery synthesis](../wiki/discovery/10-discovery.md)
+92  - [Airtable forms](../raw/2026-10-18-airtable-forms.md)
+93  - [Airtable data model](../raw/2026-10-18-airtable-data-model.md)
+94  - [BRUZZ report](../raw/2026-10-18-bruzz-make-a-mark-2023.md)
+95  - [Additional local and international material](../raw/2026-10-18-additional-mam-materials.md)

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "settings": {
+    "red": "#d14b4c",
+    "blue": "#17469d",
+    "paper": "#f8ead3",
+    "contrast": 26,
+    "exposure": -4,
+    "balance": 23,
+    "grain": 84,
+    "grainSize": 0.6,
+    "texture": 0,
+    "offset": 1.5,
+    "margin": 0,
+    "redOpacity": 98,
+    "blueOpacity": 100
+  }
+}

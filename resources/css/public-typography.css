@@ -1,0 +1,86 @@
+/* Shared public-site text roles, promoted from the approved makers treatment. */
+@layer components {
+  .public-site {
+    --reading-family: "Plus Jakarta Sans", "Plus Jakarta Sans fallback: Arial", system-ui, sans-serif;
+    --reading-size: 1.0625rem;
+    --label-size: 1rem;
+    --detail-size: .875rem;
+    --fs-body: var(--reading-size);
+  }
+
+  .public-site :is(.hero__intro, .audience-panel > p, .edition__body p, .edition__body li, .about__people li, .audience-hero__intro, .commitment__lead p, .commitment__steps p, .faq > p, .application__context, .application__notice p, .privacy__body section p, .privacy__body li) {
+    font-family: var(--reading-family);
+    font-size: var(--reading-size);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .public-site .audience-page .commitment__lead p {
+    color: var(--ink-brown);
+    font-size: var(--fs-lead);
+    line-height: 1.4;
+  }
+  .public-site .audience-page .application__context--lead {
+    color: var(--ink-brown);
+    font-size: var(--fs-lead);
+    line-height: 1.4;
+  }
+  .public-site :is(strong, b) { font-weight: 600; }
+  .public-site :is(.edition__body, .privacy__body) { max-width: 65ch; }
+  .public-site .audience-panel { min-width: 0; }
+  .public-site .audience-panel p { overflow-wrap: anywhere; }
+  .public-site :is(.distilled__date, .audience-hero__date, .privacy__updated, .hero__status, .distilled-evidence__caption) {
+    font-size: var(--detail-size);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .public-site .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: var(--detail-size);
+    font-weight: 400;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  .public-site .back-link__icon { width: 16px; height: 16px; flex: none; }
+  .public-site .back-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .public-site .back-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .public-site .commitment__lead h2 { text-wrap: balance; max-width: 11ch; }
+  .organisations-page .audience-hero__heading { grid-column: 1; grid-row: 1; min-width: 0; container-type: inline-size; }
+  .organisations-page .audience-hero__heading .audience-hero__title { max-width: none; font-size: min(var(--fs-hero), 18cqi); }
+  @media (max-width: 860px) {
+    .organisations-page .audience-hero__heading { grid-column: auto; grid-row: auto; }
+  }
+
+  /* Display headings wrap at spaces; prose/URLs own emergency word wrapping. */
+  .public-site :is(.h-display, .privacy__body h2) { overflow-wrap: normal; word-break: normal; }
+  .public-site .application__title { max-width: none; }
+  .public-site .application--inline .application__title {
+    font-size: clamp(2rem, 5vw, 4.25rem);
+    line-height: .98;
+    text-wrap: balance;
+  }
+  .public-site :is(.application__context, .application__privacy-note, .application__notice, .privacy__body p, .privacy__body li) { overflow-wrap: anywhere; }
+  .public-site :is(.application-form__field, .application-form__label, [data-flux-label]) { font-size: var(--reading-size); font-weight: 600; }
+  .public-site .application-form :is(input, select, textarea) { font-size: var(--reading-size); font-weight: 400; }
+  .public-site .application-form__checks label, .public-site .application-form__check { font-weight: 400; }
+  .public-site :is(.application-form__hint, .application-form__required, .application__privacy-note) {
+    color: var(--ink-brown);
+    font-size: var(--reading-size);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .public-site :is(.application-form__error, .application-form__client-error, [data-flux-error]) {
+    color: var(--ink);
+    font-size: var(--reading-size);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .public-site .audience-page .application-form__sending {
+    color: var(--ink-brown);
+    font-size: var(--reading-size);
+    font-weight: 300;
+  }
+}

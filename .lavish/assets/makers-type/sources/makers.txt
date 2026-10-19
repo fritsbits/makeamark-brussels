@@ -1,0 +1,82 @@
+/* Selected makers-page refinements: M01 and M03 through M08. */
+@layer components {
+
+.makers-page .audience-hero { width:calc(100% - 2 * var(--block-margin)); max-width:none; margin:0 var(--block-margin) 64px; padding:36px clamp(24px,5vw,72px) 64px; border-radius:var(--radius-block); background:var(--red); color:var(--cream-light); display:grid; grid-template-columns:1.15fr 1fr; gap:24px 72px; align-items:end; }
+.makers-page .audience-hero .back-link { grid-column:1/-1; margin:0 0 20px; color:var(--cream-light); }
+.makers-page .audience-hero__title { grid-column:1; grid-row:2/5; margin:0; max-width:12ch; color:var(--cream-light); font-size:var(--fs-hero); }
+.makers-page .audience-hero__intro { grid-column:2; margin:0; max-width:43ch; }
+.makers-page .audience-hero > p:not(.audience-hero__intro) { grid-column:2; margin:0; }
+.makers-page .audience-hero > .pill { grid-column:2; justify-self:start; margin:0; color:var(--red); background:var(--cream-light); border-color:var(--cream-light); }
+.makers-page .faq { display:flex; align-items:baseline; gap:40px; padding-block:18px 48px; }
+.makers-page .faq__heading { margin:0; color:var(--ink); font-size:var(--fs-h3); }
+.makers-page .faq > p { margin:0; }
+.makers-page .application { display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:72px; padding-top:32px; align-items:start; }
+.makers-page .application__intro { position:sticky; top:110px; padding-top:24px; border-top:7px solid var(--red); }
+.makers-page .application__title { max-width:9ch; margin:0 0 24px; }
+.makers-page .application__privacy-note { margin:24px 0 0; }
+.makers-page .application__context { margin-top:20px; }
+.makers-page .application-form { max-width:none; margin:0; min-width:0; }
+.makers-page .application-form__group { padding-top:24px; margin-bottom:48px; }
+.makers-page .application-form__group legend { margin-bottom:8px; }
+
+.makers-page [x-cloak] { display:none!important; }
+.makers-page .application-form__field { min-width:0; max-width:none; gap:9px; grid-template-columns:minmax(0,1fr); }
+.makers-page .application-form__field > label { margin:0; }
+.makers-page [data-flux-label] { color:var(--ink); font:600 var(--fs-body)/1.5 var(--font-body); flex-wrap:wrap; gap:0 .3em; }
+.makers-page .application-form__short-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.makers-page .application-form__language-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:18px; }
+.makers-page .application-form__field :is(input[data-flux-control],select[data-flux-control],textarea[data-flux-control]) {
+    width:100%; min-width:0; min-height:50px; border:1px solid var(--red); border-radius:var(--radius-card);
+    background-color:var(--cream-light); color:var(--ink); box-shadow:none;
+    padding-block:12px; padding-inline-start:14px; font:400 var(--fs-body)/1.4 var(--font-body);
+}
+.makers-page .application-form__field :is(input[data-flux-control],textarea[data-flux-control]) { padding-inline-end:14px; }
+/* Flux's unlayered chevron rule requires a scoped override for readable ink contrast. */
+.makers-page .application-form__field select[data-flux-select-native] { padding-inline-end:2.5rem; height:auto; background-image:url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8 9L12 5L16 9M16 15L12 19L8 15' stroke='%231E1A16' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e")!important; }
+.makers-page .application-form__field textarea[rows="2"] { min-height:80px; }
+.makers-page .application-form__field :is(input,select,textarea):focus-visible,
+.makers-page .application-form__submit:focus-visible,
+.makers-page .application-form__choice:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+.makers-page .application-form__field [aria-invalid="true"] { border-width:2px; }
+.makers-page :is(input,select,textarea,ui-checkbox,.application-form__choice,.application-form__errors) { scroll-margin-block:120px 24px; }
+.makers-page [data-flux-error],.makers-page .application-form__client-error { margin:0; color:var(--ink); font:400 var(--fs-small)/1.6 var(--font-body); overflow-wrap:anywhere; }
+.makers-page .application-form__checks { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:14px; }
+.makers-page .application-form__choice { min-width:0; }
+.makers-page .application-form__choice-row { display:flex; align-items:flex-start; gap:12px; border:1px solid var(--red); border-radius:var(--radius-card); padding:14px; min-height:56px; height:100%; cursor:pointer; }
+.makers-page .application-form__choice-row > span { min-width:0; overflow-wrap:anywhere; }
+.makers-page .application-form__choice-row :is(ui-checkbox,input[type="checkbox"]) { flex:0 0 20px; width:20px; height:20px; margin-top:3px; }
+.makers-page [data-flux-checkbox] > div { border:1px solid var(--ink); box-shadow:none; }
+.makers-page [data-flux-checkbox][data-checked] > div { background-color:var(--ink); color:var(--cream-light); }
+.makers-page .application-form__choice-row:has(:is([data-checked],:checked)) { background-color:var(--red); color:var(--cream-light); }
+.makers-page .application-form__choice-row:focus-within { outline:2px solid var(--ink); outline-offset:3px; }
+.makers-page .application-form__choice-row ui-checkbox:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+.makers-page .application-form__choice-row:has([data-checked]) ui-checkbox:focus-visible { outline-color:var(--cream-light); }
+.makers-page .application-form__choice:has([aria-invalid="true"]) .application-form__choice-row { border-width:2px; }
+.makers-page .application-form__send { background-color:var(--cream-inset); border-radius:var(--radius-block); padding:28px; }
+.makers-page .application-form__send .application-form__required { margin:0 0 18px; color:var(--ink); }
+.makers-page .application-form__submit { display:inline-flex; justify-content:center; align-items:center; border-radius:var(--radius-pill); height:auto; min-height:52px; max-width:100%; padding:14px 22px; white-space:normal; background-color:var(--red); color:var(--cream-light); border:1px solid var(--red); box-shadow:none; }
+.makers-page .application-form__submit:hover { background-color:var(--ink); border-color:var(--ink); }
+.makers-page .application-form__submit:disabled { cursor:wait; opacity:.7; }
+.makers-page .application-form__sending { margin-top:14px; color:var(--ink); font-size:var(--fs-small); }
+.makers-page .application-form__errors { border:1px solid var(--red); border-radius:var(--radius-card); background-color:var(--cream-light); padding:20px; overflow-wrap:anywhere; }
+.makers-page .application-form__errors a { text-decoration:underline; text-underline-offset:4px; }
+.makers-page .application__intro { max-height:calc(100dvh - 140px); overflow:auto; overflow-wrap:anywhere; }
+@media(max-width:860px) {
+ .makers-page .audience-hero { grid-template-columns:minmax(0,1fr); gap:24px; padding:28px 24px 40px; margin-bottom:40px; }
+ .makers-page .audience-hero > * { grid-column:1!important; grid-row:auto!important; }
+ .makers-page .audience-hero .back-link { margin-bottom:0; }
+ .makers-page .faq { display:block; padding-block:0 40px; }
+ .makers-page .faq__heading { margin-bottom:14px; }
+ .makers-page .application { grid-template-columns:minmax(0,1fr); gap:36px; padding-top:12px; }
+ .makers-page .application__intro { position:static; max-height:none; overflow:visible; }
+ .makers-page .application__title { max-width:none; }
+ .makers-page .application-form__short-row { grid-template-columns:minmax(0,1fr); }
+ .makers-page .application-form__checks { grid-template-columns:minmax(0,1fr); }
+ .makers-page .application-form__send { padding:22px; }
+ .makers-page .application-form__submit { width:100%; }
+}
+@media(forced-colors:active) {
+ .makers-page :is([data-flux-control],.application-form__choice-row,.application-form__submit) { border-color:ButtonText; }
+ .makers-page .application-form__choice-row:has([data-checked]) { outline:2px solid Highlight; outline-offset:2px; }
+}
+}

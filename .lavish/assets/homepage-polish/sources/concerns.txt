@@ -1,0 +1,54 @@
+docs/wiki/build/01-build-concerns.md
+Captured 18 October 2026
+
+0001  ---
+0002  title: Build concerns
+0003  tags: [concerns, build, website]
+0004  sources:
+0005    - "../../raw/2026-10-18-admin-demo-data-request.md"
+0006    - "../../raw/2026-10-18-admin-build-instruction.md"
+0007    - "../../raw/2026-10-18-admin-workflow-clarification.md"
+0008    - "../../raw/2026-10-18-admin-review-request.md"
+0009    - "../../raw/2026-10-18-all-photo-treatment-selection.md"
+0010    - "../../ux/_scope.md"
+0011    - "../../raw/2026-10-18-airtable-forms.md"
+0012    - "../../raw/2026-10-18-airtable-data-model.md"
+0013    - "../../raw/2026-10-18-laravel-data-migration-direction.md"
+0014    - "../../raw/2026-10-18-application-privacy-requirements.md"
+0015    - "../../raw/2026-10-18-application-operations-update.md"
+0016    - "../../raw/2026-10-18-application-provider-handling.md"
+0017    - "../../raw/2026-10-18-application-privacy-decision-instruction.md"
+0018    - "../../raw/2026-10-18-risoprint-tool-request.md"
+0019    - "../../raw/2026-10-18-site-risoprint-selection.md"
+0020    - "../../raw/2026-10-18-homepage-photo-reveal-selection.md"
+0021  phase: Build
+0022  updated: 2026-10-18
+0023  ---
+0024  
+0025  # Build concerns
+0026  
+0027  B-005 treatment update: the [monochrome selection](11-site-photo-treatments.md#current-monochrome-treatment)
+0028  supersedes the earlier Riso selection on the public homepage. The owner then
+0029  extended the hero styling and group rollover to every photo. All 12 photos
+0030  share one component; the local tool and saved preset remain available.
+0031  [All-photo selection](../../raw/2026-10-18-all-photo-treatment-selection.md).
+0032  
+0033  Local [admin test records](31-admin-workspace.md#local-test-data) are fictional;
+0034  B-004 remains open for the actual Airtable migration. Real account setup in
+0035  B-009 is unchanged.
+0036  
+0037  **Status:** 3 Open · 5 Partly · 3 Closed
+0038  
+0039  | ID | Concern | Why it remains open | Next step |
+0040  | --- | --- | --- | --- |
+0041  | B-011 | Closed: should the distilled messaging replace the public version? | Resolution: the owner selected the second version and omitted the homepage process section. Canonical home and audience pages are promoted and browser-verified; the preserved original remains in the local comparison. [Selection and implementation](13-messaging-review.md) | No further adoption decision. Retain source-backed copy and separate B-007 photo replacement. |
+0042  | B-008 | Closed: what review, selection and matching workflow must the admin support? | Resolution: owner instructed implementation, delegated unified skill labels and selected an external message to Gwen when briefings are ready. Filament now supports separate organisation reviews, refined briefs/skills, maker selection and edition-safe team matching; verified in the running product. [Decision, implementation and verification](31-admin-workspace.md) | No further design gate. Keep operational choices documented; B-001/B-004 retain field/import audits. |
+0043  | B-009 | Partly: what may each organiser do? | Resolved permissions: all active organisers review/refine/select/match; only super admins manage accounts. Self/last-super lockout is prevented and tested. Frederik is super admin; the four real account email addresses are still pending. Preview login was verified using the new copyable text file after JSON escaping made the first password handoff misleading. [Resolution and setup](31-admin-workspace.md#account-setup) | Obtain Frederik/Piet/Gwen/Bernard account emails and provision individual credentials. No guessed real addresses or shared passwords. |
+0044  | B-010 | Partly: which selection communications belong in the admin? | Resolved: organisation contact stays in Frederik's mailbox; he messages Gwen externally when all briefings are ready. Contact notes exist; no integrated mailbox, readiness gate or automatic selection email is built. Maker acceptance/rejection templates remain unknown; A-04's automation is off. [Resolution](31-admin-workspace.md#skills-and-briefing-handoff) | Capture actual maker templates/sending requirements if communication enters admin scope later. Provider/receipt/internal-alert work remains B-002. |
+0045  | B-006 | Partly: which global-site surface refinements should Brussels adopt? | The owner requested tonal variation and temporary international photography. An initial [homepage refinement](12-global-design-review.md#initial-homepage-implementation) is implemented and browser-verified; the broader recommendations remain for review. | Review the running homepage before extending the direction further. |
+0046  | B-007 | Which sourced Brussels photos will replace the temporary international images? | The owner has no suitable photos yet and asked to use global-site images temporarily. Source URLs and temporary flags are recorded in homepage content. [Implementation](12-global-design-review.md#initial-homepage-implementation) | Replace both hero images, alt text and source caption with locally sourced/credited photography before public launch. |
+0047  | B-001 | Partly: which application fields are collected, required, or deferred? | Both forms validate the captured fields; requiredness still follows historical screenshots rather than a current reviewer audit. The owner removed the dietary-requirements question. Signup is open. [Airtable forms; Scope; Owner decisions; Application intake] | Review requiredness and remove fields not needed for selection or event preparation. |
+0048  | B-002 | Partly: what privacy notice, lawful basis, recipients, and rights-request process govern applications? | The notice records legitimate interests for current applications and a three-year limit with annual review. Owner screenshots confirm the AMS3 droplet managed with Forge. Resend sender setup and the destination mailbox remain outstanding; annual review/deletion is manual; future self-service accounts need a separate purpose review. [Application privacy and retention; provider source review] | Set up receipt email and mailbox routing; establish the annual manual review; revisit purpose and notice before adding self-service reuse/accounts. |
+0049  | B-003 | How do Edition status values map to the three public phases? | The owner set the 2027 edition to `open`. The captured historic statuses still do not distinguish signup closed from after-event. [Scope; Airtable data model] | Define the two post-open status values and test their public behavior before those phases. |
+0050  | B-004 | Is the Airtable migration complete across records, fields, links, and attachments? | The inspected data model is a read-only interface capture, not a full export. No complete import inventory is available. [Airtable data model; migration direction] | Compare a full export against the import and record field, relationship, and attachment coverage. |
+0051  | B-005 | Closed: can the requested risoprint treatment be configured and reused? | Resolved with a local browser tool, supplied sample, adjustable controls, reusable settings and PNG export. The owner selected a saved treatment for the homepage group photo only, then chose an expanding original-photo reveal and requested a larger frame. [Tool request](../../raw/2026-10-18-risoprint-tool-request.md); [site selection](../../raw/2026-10-18-site-risoprint-selection.md); [reveal selection](../../raw/2026-10-18-homepage-photo-reveal-selection.md) | Resolution: [tool record](10-risoprint-tool.md) and [selected photo treatments](11-site-photo-treatments.md). The larger frame and reveal pass running desktop, mobile, reduced-motion and no-JavaScript checks. Two earlier PHP application-state assertions remain separate from these checks. Public sitemap is unchanged. |

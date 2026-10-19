@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Footer polish review · Make a Mark Brussels</title>
+  <style>
+    @font-face{font-family:"Big Shoulders Display";src:url("assets/footer-review/display-600.woff2") format("woff2");font-weight:600;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url("assets/footer-review/plus-jakarta-sans-400.woff2") format("woff2");font-weight:400;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url("assets/footer-review/plus-jakarta-sans-light-300.woff2") format("woff2");font-weight:300;font-display:swap}
+    :root{--red:#c33f40;--cream:#f5e2ca;--cream-light:#fff6ea;--inset:#ebd5bb;--rule:#dfc3a3;--ink:#29231d;--brown:#6b5645;--display:"Big Shoulders Display",Impact,sans-serif;--body:"Plus Jakarta Sans",system-ui,sans-serif;--fs-h3:clamp(26px,3vw,34px);--fs-lead:clamp(1.25rem,2vw,1.5rem);--fs-body:17px;--fs-small:13px;--track-caps:.12em;--radius-block:18px;--radius-card:10px}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:400 var(--fs-body)/1.55 var(--body)}
+    .mast{background:var(--red);color:var(--cream-light);padding:clamp(28px,5vw,64px) max(22px,calc((100vw - 1180px)/2));border-radius:0 0 var(--radius-block) var(--radius-block)}
+    .eyebrow{font-size:var(--fs-small);font-weight:600;letter-spacing:var(--track-caps);text-transform:uppercase;color:var(--cream-light)}.mast h1{font:600 clamp(42px,7vw,78px)/.92 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:15px 0 12px;max-width:850px}.mast p{font-weight:300;font-size:var(--fs-lead);max-width:64ch;margin:0}
+    main{max-width:1180px;margin:auto;padding:clamp(28px,5vw,58px) 22px 76px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.section-head h2{font:600 var(--fs-h3)/.98 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:0}.section-head p{margin:0;color:var(--brown);font-size:var(--fs-small)}
+    .source{padding:clamp(12px,2vw,22px);background:var(--cream-light);border:1px solid var(--rule);border-radius:var(--radius-card)}.source img{display:block;width:100%;height:auto}.caption{display:flex;justify-content:space-between;gap:18px;margin-top:12px;color:var(--brown);font-size:var(--fs-small)}.caption span:last-child{text-align:right}
+    .copy-trial{margin-top:38px}.mock-footer{background:var(--red);color:var(--cream-light);width:100vw;margin-left:calc(50% - 50vw);padding:40px;border-radius:0}.mock-inner{max-width:1360px;margin:auto;padding-inline:0;display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,2fr);gap:clamp(24px,4vw,56px);align-items:start}.mock-wordmark{font:600 22px/1 var(--display);text-transform:uppercase;color:var(--cream);margin-bottom:5px}.mock-brand a,.mock-brand p{display:block;color:var(--cream-light);font-size:var(--fs-small);line-height:1.5;margin:0 0 5px}.mock-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2vw,28px);min-width:0}.mock-group{display:flex;flex-direction:column;gap:0;min-width:0}.mock-group a{display:flex;align-items:center;min-height:44px;max-width:260px;color:var(--cream-light);font:600 12px/1.35 var(--body);letter-spacing:var(--track-caps);text-transform:uppercase;text-decoration:none}.mock-group .edited{color:var(--cream);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}.mock-label{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--brown);font-size:var(--fs-small)}.mock-label::before{content:"";width:20px;height:1px;background:var(--red)}
+    .recommendations{margin-top:40px}.rec-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}.rec{background:var(--cream-light);border:1px solid var(--rule);border-radius:var(--radius-card);padding:22px 24px;min-width:0}.rec-top{display:flex;align-items:center;gap:12px;margin-bottom:11px}.number{font:600 var(--fs-h3)/.9 var(--display);color:var(--red)}.tag{font-size:var(--fs-small);letter-spacing:var(--track-caps);text-transform:uppercase;color:var(--brown);border-bottom:1px solid var(--rule);padding-bottom:3px}.rec h3{font:600 var(--fs-h3)/1 var(--display);text-transform:uppercase;margin:0 0 9px;color:var(--ink)}.rec p{margin:0;color:var(--brown);font-size:var(--fs-small)}.rec strong{font-weight:600;color:var(--ink)}
+    .preserve{margin-top:18px;padding:20px 24px;border-radius:var(--radius-card);background:var(--inset);display:grid;grid-template-columns:minmax(140px,.65fr) minmax(0,2fr);gap:18px;align-items:start}.preserve h3{font:600 var(--fs-h3)/1 var(--display);text-transform:uppercase;margin:2px 0}.preserve p{margin:0;font-size:var(--fs-small);color:var(--brown)}.preserve p+p{margin-top:7px}
+    .direction{margin-top:36px;padding-top:17px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:24px;color:var(--brown);font-size:var(--fs-small)}.direction strong{color:var(--ink);font-weight:600}
+    .mock-group .edited{color:var(--cream-light)}
+    @media(max-width:760px){.section-head{align-items:start;flex-direction:column}.mock-footer{padding:20px}.mock-inner{grid-template-columns:minmax(0,1fr);gap:20px}.mock-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px}.mock-group:first-child{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:8px 14px}.mock-group a{font-size:12px;letter-spacing:.08em}.rec-grid{grid-template-columns:1fr}.preserve{grid-template-columns:1fr;gap:6px}.caption,.direction{flex-direction:column}.caption span:last-child{text-align:left}}
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <div class="eyebrow">Make a Mark Brussels · Footer review</div>
+    <h1>One small edit.<br>A cleaner finish.</h1>
+    <p>The footer now balances its compact identity lockup with three clear link groups. Compare the supplied screenshot with the updated, responsive arrangement below.</p>
+  </header>
+  <main>
+    <section aria-labelledby="current-title">
+      <div class="section-head"><h2 id="current-title">Current · supplied screenshot</h2><p>Original desktop crop · unchanged</p></div>
+      <figure class="source">
+        <img src="assets/footer-review/source.png" alt="Make a Mark Brussels footer on a red background, with the site name and credits on the left, audience navigation in the first link column, movement and Instagram links in the next, and privacy and email at the right.">
+        <figcaption class="caption"><span>The visual treatment and all other footer copy stay as supplied.</span><span>The “Organise…” link wraps its last word onto a line by itself.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="copy-trial" aria-labelledby="trial-title">
+      <div class="section-head"><h2 id="trial-title">After · balanced footer</h2><p>Full bleed · square edges · aligned inset</p></div>
+      <div class="mock-footer" aria-label="Updated footer with a compact lockup, balanced link groups and shorter Organise link copy">
+        <div class="mock-inner">
+          <div class="mock-brand"><div class="mock-wordmark">Make a Mark Brussels</div><a>Part of the global Make a Mark movement</a><p>Website by Impact Studio</p></div>
+          <nav class="mock-nav" aria-label="Footer links">
+            <div class="mock-group"><a>For makers</a><a>For organisations</a><a>About</a></div>
+            <div class="mock-group"><a class="edited">Organise in your city</a><a>Instagram</a></div>
+            <div class="mock-group"><a>Privacy</a><a>Email</a></div>
+          </nav>
+        </div>
+      </div>
+      <div class="mock-label">Tighter lockup rhythm · 44px link targets · matching responsive top, bottom and side insets</div>
+    </section>
+
+    <section class="recommendations" aria-labelledby="polish-title">
+      <div class="section-head"><h2 id="polish-title">Applied on the site</h2><p>Copy and spacing refinements · visual identity retained</p></div>
+      <div class="rec-grid">
+        <article class="rec">
+          <div class="rec-top"><span class="number">01</span><span class="tag">Live footer copy</span></div>
+          <h3>“Organise in your city”</h3>
+          <p>The compact two-part grid brings the left lockup closer to the right-side navigation. Tighter vertical rhythm and the shared responsive gutter reduce the loose gaps, while the shorter city link stays intact. <strong>The live footer now uses this arrangement.</strong></p>
+        </article>
+      </div>
+      <aside class="preserve" aria-label="What is already working">
+        <h3>Keep as-is</h3>
+        <div>
+          <p><strong>Keep:</strong> the red-and-cream palette, three link groups, and established link labels.</p>
+          <p><strong>Interaction:</strong> the implemented links already retain 44px minimum height and show underline feedback on hover and keyboard focus.</p>
+        </div>
+      </aside>
+    </section>
+    <div class="direction"><span><strong>Design source:</strong> Make a Mark Brussels’ existing broadsheet identity — Marker Red, Paper Cream, Big Shoulders Display, and Plus Jakarta Sans.</span><span>Product footer updated · desktop and mobile reviewed</span></div>
+  </main>
+</body>
+</html>

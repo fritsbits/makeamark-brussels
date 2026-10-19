@@ -1,0 +1,190 @@
+[
+  {
+    "width": 1440,
+    "overflow": 0,
+    "body": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "heroCopy": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "date": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "label": {
+      "weight": "600",
+      "size": 16,
+      "line": 24,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "input": {
+      "weight": "400",
+      "size": 17,
+      "line": 23.8,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "helper": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "title": {
+      "weight": "600",
+      "size": 68,
+      "line": 66.64,
+      "family": "\"Big Shoulders Display\", Impact, sans-serif"
+    },
+    "fontLoaded": true
+  },
+  {
+    "width": 900,
+    "overflow": 0,
+    "body": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "heroCopy": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "date": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "label": {
+      "weight": "600",
+      "size": 16,
+      "line": 24,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "input": {
+      "weight": "400",
+      "size": 17,
+      "line": 23.8,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "helper": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "title": {
+      "weight": "600",
+      "size": 45,
+      "line": 44.1,
+      "family": "\"Big Shoulders Display\", Impact, sans-serif"
+    },
+    "fontLoaded": true
+  },
+  {
+    "width": 390,
+    "overflow": 0,
+    "body": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "heroCopy": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "date": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "label": {
+      "weight": "600",
+      "size": 16,
+      "line": 24,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "input": {
+      "weight": "400",
+      "size": 17,
+      "line": 23.8,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "helper": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "title": {
+      "weight": "600",
+      "size": 40,
+      "line": 39.2,
+      "family": "\"Big Shoulders Display\", Impact, sans-serif"
+    },
+    "fontLoaded": true
+  },
+  {
+    "width": 320,
+    "overflow": 0,
+    "body": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "heroCopy": {
+      "weight": "300",
+      "size": 17,
+      "line": 27.2,
+      "family": "\"Plus Jakarta Sans\", \"Plus Jakarta Sans fallback: Arial\", system-ui, sans-serif"
+    },
+    "date": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "label": {
+      "weight": "600",
+      "size": 16,
+      "line": 24,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "input": {
+      "weight": "400",
+      "size": 17,
+      "line": 23.8,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "helper": {
+      "weight": "400",
+      "size": 14,
+      "line": 22.4,
+      "family": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "title": {
+      "weight": "600",
+      "size": 40,
+      "line": 39.2,
+      "family": "\"Big Shoulders Display\", Impact, sans-serif"
+    },
+    "fontLoaded": true
+  }
+]

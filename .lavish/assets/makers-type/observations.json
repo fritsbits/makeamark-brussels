@@ -1,0 +1,102 @@
+[
+  {
+    "device": "desktop",
+    "current": [
+      {
+        "selector": ".back-link",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": ".audience-hero__intro",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": ".commitment__lead p",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": "[data-flux-label]",
+        "size": "17px",
+        "weight": "600",
+        "line": "25.5px"
+      },
+      {
+        "selector": ".application__privacy-note",
+        "size": "13px",
+        "weight": "400",
+        "line": "20.8px"
+      }
+    ],
+    "proposed": {
+      "overflow": 0,
+      "bodyWeight": "300",
+      "emphasisWeight": "600",
+      "backTarget": {
+        "x": 96,
+        "y": -2080.765625,
+        "width": 70.953125,
+        "height": 44,
+        "top": -2080.765625,
+        "right": 166.953125,
+        "bottom": -2036.765625,
+        "left": 96
+      }
+    }
+  },
+  {
+    "device": "mobile",
+    "current": [
+      {
+        "selector": ".back-link",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": ".audience-hero__intro",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": ".commitment__lead p",
+        "size": "17px",
+        "weight": "400",
+        "line": "27.2px"
+      },
+      {
+        "selector": "[data-flux-label]",
+        "size": "17px",
+        "weight": "600",
+        "line": "25.5px"
+      },
+      {
+        "selector": ".application__privacy-note",
+        "size": "13px",
+        "weight": "400",
+        "line": "20.8px"
+      }
+    ],
+    "proposed": {
+      "overflow": 0,
+      "bodyWeight": "300",
+      "emphasisWeight": "600",
+      "backTarget": {
+        "x": 36,
+        "y": -3012,
+        "width": 70.953125,
+        "height": 44,
+        "top": -3012,
+        "right": 106.953125,
+        "bottom": -2968,
+        "left": 36
+      }
+    }
+  }
+]

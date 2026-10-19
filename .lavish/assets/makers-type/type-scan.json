@@ -1,0 +1,219 @@
+[
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 75,
+    "snippet": "font-size: 28px is off the DESIGN.md type ramp",
+    "ignoreValue": "28px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 82,
+    "snippet": "font-size: 14px is off the DESIGN.md type ramp",
+    "ignoreValue": "14px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 101,
+    "snippet": "font-size: 30px is off the DESIGN.md type ramp",
+    "ignoreValue": "30px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 144,
+    "snippet": "font-size: 23px is off the DESIGN.md type ramp",
+    "ignoreValue": "23px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 268,
+    "snippet": "font-size: clamp(20px, 2.2vw, 28px) has fluid endpoints 20px and 28px off the DESIGN.md type ramp",
+    "ignoreValue": "20px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 278,
+    "snippet": "font-size: 28px is off the DESIGN.md type ramp",
+    "ignoreValue": "28px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 285,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "ignoreValue": "22px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 302,
+    "snippet": "font-size: clamp(16px, 1.4vw, 19px) has fluid endpoints 16px and 19px off the DESIGN.md type ramp",
+    "ignoreValue": "16px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 317,
+    "snippet": "font-size: 22px is off the DESIGN.md type ramp",
+    "ignoreValue": "22px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 329,
+    "snippet": "font-size: 14px is off the DESIGN.md type ramp",
+    "ignoreValue": "14px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 337,
+    "snippet": "font-size: 14px is off the DESIGN.md type ramp",
+    "ignoreValue": "14px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 473,
+    "snippet": "font-size: clamp(56px, 9vw, 110px) has fluid endpoint 110px off the DESIGN.md type ramp",
+    "ignoreValue": "110px"
+  },
+  {
+    "antipattern": "design-system-font-size",
+    "name": "Font size outside DESIGN.md",
+    "description": "A literal font-size is off the type ramp documented in DESIGN.md typography. Use a documented size step or update the design system if the new step is intentional.",
+    "severity": "advisory",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/app.css",
+    "line": 497,
+    "snippet": "font-size: clamp(56px, 9vw, 110px) has fluid endpoint 110px off the DESIGN.md type ramp",
+    "ignoreValue": "110px"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 9,
+    "snippet": "font-family:\"Plus Jakarta Sans"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 12,
+    "snippet": "font-family:\"Plus Jakarta Sans"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 15,
+    "snippet": "font-family:\"Plus Jakarta Sans"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 5,
+    "snippet": "font-family: Big Shoulders Display Fallback: Arial is not declared in DESIGN.md typography",
+    "ignoreValue": "Big Shoulders Display Fallback: Arial"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 8,
+    "snippet": "font-family: Big Shoulders Display Fallback: Arial is not declared in DESIGN.md typography",
+    "ignoreValue": "Big Shoulders Display Fallback: Arial"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 13,
+    "snippet": "font-family: Plus Jakarta Sans Fallback: Arial is not declared in DESIGN.md typography",
+    "ignoreValue": "Plus Jakarta Sans Fallback: Arial"
+  },
+  {
+    "antipattern": "design-system-font",
+    "name": "Font outside DESIGN.md",
+    "description": "A font is used that is not declared in DESIGN.md typography. Use the documented type system or update DESIGN.md if this is an intentional brand addition.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/frederikvincx/bloom/workspaces.noindex/makeamark/fritsbits-southern-ocean/resources/css/fonts.css",
+    "line": 16,
+    "snippet": "font-family: Plus Jakarta Sans Fallback: Arial is not declared in DESIGN.md typography",
+    "ignoreValue": "Plus Jakarta Sans Fallback: Arial"
+  }
+]

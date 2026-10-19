@@ -1,0 +1,89 @@
+resources/views/home.blade.php
+Captured 18 October 2026
+
+0001  <x-layouts.app :site="$site">
+0002      @include('sections.nav')
+0003      <main id="main" class="distilled" tabindex="-1">
+0004          <section id="top" class="hero container hero--edition">
+0005              <div class="hero__copy">
+0006                  <flux:text class="distilled__date">Brussels · {{ $edition['dates'] }}</flux:text>
+0007                  <flux:heading level="1" class="h-display hero__headline">{{ $site['hero']['headline'] }}</flux:heading>
+0008                  <flux:text class="hero__intro">{{ $site['hero']['intro'] }}</flux:text>
+0009                  <div class="hero__actions">
+0010                      <x-pill href="/makers">For makers</x-pill>
+0011                      <x-pill href="/organisations">For social organisations</x-pill>
+0012                  </div>
+0013                  <p class="hero__status" role="status"><span class="status-dot" aria-hidden="true"></span>{{ $edition['pill']['label'] }}</p>
+0014              </div>
+0015              <figure class="hero__visual">
+0016                  <div class="hero__photos">
+0017                      @foreach ($site['hero']['photos'] as $photo)
+0018                          <div class="hero__photo">
+0019                              <x-photo-reveal :file="$photo['file']" :widths="[480, 960]" :default-width="480" :alt="$photo['alt']" sizes="(max-width: 860px) 90vw, 42vw" width="1000" :height="$loop->first ? 636 : 486" loading="eager" />
+0020                          </div>
+0021                      @endforeach
+0022                  </div>
+0023                  <figcaption><a href="{{ $site['hero']['photoSourceUrl'] }}" target="_blank" rel="noopener">{{ $site['hero']['photoSourceLabel'] }}</a></figcaption>
+0024              </figure>
+0025          </section>
+0026  
+0027  
+0028          <section id="take-part" class="audience-pair container" aria-label="Take part">
+0029              <article class="audience-panel">
+0030                  <flux:heading level="2" class="h-display">For makers</flux:heading>
+0031                  <flux:text>Give your creative skills to a local project and meet other makers.</flux:text>
+0032                  <x-pill href="/makers">Maker details</x-pill>
+0033              </article>
+0034              <article class="audience-panel">
+0035                  <flux:heading level="2" class="h-display">For social organisations</flux:heading>
+0036                  <flux:text>Work with a maker team on one communication, design or digital challenge.</flux:text>
+0037                  <x-pill href="/organisations">Organisation details</x-pill>
+0038              </article>
+0039          </section>
+0040  
+0041          <section id="edition" class="block block--red" aria-labelledby="edition-heading">
+0042              <div class="container distilled-edition">
+0043                  <div>
+0044                      <flux:heading level="2" class="h-display distilled__heading" id="edition-heading">The 2027 edition</flux:heading>
+0045                      <flux:text class="edition__dates">{{ $edition['dates'] }}</flux:text>
+0046                  </div>
+0047                  <div>
+0048                      <div class="edition__body">{!! $edition['html'] !!}</div>
+0049                      @if ($edition['status'] === 'open')
+0050                          <x-pill href="#take-part">Choose your application</x-pill>
+0051                      @else
+0052                          <flux:text>{{ $edition['pill']['label'] }}</flux:text>
+0053                      @endif
+0054                  </div>
+0055              </div>
+0056          </section>
+0057  
+0058          <section class="container distilled-evidence" aria-labelledby="evidence-heading">
+0059              <div class="distilled-evidence__photo">
+0060                  <x-photo-reveal :file="$edition['photo']" :widths="[440, 880]" sizes="(max-width: 860px) 90vw, 46vw" :alt="$edition['photoAlt']" label="group photo" width="440" :height="$edition['photoHeight']" loading="lazy" />
+0061                  <flux:text class="distilled-evidence__caption">Makers and organisers at the 2026 Brussels edition.</flux:text>
+0062              </div>
+0063              <div>
+0064                  <flux:heading level="2" class="h-display distilled__heading" id="evidence-heading">A feel for the day.</flux:heading>
+0065                  <flux:text><a href="https://www.bruzz.be/samenleving/creatieve-marathon-make-mark-maakt-brussel-opnieuw-een-beetje-beter-2023-03-19" target="_blank" rel="noopener">Watch the BRUZZ report from the 2023 edition</a>.</flux:text>
+0066                  <flux:text><a href="{{ $site['instagramUrl'] }}" target="_blank" rel="noopener">More from past editions on Instagram</a>.</flux:text>
+0067              </div>
+0068          </section>
+0069  
+0070          <section id="about" class="about container">
+0071              <div class="about__text">
+0072                  <flux:heading level="2" class="h-display about__heading">The people behind Make a Mark</flux:heading>
+0073                  <ul class="about__people" role="list">
+0074                      @foreach ($site['about']['organisers'] as $person)
+0075                          <li><a href="{{ $person['url'] }}" rel="noopener" target="_blank">{{ $person['name'] }}</a> <span>{{ $person['role'] }}</span></li>
+0076                      @endforeach
+0077                  </ul>
+0078                  <x-pill :href="'mailto:'.$site['email']">Contact us</x-pill>
+0079              </div>
+0080              <div class="about__logo">
+0081                  <img src="/images/logo-brussels.420.webp" srcset="/images/logo-brussels.420.webp 420w, /images/logo-brussels.840.webp 840w" sizes="(max-width: 860px) 280px, 420px" alt="Make a Mark Brussels, hand-drawn logo" width="420" height="407" loading="lazy">
+0082              </div>
+0083          </section>
+0084      </main>
+0085      @include('sections.footer')
+0086  </x-layouts.app>

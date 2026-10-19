@@ -1,0 +1,81 @@
+resources/content/site.json
+
+1  {
+2    "name": "Make a Mark Brussels",
+3    "shortName": "Make a Mark",
+4    "domain": "https://letsmakeamark.brussels",
+5    "instagramUrl": "https://www.instagram.com/lets_makeamarkbxl/",
+6    "email": "makeamarkbxl@gmail.com",
+7    "globalSiteUrl": "https://www.letsmakeamark.org/",
+8    "firstEditionYear": 2016,
+9    "meta": {
+10      "title": "Make a Mark Brussels",
+11      "description": "A one-day make-a-thon where creative makers and Brussels social organisations work together on communication, design, and digital challenges. Join the 2027 edition."
+12    },
+13    "nav": [
+14      { "label": "For makers", "href": "/makers" },
+15      { "label": "For organisations", "href": "/organisations" },
+16      { "label": "FAQ", "href": "#faq" },
+17      { "label": "About", "href": "#about" }
+18    ],
+19    "hero": {
+20      "photos": [
+21        {
+22          "file": "placeholder-global-community.jpg",
+23          "alt": "A group from the global Make a Mark community smiling together",
+24          "temporary": true,
+25          "sourceUrl": "https://cdn.prod.website-files.com/657e294654838aafd287debc/657f378b30cef4d16680c325_nyc1.jpeg"
+26        },
+27        {
+28          "file": "placeholder-global-collaboration.jpg",
+29          "alt": "Make a Mark participants working with laptops and arranging notes on a wall",
+30          "temporary": true,
+31          "sourceUrl": "https://cdn.prod.website-files.com/657e294654838aafd287debc/657f37bf42a3aaa03555a05e_chat3.jpeg"
+32        }
+33      ],
+34      "photoSourceLabel": "From the global Make a Mark community",
+35      "photoSourceUrl": "https://www.letsmakeamark.org/",
+36      "headline": "One day. Many ways to make a mark.",
+37      "intro": "Make a Mark brings creative makers and Brussels social organisations together to work on one real communication challenge.",
+38      "instagramLabel": "See their work on Instagram"
+39    },
+40    "makers": {
+41      "heading": "Info for Makers",
+42      "steps": [
+43        { "title": "Friday evening", "text": "We all come together to plan and get to know each other. To make sure everyone can go in turbo creative mode Saturday." },
+44        { "title": "All day Saturday", "text": "You'll spend the whole of Saturday collaborating in a team, tackling a creative challenge for the central case. We'll provide WiFi, food, drinks, and great company to keep you energized throughout the day." },
+45        { "title": "Selected in advance", "text": "We select Makers in advance, ensuring we form the most effective teams to tackle the challenges. We'll let you know at the end of January if you got selected. A few weeks after that you'll meet your team members and the organisation to discuss their challenge, in a one-hour meeting on an evening in the first week of March." }
+46      ],
+47      "closing": "Please make sure you can make it."
+48    },
+49    "organisations": {
+50      "heading": "55 social-profits made their mark",
+51      "intro": "In the past years hundreds of creatives have made social-profits look fabulous with a day of voluntary design work. These are the previous social organisations that were helped."
+52    },
+53    "faq": { "heading": "FAQ" },
+54    "edition": {
+55      "statusLabels": {
+56        "open": "Applications open",
+57        "closed": "Applications are closed for {year}",
+58        "selected": "Makers have been selected, see you in March",
+59        "done": "Read about the {year} edition on Instagram",
+60        "preparing": "2027 applications are being prepared"
+61      }
+62    },
+63    "about": {
+64      "heading": "The people behind Make a Mark",
+65      "intro": "Make a Mark Brussels is part of the global Make a Mark movement. The local team brings volunteer makers and social organisations together for a day of shared creative work.",
+66      "organisers": [
+67        { "name": "Gwen Dubois", "role": "The instigator. An interior architect and creative activist from Jette.", "url": "https://www.gwentibold.com/" },
+68        { "name": "Piet Lambrecht", "role": "Organising it from the start with Gwen. Until recently he led the communication of Muntpunt.", "url": "https://www.brusseleir.eu/neus/piet-lambrechts-brussel-komen-kijken-en-het-willen-zien/" },
+69        { "name": "Frederik Vincx", "role": "A Maker at many editions before he joined the organisers. He builds digital products for social organisations in Brussels.", "url": "https://frederikvincx.com/" },
+70        { "name": "Bernard Polet", "role": "A Maker at many editions before he joined the organisers. He founded //gaggarin//, a gallery in the Brussels Canal Zone.", "url": "https://www.linkedin.com/in/bernardpolet" }
+71      ],
+72      "contactLabel": "Contact us"
+73    },
+74    "footer": {
+75      "globalLabel": "Part of the global Make a Mark movement",
+76      "instagramLabel": "Instagram",
+77      "emailLabel": "Email"
+78    }
+79  }

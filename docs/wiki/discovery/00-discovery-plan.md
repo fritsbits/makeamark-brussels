@@ -1,7 +1,7 @@
 ---
 title: Discovery plan
 tags: [plan, discovery]
-sources: ["docs/raw/2026-10-18-letsmakeamark-brussels.md"]
+sources: ["Notion: Cascade digital product playbook"]
 phase: Discovery
 updated: 2026-10-18
 ---
@@ -10,25 +10,39 @@ updated: 2026-10-18
 
 ## Purpose
 
-Build shared context on Make a Mark Brussels and the 2027 edition ("Jongeren in BXL") before any strategy or design work.
+Establish what this product is, who it serves, what people need from it, and
+what evidence supports those conclusions before locking strategy.
 
-## Status
+## Current status
 
-Active.
-One source ingested: the public site.
-The Notion brief for 2027 is not yet ingested (D-001).
+**Gate met on 2026-10-18; Discovery is closed.** The register has no Open
+concerns. Five Partly concerns remain visible and carry into Strategy. The
+existing Astro one-pager supplies an initial product baseline, captured in the
+[source inventory](../../raw/2026-10-18-astro-site.md). The owner requested its
+[migration to Laravel](20-laravel-foundation.md), which did not itself close
+the Discovery gate.
 
 ## Method
 
-1. Capture sources in `docs/raw/`.
-2. Synthesise per topic in `docs/wiki/discovery/`.
-3. Track gaps in `01-concerns.md`.
+1. Gather and preserve existing product materials in `docs/raw/`.
+2. Inventory the product and its ecosystem from supplied materials and
+   verifiable sources.
+3. Research audiences, needs, journeys, comparable products, and relevant
+   constraints where evidence is available.
+4. Separate observations from interpretations and cite every factual claim.
+5. Synthesize findings in focused evidence pages; keep unknowns in the
+   concerns register.
+6. Review the discovery gate before opening Strategy.
 
-## Gate
+## Completion gate
 
-Discovery closes when the 2027 edition's goal, audience and constraints are evidence-backed and no concern is silently Open.
+Discovery can conclude when the product and its context have an evidence-backed
+summary; key research streams have been considered or explicitly scoped out;
+material gaps are visible; and no concern remains silently Open. Unresolved
+items must be carried into Strategy.
 
 ## Artifacts
 
-- `01-concerns.md`: 5 Open.
-- `10-make-a-mark-brussels.md`: public-site synthesis.
+- `01-concerns.md` — Product research gaps and partly resolved baseline questions.
+- `10-discovery.md` — Initial synthesis grounded in the existing site.
+- `20-laravel-foundation.md` — Technical conversion scope and verification.

@@ -1,0 +1,2706 @@
+{
+  "text": " Muziek Vandaag is het Make a Mark in Muntpunt in Brussel. Hallo Jens. Op 11 uur gaan we met een 50-tal creatieve mensen proberen problemen van lokale nonprofits op te lossen. Ik ben de Sine de Bertin en ik ben de responsabel van de SBR Surinameau Volontaire. Ik ben Tegy en ik ben chauffeur en accompagnateur. Ik ben Solimop. Analys, kleren maken. En dan op weg weg. ZE GELUIDEN De hand is 3 uur, geländelijk 2 uur om dat te werken. Gas geven! Nog een kwartier te gaan en we zijn al gered. whole world whole world whole world whole world whole world met me even ® life like for the whole world this is on on on on on on on on on on on on on on on on on on on on on on on on We hebben het best. Weet je Mark? Die kan mij zien. Dat straf mag op nog geen acht uur kunnen doen om op alle vz2 te helpen. Dat zou pak meer moeten gebeuren. Tot volgend jaar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 15.740000000000002,
+      "end": 16.46,
+      "text": " Muziek",
+      "tokens": [
+        50364,
+        15601,
+        3283,
+        74,
+        51374
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.7324153530982233,
+      "compression_ratio": 0.9583333333333334,
+      "no_speech_prob": 0.12068333476781845,
+      "words": [
+        {
+          "word": " Muziek",
+          "start": 15.740000000000002,
+          "end": 16.46,
+          "probability": 0.654296875
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 19.700000000000003,
+      "end": 22.84,
+      "text": " Vandaag is het Make a Mark in Muntpunt in Brussel.",
+      "tokens": [
+        51374,
+        691,
+        37033,
+        307,
+        3639,
+        4387,
+        257,
+        3934,
+        294,
+        376,
+        2760,
+        79,
+        2760,
+        294,
+        32894,
+        790,
+        13,
+        51527
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.7324153530982233,
+      "compression_ratio": 0.9583333333333334,
+      "no_speech_prob": 0.12068333476781845,
+      "words": [
+        {
+          "word": " Vandaag",
+          "start": 19.700000000000003,
+          "end": 20.42,
+          "probability": 0.456787109375
+        },
+        {
+          "word": " is",
+          "start": 20.42,
+          "end": 20.64,
+          "probability": 0.9814453125
+        },
+        {
+          "word": " het",
+          "start": 20.64,
+          "end": 20.8,
+          "probability": 0.5087890625
+        },
+        {
+          "word": " Make",
+          "start": 20.8,
+          "end": 20.9,
+          "probability": 0.70166015625
+        },
+        {
+          "word": " a",
+          "start": 20.9,
+          "end": 21.04,
+          "probability": 0.6640625
+        },
+        {
+          "word": " Mark",
+          "start": 21.04,
+          "end": 21.24,
+          "probability": 0.6865234375
+        },
+        {
+          "word": " in",
+          "start": 21.24,
+          "end": 21.86,
+          "probability": 0.67431640625
+        },
+        {
+          "word": " Muntpunt",
+          "start": 21.86,
+          "end": 22.28,
+          "probability": 0.701171875
+        },
+        {
+          "word": " in",
+          "start": 22.28,
+          "end": 22.44,
+          "probability": 0.92431640625
+        },
+        {
+          "word": " Brussel.",
+          "start": 22.44,
+          "end": 22.84,
+          "probability": 0.96875
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 23.3,
+      "end": 24.02,
+      "text": " Hallo Jens.",
+      "tokens": [
+        51527,
+        21242,
+        508,
+        694,
+        13,
+        51608
+      ],
+      "temperature": 0.4,
+      "avg_logprob": -0.7324153530982233,
+      "compression_ratio": 0.9583333333333334,
+      "no_speech_prob": 0.12068333476781845,
+      "words": [
+        {
+          "word": " Hallo",
+          "start": 23.3,
+          "end": 23.7,
+          "probability": 0.05743408203125
+        },
+        {
+          "word": " Jens.",
+          "start": 23.7,
+          "end": 24.02,
+          "probability": 0.578125
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 2402,
+      "start": 24.02,
+      "end": 29.02,
+      "text": " Op 11 uur gaan we met een 50-tal creatieve mensen proberen",
+      "tokens": [
+        50364,
+        12011,
+        2975,
+        344,
+        374,
+        14118,
+        321,
+        1131,
+        3881,
+        2625,
+        12,
+        32831,
+        1428,
+        11108,
+        18062,
+        447,
+        607,
+        268,
+        50609
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6793689727783203,
+      "compression_ratio": 1.3623188405797102,
+      "no_speech_prob": 0.1472986787557602,
+      "words": [
+        {
+          "word": " Op",
+          "start": 24.02,
+          "end": 25.26,
+          "probability": 0.63720703125
+        },
+        {
+          "word": " 11",
+          "start": 25.26,
+          "end": 25.66,
+          "probability": 0.8115234375
+        },
+        {
+          "word": " uur",
+          "start": 25.66,
+          "end": 26.16,
+          "probability": 0.9853515625
+        },
+        {
+          "word": " gaan",
+          "start": 26.16,
+          "end": 26.3,
+          "probability": 0.9794921875
+        },
+        {
+          "word": " we",
+          "start": 26.3,
+          "end": 26.34,
+          "probability": 0.63232421875
+        },
+        {
+          "word": " met",
+          "start": 26.34,
+          "end": 26.44,
+          "probability": 0.59033203125
+        },
+        {
+          "word": " een",
+          "start": 26.44,
+          "end": 26.52,
+          "probability": 0.85791015625
+        },
+        {
+          "word": " 50",
+          "start": 26.52,
+          "end": 26.84,
+          "probability": 0.5869140625
+        },
+        {
+          "word": "-tal",
+          "start": 26.84,
+          "end": 27.14,
+          "probability": 0.7265625
+        },
+        {
+          "word": " creatieve",
+          "start": 27.14,
+          "end": 27.68,
+          "probability": 0.97265625
+        },
+        {
+          "word": " mensen",
+          "start": 27.68,
+          "end": 27.98,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " proberen",
+          "start": 27.98,
+          "end": 29.02,
+          "probability": 0.98876953125
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 2402,
+      "start": 29.02,
+      "end": 31.66,
+      "text": " problemen van lokale nonprofits op te lossen.",
+      "tokens": [
+        50609,
+        1154,
+        268,
+        3161,
+        43578,
+        1220,
+        42851,
+        999,
+        535,
+        4470,
+        268,
+        13,
+        50746
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6793689727783203,
+      "compression_ratio": 1.3623188405797102,
+      "no_speech_prob": 0.1472986787557602,
+      "words": [
+        {
+          "word": " problemen",
+          "start": 29.02,
+          "end": 29.76,
+          "probability": 0.54833984375
+        },
+        {
+          "word": " van",
+          "start": 29.76,
+          "end": 29.84,
+          "probability": 0.94189453125
+        },
+        {
+          "word": " lokale",
+          "start": 29.84,
+          "end": 30.18,
+          "probability": 0.5576171875
+        },
+        {
+          "word": " nonprofits",
+          "start": 30.18,
+          "end": 30.68,
+          "probability": 0.421630859375
+        },
+        {
+          "word": " op",
+          "start": 30.68,
+          "end": 31.2,
+          "probability": 0.89892578125
+        },
+        {
+          "word": " te",
+          "start": 31.2,
+          "end": 31.3,
+          "probability": 0.93505859375
+        },
+        {
+          "word": " lossen.",
+          "start": 31.3,
+          "end": 31.66,
+          "probability": 0.921875
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "seek": 2402,
+      "start": 47.3,
+      "end": 51.42,
+      "text": " Ik ben de Sine de Bertin en ik ben de responsabel van de SBR Surinameau Volontaire.",
+      "tokens": [
+        51586,
+        8316,
+        3271,
+        368,
+        318,
+        533,
+        368,
+        29594,
+        259,
+        465,
+        4320,
+        3271,
+        368,
+        2914,
+        18657,
+        3161,
+        368,
+        318,
+        11609,
+        6732,
+        259,
+        529,
+        1459,
+        8911,
+        896,
+        9020,
+        13,
+        51742
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6793689727783203,
+      "compression_ratio": 1.3623188405797102,
+      "no_speech_prob": 0.1472986787557602,
+      "words": [
+        {
+          "word": " Ik",
+          "start": 47.3,
+          "end": 47.94,
+          "probability": 0.436279296875
+        },
+        {
+          "word": " ben",
+          "start": 47.94,
+          "end": 48.58,
+          "probability": 0.8779296875
+        },
+        {
+          "word": " de",
+          "start": 48.58,
+          "end": 48.74,
+          "probability": 0.1988525390625
+        },
+        {
+          "word": " Sine",
+          "start": 48.74,
+          "end": 48.74,
+          "probability": 0.03924560546875
+        },
+        {
+          "word": " de",
+          "start": 48.74,
+          "end": 48.74,
+          "probability": 0.428466796875
+        },
+        {
+          "word": " Bertin",
+          "start": 48.74,
+          "end": 49.06,
+          "probability": 0.814453125
+        },
+        {
+          "word": " en",
+          "start": 49.06,
+          "end": 49.16,
+          "probability": 0.37060546875
+        },
+        {
+          "word": " ik",
+          "start": 49.16,
+          "end": 49.18,
+          "probability": 0.5830078125
+        },
+        {
+          "word": " ben",
+          "start": 49.18,
+          "end": 49.26,
+          "probability": 0.79052734375
+        },
+        {
+          "word": " de",
+          "start": 49.26,
+          "end": 49.32,
+          "probability": 0.5634765625
+        },
+        {
+          "word": " responsabel",
+          "start": 49.32,
+          "end": 49.66,
+          "probability": 0.46630859375
+        },
+        {
+          "word": " van",
+          "start": 49.66,
+          "end": 49.92,
+          "probability": 0.86376953125
+        },
+        {
+          "word": " de",
+          "start": 49.92,
+          "end": 50.28,
+          "probability": 0.71142578125
+        },
+        {
+          "word": " SBR",
+          "start": 50.28,
+          "end": 50.58,
+          "probability": 0.73095703125
+        },
+        {
+          "word": " Surinameau",
+          "start": 50.58,
+          "end": 50.96,
+          "probability": 0.242431640625
+        },
+        {
+          "word": " Volontaire.",
+          "start": 50.96,
+          "end": 51.42,
+          "probability": 0.759765625
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "seek": 5142,
+      "start": 51.42,
+      "end": 54.88,
+      "text": " Ik ben Tegy en ik ben chauffeur en accompagnateur.",
+      "tokens": [
+        50364,
+        8316,
+        3271,
+        314,
+        1146,
+        88,
+        465,
+        4320,
+        3271,
+        49211,
+        13629,
+        465,
+        696,
+        21541,
+        4535,
+        15540,
+        13,
+        50542
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.779119873046875,
+      "compression_ratio": 1.1263157894736842,
+      "no_speech_prob": 0.11082109063863754,
+      "words": [
+        {
+          "word": " Ik",
+          "start": 51.42,
+          "end": 51.82,
+          "probability": 0.8564453125
+        },
+        {
+          "word": " ben",
+          "start": 51.82,
+          "end": 51.9,
+          "probability": 0.92529296875
+        },
+        {
+          "word": " Tegy",
+          "start": 51.9,
+          "end": 52.18,
+          "probability": 0.252197265625
+        },
+        {
+          "word": " en",
+          "start": 52.18,
+          "end": 52.84,
+          "probability": 0.71484375
+        },
+        {
+          "word": " ik",
+          "start": 52.84,
+          "end": 53.22,
+          "probability": 0.91015625
+        },
+        {
+          "word": " ben",
+          "start": 53.22,
+          "end": 53.4,
+          "probability": 0.89697265625
+        },
+        {
+          "word": " chauffeur",
+          "start": 53.4,
+          "end": 54.14,
+          "probability": 0.978515625
+        },
+        {
+          "word": " en",
+          "start": 54.14,
+          "end": 54.22,
+          "probability": 0.501953125
+        },
+        {
+          "word": " accompagnateur.",
+          "start": 54.22,
+          "end": 54.88,
+          "probability": 0.68798828125
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "seek": 5142,
+      "start": 55.14,
+      "end": 55.62,
+      "text": " Ik ben Solimop.",
+      "tokens": [
+        50542,
+        8316,
+        3271,
+        7026,
+        332,
+        404,
+        13,
+        50592
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.779119873046875,
+      "compression_ratio": 1.1263157894736842,
+      "no_speech_prob": 0.11082109063863754,
+      "words": [
+        {
+          "word": " Ik",
+          "start": 55.14,
+          "end": 55.14,
+          "probability": 0.59228515625
+        },
+        {
+          "word": " ben",
+          "start": 55.14,
+          "end": 55.18,
+          "probability": 0.93017578125
+        },
+        {
+          "word": " Solimop.",
+          "start": 55.18,
+          "end": 55.62,
+          "probability": 0.421875
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "seek": 5142,
+      "start": 56.22,
+      "end": 57.26,
+      "text": " Analys, kleren maken.",
+      "tokens": [
+        50592,
+        16128,
+        749,
+        11,
+        350,
+        1918,
+        268,
+        24703,
+        13,
+        50670
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.779119873046875,
+      "compression_ratio": 1.1263157894736842,
+      "no_speech_prob": 0.11082109063863754,
+      "words": [
+        {
+          "word": " Analys,",
+          "start": 56.22,
+          "end": 56.62,
+          "probability": 0.53662109375
+        },
+        {
+          "word": " kleren",
+          "start": 56.86,
+          "end": 57.1,
+          "probability": 0.5859375
+        },
+        {
+          "word": " maken.",
+          "start": 57.1,
+          "end": 57.26,
+          "probability": 0.5537109375
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "seek": 5142,
+      "start": 57.58,
+      "end": 58.4,
+      "text": " En dan op weg weg.",
+      "tokens": [
+        50670,
+        2193,
+        3277,
+        999,
+        15565,
+        15565,
+        13,
+        50720
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.779119873046875,
+      "compression_ratio": 1.1263157894736842,
+      "no_speech_prob": 0.11082109063863754,
+      "words": [
+        {
+          "word": " En",
+          "start": 57.58,
+          "end": 57.74,
+          "probability": 0.0223388671875
+        },
+        {
+          "word": " dan",
+          "start": 57.74,
+          "end": 57.82,
+          "probability": 0.572265625
+        },
+        {
+          "word": " op",
+          "start": 57.82,
+          "end": 58.06,
+          "probability": 0.2257080078125
+        },
+        {
+          "word": " weg",
+          "start": 58.06,
+          "end": 58.22,
+          "probability": 0.76806640625
+        },
+        {
+          "word": " weg.",
+          "start": 58.22,
+          "end": 58.4,
+          "probability": 0.464111328125
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "seek": 8142,
+      "start": 102.46000000000001,
+      "end": 103.66,
+      "text": " ZE GELUIDEN",
+      "tokens": [
+        50364,
+        1176,
+        36,
+        460,
+        3158,
+        52,
+        2777,
+        2195,
+        50464
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.7160333395004272,
+      "compression_ratio": 0.9166666666666666,
+      "no_speech_prob": 0.1292402744293213,
+      "words": [
+        {
+          "word": " ZE",
+          "start": 102.46000000000001,
+          "end": 103.06,
+          "probability": 0.054290771484375
+        },
+        {
+          "word": " GELUIDEN",
+          "start": 103.06,
+          "end": 103.66,
+          "probability": 0.560546875
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "seek": 8142,
+      "start": 103.66,
+      "end": 109.62,
+      "text": " De hand is 3 uur, geländelijk 2 uur om dat te werken.",
+      "tokens": [
+        51546,
+        1346,
+        1011,
+        307,
+        805,
+        344,
+        374,
+        11,
+        4087,
+        5524,
+        19592,
+        568,
+        344,
+        374,
+        3406,
+        1137,
+        535,
+        2612,
+        2653,
+        13,
+        51746
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.7160333395004272,
+      "compression_ratio": 0.9166666666666666,
+      "no_speech_prob": 0.1292402744293213,
+      "words": [
+        {
+          "word": " De",
+          "start": 103.66,
+          "end": 103.68,
+          "probability": 0.0143890380859375
+        },
+        {
+          "word": " hand",
+          "start": 103.68,
+          "end": 106.9,
+          "probability": 0.459228515625
+        },
+        {
+          "word": " is",
+          "start": 106.9,
+          "end": 107.14,
+          "probability": 0.9541015625
+        },
+        {
+          "word": " 3",
+          "start": 107.14,
+          "end": 107.48,
+          "probability": 0.515625
+        },
+        {
+          "word": " uur,",
+          "start": 107.48,
+          "end": 107.64,
+          "probability": 0.9365234375
+        },
+        {
+          "word": " geländelijk",
+          "start": 107.72,
+          "end": 107.86,
+          "probability": 0.2783203125
+        },
+        {
+          "word": " 2",
+          "start": 107.86,
+          "end": 108.28,
+          "probability": 0.486328125
+        },
+        {
+          "word": " uur",
+          "start": 108.28,
+          "end": 108.6,
+          "probability": 0.91259765625
+        },
+        {
+          "word": " om",
+          "start": 108.6,
+          "end": 108.78,
+          "probability": 0.85791015625
+        },
+        {
+          "word": " dat",
+          "start": 108.78,
+          "end": 109.14,
+          "probability": 0.806640625
+        },
+        {
+          "word": " te",
+          "start": 109.14,
+          "end": 109.32,
+          "probability": 0.97998046875
+        },
+        {
+          "word": " werken.",
+          "start": 109.32,
+          "end": 109.62,
+          "probability": 0.9873046875
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "seek": 10962,
+      "start": 114.66,
+      "end": 115.66,
+      "text": " Gas geven!",
+      "tokens": [
+        50364,
+        24025,
+        49437,
+        0,
+        50714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6818867973659349,
+      "compression_ratio": 0.9032258064516129,
+      "no_speech_prob": 0.17059674859046936,
+      "words": [
+        {
+          "word": " Gas",
+          "start": 114.66,
+          "end": 115.34,
+          "probability": 0.1827392578125
+        },
+        {
+          "word": " geven!",
+          "start": 115.34,
+          "end": 115.66,
+          "probability": 0.44140625
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "seek": 10962,
+      "start": 124.30000000000001,
+      "end": 127.48,
+      "text": " Nog een kwartier te gaan en we zijn al gered.",
+      "tokens": [
+        50714,
+        426,
+        664,
+        3881,
+        23846,
+        446,
+        811,
+        535,
+        14118,
+        465,
+        321,
+        8004,
+        419,
+        290,
+        4073,
+        13,
+        51264
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6818867973659349,
+      "compression_ratio": 0.9032258064516129,
+      "no_speech_prob": 0.17059674859046936,
+      "words": [
+        {
+          "word": " Nog",
+          "start": 124.30000000000001,
+          "end": 124.98,
+          "probability": 0.63623046875
+        },
+        {
+          "word": " een",
+          "start": 124.98,
+          "end": 125.1,
+          "probability": 0.9697265625
+        },
+        {
+          "word": " kwartier",
+          "start": 125.1,
+          "end": 125.52,
+          "probability": 0.99560546875
+        },
+        {
+          "word": " te",
+          "start": 125.52,
+          "end": 125.68,
+          "probability": 0.978515625
+        },
+        {
+          "word": " gaan",
+          "start": 125.68,
+          "end": 125.94,
+          "probability": 0.98583984375
+        },
+        {
+          "word": " en",
+          "start": 125.94,
+          "end": 126.74,
+          "probability": 0.36376953125
+        },
+        {
+          "word": " we",
+          "start": 126.74,
+          "end": 126.84,
+          "probability": 0.45654296875
+        },
+        {
+          "word": " zijn",
+          "start": 126.84,
+          "end": 126.98,
+          "probability": 0.99462890625
+        },
+        {
+          "word": " al",
+          "start": 126.98,
+          "end": 127.12,
+          "probability": 0.9462890625
+        },
+        {
+          "word": " gered.",
+          "start": 127.12,
+          "end": 127.48,
+          "probability": 0.8564453125
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "seek": 13962,
+      "start": 139.62,
+      "end": 140.58,
+      "text": " whole world",
+      "tokens": [
+        50364,
+        1379,
+        1002,
+        50437
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " whole",
+          "start": 139.62,
+          "end": 140.12,
+          "probability": 3.6954879760742188e-06
+        },
+        {
+          "word": " world",
+          "start": 140.12,
+          "end": 140.58,
+          "probability": 0.210205078125
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "seek": 13962,
+      "start": 140.58,
+      "end": 141.66,
+      "text": " whole world",
+      "tokens": [
+        50437,
+        1379,
+        1002,
+        50490
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " whole",
+          "start": 140.58,
+          "end": 141.4,
+          "probability": 0.001338958740234375
+        },
+        {
+          "word": " world",
+          "start": 141.4,
+          "end": 141.66,
+          "probability": 0.97021484375
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "seek": 13962,
+      "start": 141.66,
+      "end": 141.66,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 17,
+      "seek": 13962,
+      "start": 141.66,
+      "end": 143.26,
+      "text": " whole world",
+      "tokens": [
+        50538,
+        1379,
+        1002,
+        50590
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " whole",
+          "start": 141.66,
+          "end": 142.56,
+          "probability": 0.263671875
+        },
+        {
+          "word": " world",
+          "start": 142.56,
+          "end": 143.26,
+          "probability": 0.9912109375
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "seek": 13962,
+      "start": 143.26,
+      "end": 144.12,
+      "text": " whole world",
+      "tokens": [
+        50590,
+        1379,
+        1002,
+        50635
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " whole",
+          "start": 143.26,
+          "end": 143.58,
+          "probability": 0.419921875
+        },
+        {
+          "word": " world",
+          "start": 143.58,
+          "end": 144.12,
+          "probability": 0.99365234375
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "seek": 13962,
+      "start": 144.12,
+      "end": 145.64,
+      "text": " whole world",
+      "tokens": [
+        50635,
+        1379,
+        1002,
+        50670
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " whole",
+          "start": 144.12,
+          "end": 144.28,
+          "probability": 0.55810546875
+        },
+        {
+          "word": " world",
+          "start": 144.28,
+          "end": 145.64,
+          "probability": 0.9951171875
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "seek": 13962,
+      "start": 145.64,
+      "end": 145.74,
+      "text": " met me",
+      "tokens": [
+        50670,
+        1131,
+        385,
+        50703
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " met",
+          "start": 145.64,
+          "end": 145.74,
+          "probability": 0.00013184547424316406
+        },
+        {
+          "word": " me",
+          "start": 145.74,
+          "end": 145.74,
+          "probability": 0.208740234375
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "seek": 13962,
+      "start": 146.4,
+      "end": 147.16,
+      "text": " even ®",
+      "tokens": [
+        50703,
+        754,
+        1815,
+        106,
+        50738
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " even",
+          "start": 146.01999999999998,
+          "end": 146.48,
+          "probability": 0.00138092041015625
+        },
+        {
+          "word": " ®",
+          "start": 146.48,
+          "end": 147.16,
+          "probability": 0.0059661865234375
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "seek": 13962,
+      "start": 147.16,
+      "end": 148.08,
+      "text": " life",
+      "tokens": [
+        50738,
+        993,
+        50772
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " life",
+          "start": 147.16,
+          "end": 148.08,
+          "probability": 0.00010675191879272461
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "seek": 13962,
+      "start": 148.08,
+      "end": 148.22,
+      "text": " like",
+      "tokens": [
+        50772,
+        411,
+        50793
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " like",
+          "start": 148.08,
+          "end": 148.22,
+          "probability": 0.00553131103515625
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "seek": 13962,
+      "start": 148.22,
+      "end": 149.18,
+      "text": " for the whole world",
+      "tokens": [
+        50793,
+        337,
+        264,
+        1379,
+        1002,
+        50840
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " for",
+          "start": 148.22,
+          "end": 148.22,
+          "probability": 0.004856109619140625
+        },
+        {
+          "word": " the",
+          "start": 148.22,
+          "end": 148.6,
+          "probability": 0.387939453125
+        },
+        {
+          "word": " whole",
+          "start": 148.6,
+          "end": 149.18,
+          "probability": 0.2890625
+        },
+        {
+          "word": " world",
+          "start": 149.18,
+          "end": 149.18,
+          "probability": 0.943359375
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "seek": 13962,
+      "start": 149.18,
+      "end": 149.8,
+      "text": " this is",
+      "tokens": [
+        50840,
+        341,
+        307,
+        50873
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " this",
+          "start": 149.18,
+          "end": 149.48,
+          "probability": 0.0021076202392578125
+        },
+        {
+          "word": " is",
+          "start": 149.48,
+          "end": 149.94,
+          "probability": 0.2626953125
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "seek": 13962,
+      "start": 150.6,
+      "end": 150.6,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 27,
+      "seek": 13962,
+      "start": 150.6,
+      "end": 150.94,
+      "text": " on",
+      "tokens": [
+        50902,
+        322,
+        50930
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 150.6,
+          "end": 151.06,
+          "probability": 0.0006818771362304688
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "seek": 13962,
+      "start": 151.54,
+      "end": 151.54,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 29,
+      "seek": 13962,
+      "start": 151.54,
+      "end": 151.54,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 30,
+      "seek": 13962,
+      "start": 151.54,
+      "end": 151.92,
+      "text": " on",
+      "tokens": [
+        50970,
+        322,
+        50988
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 151.54,
+          "end": 151.92,
+          "probability": 0.0938720703125
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "seek": 13962,
+      "start": 151.92,
+      "end": 152.02,
+      "text": " on",
+      "tokens": [
+        50988,
+        322,
+        51003
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 151.92,
+          "end": 152.02,
+          "probability": 0.121337890625
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "seek": 13962,
+      "start": 152.02,
+      "end": 152.18,
+      "text": " on",
+      "tokens": [
+        51003,
+        322,
+        51028
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 152.02,
+          "end": 152.18,
+          "probability": 0.1585693359375
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "seek": 13962,
+      "start": 152.18,
+      "end": 152.48,
+      "text": " on",
+      "tokens": [
+        51028,
+        322,
+        51045
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 152.18,
+          "end": 152.48,
+          "probability": 0.207763671875
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "seek": 13962,
+      "start": 153.24,
+      "end": 153.46,
+      "text": " on",
+      "tokens": [
+        51045,
+        322,
+        51067
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 153.0,
+          "end": 153.46,
+          "probability": 0.269287109375
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "seek": 13962,
+      "start": 153.46,
+      "end": 153.62,
+      "text": " on",
+      "tokens": [
+        51067,
+        322,
+        51077
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 153.46,
+          "end": 153.62,
+          "probability": 0.330810546875
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "seek": 13962,
+      "start": 153.62,
+      "end": 153.62,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 37,
+      "seek": 13962,
+      "start": 153.62,
+      "end": 153.66,
+      "text": " on",
+      "tokens": [
+        51099,
+        322,
+        51125
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 153.62,
+          "end": 153.66,
+          "probability": 0.47119140625
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "seek": 13962,
+      "start": 153.66,
+      "end": 153.68,
+      "text": " on",
+      "tokens": [
+        51125,
+        322,
+        51133
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 153.66,
+          "end": 153.68,
+          "probability": 0.53369140625
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "seek": 13962,
+      "start": 153.68,
+      "end": 153.68,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 40,
+      "seek": 13962,
+      "start": 153.68,
+      "end": 154.0,
+      "text": " on",
+      "tokens": [
+        51155,
+        322,
+        51171
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 153.68,
+          "end": 154.0,
+          "probability": 0.64404296875
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "seek": 13962,
+      "start": 154.0,
+      "end": 154.0,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 42,
+      "seek": 13962,
+      "start": 154.0,
+      "end": 154.8,
+      "text": " on",
+      "tokens": [
+        51189,
+        322,
+        51210
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 154.0,
+          "end": 154.8,
+          "probability": 0.7314453125
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "seek": 13962,
+      "start": 154.8,
+      "end": 154.98,
+      "text": " on",
+      "tokens": [
+        51210,
+        322,
+        51230
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 154.8,
+          "end": 154.98,
+          "probability": 0.76416015625
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "seek": 13962,
+      "start": 154.98,
+      "end": 154.98,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 45,
+      "seek": 13962,
+      "start": 154.98,
+      "end": 155.16,
+      "text": " on",
+      "tokens": [
+        51249,
+        322,
+        51268
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 154.98,
+          "end": 155.16,
+          "probability": 0.818359375
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "seek": 13962,
+      "start": 155.16,
+      "end": 155.16,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 47,
+      "seek": 13962,
+      "start": 155.16,
+      "end": 155.16,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 48,
+      "seek": 13962,
+      "start": 155.16,
+      "end": 155.16,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 49,
+      "seek": 13962,
+      "start": 155.16,
+      "end": 155.9,
+      "text": " on",
+      "tokens": [
+        51325,
+        322,
+        51340
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 155.16,
+          "end": 155.9,
+          "probability": 0.88818359375
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "seek": 13962,
+      "start": 155.9,
+      "end": 156.44,
+      "text": " on",
+      "tokens": [
+        51340,
+        322,
+        51360
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 155.9,
+          "end": 156.44,
+          "probability": 0.8984375
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 52,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 53,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 54,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 55,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 56,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 57,
+      "seek": 13962,
+      "start": 156.44,
+      "end": 156.44,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 58,
+      "seek": 13962,
+      "start": 157.64000000000001,
+      "end": 158.56,
+      "text": " on",
+      "tokens": [
+        51463,
+        322,
+        51483
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 157.64000000000001,
+          "end": 158.56,
+          "probability": 0.94775390625
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "seek": 13962,
+      "start": 158.56,
+      "end": 158.56,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 60,
+      "seek": 13962,
+      "start": 158.56,
+      "end": 159.7,
+      "text": " on",
+      "tokens": [
+        51499,
+        322,
+        51516
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 158.56,
+          "end": 159.7,
+          "probability": 0.953125
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 62,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 63,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 64,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 65,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.7,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 66,
+      "seek": 13962,
+      "start": 159.7,
+      "end": 159.74,
+      "text": " on",
+      "tokens": [
+        51595,
+        322,
+        51616
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 159.7,
+          "end": 159.74,
+          "probability": 0.96337890625
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "seek": 13962,
+      "start": 159.74,
+      "end": 159.74,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 68,
+      "seek": 13962,
+      "start": 159.74,
+      "end": 159.74,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 69,
+      "seek": 13962,
+      "start": 159.74,
+      "end": 159.74,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 70,
+      "seek": 13962,
+      "start": 159.74,
+      "end": 160.22,
+      "text": " on",
+      "tokens": [
+        51667,
+        322,
+        51678
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 159.74,
+          "end": 160.22,
+          "probability": 0.96630859375
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "seek": 13962,
+      "start": 160.22,
+      "end": 160.22,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 72,
+      "seek": 13962,
+      "start": 160.22,
+      "end": 160.22,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 73,
+      "seek": 13962,
+      "start": 160.22,
+      "end": 160.5,
+      "text": " on",
+      "tokens": [
+        51717,
+        322,
+        51730
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 160.22,
+          "end": 160.5,
+          "probability": 0.96875
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "seek": 13962,
+      "start": 160.5,
+      "end": 160.5,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 75,
+      "seek": 13962,
+      "start": 160.5,
+      "end": 160.5,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 76,
+      "seek": 13962,
+      "start": 160.5,
+      "end": 160.52,
+      "text": " on",
+      "tokens": [
+        51764,
+        322,
+        51782
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 160.5,
+          "end": 160.52,
+          "probability": 0.970703125
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "seek": 13962,
+      "start": 166.44000000000003,
+      "end": 167.36,
+      "text": " on",
+      "tokens": [
+        51789,
+        322,
+        51799
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 166.44000000000003,
+          "end": 167.36,
+          "probability": 0.970703125
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "seek": 13962,
+      "start": 167.36,
+      "end": 167.36,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 79,
+      "seek": 13962,
+      "start": 167.36,
+      "end": 167.36,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 80,
+      "seek": 13962,
+      "start": 167.36,
+      "end": 167.36,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 81,
+      "seek": 13962,
+      "start": 167.36,
+      "end": 167.94,
+      "text": " on",
+      "tokens": [
+        51850,
+        322,
+        51853
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 167.36,
+          "end": 167.94,
+          "probability": 0.9716796875
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "seek": 13962,
+      "start": 167.94,
+      "end": 167.94,
+      "text": "",
+      "tokens": [],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": []
+    },
+    {
+      "id": 83,
+      "seek": 13962,
+      "start": 167.94,
+      "end": 168.16,
+      "text": " on",
+      "tokens": [
+        51853,
+        322,
+        51853
+      ],
+      "temperature": 1.0,
+      "avg_logprob": -1.5619095865885417,
+      "compression_ratio": 4.584615384615384,
+      "no_speech_prob": 0.40596258640289307,
+      "words": [
+        {
+          "word": " on",
+          "start": 167.94,
+          "end": 168.16,
+          "probability": 0.97216796875
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "seek": 16816,
+      "start": 168.16,
+      "end": 169.16,
+      "text": " We hebben het best.",
+      "tokens": [
+        50364,
+        492,
+        12116,
+        3639,
+        1151,
+        13,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " We",
+          "start": 168.16,
+          "end": 168.82,
+          "probability": 0.12310791015625
+        },
+        {
+          "word": " hebben",
+          "start": 168.82,
+          "end": 168.86,
+          "probability": 0.0989990234375
+        },
+        {
+          "word": " het",
+          "start": 168.86,
+          "end": 169.04,
+          "probability": 0.188720703125
+        },
+        {
+          "word": " best.",
+          "start": 169.04,
+          "end": 169.16,
+          "probability": 0.18212890625
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "seek": 16816,
+      "start": 170.42,
+      "end": 171.04,
+      "text": " Weet je Mark?",
+      "tokens": [
+        50464,
+        492,
+        302,
+        1506,
+        3934,
+        30,
+        50528
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " Weet",
+          "start": 170.42,
+          "end": 170.72,
+          "probability": 0.319580078125
+        },
+        {
+          "word": " je",
+          "start": 170.72,
+          "end": 170.78,
+          "probability": 0.88134765625
+        },
+        {
+          "word": " Mark?",
+          "start": 170.78,
+          "end": 171.04,
+          "probability": 0.452880859375
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "seek": 16816,
+      "start": 171.54,
+      "end": 172.26,
+      "text": " Die kan mij zien.",
+      "tokens": [
+        50528,
+        3229,
+        4608,
+        22953,
+        23735,
+        13,
+        50583
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " Die",
+          "start": 171.54,
+          "end": 171.8,
+          "probability": 0.2259521484375
+        },
+        {
+          "word": " kan",
+          "start": 171.8,
+          "end": 171.92,
+          "probability": 0.5966796875
+        },
+        {
+          "word": " mij",
+          "start": 171.92,
+          "end": 172.02,
+          "probability": 0.424072265625
+        },
+        {
+          "word": " zien.",
+          "start": 172.02,
+          "end": 172.26,
+          "probability": 0.84326171875
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "seek": 16816,
+      "start": 172.56,
+      "end": 176.74,
+      "text": " Dat straf mag op nog geen acht uur kunnen doen om op alle vz2 te helpen.",
+      "tokens": [
+        50583,
+        9315,
+        2148,
+        69,
+        2258,
+        999,
+        9638,
+        21773,
+        43048,
+        344,
+        374,
+        18377,
+        15159,
+        3406,
+        999,
+        5430,
+        371,
+        89,
+        17,
+        535,
+        854,
+        268,
+        13,
+        50803
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " Dat",
+          "start": 172.56,
+          "end": 172.64,
+          "probability": 0.74853515625
+        },
+        {
+          "word": " straf",
+          "start": 172.64,
+          "end": 172.98,
+          "probability": 0.6611328125
+        },
+        {
+          "word": " mag",
+          "start": 172.98,
+          "end": 173.08,
+          "probability": 0.16357421875
+        },
+        {
+          "word": " op",
+          "start": 173.08,
+          "end": 173.3,
+          "probability": 0.7265625
+        },
+        {
+          "word": " nog",
+          "start": 173.3,
+          "end": 173.66,
+          "probability": 0.78564453125
+        },
+        {
+          "word": " geen",
+          "start": 173.66,
+          "end": 173.8,
+          "probability": 0.92138671875
+        },
+        {
+          "word": " acht",
+          "start": 173.8,
+          "end": 174.02,
+          "probability": 0.57275390625
+        },
+        {
+          "word": " uur",
+          "start": 174.02,
+          "end": 174.26,
+          "probability": 0.95947265625
+        },
+        {
+          "word": " kunnen",
+          "start": 174.26,
+          "end": 174.42,
+          "probability": 0.60546875
+        },
+        {
+          "word": " doen",
+          "start": 174.42,
+          "end": 174.76,
+          "probability": 0.477294921875
+        },
+        {
+          "word": " om",
+          "start": 174.76,
+          "end": 175.2,
+          "probability": 0.78466796875
+        },
+        {
+          "word": " op",
+          "start": 175.2,
+          "end": 175.68,
+          "probability": 0.5078125
+        },
+        {
+          "word": " alle",
+          "start": 175.68,
+          "end": 175.78,
+          "probability": 0.2022705078125
+        },
+        {
+          "word": " vz2",
+          "start": 175.78,
+          "end": 176.22,
+          "probability": 0.70556640625
+        },
+        {
+          "word": " te",
+          "start": 176.22,
+          "end": 176.4,
+          "probability": 0.96875
+        },
+        {
+          "word": " helpen.",
+          "start": 176.4,
+          "end": 176.74,
+          "probability": 0.97216796875
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "seek": 16816,
+      "start": 177.32,
+      "end": 178.9,
+      "text": " Dat zou pak meer moeten gebeuren.",
+      "tokens": [
+        50803,
+        9315,
+        22934,
+        20843,
+        16318,
+        26175,
+        29073,
+        9873,
+        13,
+        50917
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " Dat",
+          "start": 177.32,
+          "end": 177.5,
+          "probability": 0.87060546875
+        },
+        {
+          "word": " zou",
+          "start": 177.5,
+          "end": 177.64,
+          "probability": 0.460693359375
+        },
+        {
+          "word": " pak",
+          "start": 177.64,
+          "end": 177.88,
+          "probability": 0.716796875
+        },
+        {
+          "word": " meer",
+          "start": 177.88,
+          "end": 178.18,
+          "probability": 0.92431640625
+        },
+        {
+          "word": " moeten",
+          "start": 178.18,
+          "end": 178.42,
+          "probability": 0.99658203125
+        },
+        {
+          "word": " gebeuren.",
+          "start": 178.42,
+          "end": 178.9,
+          "probability": 0.9775390625
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "seek": 16816,
+      "start": 179.62,
+      "end": 180.3,
+      "text": " Tot volgend jaar.",
+      "tokens": [
+        50917,
+        11236,
+        1996,
+        9395,
+        22579,
+        13,
+        51017
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6951193431067089,
+      "compression_ratio": 1.3037037037037038,
+      "no_speech_prob": 0.08537902683019638,
+      "words": [
+        {
+          "word": " Tot",
+          "start": 179.62,
+          "end": 179.76,
+          "probability": 0.98828125
+        },
+        {
+          "word": " volgend",
+          "start": 179.76,
+          "end": 180.14,
+          "probability": 0.99609375
+        },
+        {
+          "word": " jaar.",
+          "start": 180.14,
+          "end": 180.3,
+          "probability": 0.99951171875
+        }
+      ]
+    }
+  ],
+  "language": "nl"
+}

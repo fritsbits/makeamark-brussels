@@ -1,0 +1,110 @@
+{
+  "name": "Make a Mark Brussels",
+  "shortName": "Make a Mark",
+  "domain": "https://letsmakeamark.brussels",
+  "instagramUrl": "https://www.instagram.com/lets_makeamarkbxl/",
+  "email": "makeamarkbxl@gmail.com",
+  "globalSiteUrl": "https://www.letsmakeamark.org/",
+  "firstEditionYear": 2016,
+  "meta": {
+    "title": "Make a Mark Brussels",
+    "description": "A one-day make-a-thon where creative makers and Brussels social organisations work together on communication, design, and digital challenges. Join the 2027 edition."
+  },
+  "nav": [
+    {
+      "label": "For makers",
+      "href": "/makers"
+    },
+    {
+      "label": "For organisations",
+      "href": "/organisations"
+    },
+    {
+      "label": "About",
+      "href": "/#about"
+    }
+  ],
+  "hero": {
+    "photos": [
+      {
+        "file": "participants-mingling-at-gathering.jpg",
+        "alt": "Participants mingle and talk together at an indoor gathering."
+      },
+      {
+        "file": "team-planning-around-meeting-table.jpg",
+        "alt": "A small team discusses ideas around a meeting table."
+      }
+    ],
+    "photoSourceLabel": "From the Make a Mark 2020 archive",
+    "photoSourceUrl": "https://www.instagram.com/lets_makeamarkbxl/",
+    "headline": "Design and creativity are for everyone",
+    "intro": "Volunteer makers and Brussels social organisations team up for one day to work on communication, design and digital challenges.",
+    "instagramLabel": "See their work on Instagram"
+  },
+  "makers": {
+    "heading": "Info for Makers",
+    "steps": [
+      {
+        "title": "Friday evening",
+        "text": "We all come together to plan and get to know each other. To make sure everyone can go in turbo creative mode Saturday."
+      },
+      {
+        "title": "All day Saturday",
+        "text": "You'll spend the whole of Saturday collaborating in a team, tackling a creative challenge for the central case. We'll provide WiFi, food, drinks, and great company to keep you energized throughout the day."
+      },
+      {
+        "title": "Selected in advance",
+        "text": "We select Makers in advance, ensuring we form the most effective teams to tackle the challenges. We'll let you know at the end of January if you got selected. A few weeks after that you'll meet your team members and the organisation to discuss their challenge, in a one-hour meeting on an evening in the first week of March."
+      }
+    ],
+    "closing": "Please make sure you can make it."
+  },
+  "organisations": {
+    "heading": "56 social organisations made their mark",
+    "intro": "These organisations have brought their communication, design and digital challenges to past editions of Make a Mark Brussels."
+  },
+  "faq": {
+    "heading": "FAQ"
+  },
+  "edition": {
+    "statusLabels": {
+      "open": "Applications open",
+      "closed": "Applications are closed for {year}",
+      "selected": "Makers have been selected, see you in March",
+      "done": "Read about the {year} edition on Instagram",
+      "preparing": "2027 applications are being prepared"
+    }
+  },
+  "about": {
+    "heading": "The people behind Make a Mark",
+    "intro": "Make a Mark Brussels is part of the global Make a Mark movement. The local team brings volunteer makers and social organisations together for a day of shared creative work.",
+    "organisers": [
+      {
+        "name": "Gwen Dubois",
+        "role": "Interior architect and creative activist.",
+        "url": "https://www.gwentibold.com/"
+      },
+      {
+        "name": "Piet Lambrechts",
+        "role": "Co-founder and organiser.",
+        "url": "https://www.brusseleir.eu/neus/piet-lambrechts-brussel-komen-kijken-en-het-willen-zien/"
+      },
+      {
+        "name": "Frederik Vincx",
+        "role": "Digital products for social organisations.",
+        "url": "https://frederikvincx.com/"
+      },
+      {
+        "name": "Bernard Polet",
+        "role": "Founder of //gaggarin//.",
+        "url": "https://www.linkedin.com/in/bernardpolet"
+      }
+    ],
+    "contactLabel": "Contact us"
+  },
+  "footer": {
+    "globalLabel": "Part of the global Make a Mark movement",
+    "instagramLabel": "Instagram",
+    "emailLabel": "Email"
+  }
+}

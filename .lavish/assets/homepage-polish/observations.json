@@ -1,0 +1,108 @@
+[
+  {
+    "device": "desktop",
+    "heroBottom": "88px",
+    "audienceTop": "96px",
+    "menu": {
+      "width": 0,
+      "height": 0
+    },
+    "footerLinks": [
+      {
+        "text": "For makers",
+        "height": 19.1875
+      },
+      {
+        "text": "For organisations",
+        "height": 19.1875
+      },
+      {
+        "text": "About",
+        "height": 19.1875
+      },
+      {
+        "text": "Organise Make a Mark in your city",
+        "height": 19.1875
+      },
+      {
+        "text": "Instagram",
+        "height": 19.1875
+      },
+      {
+        "text": "Privacy",
+        "height": 19.1875
+      },
+      {
+        "text": "Email",
+        "height": 19.1875
+      }
+    ],
+    "evidenceLinks": [
+      {
+        "text": "Watch the BRUZZ report from the 2023 edition",
+        "decoration": "none"
+      },
+      {
+        "text": "More from past editions on Instagram",
+        "decoration": "none"
+      }
+    ]
+  },
+  {
+    "device": "desktop",
+    "proposedOverflow": 0
+  },
+  {
+    "device": "mobile",
+    "heroBottom": "48px",
+    "audienceTop": "56px",
+    "menu": {
+      "width": 40,
+      "height": 40
+    },
+    "footerLinks": [
+      {
+        "text": "For makers",
+        "height": 19.1875
+      },
+      {
+        "text": "For organisations",
+        "height": 19.1875
+      },
+      {
+        "text": "About",
+        "height": 19.1875
+      },
+      {
+        "text": "Organise Make a Mark in your city",
+        "height": 19.1875
+      },
+      {
+        "text": "Instagram",
+        "height": 19.1875
+      },
+      {
+        "text": "Privacy",
+        "height": 19.1875
+      },
+      {
+        "text": "Email",
+        "height": 19.1875
+      }
+    ],
+    "evidenceLinks": [
+      {
+        "text": "Watch the BRUZZ report from the 2023 edition",
+        "decoration": "none"
+      },
+      {
+        "text": "More from past editions on Instagram",
+        "decoration": "none"
+      }
+    ]
+  },
+  {
+    "device": "mobile",
+    "proposedOverflow": 0
+  }
+]

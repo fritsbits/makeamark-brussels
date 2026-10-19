@@ -1,0 +1,84 @@
+<x-layouts.app :site="$site">
+    @include('sections.nav')
+    <main id="main" class="distilled" tabindex="-1">
+        <section id="top" class="hero container hero--edition">
+            <div class="hero__copy">
+                <flux:text class="distilled__date">Brussels · {{ $edition['dates'] }}</flux:text>
+                <flux:heading level="1" class="h-display hero__headline">{{ $site['hero']['headline'] }}</flux:heading>
+                <flux:text class="hero__intro">{{ $site['hero']['intro'] }}</flux:text>
+                <p class="hero__status" role="status"><span class="status-dot" aria-hidden="true"></span>{{ $edition['pill']['label'] }}</p>
+            </div>
+            <figure class="hero__visual">
+                <div class="hero__photos">
+                    @foreach ($site['hero']['photos'] as $photo)
+                        <div class="hero__photo">
+                            <x-photo-reveal :file="$photo['file']" :widths="[480, 960]" :default-width="480" :alt="$photo['alt']" sizes="(max-width: 860px) 90vw, 42vw" width="1000" :height="$loop->first ? 636 : 486" loading="eager" />
+                        </div>
+                    @endforeach
+                </div>
+                <figcaption><a href="{{ $site['hero']['photoSourceUrl'] }}" target="_blank" rel="noopener">{{ $site['hero']['photoSourceLabel'] }}</a></figcaption>
+            </figure>
+        </section>
+
+
+        <section id="take-part" class="audience-pair container" aria-label="Take part">
+            <article class="audience-panel">
+                <flux:heading level="2" class="h-display">For makers</flux:heading>
+                <flux:text>Give your creative skills to a local project and meet other makers.</flux:text>
+                <x-pill href="/makers">Maker details</x-pill>
+            </article>
+            <article class="audience-panel">
+                <flux:heading level="2" class="h-display">For social organisations</flux:heading>
+                <flux:text>Work with a maker team on one communication, design or digital challenge.</flux:text>
+                <x-pill href="/organisations">Organisation details</x-pill>
+            </article>
+        </section>
+
+        <section id="edition" class="block block--red" aria-labelledby="edition-heading">
+            <div class="container distilled-edition">
+                <div>
+                    <flux:heading level="2" class="h-display distilled__heading" id="edition-heading">The 2027 edition</flux:heading>
+                    <flux:text class="edition__dates">{{ $edition['dates'] }}</flux:text>
+                </div>
+                <div>
+                    <div class="edition__body">{!! $edition['html'] !!}</div>
+                    @if ($edition['status'] === 'open')
+                        <x-pill href="#take-part">Explore ways to take part</x-pill>
+                    @else
+                        <flux:text>{{ $edition['pill']['label'] }}</flux:text>
+                    @endif
+                </div>
+            </div>
+        </section>
+
+        <section class="container distilled-evidence" aria-labelledby="evidence-heading">
+            <div class="distilled-evidence__photo">
+                <x-photo-reveal :file="$edition['photo']" :widths="[440, 880]" sizes="(max-width: 860px) 90vw, 46vw" :alt="$edition['photoAlt']" label="group photo" width="440" :height="$edition['photoHeight']" loading="lazy" />
+                <flux:text class="distilled-evidence__caption">Makers and organisers at the 2026 Brussels edition.</flux:text>
+            </div>
+            <div>
+                <flux:heading level="2" class="h-display distilled__heading" id="evidence-heading">A feel for the day.</flux:heading>
+                <div class="distilled-evidence__links">
+                    <flux:text><a class="evidence-resource" href="https://www.bruzz.be/samenleving/creatieve-marathon-make-mark-maakt-brussel-opnieuw-een-beetje-beter-2023-03-19" target="_blank" rel="noopener"><span>Watch the BRUZZ report from the 2023 edition</span><flux:icon.arrow-up-right class="evidence-resource__icon" aria-hidden="true" /></a></flux:text>
+                    <flux:text><a class="evidence-resource" href="{{ $site['instagramUrl'] }}" target="_blank" rel="noopener"><span>More from past editions on Instagram</span><flux:icon.arrow-up-right class="evidence-resource__icon" aria-hidden="true" /></a></flux:text>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about container">
+            <div class="about__text">
+                <flux:heading level="2" class="h-display about__heading">The people behind Make a Mark</flux:heading>
+                <ul class="about__people" role="list">
+                    @foreach ($site['about']['organisers'] as $person)
+                        <li><a href="{{ $person['url'] }}" rel="noopener" target="_blank">{{ $person['name'] }}</a> <span>{{ $person['role'] }}</span></li>
+                    @endforeach
+                </ul>
+                <x-pill :href="'mailto:'.$site['email']">Contact us</x-pill>
+            </div>
+            <div class="about__logo">
+                <img src="/images/logo-brussels.420.webp" srcset="/images/logo-brussels.420.webp 420w, /images/logo-brussels.840.webp 840w" sizes="(max-width: 860px) 280px, 420px" alt="Make a Mark Brussels, hand-drawn logo" width="420" height="407" loading="lazy">
+            </div>
+        </section>
+    </main>
+    @include('sections.footer')
+</x-layouts.app>

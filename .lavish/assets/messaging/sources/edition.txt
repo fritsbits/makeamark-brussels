@@ -1,0 +1,16 @@
+resources/content/editions/2027.json
+
+1  {
+2    "year": 2027,
+3    "kicker": "The ninth edition",
+4    "title": "Make a Mark for Brussels youth",
+5    "dates": "Saturday 27 March 2027",
+6    "startDate": "2027-03-27",
+7    "endDate": "2027-03-27",
+8    "status": "open",
+9    "applyUrl": "/#audience-heading",
+10    "photo": "edition-2026-group.jpg",
+11    "photoTreatment": "monochrome",
+12    "photoAlt": "Makers and organisers of Make a Mark Brussels in a courtyard, photographed from above",
+13    "body": "Make a Mark brings volunteer makers together with Brussels social organisations for one day of creative work on a real communication, design, or digital challenge.\n\nThe 2027 edition centres on organisations working with young people in Brussels. The event date is confirmed; venues and application details are still being prepared."
+14  }

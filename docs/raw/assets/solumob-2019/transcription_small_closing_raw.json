@@ -1,0 +1,274 @@
+{
+  "text": " Die kun je met zien dat strafwak op nog geen 8 uur kunt doen om op kalle vz2 te helpen. Dat zou pak meer moeten gebeuren. Tot volgend jaar.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 6.3,
+      "text": " Die kun je met zien dat strafwak op nog geen 8 uur kunt doen om op kalle vz2 te helpen.",
+      "tokens": [
+        50364,
+        3229,
+        8215,
+        1506,
+        1131,
+        23735,
+        1137,
+        2148,
+        69,
+        86,
+        514,
+        999,
+        9638,
+        21773,
+        1649,
+        344,
+        374,
+        34199,
+        15159,
+        3406,
+        999,
+        350,
+        11780,
+        371,
+        89,
+        17,
+        535,
+        854,
+        268,
+        13,
+        50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5313923115632972,
+      "compression_ratio": 1.2300884955752212,
+      "no_speech_prob": 0.2584729790687561,
+      "words": [
+        {
+          "word": " Die",
+          "start": 0.0,
+          "end": 0.78,
+          "probability": 0.08099365234375
+        },
+        {
+          "word": " kun",
+          "start": 0.78,
+          "end": 0.9,
+          "probability": 0.2127685546875
+        },
+        {
+          "word": " je",
+          "start": 0.9,
+          "end": 0.98,
+          "probability": 0.9013671875
+        },
+        {
+          "word": " met",
+          "start": 0.98,
+          "end": 1.04,
+          "probability": 0.293701171875
+        },
+        {
+          "word": " zien",
+          "start": 1.04,
+          "end": 1.28,
+          "probability": 0.67919921875
+        },
+        {
+          "word": " dat",
+          "start": 1.28,
+          "end": 1.62,
+          "probability": 0.435546875
+        },
+        {
+          "word": " strafwak",
+          "start": 1.62,
+          "end": 2.1,
+          "probability": 0.5849609375
+        },
+        {
+          "word": " op",
+          "start": 2.1,
+          "end": 2.28,
+          "probability": 0.430419921875
+        },
+        {
+          "word": " nog",
+          "start": 2.28,
+          "end": 2.66,
+          "probability": 0.7626953125
+        },
+        {
+          "word": " geen",
+          "start": 2.66,
+          "end": 2.8,
+          "probability": 0.94482421875
+        },
+        {
+          "word": " 8",
+          "start": 2.8,
+          "end": 3.04,
+          "probability": 0.53515625
+        },
+        {
+          "word": " uur",
+          "start": 3.04,
+          "end": 3.3,
+          "probability": 0.9384765625
+        },
+        {
+          "word": " kunt",
+          "start": 3.3,
+          "end": 3.44,
+          "probability": 0.8447265625
+        },
+        {
+          "word": " doen",
+          "start": 3.44,
+          "end": 3.74,
+          "probability": 0.7900390625
+        },
+        {
+          "word": " om",
+          "start": 3.74,
+          "end": 4.18,
+          "probability": 0.8798828125
+        },
+        {
+          "word": " op",
+          "start": 4.18,
+          "end": 4.66,
+          "probability": 0.308349609375
+        },
+        {
+          "word": " kalle",
+          "start": 4.66,
+          "end": 4.8,
+          "probability": 0.15625
+        },
+        {
+          "word": " vz2",
+          "start": 4.8,
+          "end": 5.22,
+          "probability": 0.69921875
+        },
+        {
+          "word": " te",
+          "start": 5.22,
+          "end": 5.42,
+          "probability": 0.9853515625
+        },
+        {
+          "word": " helpen.",
+          "start": 5.42,
+          "end": 6.3,
+          "probability": 0.98046875
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.3,
+      "end": 7.92,
+      "text": " Dat zou pak meer moeten gebeuren.",
+      "tokens": [
+        50664,
+        9315,
+        22934,
+        20843,
+        16318,
+        26175,
+        29073,
+        9873,
+        13,
+        50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5313923115632972,
+      "compression_ratio": 1.2300884955752212,
+      "no_speech_prob": 0.2584729790687561,
+      "words": [
+        {
+          "word": " Dat",
+          "start": 6.3,
+          "end": 6.5,
+          "probability": 0.76611328125
+        },
+        {
+          "word": " zou",
+          "start": 6.5,
+          "end": 6.64,
+          "probability": 0.58740234375
+        },
+        {
+          "word": " pak",
+          "start": 6.64,
+          "end": 6.88,
+          "probability": 0.82177734375
+        },
+        {
+          "word": " meer",
+          "start": 6.88,
+          "end": 7.18,
+          "probability": 0.94189453125
+        },
+        {
+          "word": " moeten",
+          "start": 7.18,
+          "end": 7.42,
+          "probability": 0.9970703125
+        },
+        {
+          "word": " gebeuren.",
+          "start": 7.42,
+          "end": 7.92,
+          "probability": 0.990234375
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.3,
+      "end": 9.3,
+      "text": " Tot volgend jaar.",
+      "tokens": [
+        50764,
+        11236,
+        1996,
+        9395,
+        22579,
+        13,
+        50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.5313923115632972,
+      "compression_ratio": 1.2300884955752212,
+      "no_speech_prob": 0.2584729790687561,
+      "words": [
+        {
+          "word": " Tot",
+          "start": 8.3,
+          "end": 8.76,
+          "probability": 0.98291015625
+        },
+        {
+          "word": " volgend",
+          "start": 8.76,
+          "end": 9.14,
+          "probability": 0.99462890625
+        },
+        {
+          "word": " jaar.",
+          "start": 9.14,
+          "end": 9.3,
+          "probability": 0.9990234375
+        }
+      ]
+    }
+  ],
+  "language": "nl",
+  "source_clip_start_seconds": 171
+}

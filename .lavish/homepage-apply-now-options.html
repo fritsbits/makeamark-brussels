@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage Apply Now scribble — colour options</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #F5E2CA;
+      --cream-inset: #EBD5BB;
+      --ink: #29231D;
+      --red: #C33F40;
+      --rule: #DFC3A3;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+    }
+    * { box-sizing: border-box; }
+    body { max-width: 1120px; margin: 0 auto; padding: clamp(28px, 6vw, 72px) clamp(20px, 4vw, 48px) 64px; }
+    h1, h2 { font-family: Impact, "Arial Narrow", sans-serif; font-weight: 600; text-transform: uppercase; }
+    h1 { max-width: 12ch; margin: 0 0 18px; color: var(--red); font-size: clamp(40px, 6vw, 78px); line-height: .92; }
+    .intro { max-width: 660px; margin: 0 0 42px; font-size: 17px; line-height: 1.6; }
+    .options { display: grid; gap: 0; }
+    .option { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(240px, .82fr); align-items: center; gap: clamp(24px, 5vw, 60px); padding: 28px 0; border-top: 1px solid var(--rule); }
+    .option:last-child { border-bottom: 1px solid var(--rule); }
+    .specimen { display: grid; place-items: center; min-height: 190px; padding: 20px; background: var(--cream-inset); }
+    .mark { display: block; width: min(100%, 350px); aspect-ratio: 620 / 330; background-position: center; background-repeat: no-repeat; background-size: contain; }
+    .mark--ink-red { background-image: url("assets/apply-now-ink-red.svg"); }
+    .mark--red { background-image: url("assets/apply-now-red.svg"); }
+    .mark--ink { background-image: url("assets/apply-now-ink.svg"); }
+    .option h2 { margin: 0 0 8px; color: var(--red); font-size: clamp(26px, 3vw, 34px); line-height: .98; }
+    .option p { max-width: 42ch; margin: 0; font-size: 16px; line-height: 1.55; }
+    .tag { display: inline-block; margin-bottom: 9px; color: var(--ink); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .note { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; line-height: 1.6; }
+    @media (max-width: 680px) {
+      .option { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0; }
+      .specimen { min-height: 160px; }
+      .mark { width: min(100%, 310px); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Apply now, in your own hand</h1>
+    <p class="intro">Three color treatments for your exact vector scribble. Each keeps the oval, the handwritten “Apply now!” and the single down-right arrow together as one mark.</p>
+    <section class="options" aria-label="Scribble color treatments">
+      <article class="option">
+        <div class="specimen"><span class="mark mark--ink-red" role="img" aria-label="Apply now, written in Ink inside a Marker Red hand-drawn oval with a Marker Red arrow"></span></div>
+        <div><span class="tag">A · Recommended</span><h2>Ink + Marker Red</h2><p>Ink keeps the handwritten words crisp; Marker Red puts the emphasis on the oval and arrow. The closest fit with the site’s existing palette.</p></div>
+      </article>
+      <article class="option">
+        <div class="specimen"><span class="mark mark--red" role="img" aria-label="Apply now, oval and arrow all in Marker Red"></span></div>
+        <div><span class="tag">B · One-color stamp</span><h2>All Marker Red</h2><p>A louder, single-ink callout. It reads like a mark-up on the cream paper and pulls the strongest attention.</p></div>
+      </article>
+      <article class="option">
+        <div class="specimen"><span class="mark mark--ink" role="img" aria-label="Apply now, oval and arrow all in Ink"></span></div>
+        <div><span class="tag">C · Quietest</span><h2>All Ink</h2><p>A restrained, high-contrast version. The hand-drawn shape stays prominent without adding another red accent to the hero.</p></div>
+      </article>
+    </section>
+    <p class="note"><strong>Placement proposal:</strong> align the mark under the hero introduction. It replaces the status label and the custom two-arrow cue completely; its own arrow points down toward both audience panels. When applications are not open, the page should keep showing the existing edition status instead of “Apply now.” The link still needs an accessible name.</p>
+  </main>
+</body>
+</html>

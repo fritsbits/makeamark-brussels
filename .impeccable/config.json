@@ -1,0 +1,464 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/ux-strategy.html"
+        ],
+        "createdAt": "2026-10-18T11:41:25.496Z",
+        "reason": "Large cream display headings on the existing Make a Mark red token measure 4.0:1; at 28px and above they exceed WCAG AA large-text contrast of 3:1. Smaller text on red was changed to white."
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          ".lavish/ux-strategy.html"
+        ],
+        "createdAt": "2026-10-18T11:41:25.514Z",
+        "reason": "The reported brown text on cream uses #51463f and #4e4036 on #f5e2ca; both are dark brown foregrounds with strong contrast, not washed-out gray. This is intentional text styling."
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          ".lavish/ux-scope.html"
+        ],
+        "createdAt": "2026-10-18T12:02:09.079Z",
+        "reason": "The only flagged palette pairing is #51463f text on #f5e2ca cream, a dark brown foreground with strong contrast; the detector labels its hue gray, but the text is legible and intentional."
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          ".lavish/ux-structure.html"
+        ],
+        "createdAt": "2026-10-18T12:10:23.792Z",
+        "reason": "The only flagged pairing is #51463f text on #f5e2ca cream, a dark brown foreground with strong contrast; the hue-based detector calls it gray, but the text is legible and intentional."
+      },
+      {
+        "rule": "gray-on-color",
+        "value": "*",
+        "files": [
+          ".lavish/ux-skeleton.html"
+        ],
+        "createdAt": "2026-10-18T12:42:58.770Z",
+        "reason": "The only flagged pairing is #51463f text on #f5e2ca cream, a dark brown foreground with strong contrast; the detector mistakes its hue for washed-out gray."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".lavish/ux-strategy.html"
+        ],
+        "createdAt": "2026-10-18T12:59:09.344Z",
+        "reason": "The local body alias resolves to Plus Jakarta Sans, which DESIGN.md documents as the body font; the detector drops the leading Plus when parsing these standalone review pages."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".lavish/ux-scope.html"
+        ],
+        "createdAt": "2026-10-18T12:59:09.347Z",
+        "reason": "The local body alias resolves to Plus Jakarta Sans, which DESIGN.md documents as the body font; the detector drops the leading Plus when parsing these standalone review pages."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".lavish/ux-structure.html"
+        ],
+        "createdAt": "2026-10-18T12:59:14.449Z",
+        "reason": "The local body alias resolves to Plus Jakarta Sans, which DESIGN.md documents as the body font; the detector drops the leading Plus when parsing these standalone review pages."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".lavish/ux-skeleton.html"
+        ],
+        "createdAt": "2026-10-18T12:59:14.511Z",
+        "reason": "The local body alias resolves to Plus Jakarta Sans, which DESIGN.md documents as the body font; the detector drops the leading Plus when parsing these standalone review pages."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/messaging-review.html"
+        ],
+        "createdAt": "2026-10-18T17:10:52.232Z",
+        "reason": "Existing Make a Mark body font documented in DESIGN.md and required for this branded review artifact; preserve incumbent identity."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/messaging-review.html"
+        ],
+        "createdAt": "2026-10-18T17:10:52.290Z",
+        "reason": "Static-analysis false positive verified in browser: red #c33f40 text is exclusively display type at 25px or larger, so 4.0:1 exceeds the 3:1 large-text requirement; small text is ink. Scoped to this review artifact."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".lavish/assets/homepage-boldness/overview.css"
+        ],
+        "createdAt": "2026-10-18T19:41:32.100Z",
+        "reason": "Agent: intentional type-scale studies in owner-requested homepage boldness review; public type tokens unchanged"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(60,30,20,.18)",
+        "files": [
+          ".lavish/assets/homepage-boldness/overview.css"
+        ],
+        "createdAt": "2026-10-18T19:41:32.164Z",
+        "reason": "Agent: same clipping photo shadow documented in DESIGN.md; detector misses its Elevation and Depth prose"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".lavish/assets/homepage-boldness/photo-demo.html"
+        ],
+        "createdAt": "2026-10-18T19:41:32.229Z",
+        "reason": "Agent: intentional type-scale studies in owner-requested homepage boldness review; public type tokens unchanged"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(60,30,20,.18)",
+        "files": [
+          ".lavish/assets/homepage-boldness/photo-demo.html"
+        ],
+        "createdAt": "2026-10-18T19:41:32.289Z",
+        "reason": "Agent: same clipping photo shadow documented in DESIGN.md; detector misses its Elevation and Depth prose"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/assets/homepage-boldness/overview.css"
+        ],
+        "createdAt": "2026-10-18T19:51:27.349Z",
+        "reason": "Agent: review reuses incumbent body font explicitly recorded in DESIGN.md; owner selected preservation of the Brussels identity"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/homepage-boldness.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.407Z",
+        "reason": "Agent: review reuses incumbent body font explicitly recorded in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jakarta sans",
+        "files": [
+          ".lavish/assets/homepage-boldness/photo-demo.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.464Z",
+        "reason": "Agent: Chromium computes Plus Jakarta Sans exactly as declared in DESIGN.md; detector truncates the family name"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jakarta sans",
+        "files": [
+          ".lavish/homepage-boldness.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.521Z",
+        "reason": "Agent: Chromium computes Plus Jakarta Sans exactly as declared in DESIGN.md; detector truncates the family name"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/assets/homepage-boldness/photo-demo.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.578Z",
+        "reason": "Agent: measured all text at1440/1024/390px; flagged red display heading is48-100px and passes3:1 with3.45:1; body text passes4.5:1"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/homepage-boldness.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.634Z",
+        "reason": "Agent: measured all text at1440/1024/390px; flagged red and cream display headings are42px or larger and pass3:1; body text passes4.5:1"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".lavish/homepage-boldness.html"
+        ],
+        "createdAt": "2026-10-18T19:51:27.690Z",
+        "reason": "Agent: Chromium measures44-64px top padding on section dividers; detector misses fluid padding-block"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/assets/button-rollovers/options.css"
+        ],
+        "createdAt": "2026-10-18T20:19:07.620Z",
+        "reason": "Agent: existing body font from DESIGN.md, preserved in the requested review"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "shoulders display",
+        "files": [
+          ".lavish/button-rollovers.html"
+        ],
+        "createdAt": "2026-10-18T20:19:07.691Z",
+        "reason": "Agent: measured Big Shoulders Display in Chromium matches DESIGN.md; detector truncates family name"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jakarta sans",
+        "files": [
+          ".lavish/button-rollovers.html"
+        ],
+        "createdAt": "2026-10-18T20:19:07.764Z",
+        "reason": "Agent: measured Plus Jakarta Sans in Chromium matches DESIGN.md; detector truncates family name"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/button-rollovers.html"
+        ],
+        "createdAt": "2026-10-18T20:19:07.829Z",
+        "reason": "Agent: measured text at1440/1024/390px; flagged red headings are40px or larger and pass3:1 with3.45:1; normal text passes4.5:1"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".lavish/button-rollovers.html"
+        ],
+        "createdAt": "2026-10-18T20:19:07.890Z",
+        "reason": "Agent: report section has44px padding-block; detector misses logical spacing"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "19px",
+        "files": [
+          ".lavish/assets/button-rollovers/options.css"
+        ],
+        "createdAt": "2026-10-18T20:19:07.955Z",
+        "reason": "Agent: review introduction size, not a new public type token"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "files": [
+          ".lavish/assets/button-rollovers/options.css"
+        ],
+        "createdAt": "2026-10-18T20:19:08.019Z",
+        "reason": "Agent: review tradeoff and selection label size, not a new public type token"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/assets/audience-arrange/preview.css"
+        ],
+        "createdAt": "2026-10-18T22:08:53.424Z",
+        "reason": "Existing project font declared in DESIGN.md; this audience-layout preview preserves the established identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/audience-arrange.html"
+        ],
+        "createdAt": "2026-10-18T22:08:53.492Z",
+        "reason": "Existing project font declared in DESIGN.md; the Lavish overview matches the subject project design system."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/copywriting-benefits.html"
+        ],
+        "createdAt": "2026-10-19T06:47:14.684Z",
+        "reason": "The Make a Mark design system specifies Plus Jakarta Sans for body copy."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          ".lavish/copywriting-benefits.html"
+        ],
+        "createdAt": "2026-10-19T06:47:14.708Z",
+        "reason": "The Make a Mark design system requires uppercase display headings; body paragraphs remain in sentence case."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "shoulders display",
+        "files": [
+          ".lavish/maker-hero-arrangement.html"
+        ],
+        "createdAt": "2026-10-19T06:58:37.741Z",
+        "reason": "The review reuses Big Shoulders Display from DESIGN.md; the detector drops the leading word Big in this standalone HTML file."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jakarta sans",
+        "files": [
+          ".lavish/maker-hero-arrangement.html"
+        ],
+        "createdAt": "2026-10-19T06:58:37.767Z",
+        "reason": "The review reuses Plus Jakarta Sans from DESIGN.md; the detector drops the leading word Plus in this standalone HTML file."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/maker-hero-arrangement.html"
+        ],
+        "createdAt": "2026-10-19T06:58:44.241Z",
+        "reason": "The detector cannot distinguish the artifact's bold display headings from body text. Remaining #c33f40 uses are 24px+ bold headings with 4.0:1 contrast on cream, above the 3:1 WCAG AA large-text threshold; small copy was changed to ink and date/lead text uses cream-light."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          ".lavish/maker-hero-arrangement.html"
+        ],
+        "createdAt": "2026-10-19T07:05:43.159Z",
+        "reason": "The artifact uses uppercase only for display headings and short navigation/action labels; it contains no all-caps body paragraphs. These are sanctioned short-label uses."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".lavish/date-lockups.html"
+        ],
+        "createdAt": "2026-10-19T07:34:08.133Z",
+        "reason": "Agent authored distinct date typography specimens for the owner-requested comparison; these are proposals, not product token changes."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/date-lockups.html"
+        ],
+        "createdAt": "2026-10-19T07:36:04.842Z",
+        "reason": "Agent confirmed rendered text meets WCAG AA in the comparison: the static warning does not resolve inherited and overridden foreground/background colours; DOM contrast check found zero failures."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/date-lockups.html"
+        ],
+        "createdAt": "2026-10-19T07:39:14.191Z",
+        "reason": "The project DESIGN.md specifies self-hosted Plus Jakarta Sans. This lockup comparison preserves the established product typography rather than proposing a new identity."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".lavish/date-lockups.html"
+        ],
+        "createdAt": "2026-10-19T07:39:14.212Z",
+        "reason": "Agent reviewed desktop-options-d06.png and the phone hero: coloured specimen containers have 24–32px padding. Flush horizontal edges belong to editorial top/bottom rules, including the weekday separator with 9–10px bottom padding, rather than text cramped against enclosing box edges."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          ".lavish/footer-polish-review.html"
+        ],
+        "createdAt": "2026-10-19T08:14:01.188Z",
+        "reason": "Footer navigation uses short uppercase link labels, not a long body passage."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          ".lavish/footer-polish-review.html"
+        ],
+        "createdAt": "2026-10-19T08:14:17.100Z",
+        "reason": "The review mirrors the Make a Mark body face defined in the project design system."
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          ".lavish/footer-polish-review.html"
+        ],
+        "createdAt": "2026-10-19T08:14:22.365Z",
+        "reason": "The artifact uses a 42–78px display title, 26–34px section headings, and 13px body; the detector misreads its font shorthand."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/footer-polish-review.html"
+        ],
+        "createdAt": "2026-10-19T08:14:56.759Z",
+        "reason": "The only flagged text is the 22px bold cream display wordmark at 4.0:1; it exceeds the 18.66px bold large-text threshold and passes WCAG AA at 3:1."
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".lavish/homepage-apply-now-options.html"
+        ],
+        "createdAt": "2026-10-19T09:06:58.918Z",
+        "reason": "All copy is Ink; Marker Red is used only for large display headings. Marker Red on Paper Cream is 4.05:1, exceeding the 3:1 large-text threshold."
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "createdAt": "2026-10-19T09:06:58.941Z",
+        "reason": "The project design system specifies Plus Jakarta Sans for reading copy; this comparison page intentionally follows that documented typography."
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          ".lavish/launch-audit.html"
+        ],
+        "createdAt": "2026-10-19T10:21:15.641Z",
+        "reason": "Agent review: the bottom border is the active indicator on unrounded navigation tabs, not an accent border on a rounded card."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          ".lavish/launch-audit.html"
+        ],
+        "createdAt": "2026-10-19T10:21:15.704Z",
+        "reason": "Agent review: this standalone comparison report uses a smaller reading and display scale to keep real before/after site captures legible. It preserves the actual project fonts and palette; the public app typography is unchanged."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "shoulders display",
+        "files": [
+          ".lavish/assets/launch-audit/og-proposal-source.html"
+        ],
+        "createdAt": "2026-10-19T10:41:41.721Z",
+        "reason": "Agent review: source declares Big Shoulders Display exactly as DESIGN.md typography specifies; detector truncates the leading Big in font shorthand. Scoped to the sharing-image source."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "jakarta sans",
+        "files": [
+          ".lavish/assets/launch-audit/og-proposal-source.html"
+        ],
+        "createdAt": "2026-10-19T10:41:41.781Z",
+        "reason": "Agent review: source declares Plus Jakarta Sans exactly as DESIGN.md typography specifies; detector truncates the leading Plus in font shorthand. Scoped to the sharing-image source."
+      }
+    ]
+  }
+}

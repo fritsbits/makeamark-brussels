@@ -1,0 +1,27 @@
+{
+  "year": 2027,
+  "kicker": "The ninth edition",
+  "title": "Make a Mark for Brussels youth",
+  "dates": "Saturday 27 March 2027",
+  "startDate": "2027-03-27",
+  "endDate": "2027-03-27",
+  "status": "open",
+  "applyUrl": "/#take-part",
+  "photo": "edition-2026-group.jpg",
+  "photoTreatment": "monochrome",
+  "photoAlt": "Makers and organisers of Make a Mark Brussels in a courtyard, photographed from above",
+  "gallery": [
+    { "file": "edition-2026-group.jpg", "alt": "Makers and organisers of Make a Mark Brussels in a courtyard, photographed from above" },
+    { "file": "audience-in-bright-workshop.jpg", "alt": "Participants listen to a facilitator in a bright workshop." },
+    { "file": "participants-portrait-bright-corridor.jpg", "alt": "Three participants pose together in a bright corridor." },
+    { "file": "participants-preparing-meal.jpg", "alt": "Participants prepare food together beside a serving table." },
+    { "file": "team-working-in-studio.jpg", "alt": "A small team works together around a table in a bright studio." },
+    { "file": "makers-designing-on-laptop.jpg", "alt": "A participant works on a colorful illustration at a laptop." },
+    { "file": "workshop-participants-photographing.jpg", "alt": "A participant with a camera documents the workshop as others sit around a table." },
+    { "file": "makers-reviewing-work.jpg", "alt": "A small team leans over a laptop and papers at a worktable." },
+    { "file": "speaker-presenting-question.jpg", "alt": "A speaker presents beside a projected question." },
+    { "file": "presenter-on-stage-with-projection.jpg", "alt": "A presenter speaks on stage beside a projected image." },
+    { "file": "audience-listening-in-dark-room.jpg", "alt": "Audience members listen to a speaker in a dark room." }
+  ],
+  "body": "This year, we're working with organisations that support young people in Brussels.\n\nVenue to be confirmed."
+}

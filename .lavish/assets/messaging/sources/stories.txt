@@ -1,0 +1,15 @@
+resources/views/sections/stories.blade.php
+
+1  <section class="strip" aria-label="Photos from past editions">
+2      <ul class="strip__list" role="list" tabindex="0">
+3          @foreach ($stories as $story)
+4              <li class="strip__item">
+5                  <x-photo-reveal :file="$story['file']" :widths="[240, 320, 480, 640]" :default-width="320" sizes="(max-width: 760px) 150px, 190px" :alt="$story['alt']" width="320" height="569" :loading="$loop->index < 4 ? 'eager' : 'lazy'" />
+6                  <span class="visually-hidden">Photo by {{ $story['credit'] }}</span>
+7              </li>
+8          @endforeach
+9      </ul>
+10      <div class="strip__cta">
+11          <x-pill :href="$site['instagramUrl']">{{ $site['hero']['instagramLabel'] }}</x-pill>
+12      </div>
+13  </section>

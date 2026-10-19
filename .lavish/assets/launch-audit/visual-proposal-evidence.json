@@ -1,0 +1,29 @@
+{
+  "date": {
+    "before": "- time",
+    "after": "- time: Saturday 27 March 2027"
+  },
+  "scope": "Temporary browser-only proposals; no application source changed",
+  "captures": [
+    "contrast-before.png",
+    "contrast-after.png",
+    "fields-before.png",
+    "fields-after.png",
+    "youth-current-intro.png",
+    "youth-current-question.png",
+    "youth-required-intro.png",
+    "youth-required-question.png",
+    "youth-priority-intro.png",
+    "youth-priority-question.png"
+  ],
+  "menu": {
+    "before": {
+      "label": "Apply now. Explore ways to take part.",
+      "background": true
+    },
+    "after": {
+      "label": "Menu",
+      "background": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+resources/views/components/photo-reveal.blade.php
+Captured 18 October 2026
+
+0001  @props(['file', 'alt', 'widths' => [320], 'defaultWidth' => null, 'sizes' => '100vw', 'width', 'height', 'loading' => 'lazy', 'label' => null])
+0002  @php($label ??= $alt)
+0003  <button type="button" {{ $attributes->class(['photo-reveal']) }}
+0004      x-data="photoReveal" disabled :disabled="!ready" :data-ready="ready"
+0005      :class="{ 'is-revealed': hovered || pinned }"
+0006      @pointerenter="enter($event)" @pointerleave="leave()" @pointercancel="leave()"
+0007      @click="toggle()" @keydown.escape.window="restore()"
+0008      aria-label="Show original photo: {{ $label }}"
+0009      :aria-label="pinned ? @js('Return to desaturated photo: '.$label) : @js('Show original photo: '.$label)"
+0010      aria-pressed="false" :aria-pressed="pinned">
+0011      <span class="photo-frame photo-reveal__frame">
+0012          <span class="photo-reveal__photo" x-ref="photo">
+0013              <x-photo :file="$file" :widths="$widths" :default-width="$defaultWidth" treatment="monochrome" :sizes="$sizes" :alt="$alt" :width="$width" :height="$height" :loading="$loading" />
+0014              <x-photo class="photo-reveal__original" x-ref="original" :file="$file" :widths="$widths" :default-width="$defaultWidth" :sizes="$sizes" alt="" aria-hidden="true" :width="$width" :height="$height" :loading="$loading" />
+0015          </span>
+0016      </span>
+0017  </button>

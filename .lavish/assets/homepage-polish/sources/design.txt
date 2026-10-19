@@ -1,0 +1,267 @@
+DESIGN.md
+Captured 18 October 2026
+
+0001  ---
+0002  name: Make a Mark Brussels
+0003  description: Two-colour broadsheet for a one-day Brussels make-a-thon.
+0004  colors:
+0005    marker-red: "#C33F40"
+0006    headline-red: "#D14B4C"
+0007    paper-cream: "#F5E2CA"
+0008    paper-cream-light: "#FFF6EA"
+0009    paper-cream-inset: "#EBD5BB"
+0010    ink: "#1E1A16"
+0011    duotone-tint: "rgba(121, 26, 27, 0.3)"
+0012    rule-red: "rgba(195, 63, 64, 0.35)"
+0013  typography:
+0014    display:
+0015      fontFamily: "Big Shoulders Display, Impact, sans-serif"
+0016      fontSize: "clamp(56px, 9vw, 118px)"
+0017      fontWeight: 600
+0018      lineHeight: 0.92
+0019      letterSpacing: "0.01em"
+0020    headline:
+0021      fontFamily: "Big Shoulders Display, Impact, sans-serif"
+0022      fontSize: "clamp(40px, 6vw, 78px)"
+0023      fontWeight: 600
+0024      lineHeight: 0.92
+0025      letterSpacing: "0.01em"
+0026    title:
+0027      fontFamily: "Big Shoulders Display, Impact, sans-serif"
+0028      fontSize: "clamp(26px, 3vw, 34px)"
+0029      fontWeight: 600
+0030      lineHeight: 0.92
+0031      letterSpacing: "0.01em"
+0032    numeral:
+0033      fontFamily: "Big Shoulders Display, Impact, sans-serif"
+0034      fontSize: "clamp(48px, 5vw, 64px)"
+0035      fontWeight: 300
+0036      lineHeight: 0.92
+0037    process-numeral:
+0038      fontFamily: "Big Shoulders Display, Impact, sans-serif"
+0039      fontSize: "clamp(72px, 7vw, 104px)"
+0040      fontWeight: 300
+0041      lineHeight: 1
+0042    body:
+0043      fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+0044      fontSize: "17px"
+0045      fontWeight: 400
+0046      lineHeight: 1.6
+0047    label:
+0048      fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+0049      fontSize: "12px"
+0050      fontWeight: 600
+0051      letterSpacing: "0.12em"
+0052    small:
+0053      fontFamily: "Plus Jakarta Sans, system-ui, sans-serif"
+0054      fontSize: "13px"
+0055      fontWeight: 400
+0056  rounded:
+0057    card: "10px"
+0058    photo: "10px"
+0059    block: "18px"
+0060    pill: "999px"
+0061  spacing:
+0062    block-margin: "clamp(12px, 2vw, 24px)"
+0063    gutter: "clamp(20px, 3vw, 40px)"
+0064    section-y: "clamp(56px, 8vw, 96px)"
+0065    container: "1360px"
+0066  components:
+0067    pill-outline:
+0068      textColor: "{colors.ink}"
+0069      typography: "{typography.label}"
+0070      rounded: "{rounded.pill}"
+0071      padding: "12px 20px"
+0072    pill-outline-hover:
+0073      backgroundColor: "{colors.marker-red}"
+0074      textColor: "{colors.paper-cream}"
+0075    pill-solid:
+0076      backgroundColor: "{colors.marker-red}"
+0077      textColor: "{colors.paper-cream}"
+0078      typography: "{typography.label}"
+0079      rounded: "{rounded.pill}"
+0080      padding: "12px 20px"
+0081    pill-solid-hover:
+0082      backgroundColor: "{colors.paper-cream}"
+0083      textColor: "{colors.marker-red}"
+0084    block-red:
+0085      backgroundColor: "{colors.marker-red}"
+0086      textColor: "{colors.paper-cream-light}"
+0087      rounded: "{rounded.block}"
+0088      padding: "{spacing.section-y} clamp(20px, 4vw, 56px)"
+0089    org-tag:
+0090      textColor: "{colors.paper-cream-light}"
+0091      rounded: "{rounded.pill}"
+0092      padding: "8px 14px"
+0093    nav-link:
+0094      textColor: "{colors.ink}"
+0095      typography: "{typography.label}"
+0096  ---
+0097  
+0098  # Design System: Make a Mark Brussels
+0099  
+0100  ## Overview
+0101  
+0102  **Creative North Star: "The Brussels Broadsheet"**
+0103  
+0104  The site reads like a two-colour broadsheet printed for the event.
+0105  Condensed uppercase headlines in red shout across warm cream paper.
+0106  Inset red blocks with rounded corners break the page into editions of the story. All photographs use neutral monochrome and reveal their original color on rollover or activation.
+0107  Density is low and the voice is loud: a few big statements, short body copy, generous section spacing.
+0108  
+0109  The print metaphor sets the limits.
+0110  There are two ink families (red and ink-black) on cream paper, with two red surfaces and two cream surfaces creating tonal depth.
+0111  Photos sit on the page at slight angles, like clippings, with soft print shadows; everything else is flat.
+0112  The hand-drawn Brussels logo is the one human mark among the type.
+0113  
+0114  **Key Characteristics:**
+0115  - Two inks on cream; no third accent colour.
+0116  - Condensed uppercase display type at poster scale, set tight (0.92 line height).
+0117  - Rounded red blocks inset from the viewport edge, alternating with cream sections.
+0118  - Neutral monochrome photography throughout, revealing full colour on hover, tap or keyboard activation.
+0119  - Tracked uppercase pills as the only button form.
+0120  
+0121  ## Colors
+0122  
+0123  A two-ink print palette: red does the shouting, ink does the reading, cream is the paper.
+0124  
+0125  ### Primary
+0126  - **Marker Red** (`marker-red`): the main ink. Fills the red blocks, the footer, solid pills, the mobile menu button, and the photo-strip focus ring and scrollbar. Text inside a red block is cream.
+0127  - **Headline Red** (`headline-red`): a slightly brighter red for display type, numerals, FAQ questions, and the wordmark on cream. It also supplies `--red-surface` for the homepage process-number panels. At 3.45:1 on cream it is for large text only; small cream text does not appear on the lighter red panels.
+0128  
+0129  ### Neutral
+0130  - **Paper Cream** (`paper-cream`): the page background, nav background and display headings inside red blocks.
+0131  - **Paper Cream Light** (`paper-cream-light`): body text and outlines inside red blocks (4.78:1 on Marker Red).
+0132  - **Paper Cream Inset** (`paper-cream-inset`, `#EBD5BB`): darker cream behind the homepage's two equal audience panels in the refinement preview. It comes from the global site's schedule panels. Ink text has 12.16:1 contrast on it. [Review](docs/wiki/build/12-global-design-review.md)
+0133  - **Ink** (`ink`): all body copy on cream (13.7:1), nav links, and the skip link.
+0134  - **Duotone Tint** (`duotone-tint`): a dark red wash multiplied over greyscale photos to create the duotone.
+0135  - **Rule Red** (`rule-red`): hairline dividers between FAQ items and above the maker steps.
+0136  
+0137  ### Named Rules
+0138  **The Two Inks Rule.** Red and ink on cream, and nothing else. A new colour needs a product reason, not a decorative one.
+0139  
+0140  **The Large Red Rule.** Headline Red is used for large text and the lighter-red process-number panels. Body-size red text on cream uses Marker Red at minimum, and small cream text sits on the deeper Marker Red. Lighter-red panels carry large numerals only.
+0141  
+0142  ## Typography
+0143  
+0144  **Display Font:** Big Shoulders Display (with Impact, sans-serif), self-hosted in weights 300 and 600.
+0145  **Body Font:** Plus Jakarta Sans (with system-ui, sans-serif), self-hosted in weights 400 and 600.
+0146  
+0147  **Character:** A condensed, industrial poster face does all the talking.
+0148  A friendly, open geometric sans carries the explanations.
+0149  
+0150  ### Hierarchy
+0151  - **Display** (600, `clamp(56px, 9vw, 118px)`, 0.92): the homepage hero is left aligned and capped at 13ch, paired with the photo collage on desktop.
+0152  - **Headline** (600, `clamp(40px, 6vw, 78px)`, 0.92): section headings such as "Info for Makers" and "FAQ".
+0153  - **Title** (600, `clamp(26px, 3vw, 34px)`, 0.92): step titles. FAQ questions use the same face at `clamp(20px, 2.2vw, 28px)`.
+0154  - **Numeral** (300, `clamp(48px, 5vw, 64px)`): zero-padded step and FAQ numbers ("01", "02"), light weight against the semibold titles.
+0155  - **Process numeral** (300, `clamp(72px, 7vw, 104px)`, 1): homepage process numbers on lighter-red panels; uses `--fs-process-num`.
+0156  - **Body** (400, 17px, 1.6): all prose. The hero intro rises to `clamp(16px, 1.4vw, 19px)`. Measure stays between 560 and 680px.
+0157  - **Label** (600, 12px, 0.12em tracking, uppercase): kickers, nav links, footer links, and pill text.
+0158  
+0159  ### Named Rules
+0160  **The Shout and Explain Rule.** Display type is always uppercase Big Shoulders. Anything a reader has to understand (instructions, answers, dates) is sentence-case Plus Jakarta Sans.
+0161  
+0162  **The Light Numeral Rule.** Sequence numbers use the 300 weight, so the semibold title next to them stays the loudest element.
+0163  
+0164  ## Layout
+0165  
+0166  The owner-selected distilled homepage pairs its existing headline and two
+0167  audience actions with a two-photo collage. At 860px and below, the hero becomes
+0168  one column and displays one group image. The hero leads directly to equal
+0169  audience panels on darker cream. One red edition block combines date and youth
+0170  focus; a Brussels photo with evidence links follows. The homepage has no
+0171  process section, story strip or global FAQ. Audience pages carry process,
+0172  preparation and cost details. The original remains in the local comparison.
+0173  [Selection and implementation](docs/wiki/build/13-messaging-review.md)
+0174  
+0175  A single centred column with a 1360px container and a fluid gutter (`clamp(20px, 3vw, 40px)`).
+0176  Cream sections sit directly on the page.
+0177  Red blocks are inset by the block margin on three sides, so cream paper shows around them like a page border.
+0178  Sections breathe with `clamp(56px, 8vw, 96px)` vertical padding.
+0179  
+0180  Grids are simple: the homepage hero uses 1.12fr / 1fr; edition details use two equal columns; the evidence section uses 1.1fr / .9fr with a maximum 600px photo; About uses 1.2fr / 1fr. Both audience panels have equal weight and the same darker-cream surface.
+0181  Everything collapses to one column at 860px, and the nav becomes a menu toggle at 760px.
+0182  The original comparison retains its horizontally scrolling photo strip; the selected homepage uses one Brussels evidence image.
+0183  The sticky nav is about 72px tall, and anchored sections offset their scroll margin to match.
+0184  
+0185  ## Elevation & Depth
+0186  
+0187  The page is flat.
+0188  Depth appears only on photographs, which behave like printed clippings laid on the paper.
+0189  
+0190  ### Shadow Vocabulary
+0191  - **Clipping** (`box-shadow: 0 10px 24px rgba(60, 30, 20, 0.18)`): all photographs use the shared `.photo-frame`, with rounded corners and no paper border.
+0192  
+0193  ### Named Rules
+0194  **The Only Photos Lift Rule.** Blocks, pills, tags, and text never cast shadows. If something isn't a photograph, it stays flat on the paper.
+0195  
+0196  **The Clipping Tilt Rule.** Hero photos rotate -5deg and 4deg on desktop, or -2deg on mobile; strip photos rotate between -2deg and 2deg, and the group photo rotates 3deg. Alternate strip items drop 18px. Revealed photos straighten; reduced-motion users get them straight.
+0197  
+0198  ## Shapes
+0199  
+0200  Soft rectangles and full pills.
+0201  Red blocks and the footer use the block radius (18px), photo cards the shared card radius (10px), and the skip link and small chrome around 6 to 10px.
+0202  Interactive and list elements (pills, organisation tags) are full pills.
+0203  Circles appear only as the FAQ disclosure icon and the mobile menu button.
+0204  Lines are hairlines: 1px Rule Red for dividers, 1.5px for pill and icon outlines.
+0205  
+0206  ## Components
+0207  
+0208  ### Pills (buttons)
+0209  Ticket-stub confident: uppercase, tracked, outlined at rest, flooding with ink on hover.
+0210  - **Shape:** full pill, 1.5px border, 12px × 20px padding, Label type.
+0211  - **Outline on cream:** Marker Red border with ink text. Hover and focus flood with Marker Red and turn the text cream.
+0212  - **Outline in a red block:** a cream border in `currentColor`. Hover floods with Paper Cream Light and turns the text red.
+0213  - **Solid:** Marker Red fill with cream text, inverting to cream with red text on hover. Used only for the primary action of the moment (Apply while applications are open).
+0214  - Pills render through `flux:button` with the `pill` class, and external links open in a new tab.
+0215  
+0216  ### Red Block
+0217  The broadsheet's feature box: Marker Red, 18px radius, inset from the viewport, and padded generously.
+0218  Headings inside are Paper Cream, and body text and links are Paper Cream Light.
+0219  
+0220  ### Photography and photo strip
+0221  
+0222  The hero currently uses two temporary international photos, recorded with
+0223  source URLs in `resources/content/site.json` under `hero.photos`. They are
+0224  locally served responsive WebPs and use neutral grayscale with 1.04 contrast,
+0225  without a cream/red wash. A visible source caption identifies the global
+0226  community. Photo corners use the 10px card radius and the existing Clipping
+0227  shadow. The desktop collage tilts -5deg and 4deg; mobile shows one image at
+0228  -2deg. Reduced-motion mode removes these rotations. Replace these placeholders
+0229  with sourced Brussels photos before public launch. All three homepage photographs share
+0230  `<x-photo-reveal>` with a monochrome base, unfiltered color overlay and the
+0231  same rounded frame and shadow. [Photo selection](docs/raw/2026-10-18-all-photo-treatment-selection.md); [homepage selection](docs/raw/2026-10-18-messaging-selection.md).
+0232  - **Evidence photo:** one Brussels group photo with a 600px maximum width.
+0233  - **Original comparison only:** the former edition photo and tilted 9:16 story strip remain in the preserved version.
+0234  - **Monochrome and color reveal:** all photos use `grayscale(1) contrast(1.04)` through `.photo--monochrome`. Each reveals an unfiltered original-color overlay with a 700ms expanding reveal, 40px feather, 1.025 zoom and straightening. Click, tap or Enter pins the color image; Escape restores monochrome. Reduced-motion mode removes zoom, tilt and the transition. Without JavaScript, monochrome remains visible. The saved Riso preset belongs to the local tool and is not selected by public homepage content. [Selection and use](docs/wiki/build/11-site-photo-treatments.md).
+0235  
+0236  ### Organisation Tags
+0237  Cream-outlined pills inside a red block, 14px text, wrapping in a 10px-gap flow.
+0238  Linked tags underline on hover.
+0239  
+0240  ### FAQ Disclosure
+0241  A native `details` list with Rule Red hairlines above and below.
+0242  Each row has a light numeral, an uppercase red question, and a 28px circular plus icon that becomes a minus when the row is open.
+0243  Answers indent under the question to 680px wide.
+0244  
+0245  ### Navigation
+0246  A sticky cream bar with the uppercase red wordmark on the left and Label-style ink links on the right.
+0247  Links underline on hover and focus with a 4px offset.
+0248  Below 760px a 40px Marker Red circle with a cream hamburger opens a full-width cream drop-down.
+0249  
+0250  ## Do's and Don'ts
+0251  
+0252  ### Do:
+0253  - **Do** set every heading in uppercase Big Shoulders Display at 0.92 line height, coloured Headline Red on cream or Paper Cream in a red block.
+0254  - **Do** put the most important information for a phase in a red block inset by the block margin with an 18px radius.
+0255  - **Do** use the shared photo-reveal component for every public photo, with monochrome styling and the original-color reveal.
+0256  - **Do** use the solid pill for at most one primary action per view, and outline pills for everything else.
+0257  - **Do** keep body text Ink on cream or Paper Cream Light on red, at 17px with 1.6 line height.
+0258  
+0259  ### Don't:
+0260  - **Don't** add a third interface colour, gradients, or tints beyond the duotone wash. The owner-selected risoprint inks are confined to opted-in photographs.
+0261  - **Don't** set body-size text in Headline Red (3.45:1 on cream fails WCAG AA for normal text).
+0262  - **Don't** add shadows to blocks, pills, or cards that aren't photographs.
+0263  - **Don't** use square or slightly rounded buttons; actions are full pills.
+0264  - **Don't** replace the hand-drawn Brussels logo with a typeset version or recolour it.

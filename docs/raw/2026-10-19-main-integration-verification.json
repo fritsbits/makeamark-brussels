@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-19",
+  "source_branch": "fritsbits/setup-cascade-digital-product",
+  "source_commit": "1a3599ef125aab5bd8c5b70492c507e41be1c49c",
+  "previous_main_commit": "938f5a7",
+  "integration": "local squash merge; no remote configured",
+  "main_checkout": "/Users/frederikvincx/Documents/makeamark",
+  "php_tests": {
+    "tool": "phpunit",
+    "result": "passed",
+    "tests": 115,
+    "passed": 115,
+    "assertions": 887,
+    "duration_ms": 4544
+  },
+  "javascript_tests": {
+    "command": "node --test tests/js/*.test.mjs",
+    "passed": 5,
+    "failed": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "exit_code": 0,
+    "summary": "\u2713 built in 837ms",
+    "warnings": "Existing root-relative public asset URL warnings; browser requests passed."
+  },
+  "browser": {
+    "passed": true,
+    "observations": [
+      {
+        "route": "/",
+        "width": 1440,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/makers",
+        "width": 1440,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/organisations",
+        "width": 1440,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/privacy",
+        "width": 1440,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/makers",
+        "width": 390,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/organisations",
+        "width": 390,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/privacy",
+        "width": 390,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/",
+        "width": 320,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/makers",
+        "width": 320,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/organisations",
+        "width": 320,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      },
+      {
+        "route": "/privacy",
+        "width": 320,
+        "http": 200,
+        "headings": "passed",
+        "overflow": "none",
+        "forms": "read-only"
+      }
+    ],
+    "submissions": 0,
+    "screenshots": 0,
+    "browserErrors": 0
+  },
+  "herd": {
+    "hostname": "makeamark-southern-ocean.test",
+    "resolved_checkout": "/Users/frederikvincx/Documents/makeamark"
+  },
+  "local_files": {
+    "attachments_and_analysis": ".bloom copied outside Git",
+    "environment": "preserved outside Git",
+    "database": "consistent SQLite backup preserved outside Git",
+    "private_admin_preview": "preserved outside Git",
+    "dependencies": "preserved outside Git",
+    "storage_snapshot": ".bloom/worktree-runtime-backup/storage"
+  }
+}

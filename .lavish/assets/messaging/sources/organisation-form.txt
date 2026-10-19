@@ -1,0 +1,70 @@
+resources/views/applications/organisation.blade.php
+
+1  <form class="application-form" method="POST" action="{{ route('audience.apply.submit', 'organisations') }}">
+2      @csrf
+3      @if ($errors->any())
+4          <div class="application-form__errors" role="alert" tabindex="-1">
+5              <strong>Some details need your attention.</strong>
+6              <ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+7          </div>
+8      @endif
+9      <fieldset class="application-form__group">
+10          <legend>About the organisation</legend>
+11          <label class="application-form__field">Organisation name <span aria-hidden="true">*</span>
+12              <input name="organisation_name" autocomplete="organization" required maxlength="255" value="{{ old('organisation_name') }}">
+13          </label>
+14          <label class="application-form__check"><input type="checkbox" name="brussels_eligibility" value="1" required @checked(old('brussels_eligibility'))> We support people in Brussels. <span aria-hidden="true">*</span></label>
+15          <label class="application-form__field">What is your organisation's mission? <span aria-hidden="true">*</span>
+16              <textarea name="mission" required maxlength="5000" rows="4">{{ old('mission') }}</textarea>
+17          </label>
+18          <label class="application-form__field">Website
+19              <input type="url" name="website" maxlength="2000" value="{{ old('website') }}" placeholder="https://">
+20          </label>
+21          <label class="application-form__field">Social media links
+22              <textarea name="social_media" maxlength="2000" rows="2">{{ old('social_media') }}</textarea>
+23          </label>
+24      </fieldset>
+25  
+26      <fieldset class="application-form__group">
+27          <legend>Your challenge</legend>
+28          <p class="application-form__hint">For example, a visual identity, campaign, communications strategy or social media assets.</p>
+29          <label class="application-form__field">What would you like makers to help you work on? <span aria-hidden="true">*</span>
+30              <textarea name="challenge" required maxlength="5000" rows="6">{{ old('challenge') }}</textarea>
+31          </label>
+32      </fieldset>
+33  
+34      <fieldset class="application-form__group">
+35          <legend>Contact</legend>
+36          <label class="application-form__field">Contact name <span aria-hidden="true">*</span>
+37              <input name="contact_name" autocomplete="name" required maxlength="255" value="{{ old('contact_name') }}">
+38          </label>
+39          <label class="application-form__field">Email address <span aria-hidden="true">*</span>
+40              <input type="email" name="email" autocomplete="email" required maxlength="255" value="{{ old('email') }}">
+41          </label>
+42          <label class="application-form__field">Phone number <span aria-hidden="true">*</span>
+43              <input type="tel" name="phone" autocomplete="tel" required maxlength="80" value="{{ old('phone') }}">
+44          </label>
+45          <span class="application-form__label">Which languages can your contact person work in? <span aria-hidden="true">*</span></span>
+46          <div class="application-form__checks">
+47              @foreach (['English', 'Dutch', 'French'] as $language)
+48                  <label><input type="checkbox" name="languages[]" value="{{ $language }}" @checked(in_array($language, old('languages', [])))> {{ $language }}</label>
+49              @endforeach
+50          </div>
+51      </fieldset>
+52  
+53      <fieldset class="application-form__group">
+54          <legend>Time commitment</legend>
+55          <p class="application-form__hint">Please confirm that your organisation can take part in these steps if selected.</p>
+56          @foreach ([
+57              'assets_ready' => 'We can provide makers with the information and materials they need to work on our challenge.',
+58              'planning_meeting' => 'We can join a planning meeting before the event.',
+59              'feedback_session' => 'We can take part in a feedback session during the make-a-thon.',
+60              'evening_presentation' => 'We can present the work in the evening.',
+61          ] as $key => $commitment)
+62              <label class="application-form__check"><input type="checkbox" name="{{ $key }}" value="1" required @checked(old($key))> {{ $commitment }} <span aria-hidden="true">*</span></label>
+63          @endforeach
+64      </fieldset>
+65  
+66      <p class="application-form__required">* Required fields</p>
+67      <button class="application-form__submit" type="submit">Send organisation application</button>
+68  </form>

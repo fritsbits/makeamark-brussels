@@ -1,0 +1,94 @@
+docs/wiki/build/13-messaging-review.md
+Captured 18 October 2026
+
+0001  ---
+0002  title: Messaging distillation and selected homepage
+0003  tags: [messaging, decision, implementation]
+0004  sources:
+0005    - "../../raw/2026-10-18-messaging-selection.md"
+0006    - "../../../resources/views/home.blade.php"
+0007    - "../../../resources/views/audience.blade.php"
+0008    - "../../../resources/content/site.json"
+0009    - "../../../resources/content/editions/2027.json"
+0010    - "../../../resources/content/previews/original-homepage.json"
+0011    - "../../ux/_structure.md"
+0012    - "../../ux/_skeleton.md"
+0013    - "../strategy/10-tone-of-voice.md"
+0014    - "../../../app/Http/Controllers/MessagingPreviewController.php"
+0015    - "../../../tests/Feature/MessagingPreviewTest.php"
+0016    - "../../../scripts/messaging-preview-check.cjs"
+0017  phase: Build
+0018  updated: 2026-10-18
+0019  status: owner selected distilled version; canonical implementation verified
+0020  ---
+0021  
+0022  # Selected homepage
+0023  
+0024  The owner selected the second, distilled version and requested omission of
+0025  the homepage "How it works" section. The selected home and audience pages now
+0026  use the canonical `/`, `/makers` and `/organisations` routes. Application
+0027  forms remain at their existing destinations.
+0028  [Owner selection](../../raw/2026-10-18-messaging-selection.md).
+0029  
+0030  ## Applied decisions
+0031  
+0032  - D01: one edition block combines the date, youth focus and venue status.
+0033    The obsolete application-preparation caveat is removed.
+0034  - D02: the existing hero headline stays. Audience cards have one invitation
+0035    each, without repeated introductory headings. The owner then removed the
+0036    homepage process section entirely.
+0037  - D03: audience pages explain contribution, costs, preparation, selection and
+0038    event steps. They retain application buttons at the top and bottom.
+0039  - D04: one Brussels photo and descriptive BRUZZ/Instagram links replace
+0040    the story strip. Cost answers live on audience pages. About keeps names,
+0041    short roles and contact. The footer carries the global organiser link.
+0042  
+0043  The established identity, two equal audiences and attributed international
+0044  hero placeholders remain. The latter still need sourced Brussels replacements
+0045  under B-007. There is no new youth signup route or guaranteed finished-product
+0046  claim. [Home](../../../resources/views/home.blade.php);
+0047  [audience pages](../../../resources/views/audience.blade.php);
+0048  [content](../../../resources/content/site.json);
+0049  [voice guide](../strategy/10-tone-of-voice.md).
+0050  
+0051  ## Comparison retained locally
+0052  
+0053  `/tools/messaging/original` renders the previous homepage against a preserved
+0054  public-content snapshot, with its original navigation/footer. The comparison
+0055  at `/tools/messaging/compare` embeds that page beside the canonical homepage
+0056  at matching desktop/mobile widths. Existing preview URLs render the selected
+0057  canonical templates, with links pointing to public routes. Tools remain
+0058  local/testing only, noindex and outside the public sitemap.
+0059  [Controller](../../../app/Http/Controllers/MessagingPreviewController.php);
+0060  [snapshot](../../../resources/content/previews/original-homepage.json);
+0061  [comparison](../../../resources/views/previews/messaging/compare.blade.php).
+0062  
+0063  The [Lavish artifact](../../../.lavish/messaging-review.html) preserves the initial
+0064  analysis. Its observations about repetition and conflicting status copy apply
+0065  to the previous version, now retained in the snapshot. The owner initially
+0066  requested analysis only, then a duplicate, then selected the duplicate.
+0067  [Instruction record](../../raw/2026-10-18-messaging-selection.md).
+0068  
+0069  ## Verification
+0070  
+0071  All 21 PHP tests pass, including updated canonical-page expectations, retained
+0072  photo treatment, preserved original content, sitemap exclusion and production
+0073  denial for tools. The earlier closed-edition assertions were updated to the
+0074  selected open-edition behavior as part of promotion. The production build
+0075  passes with the existing runtime-font URL warnings.
+0076  [Tests](../../../tests/Feature/EditionWebsiteTest.php);
+0077  [photo tests](../../../tests/Feature/PhotoTreatmentTest.php);
+0078  [preview tests](../../../tests/Feature/MessagingPreviewTest.php).
+0079  
+0080  Running desktop/mobile checks pass for navigation, images, keyboard reveal,
+0081  audience/application routes, viewport comparison controls and overflow.
+0082  The homepage process and global FAQ/story strip are absent. Desktop/mobile
+0083  screenshots were visually inspected in one batch.
+0084  [Public check](../../../scripts/screenshot.cjs);
+0085  [comparison check](../../../scripts/messaging-preview-check.cjs).
+0086  
+0087  The current homepage main text measures 165 words against 489 in the preserved
+0088  original, a 66% reduction. This excludes navigation/footer and does not measure
+0089  comprehension or conversion. B-011 is resolved by owner selection and verified
+0090  canonical implementation.
+0091  [Measurement](../../../scripts/messaging-preview-check.cjs).

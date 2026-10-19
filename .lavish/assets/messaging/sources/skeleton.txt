@@ -1,0 +1,91 @@
+docs/ux/_skeleton.md
+
+1  ---
+2  title: Make a Mark Brussels website — Skeleton
+3  tags: [ux, skeleton, site-level]
+4  sources:
+5    - "_strategy.md"
+6    - "_scope.md"
+7    - "_structure.md"
+8    - "../raw/2026-10-18-astro-site.md"
+9    - "../raw/2026-10-18-airtable-forms.md"
+10    - "../raw/2026-10-18-structure-feedback.md"
+11    - "../raw/2026-10-18-skeleton-feedback.md"
+12  phase: Strategy
+13  updated: 2026-10-18
+14  status: owner-selected layout and order; Skeleton complete
+15  ---
+16  
+17  # Skeleton
+18  
+19  ## Current edition home — signup-open state
+20  
+21  ```text
+22  ┌─────────────────────────────────────────────────────────────┐
+23  │ BRAND / NAV: Current edition · For makers · For organisations│
+24  ├─────────────────────────────────────────────────────────────┤
+25  │ EDITION STATUS: Applications open · edition/date             │
+26  │ HERO: What Make a Mark does for Brussels social organisations │
+27  │       [For makers]       [For organisations]                  │
+28  ├─────────────────────────────────────────────────────────────┤
+29  │ WHAT HAPPENS: challenge → team → make-a-thon → useful result │
+30  ├─────────────────────────────────────────────────────────────┤
+31  │ TWO AUDIENCE CARDS                                            │
+32  │ Makers: fit + commitment → [Read maker information]           │
+33  │ Organisations: fit + commitment → [Read organisation info]    │
+34  ├─────────────────────────────────────────────────────────────┤
+35  │ EDITION DETAILS / key date / how to prepare                   │
+36  ├─────────────────────────────────────────────────────────────┤
+37  │ EXISTING STORIES (if retained; not case studies)              │
+38  ├─────────────────────────────────────────────────────────────┤
+39  │ FAQ / ABOUT / CONTACT                                         │
+40  └─────────────────────────────────────────────────────────────┘
+41  ```
+42  
+43  ## Same edition home — closed and after-event states
+44  
+45  ```text
+46  SIGNUPS CLOSED: clear status + what happens to applicants
+47    [Maker future interest] [Organisation future interest]
+48  
+49  AFTER EVENT: results and work lead; future interest stays optional
+50    [Maker future interest] [Organisation future interest]
+51  ```
+52  
+53  The page boundary and state-driven home are owner-selected. The hero leads with
+54  the edition purpose and gives both applicant audiences equal actions. Case
+55  studies are deferred until content exists and will each have their own page
+56  later. [Structure feedback; owner selected this hierarchy]
+57  
+58  ## Audience information page pattern
+59  
+60  ```text
+61  NAV / link back to edition
+62  WHO IT'S FOR: audience and the kind of challenge/contribution
+63  WHAT IT OFFERS: what a useful collaboration can make possible
+64  COMMITMENT: time, preparation, assets, and expectations
+65  PROCESS: what happens after applying → selection → event
+66  FAQ: audience-specific questions
+67  CTA: start the dedicated application form
+68  ```
+69  
+70  Maker and organisation pages use the same pattern, with audience-specific
+71  content. Exact copy and form fields depend on the reviewer-led field audit.
+72  The supplied forms ask different questions and set different commitments.
+73  [Airtable forms capture; owner selected this information order]
+74  
+75  ## Application form skeleton
+76  
+77  The owner selected a single page with grouped sections and a final review for
+78  each application. The reviewer-led field audit determines the final groups and
+79  fields; the supplied forms currently group identity, motivation/mission,
+80  language, work or challenge, preferences/logistics, and commitment checks.
+81  [Airtable forms capture; owner selected this layout]
+82  
+83  ```text
+84  FORM INTRO: edition / audience / estimated commitment
+85  GROUPED APPLICATION SECTIONS: fields determined after reviewer audit
+86  REVIEW: submitted answers, required items, and any corrections
+87  SUBMIT
+88  CONFIRMATION: receipt + response timeline only if the team can meet it
+89  ```

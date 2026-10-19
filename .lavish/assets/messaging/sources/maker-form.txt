@@ -1,0 +1,92 @@
+resources/views/applications/maker.blade.php
+
+1  <form class="application-form" method="POST" action="{{ route('audience.apply.submit', 'makers') }}">
+2      @csrf
+3      @if ($errors->any())
+4          <div class="application-form__errors" role="alert" tabindex="-1">
+5              <strong>Some details need your attention.</strong>
+6              <ul>@foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+7          </div>
+8      @endif
+9      <fieldset class="application-form__group">
+10          <legend>About you</legend>
+11          <label class="application-form__field">Your name <span aria-hidden="true">*</span>
+12              <input name="name" autocomplete="name" required maxlength="255" value="{{ old('name') }}" @error('name') aria-invalid="true" aria-describedby="name-error" @enderror>
+13              @error('name')<span class="application-form__error" id="name-error">{{ $message }}</span>@enderror
+14          </label>
+15          <label class="application-form__field">Email address <span aria-hidden="true">*</span>
+16              <input type="email" name="email" autocomplete="email" required maxlength="255" value="{{ old('email') }}" @error('email') aria-invalid="true" aria-describedby="email-error" @enderror>
+17              @error('email')<span class="application-form__error" id="email-error">{{ $message }}</span>@enderror
+18          </label>
+19          <label class="application-form__field">Why would you like to take part? <span aria-hidden="true">*</span>
+20              <textarea name="motivation" required maxlength="5000" rows="4" @error('motivation') aria-invalid="true" aria-describedby="motivation-error" @enderror>{{ old('motivation') }}</textarea>
+21              @error('motivation')<span class="application-form__error" id="motivation-error">{{ $message }}</span>@enderror
+22          </label>
+23          <label class="application-form__field">Where did you hear about Make a Mark?
+24              <input name="referral" maxlength="1000" value="{{ old('referral') }}">
+25          </label>
+26      </fieldset>
+27  
+28      <fieldset class="application-form__group">
+29          <legend>Languages</legend>
+30          <p class="application-form__hint">Choose the level you can work in, from 1 (beginner) to 5 (fluent). These are optional.</p>
+31          @foreach (['dutch' => 'Dutch', 'english' => 'English', 'french' => 'French'] as $key => $language)
+32              <label class="application-form__field">{{ $language }}
+33                  <select name="{{ $key }}">
+34                      <option value="">Choose a level</option>
+35                      @foreach (range(1, 5) as $level)
+36                          <option value="{{ $level }}" @selected(old($key) == $level)>{{ $level }}{{ $level === 1 ? ' · beginner' : ($level === 5 ? ' · fluent' : '') }}</option>
+37                      @endforeach
+38                  </select>
+39              </label>
+40          @endforeach
+41          <label class="application-form__field">Other languages
+42              <input name="other_languages" maxlength="1000" value="{{ old('other_languages') }}">
+43          </label>
+44      </fieldset>
+45  
+46      <fieldset class="application-form__group">
+47          <legend>About your work</legend>
+48          <label class="application-form__field">Portfolio or examples of your work <span aria-hidden="true">*</span>
+49              <input type="url" name="portfolio" required maxlength="2000" value="{{ old('portfolio') }}" placeholder="https://" @error('portfolio') aria-invalid="true" aria-describedby="portfolio-error" @enderror>
+50              @error('portfolio')<span class="application-form__error" id="portfolio-error">{{ $message }}</span>@enderror
+51          </label>
+52          <label class="application-form__field">Social media links
+53              <textarea name="social_media" maxlength="2000" rows="2">{{ old('social_media') }}</textarea>
+54          </label>
+55          <label class="application-form__field">Your main skills <span aria-hidden="true">*</span>
+56              <textarea name="main_skills" required maxlength="3000" rows="3">{{ old('main_skills') }}</textarea>
+57          </label>
+58          <label class="application-form__field">Other skills you could bring
+59              <textarea name="backup_skills" maxlength="3000" rows="2">{{ old('backup_skills') }}</textarea>
+60          </label>
+61          <label class="application-form__field">Other skills
+62              <textarea name="other_skills" maxlength="3000" rows="2">{{ old('other_skills') }}</textarea>
+63          </label>
+64      </fieldset>
+65  
+66      <fieldset class="application-form__group">
+67          <legend>Preferences</legend>
+68          <label class="application-form__field">Team preferences or anything that would help us match you
+69              <textarea name="team_preferences" maxlength="2000" rows="2">{{ old('team_preferences') }}</textarea>
+70          </label>
+71          <span class="application-form__label">Are there social themes you would be especially interested in?</span>
+72          <div class="application-form__checks">
+73              @foreach (['Poverty reduction and social security', 'Culture and community building', 'Health and well-being', 'Housing and living conditions', 'Local economy and employment', 'Environment and sustainability', 'Education and youth development', 'Social inclusion and diversity', 'Sports and recreation', 'Refugee and migrant support'] as $theme)
+74                  <label><input type="checkbox" name="themes[]" value="{{ $theme }}" @checked(in_array($theme, old('themes', [])))> {{ $theme }}</label>
+75              @endforeach
+76          </div>
+77      </fieldset>
+78  
+79      <fieldset class="application-form__group">
+80          <legend>Practical details</legend>
+81          <label class="application-form__check"><input type="checkbox" name="date_confirmed" value="1" required @checked(old('date_confirmed'))> I have Saturday 27 March 2027 in my calendar. <span aria-hidden="true">*</span></label>
+82          <label class="application-form__field">When could you join a planning meeting before the event? <span aria-hidden="true">*</span>
+83              <textarea name="meeting_availability" required maxlength="2000" rows="3">{{ old('meeting_availability') }}</textarea>
+84          </label>
+85          <label class="application-form__check"><input type="checkbox" name="full_commitment" value="1" required @checked(old('full_commitment'))> If selected, I can take part for the full event and join a planning meeting. <span aria-hidden="true">*</span></label>
+86      </fieldset>
+87  
+88      <p class="application-form__required">* Required fields</p>
+89      <button class="application-form__submit" type="submit">Send maker application</button>
+90  </form>

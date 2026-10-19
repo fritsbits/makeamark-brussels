@@ -3,10 +3,17 @@ title: Make a Mark Brussels (public site)
 tags: [synthesis, discovery, make-a-mark]
 sources: ["docs/raw/2026-10-18-letsmakeamark-brussels.md"]
 phase: Discovery
-updated: 2026-10-18
+updated: 2026-10-19
+status: historical public-site synthesis; superseded by the maintained Discovery and Build records
 ---
 
 # Make a Mark Brussels
+
+Historical synthesis preserved from the original `main` scaffold during the
+2026-10-19 worktree integration. This page describes the earlier public site.
+Its concern references belong to that original scaffold, not the current
+register. Use the [maintained discovery synthesis](10-discovery.md) and
+[product index](../index.md) for current decisions.
 
 Source: [raw capture](../../raw/2026-10-18-letsmakeamark-brussels.md) of https://letsmakeamark.brussels/ (single page, English only).
 

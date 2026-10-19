@@ -1,0 +1,25 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "npm run photos:build && vite build",
+        "photos:build": "node scripts/build-photo-treatments.mjs",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.2.0",
+        "concurrently": "^10.0.3",
+        "laravel-vite-plugin": "^3.1",
+        "sharp": "^0.35.5",
+        "tailwindcss": "^4.2.0",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    },
+    "name": "makeamark-brussels",
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}

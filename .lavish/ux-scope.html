@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-lavish-annotate="off">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make a Mark Brussels — UX Scope</title>
+  <style>
+    @font-face{font-family:"Big Shoulders Display";src:url('./assets/display-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url('./assets/body-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url('./assets/body-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+    :root{--cream:#F5E2CA;--paper:#FFF6EA;--red:#C33F40;--red-text:#92292B;--ink:#1E1A16;--muted:#51463F;--line:rgba(121,26,27,.24);--green:#39695D;--yellow:#F3C85B;--r:18px;--shadow:0 14px 36px rgba(65,35,23,.08)}
+    *{box-sizing:border-box}html{background:var(--cream);color:var(--ink);scroll-behavior:smooth}body{margin:0;font:400 16px/1.58 "Plus Jakarta Sans",system-ui,sans-serif}a{color:inherit}button,input{font:inherit}button{cursor:pointer}p,h1,h2,h3{margin-top:0}p{margin-bottom:1em}main{max-width:1280px;margin:0 auto;padding:clamp(20px,4vw,52px)}
+    h1,h2,h3{font-family:"Big Shoulders Display",Impact,sans-serif;text-transform:uppercase;line-height:.98;letter-spacing:-.04em}h1{font-size:clamp(46px,8vw,96px);max-width:900px;margin:0 0 20px;color:#fff}.hero{background:var(--red);color:var(--paper);padding:clamp(28px,5vw,64px);border-radius:var(--r);box-shadow:var(--shadow)}.dek{max-width:760px;font-size:clamp(17px,2vw,21px);color:#fff;margin:0}.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.chip{border:1px solid #fff;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600;color:#fff}
+    .section{margin-top:clamp(28px,5vw,52px)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.section-head h2{font-size:clamp(30px,4.5vw,52px);color:var(--red-text);margin:0}.section-head p{max-width:540px;color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.col-12{grid-column:span 12}.col-6{grid-column:span 6}.col-4{grid-column:span 4}.card{background:var(--paper);border-radius:var(--r);padding:clamp(24px,3vw,36px);box-shadow:var(--shadow);min-width:0}.card h3{font-size:clamp(23px,2.5vw,30px);margin:0 0 10px}.signal{font-size:14px;color:var(--green);font-weight:600;margin-bottom:12px}.small{font-size:14px;color:var(--muted)}.callout{background:#f4e3cc;padding:14px 16px;border-radius:12px;margin-top:16px}.callout p:last-child{margin:0}.boundary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.boundary div{background:var(--paper);border-radius:12px;padding:16px}.boundary b{display:block;margin-bottom:5px}.source{font-size:14px;color:var(--red-text);font-weight:600}
+    .choice{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}fieldset{border:0;padding:0;margin:0}legend{font-weight:600;font-size:15px;margin-bottom:8px}label{display:flex;gap:10px;align-items:flex-start;padding:10px;border-radius:10px;cursor:pointer}label:hover{background:var(--cream)}input[type=radio]{accent-color:var(--red);margin-top:5px;flex:0 0 auto}.label-copy{font-size:15px;line-height:1.45}.label-copy small{display:block;font-size:14px;color:var(--muted);margin-top:3px}.recommended{font-size:14px;color:var(--red-text);font-weight:600}.answer-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}.queue{background:var(--red);color:#fff;border:0;border-radius:999px;padding:11px 17px;font-size:14px;font-weight:600}.queue:hover,.queue:focus-visible{background:var(--ink)}.status{font-size:14px;color:var(--green);min-height:1em}.evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.evidence div{background:var(--paper);padding:16px;border-radius:12px}.evidence b{display:block;margin-bottom:4px}.evidence p{font-size:14px;color:var(--muted);margin:0}.footer{margin-top:44px;background:var(--ink);color:var(--paper);border-radius:var(--r);padding:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer h2{font-size:clamp(25px,3vw,34px);color:var(--yellow);margin:0 0 8px}.footer p{font-size:14px;margin:0;max-width:720px}.footnote{color:var(--muted);font-size:14px;margin:12px 2px}
+    :where(.grid,.answer-row,.section-head,.boundary,.evidence,.footer)>*{min-width:0}:where(p,h1,h2,h3,li,.chip){overflow-wrap:anywhere}:focus-visible{outline:3px solid #a56d00;outline-offset:3px}@media(max-width:850px){.col-6,.col-4{grid-column:span 12}.section-head{display:block}.section-head p{margin-top:8px}.boundary,.evidence{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Decide what the signup experience includes.</h1>
+    <p class="dek">Scope draft for two application journeys and three edition moments, grounded in the Airtable model and the forms you shared.</p>
+    <div class="meta"><span class="chip">Strategy choices recorded</span><span class="chip">Scope draft</span><span class="chip">No admin in v1</span></div>
+  </header>
+
+  <section class="section">
+    <div class="section-head"><h2>Strategy carried forward</h2><p>These directions are owner-selected. Scope is about the capabilities and content needed to deliver them.</p></div>
+    <div class="boundary">
+      <div><b>Two co-primary application tracks</b>Maker signup for people; organisation application for Brussels social-profit organisations.</div>
+      <div><b>Three edition moments</b>Signup open, signups closed, and after-event results with future interest.</div>
+      <div><b>First-version boundary</b>Import Airtable content into Laravel; signup administration in the website comes later.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Choose the functional scope</h2><p>Each choice changes data flow, applicant effort, or the work needed to keep edition information current. Pick an option and queue it to the Lavish conversation.</p></div>
+    <div class="grid">
+      <article class="card col-6">
+        <h3>Where should applicants and source data live?</h3>
+        <div class="signal">C-001 · Owner confirmed</div>
+        <p>Your clarification supersedes the earlier “manual reconciliation” selection: the new version should not use Airtable. Import all Airtable content into Laravel, then use Laravel for new applications and ongoing data.</p>
+        <div class="callout"><p><b>Working import boundary:</b> records, field data, and relationships across Editions, Makers, Organisations, Teams, and Screenshots. Verify attachment completeness and historical field values against a full export. Treat Airtable views and automations as separate requirements, not assumed imports. [Owner migration direction; Airtable model]</p></div>
+        <p class="small" style="margin-top:14px">This changes the first-version data work: plan a complete migration and Laravel data mapping before building the two signup forms. Airtable should not remain a parallel operational source.</p>
+      </article>
+
+      <article class="card col-6">
+        <h3>How should we decide which fields stay?</h3>
+        <div class="signal">Scope choice C-002 · Application content</div>
+        <p>The screenshots show detailed questions and practical commitments, but don't establish requiredness or whether every field still serves selection and matching.</p>
+        <div class="choice"><form data-lavish-question="C-002" data-question-label="Application field scope"><fieldset><legend>Choose a field policy</legend>
+          <label><input type="radio" name="answer" value="Carry all visible fields and requiredness over"><span class="label-copy">Carry all visible fields and requiredness over<small>Fastest fidelity to the forms; may preserve unnecessary effort or old assumptions.</small></span></label>
+          <label><input type="radio" name="answer" value="Audit each field with reviewers before deciding" checked><span class="label-copy">Audit each field with reviewers before deciding <span class="recommended">Selected</span><small>Keep information needed to decide fit, form teams, and prepare; set requiredness intentionally.</small></span></label>
+          <label><input type="radio" name="answer" value="Ask only essentials now and collect details later"><span class="label-copy">Ask only essentials now and collect details later<small>Shorter first step; requires a clear later collection moment and follow-up process.</small></span></label>
+        </fieldset><div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div></form></div>
+        <div class="callout"><p><span class="source">Evidence:</span> maker form includes skills, portfolio, preferences, and availability; organisation form includes challenge, assets, and commitments. [Airtable forms]</p></div>
+      </article>
+
+      <article class="card col-6">
+        <h3>What can people do while signups are closed?</h3>
+        <div class="signal">Scope choice C-003 · Future interest</div>
+        <p>A past organisation form and Airtable views suggest future-interest paths for both organisations and makers. The supplied screenshots do not establish current opt-in or follow-up rules.</p>
+        <div class="choice"><form data-lavish-question="C-003" data-question-label="Closed-phase future interest"><fieldset><legend>Choose the closed-phase offer</legend>
+          <label><input type="radio" name="answer" value="Offer separate opt-in forms for makers and organisations" checked><span class="label-copy">Offer separate opt-in forms for makers and organisations <span class="recommended">Selected</span><small>Capture only people who ask for next-edition updates, with separate audience-specific fields.</small></span></label>
+          <label><input type="radio" name="answer" value="Offer the existing organisation interest form only"><span class="label-copy">Offer the existing organisation interest form only<small>Matches the supplied closed-period screenshot; no maker lead capture.</small></span></label>
+          <label><input type="radio" name="answer" value="Show dates and next steps without collecting contact details"><span class="label-copy">Show dates and next steps without collecting contact details<small>Smallest scope and data footprint; people must return or find another channel.</small></span></label>
+        </fieldset><div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div></form></div>
+        <div class="callout"><p><span class="source">Evidence:</span> Airtable views include “Stay in the loop” paths for makers and organisations; historical form copy requests next-cycle contact. [Airtable model; forms]</p></div>
+      </article>
+
+      <article class="card col-6">
+        <h3>How should each edition's phase be set?</h3>
+        <div class="signal">Scope choice C-004 · Phase control</div>
+        <p>The visible Airtable Edition status values are “In progress” and “Done,” but the site will use Laravel. Signup administration is later, so choose how public phase changes happen in v1.</p>
+        <div class="choice"><form data-lavish-question="C-004" data-question-label="Edition phase control"><fieldset><legend>Choose a first-version control</legend>
+          <label><input type="radio" name="answer" value="Infer the public phase from the migrated Edition status field" checked><span class="label-copy">Infer the public phase from the migrated Edition status field <span class="recommended">Selected</span><small>Use the existing status field as the source, with Laravel as the ongoing system.</small></span></label>
+          <label><input type="radio" name="answer" value="Set phase transitions by dates in the Laravel Edition record"><span class="label-copy">Set phase transitions by dates on the Laravel Edition record<small>Automates normal changes; needs confirmed opening, closing, and event dates plus an exception plan.</small></span></label>
+          <label><input type="radio" name="answer" value="Use a code configuration value for each edition"><span class="label-copy">Use a code configuration value for each edition<small>Simple to build; phase changes require a developer deployment.</small></span></label>
+        </fieldset><div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div></form></div>
+        <div class="callout"><p><span class="source">Data question to carry:</span> the captured Edition values are “In progress” and “Done.” Those do not yet distinguish signup open, signups closed, and after-event. Confirm the migrated status options or mapping before implementation. [Airtable model; owner feedback]</p></div>
+      </article>
+
+      <article class="card col-12">
+        <h3>What should an applicant be told after submitting?</h3>
+        <div class="signal">Scope choice C-005 · Confirmation and contact</div>
+        <p>Application receipt, future-interest opt-in, response timing, and retention are not established in the source captures. Keep application processing messages separate from optional future updates.</p>
+        <div class="grid">
+          <div class="col-6"><div class="choice" style="margin-top:0"><form data-lavish-question="C-005" data-question-label="Submission confirmation and contact"><fieldset><legend>Choose a confirmation scope</legend>
+            <label><input type="radio" name="answer" value="Receipt confirmation with a response timeline only when the team can meet it" checked><span class="label-copy">Receipt confirmation; state a response timeline only when the team can meet it <span class="recommended">Selected</span></span></label>
+            <label><input type="radio" name="answer" value="Simple on-screen receipt with no timeline"><span class="label-copy">Simple on-screen receipt with no timeline</span></label>
+            <label><input type="radio" name="answer" value="Automated email receipt and expected decision date"><span class="label-copy">Automated email receipt and expected decision date</span></label>
+          </fieldset><div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div></form></div></div>
+          <div class="col-6"><div class="callout" style="margin-top:0"><p><b>Scope note:</b> future-interest signup needs an explicit, separate choice to receive future contact. The legal basis, wording, retention period, and privacy notice need confirmation before implementation; the screenshots do not answer these. [Airtable forms; data model]</p></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Evidence and dependencies</h2><p>These sources support the scope questions. They do not settle the decisions.</p></div>
+    <div class="evidence">
+      <div><b>Two application forms</b><p>Visible maker and organisation questions, commitments, and old edition-specific wording. [docs/raw/2026-10-18-airtable-forms.md]</p></div>
+      <div><b>Existing Airtable model</b><p>Editions, Makers, Organisations, Teams, and Screenshots, plus relationships and saved views. It is the import source only; form writes and field-level validation remain unknown. [docs/raw/2026-10-18-airtable-data-model.md]</p></div>
+      <div><b>Three public phases</b><p>Signup, closed, and after-event are owner requirements. Future interest appears in historical local materials; exact phase behavior remains undecided. [Owner brief; additional materials]</p></div>
+    </div>
+  </section>
+
+  <div class="footer"><div><h2>Your choices stay local until queued.</h2><p>Select an option for any question and queue it to the Lavish conversation. Your choices aren't sent to the team or saved to a backend by this page.</p></div><div><span class="status" id="copyStatus" role="status" aria-live="polite"></span></div></div>
+  <p class="footnote">The Laravel-only destination and full-content import are confirmed. Recommendations are starting points for other decisions. Consent, retention, exact migration inventory, validation, and which fields are required need confirmation before build.</p>
+</main>
+<script>
+  document.querySelectorAll('form[data-lavish-question]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const answer = new FormData(form).get('answer');
+      const status = form.querySelector('.status');
+      if (!answer) { status.textContent = 'Choose an option first.'; return; }
+      const question = form.dataset.questionLabel;
+      const prompt = `${question}: ${answer}`;
+      if (window.lavish?.queuePrompt) {
+        window.lavish.queuePrompt(prompt, { tag: 'choice', text: prompt, element: form, data: { id: form.dataset.lavishQuestion, question, answer } });
+        status.textContent = 'Queued. Review and send it in the Lavish conversation panel.';
+      } else {
+        status.textContent = 'Lavish is not active. Select an option in your reply instead.';
+      }
+    });
+  });
+</script>
+</body>
+</html>

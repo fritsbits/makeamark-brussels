@@ -1,0 +1,21 @@
+resources/views/sections/footer.blade.php
+Captured 18 October 2026
+
+0001  <footer class="footer">
+0002      <div class="container footer__inner">
+0003          <div>
+0004              <div class="footer__wordmark h-display">{{ $site['name'] }}</div>
+0005              <a class="footer__global" href="{{ $site['globalSiteUrl'] }}" rel="noopener" target="_blank">{{ $site['footer']['globalLabel'] }}</a>
+0006              <p class="footer__credit">Website by <a href="https://frederikvincx.com">Impact Studio</a></p>
+0007          </div>
+0008          <nav class="footer__links" aria-label="Footer">
+0009              @foreach ($site['nav'] as $item)
+0010                  <a href="{{ $item['href'] }}">{{ $item['label'] }}</a>
+0011              @endforeach
+0012              <a href="{{ $site['globalSiteUrl'] }}" rel="noopener" target="_blank">Organise Make a Mark in your city</a>
+0013              <a href="{{ $site['instagramUrl'] }}" rel="noopener" target="_blank">Instagram</a>
+0014              <a href="{{ route('privacy') }}">Privacy</a>
+0015              <a href="mailto:{{ $site['email'] }}">Email</a>
+0016          </nav>
+0017      </div>
+0018  </footer>

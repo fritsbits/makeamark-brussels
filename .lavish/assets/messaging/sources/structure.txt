@@ -1,0 +1,80 @@
+docs/ux/_structure.md
+
+1  ---
+2  title: Make a Mark Brussels website — Structure
+3  tags: [ux, structure, site-level, sitemap]
+4  sources:
+5    - "_strategy.md"
+6    - "_scope.md"
+7    - "../wiki/discovery/10-discovery.md"
+8    - "../raw/2026-10-18-astro-site.md"
+9    - "../raw/2026-10-18-airtable-forms.md"
+10    - "../raw/2026-10-18-scope-feedback.md"
+11    - "../raw/2026-10-18-structure-feedback.md"
+12  phase: Strategy
+13  updated: 2026-10-18
+14  status: owner direction recorded; sitemap implemented in Build
+15  ---
+16  
+17  # Structure
+18  
+19  ## Proposed site map
+20  
+21  The owner selected one stable phase-aware edition page, separate maker and
+22  organisation information pages with dedicated forms, and a current-edition-only
+23  scope for v1. The sitemap below records that direction; final routes are still
+24  subject to implementation naming.
+25  
+26  ```text
+27  Make a Mark Brussels
+28  ├── Current edition — phase-aware edition hub
+29  │   ├── For makers — what to expect and how to apply
+30  │   │   └── Maker application
+31  │   ├── For organisations — fit, challenge, and commitments
+32  │   │   └── Organisation application
+33  │   ├── Signups-closed state
+34  │   │   ├── Future interest: makers
+35  │   │   └── Future interest: organisations
+36  │   └── After-event state
+37  │       ├── Results and work
+38  │       └── Future interest: makers and organisations
+39  ├── Case studies — later, one page per case study when content exists
+40  ├── About / how it works / FAQ
+41  └── Contact
+42  ```
+43  
+44  ### Phase behavior in the structure
+45  
+46  - The edition hub is the stable entry point for the active edition.
+47  - The edition's phase determines which primary action and supporting content
+48    the hub presents: application routes while open, future-interest routes when
+49    closed, and results plus future interest after the event.
+50  - Maker and organisation journeys stay distinct because their forms and
+51    commitments differ. [Airtable forms capture]
+52  - The migration direction makes Laravel the ongoing system of record; this
+53    sitemap does not imply Airtable routes or a website admin. [Scope feedback]
+54  
+55  ## Evidence and interpretation
+56  
+57  The current site is a one-page layout with navigation, edition information,
+58  maker and organisation sections, stories, FAQ, About, and contact. Its captured
+59  edition-status behavior uses open, closed/selected, and done states, with no
+60  date-based changes. [Astro source capture]
+61  
+62  The owner's selected product role is an edition-cycle guide with two co-primary
+63  application routes and after-event results. The phase-aware edition hub and
+64  two separate audience information pages are owner-selected. The current site
+65  remains the source for general About/FAQ/contact content. Case studies are
+66  planned as individual pages later, when material is available. [Structure
+67  feedback]
+68  
+69  ## Carried questions
+70  
+71  - Decide how much of the existing one-page content is retained or reduced when
+72    arranging the current edition page and audience information pages.
+73  - Case studies need their own page type in a later release; no case-study
+74    content is available for v1.
+75  - Map the migrated Edition status values to signup open, signups closed, and
+76    after-event before relying on phase-driven navigation.
+77  - Keep the status-to-phase mapping, privacy, and full data-import inventory
+78    open from Scope. [Scope]

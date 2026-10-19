@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-lavish-annotate="off">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make a Mark Brussels — UX Strategy decisions</title>
+  <style>
+    @font-face{font-family:"Big Shoulders Display";src:url('./assets/display-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url('./assets/body-regular.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:"Plus Jakarta Sans";src:url('./assets/body-semibold.woff2') format('woff2');font-weight:600;font-display:swap}
+    :root{--cream:#F5E2CA;--paper:#FFF6EA;--red:#C33F40;--red-text:#92292B;--red2:#D14B4C;--ink:#1E1A16;--muted:#51463F;--line:rgba(121,26,27,.24);--green:#39695D;--yellow:#F3C85B;--r:18px;--shadow:0 14px 36px rgba(65,35,23,.08)}
+    *{box-sizing:border-box}html{background:var(--cream);color:var(--ink);scroll-behavior:smooth}body{margin:0;font:400 16px/1.58 "Plus Jakarta Sans",system-ui,sans-serif}a{color:inherit}button,input,textarea{font:inherit}button{cursor:pointer}img,svg{max-width:100%;height:auto}p,h1,h2,h3{margin-top:0}p{margin-bottom:1em}main{max-width:1280px;margin:0 auto;padding:clamp(20px,4vw,52px)}
+    .eyebrow{font-size:14px;letter-spacing:.04em;font-weight:600;color:var(--red-text)}
+    .hero{background:var(--red);color:var(--paper);padding:clamp(28px,5vw,64px);border-radius:var(--r);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .hero:after{content:"";position:absolute;width:300px;height:300px;border:1px solid rgba(255,246,234,.24);border-radius:50%;right:-55px;top:-90px;box-shadow:0 0 0 28px rgba(255,246,234,.05),0 0 0 56px rgba(255,246,234,.04)}
+    h1,h2,h3{font-family:"Big Shoulders Display",Impact,sans-serif;text-transform:uppercase;line-height:.98;letter-spacing:-.04em}h1{font-size:clamp(46px,8vw,96px);max-width:900px;margin:0 0 20px;color:var(--cream)}.dek{max-width:760px;font-size:clamp(17px,2vw,21px);color:#ffffff;margin:0}.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;position:relative;z-index:1}.chip{border:1px solid currentColor;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;letter-spacing:.04em}.chip--light{color:#fff}.chip--dark{color:var(--red);background:var(--paper);border-color:transparent}.hero-note{position:relative;z-index:1;margin:28px 0 0;padding:3px 0;max-width:760px;color:#fff7ea}.hero .inline-cite{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .section{margin-top:clamp(28px,5vw,52px)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.section-head h2{font-size:clamp(30px,4.5vw,52px);color:var(--red-text);margin:0}.section-head p{max-width:520px;color:var(--muted);margin:0}.card{background:var(--paper);border-radius:var(--r);padding:clamp(24px,3vw,36px);box-shadow:var(--shadow);position:relative}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}.col-12{grid-column:span 12}.col-7{grid-column:span 7}.col-6{grid-column:span 6}.col-5{grid-column:span 5}.col-4{grid-column:span 4}.min0{min-width:0}
+    .mission{background:var(--ink);color:var(--paper);padding:clamp(24px,4vw,42px);border-radius:var(--r)}.mission h2{font-size:clamp(30px,4vw,46px);color:var(--yellow);margin:0 12px 16px}.mission blockquote{font-size:clamp(21px,3.3vw,34px);line-height:1.3;margin:0 12px;max-width:980px}.mission p{margin:16px 12px 0;color:#ddd0c5;font-size:14px}
+    .signal{font-size:14px;letter-spacing:.02em;color:var(--green);font-weight:600;display:inline-flex;align-items:center;gap:7px;padding:4px 9px;border-radius:999px;background:#f5e2ca;margin:2px 0 14px}.signal:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}.signal--hypothesis{color:#754D00}.signal--hypothesis:before{background:#B98200}.signal--unknown{color:var(--red-text)}.signal--unknown:before{background:var(--red)}
+    h3{font-size:27px;margin:0 0 12px;color:var(--ink)}.small{font-size:14px;color:var(--muted)}.callout{padding:12px 16px;background:#f9ead8;border-radius:10px;margin-top:16px}.callout p:last-child{margin:0}.inline-cite{font-size:14px;font-weight:600;color:var(--red-text);text-decoration:none;white-space:nowrap}
+    .audience{height:100%;padding-top:24px}.audience h3{margin-bottom:8px}.audience .jtbd{font-size:18px;line-height:1.42;margin:12px 0}.barrier{background:#f5e2ca;border-radius:10px;padding:11px 13px;font-size:14px;color:#4e4036}.audience .source{display:block;margin-top:13px}
+    .option-card{height:100%;border:1px solid var(--line);border-radius:14px;padding:18px;background:rgba(255,255,255,.48);position:relative}.option-card.recommended{border:2px solid var(--red);background:#fffaf3}.option-card.recommended:after{content:"Working recommendation";position:absolute;right:12px;top:-12px;padding:4px 9px;border-radius:99px;background:var(--red);color:white;font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}.option-card h3{font-size:24px;margin-bottom:8px}.option-card p{font-size:14px;color:var(--muted);margin:0}.trade{font-size:12px;color:var(--ink);padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}
+    .choice{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.choice fieldset{border:0;padding:0;margin:0}.choice legend{font-weight:600;font-size:14px;margin-bottom:10px}.choice label{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:9px;cursor:pointer}.choice label:hover{background:#f5e2ca}.choice input[type=radio]{accent-color:var(--red);margin-top:5px;flex:0 0 auto}.choice .label-copy{font-size:14px;line-height:1.45}.recommended-tag{font-size:14px;letter-spacing:.02em;color:var(--red-text);font-weight:600}.answer-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.queue{background:var(--red);color:var(--paper);border:0;border-radius:999px;padding:11px 16px;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}.queue:hover,.queue:focus-visible{background:var(--ink)}.status{font-size:14px;color:var(--green);min-height:1em}.footer .status{color:#fff}.choice-summary{font-size:14px;color:var(--muted);margin:8px 0 0}.phase{background:var(--paper);border-radius:var(--r);padding:22px;height:100%;border-bottom:1px solid var(--line)}.phase-num{font-family:"Big Shoulders Display",sans-serif;font-size:56px;color:var(--red-text);line-height:.9}.phase h3{margin-top:12px}.phase p{font-size:14px;color:var(--muted)}.phase .intent{font-size:13px;color:var(--ink);font-weight:600}
+    .measure{display:flex;gap:14px;align-items:flex-start;padding:17px 0;border-top:1px solid var(--line)}.measure:first-child{border-top:0;padding-top:0}.measure b{display:block}.measure .badge{flex:0 0 auto;background:var(--cream);color:var(--red-text);font-size:12px;border-radius:999px;padding:4px 9px;font-weight:600}.measure p{margin:3px 0 0;font-size:13px;color:var(--muted)}
+    .evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.evidence-item{border:1px solid var(--line);padding:13px;border-radius:10px}.evidence-item b{display:block;font-size:14px}.evidence-item p{font-size:14px;color:var(--muted);margin:5px 0 0}.evidence-item .tag{font-size:14px;letter-spacing:.02em;color:var(--green);font-weight:600}
+    .footer{margin-top:44px;background:var(--red);color:var(--paper);border-radius:var(--r);padding:24px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.footer h2{font-size:28px;color:var(--cream);margin:0}.footer p{font-size:14px;margin:0;max-width:700px}.footer button{background:var(--cream);color:var(--ink);border:0;border-radius:999px;padding:10px 15px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}.footnote{color:var(--muted);font-size:14px;margin:12px 2px}
+    :where(.grid,.answer-row,.section-head,.measure,.footer)>*{min-width:0}:where(p,h1,h2,h3,li,td,th,.chip,.small){overflow-wrap:anywhere}:focus-visible{outline:3px solid #e8ac22;outline-offset:3px}
+    @media(max-width:850px){.col-7,.col-6,.col-5,.col-4{grid-column:span 12}.section-head{display:block}.section-head p{margin-top:8px}.evidence{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <h1>Make it clear who can make a mark.</h1>
+    <p class="dek">A strategy draft for a website that helps Brussels organisations and creative makers enter an edition with confidence, then know what happens next.</p>
+    <div class="hero-meta"><span class="chip chip--light">Owner decisions recorded</span><span class="chip chip--light">Scope is next</span><span class="chip chip--light">Signup experience</span></div>
+    <p class="hero-note"><b>What the owner has decided:</b> import all Airtable content into Laravel and retire Airtable; support maker and organisation signup; account for signup open, signup closed, and after-event phases. Signup administration in the website is later. <a class="inline-cite" href="#sources">[Owner brief]</a></p>
+  </header>
+
+  <section class="section grid" aria-label="Digital mission">
+    <div class="mission col-12">
+      <h2 style="font-size:clamp(30px,4vw,46px);color:var(--yellow);margin:0 0 16px">Digital mission · working direction</h2>
+      <blockquote>Give Brussels social-profit organisations and creative makers a clear, trustworthy way to apply to each Make a Mark edition—and make the next step after applying easy to understand.</blockquote>
+      <p>Working synthesis from the owner's request and five confirmed Strategy choices. User needs in the source material remain historical hypotheses.</p>
+    </div>
+    <div class="card col-7 min0">
+      <h3>Two application journeys; one shared outcome</h3>
+        <div class="signal">Known from the owner and product records</div>
+      <p>Organisations bring a challenge and the context makers need. Makers bring skills, work examples, preferences, and availability. Airtable links both groups through teams and editions. <a class="inline-cite" href="#sources">[Forms · Airtable]</a></p>
+      <div class="callout"><p><b>Strategy implication:</b> the website should explain each audience's commitment in its own terms, while keeping a visible connection between the two journeys.</p></div>
+    </div>
+    <div class="card col-5 min0">
+      <h3>Review-ready applications by edition</h3>
+        <div class="signal">Owner-selected North Star</div>
+      <p>Candidate measure: complete, usable maker and organisation applications received by the deadline, tracked separately by application type.</p>
+      <p class="small">This measures the website's near-term contribution without claiming that form submissions alone create a successful match. Confirm whether “review-ready” can be measured from the current data and review process.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Who we're serving</h2><p>Audience roles are ranked provisionally for this signup version. The underlying evidence is historical; current needs remain hypotheses.</p></div>
+    <div class="grid">
+      <article class="card col-6 audience">
+        <h3>Brussels social-profit organisations</h3>
+        <div class="signal signal--hypothesis">Primary applicant · hypothesis</div>
+        <p class="jtbd">“When we have a communication or design challenge but limited capacity, help us explain it clearly and apply for a useful, realistic collaboration.”</p>
+        <div class="barrier"><b>Likely hesitation:</b> Am I eligible? Is our challenge clear enough? Can we provide the time, assets, and people the process expects?</div>
+        <span class="source inline-cite">Evidence: application fields ask for mission, challenge, assets, and time commitment; BRUZZ reports resource constraints. [Forms · BRUZZ]</span>
+      </article>
+      <article class="card col-6 audience">
+        <h3>Creative makers</h3>
+        <div class="signal signal--hypothesis">Primary applicant · hypothesis</div>
+        <p class="jtbd">“When I want to use my creative skills for a social purpose, help me understand the work, commitment, and team fit before I apply.”</p>
+        <div class="barrier"><b>Likely hesitation:</b> Will I be a fit? What is expected before and during the day? Will the time and contribution be respected?</div>
+        <span class="source inline-cite">Evidence: BRUZZ participants describe social impact and peer connection; a maker says a first event felt overwhelming. The 2020 packet emphasizes protected, valued time. [BRUZZ · Maker Packet]</span>
+      </article>
+      <article class="card col-12 audience">
+        <h3>Young people aged roughly 12–25</h3>
+        <div class="signal signal--unknown">Important stakeholder · role unresolved</div>
+        <p class="jtbd">The 2027 brief calls for young people's involvement in preparation and feedback, but whether they should apply as participants, makers, or feedback contributors is unsettled.</p>
+        <div class="barrier"><b>Planning stance:</b> make their role visible in the strategy, but don't treat them as a signup audience until the owner confirms a specific role and journey.</div>
+        <span class="source inline-cite">Evidence: 2027 project brief and planning notes. [2027 brief]</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Three edition moments</h2><p>Keep the phase states distinct so people can tell whether they are applying now, registering future interest, or seeing what happened.</p></div>
+    <div class="grid">
+      <article class="phase col-4"><div class="phase-num">01</div><h3>Signup open</h3><p>Two separate applications, with clear fit, requirements, timing, and what happens after submission.</p><div class="intent">Strategic job: help each applicant decide and submit with confidence.</div><p class="small">The supplied forms support this distinction. No exact fields are prescribed here. [Forms]</p></article>
+      <article class="phase col-4"><div class="phase-num">02</div><h3>Signups closed</h3><p>Say plainly that applications have closed. Explain what happens to submitted applications and when a new opportunity is expected, if known.</p><div class="intent">Strategic job: close the door gently and give a useful next step.</div><p class="small">A past organisation form captures name, email, and organisation for next-cycle contact. It is historical copy, not the final experience. [Forms]</p></article>
+      <article class="phase col-4"><div class="phase-num">03</div><h3>After the event</h3><p>Recognize what participants and organisations contributed; show work and outcomes where available; offer future interest without implying everyone must continue.</p><div class="intent">Strategic job: provide a meaningful ending and an optional way back.</div><p class="small">Local history includes showcases, thanks, and participant stories; the international guide adds follow-up/survey practices that are not local policy. [2019 recap · 2023 stories · Field Guide]</p></article>
+    </div>
+    <p class="footnote">These are strategic intents, not a sitemap or screen plan. The form backend, consent, retention, phase switching, and copy belong in later decisions.</p>
+  </section>
+
+  <section class="section grid">
+    <div class="card col-7 min0">
+      <div class="section-head"><h2 style="font-size:40px">Value &amp; channels</h2></div>
+      <div class="signal signal--hypothesis">Proposed value proposition</div>
+      <p style="font-size:20px;line-height:1.42"><b>For organisations:</b> a chance to make a focused communication or design challenge clearer and more achievable with creative collaborators.<br><b>For makers:</b> a bounded way to use professional or emerging skills for local social impact and meet peers.</p>
+      <p class="small">The 2023 article and testimonials describe these kinds of value; they don't establish that every participant experiences it. [BRUZZ · 100PAP · BAOB]</p>
+      <div class="callout"><p><b>Channel recommendation:</b> use the website as the clear, current application destination; let direct outreach, partner networks, past participants, and communications bring people to it. Past local articles and the international guide show network and media recruitment, but current channel performance is unknown. [2019 articles · Field Guide · 2027 brief]</p></div>
+    </div>
+    <div class="card col-5 min0">
+      <h3>Do the signup work well first</h3>
+        <div class="signal">Owner's first-version boundary</div>
+      <div class="measure"><span class="badge">IN</span><div><b>Edition-specific applications and phase states</b><p>Maker and organisation entry points; clear closed and after-event states.</p></div></div>
+      <div class="measure"><span class="badge">LATER</span><div><b>Website admin for signup management</b><p>The owner explicitly wants this in a later version.</p></div></div>
+      <div class="measure"><span class="badge">OPEN</span><div><b>Young-person signup, ongoing community, full participant accounts</b><p>Do not assume these belong in the first version.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>Choose the strategic direction</h2><p>These are the choices most likely to change the later Scope plane. Pick an option, then queue your answer to the Lavish conversation.</p></div>
+    <div class="grid">
+      <article class="card col-6 min0">
+        <h3>Who is “people” in the person signup?</h3>
+        <div class="signal signal--unknown">Decision S-001 · Audience</div>
+        <div class="choice">
+          <form data-lavish-question="S-001" data-question-label="Person signup audience">
+            <fieldset><legend>Choose the first-version audience</legend>
+              <label><input type="radio" name="answer" value="Makers only" checked><span class="label-copy">Makers only <span class="recommended-tag">Selected</span><br><span class="small">Matches the Maker table and existing maker application.</span></span></label>
+              <label><input type="radio" name="answer" value="Makers plus young people"><span class="label-copy">Makers plus young people<br><span class="small">Youth get a defined participation route too.</span></span></label>
+              <label><input type="radio" name="answer" value="Separate maker and youth routes"><span class="label-copy">Separate maker and youth routes<br><span class="small">Different roles, needs, and safeguards get distinct journeys.</span></span></label>
+            </fieldset>
+            <div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div>
+          </form>
+        </div>
+      </article>
+      <article class="card col-6 min0">
+        <h3>How should the site balance the applicants?</h3>
+        <div class="signal signal--unknown">Decision S-002 · Priority</div>
+        <div class="choice">
+          <form data-lavish-question="S-002" data-question-label="Audience priority">
+            <fieldset><legend>Choose the audience framing</legend>
+              <label><input type="radio" name="answer" value="Co-primary: organisations and makers" checked><span class="label-copy">Organisations and makers are co-primary <span class="recommended-tag">Selected</span><br><span class="small">Both apply; the team outcome depends on both.</span></span></label>
+              <label><input type="radio" name="answer" value="Organisation-led"><span class="label-copy">Organisation-led<br><span class="small">Start with the challenge and who it serves.</span></span></label>
+              <label><input type="radio" name="answer" value="Maker-led"><span class="label-copy">Maker-led<br><span class="small">Start with the invitation to use creative skills for impact.</span></span></label>
+            </fieldset>
+            <div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div>
+          </form>
+        </div>
+      </article>
+      <article class="card col-6 min0">
+        <h3>How far beyond the signup form should v1 go?</h3>
+        <div class="signal signal--unknown">Decision S-003 · Website role</div>
+        <div class="choice">
+          <form data-lavish-question="S-003" data-question-label="Website role">
+            <fieldset><legend>Choose the product role</legend>
+              <label><input type="radio" name="answer" value="Application doorway"><span class="label-copy">Application doorway<br><span class="small">The site explains the event and routes people to current forms.</span></span></label>
+              <label><input type="radio" name="answer" value="Edition-cycle guide" checked><span class="label-copy">Edition-cycle guide <span class="recommended-tag">Selected</span><br><span class="small">The site explains signup, closed, and after-event states for each edition.</span></span></label>
+              <label><input type="radio" name="answer" value="Year-round community platform"><span class="label-copy">Year-round community platform<br><span class="small">Ongoing participation and community become a central product job.</span></span></label>
+            </fieldset>
+            <div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div>
+          </form>
+        </div>
+      </article>
+      <article class="card col-6 min0">
+        <h3>What should the main success measure reward?</h3>
+        <div class="signal signal--unknown">Decision S-004 · Success</div>
+        <div class="choice">
+          <form data-lavish-question="S-004" data-question-label="North Star measure">
+            <fieldset><legend>Choose the main measure</legend>
+              <label><input type="radio" name="answer" value="Completed applications"><span class="label-copy">Completed applications<br><span class="small">Simple signup-volume measure.</span></span></label>
+              <label><input type="radio" name="answer" value="Review-ready applications across both tracks" checked><span class="label-copy">Review-ready applications across both tracks <span class="recommended-tag">Selected</span><br><span class="small">Rewards useful applications, not raw volume.</span></span></label>
+              <label><input type="radio" name="answer" value="Accepted participants who attend and receive useful results"><span class="label-copy">Accepted participants who attend and receive useful results<br><span class="small">Best outcome measure, but depends on operations beyond the website.</span></span></label>
+            </fieldset>
+            <div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div>
+          </form>
+        </div>
+      </article>
+      <article class="card col-12 min0">
+        <h3>What is the most valuable ending to the edition?</h3>
+        <div class="signal signal--unknown">Decision S-005 · After event</div>
+        <div class="grid">
+          <div class="col-7 min0"><p class="small">The local history includes thank-yous, work showcases, stories, and future interest. Choose the one the website should lead with; other activities can be secondary.</p></div>
+          <div class="col-5 min0 choice">
+            <form data-lavish-question="S-005" data-question-label="After-event priority">
+              <fieldset><legend>Choose the primary after-event job</legend>
+                <label><input type="radio" name="answer" value="Show results and invite future interest" checked><span class="label-copy">Show results and invite future interest <span class="recommended-tag">Selected</span></span></label>
+                <label><input type="radio" name="answer" value="Thank participants and close the loop"><span class="label-copy">Thank participants and close the loop</span></label>
+                <label><input type="radio" name="answer" value="Collect feedback for the next edition"><span class="label-copy">Collect feedback for the next edition</span></label>
+              </fieldset>
+              <div class="answer-row"><button class="queue" type="submit">Queue answer</button><span class="status" role="status" aria-live="polite"></span></div>
+            </form>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section grid" id="sources">
+    <div class="card col-7 min0">
+      <h3>What this draft rests on</h3>
+        <div class="signal">Evidence used</div>
+      <div class="evidence">
+        <div class="evidence-item"><span class="tag">Owner brief</span><b>Two signups; three phases; admin later</b><p>Current user direction in this thread. [docs/raw/2026-10-18-airtable-forms.md]</p></div>
+        <div class="evidence-item"><span class="tag">Airtable</span><b>Editions, Makers, Organisations, Teams</b><p>Edition links and team relationships establish the current admin model. [docs/raw/2026-10-18-airtable-data-model.md]</p></div>
+        <div class="evidence-item"><span class="tag">Local history</span><b>Maker expectations and edition touchpoints</b><p>2019 recap; 2020 maker packet; 2023 BRUZZ reporting. [docs/raw/2026-10-18-additional-mam-materials.md; docs/raw/2026-10-18-bruzz-make-a-mark-2023.md]</p></div>
+        <div class="evidence-item"><span class="tag">Testimonials</span><b>Two organisations describe outputs and anticipation</b><p>BAOB Brussels and 100PAP posts, 2023. [docs/raw/2026-10-18-additional-mam-materials.md]</p></div>
+        <div class="evidence-item"><span class="tag">Next edition</span><b>Youth-focused 2027 edition</b><p>Young people's role remains undecided. [docs/raw/2026-10-18-notion-make-a-mark-2027.md]</p></div>
+        <div class="evidence-item"><span class="tag">International guidance</span><b>Field Guide is not local policy</b><p>Useful model for the lifecycle; not assumed to be Brussels practice. [docs/raw/2026-10-18-additional-mam-materials.md]</p></div>
+      </div>
+    </div>
+    <div class="card col-5 min0">
+      <h3>Keep these out of the assumptions column</h3>
+        <div class="signal signal--unknown">Still unknown</div>
+      <ul class="small"><li>Which person signup(s) are wanted beyond makers.</li><li>Directly validated needs and fears for current applicants.</li><li>Agreed success metric and target values.</li><li>Consent, retention, application confirmation, and response timeline.</li><li>What the exact post-event experience should prioritize.</li><li>Whether Airtable phase and form behaviors can be carried over as-is.</li></ul>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div><h2>Your choices stay local until queued.</h2><p>Select any options above and submit them individually. Lavish will place each answer in the conversation queue; review and send it there. Or copy all selected answers to paste into chat.</p></div>
+    <div><button type="button" id="copyAnswers">Copy selected answers</button><span class="status" id="copyStatus" role="status" aria-live="polite"></span></div>
+  </div>
+  <p class="footnote">Working note: owner-selected directions are recorded; the jobs-to-be-done and barriers remain hypotheses from historical material and need direct validation.</p>
+</main>
+<script>
+  document.querySelectorAll('form[data-lavish-question]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const answer = new FormData(form).get('answer');
+      const status = form.querySelector('.status');
+      if (!answer) { status.textContent = 'Choose an option first.'; return; }
+      const question = form.dataset.questionLabel;
+      const prompt = `${question}: ${answer}`;
+      if (window.lavish?.queuePrompt) {
+        window.lavish.queuePrompt(prompt, { tag: 'choice', text: prompt, element: form, data: { id: form.dataset.lavishQuestion, question, answer } });
+        status.textContent = 'Queued. Review and send it in the Lavish conversation panel.';
+      } else {
+        status.textContent = 'Lavish is not active. Use “Copy selected answers” below.';
+      }
+    });
+  });
+  document.getElementById('copyAnswers').addEventListener('click', async (event) => {
+    const button = event.currentTarget;
+    const status = document.getElementById('copyStatus');
+    const lines = [];
+    document.querySelectorAll('form[data-lavish-question]').forEach((form) => {
+      const answer = new FormData(form).get('answer');
+      if (answer) lines.push(`${form.dataset.lavishQuestion} ${form.dataset.questionLabel}: ${answer}`);
+    });
+    if (!lines.length) { status.textContent = 'Choose at least one option first.'; return; }
+    const value = lines.join('\n');
+    try { await navigator.clipboard.writeText(value); status.textContent = 'Answers copied.'; }
+    catch { const area = document.createElement('textarea'); area.value = value; document.body.append(area); area.select(); document.execCommand('copy'); area.remove(); status.textContent = 'Answers copied.'; }
+  });
+</script>
+</body>
+</html>

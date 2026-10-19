@@ -1,0 +1,24 @@
+<p class="application__privacy-note">We use your information to review your application and organise Make a Mark. We keep application records for up to three years after your latest application. <a href="{{ route('privacy') }}">Read our privacy notice</a>.</p>
+@if ($submitted)
+    <div class="application__notice" role="status" aria-live="polite">
+        <strong>Application received</strong>
+        <p>Thank you. Your application has been recorded for the {{ $edition['year'] }} edition.</p>
+        @if ($emailSent)
+            <p>A receipt email has been sent to the address you provided.</p>
+        @else
+            <p>Email receipts are not configured yet. If you have a question, contact <a href="mailto:{{ $site['email'] }}">the organising team</a>.</p>
+        @endif
+    </div>
+@elseif ($edition['status'] === 'open')
+    <p class="application__context">{{ $audience === 'makers' ? 'Tell us what you bring and when you can take part. Makers contribute their time voluntarily.' : 'Tell us about your organisation and the creative challenge you would like to work on. Taking part is free.' }}</p>
+    @include($audience === 'makers' ? 'applications.maker' : 'applications.organisation')
+@else
+    <div class="application__notice" role="status">
+        <strong>{{ $edition['pill']['label'] }}</strong>
+        <p>We’re preparing the application details for the 2027 edition. The form will appear here when applications are ready to open.</p>
+        <p>Questions? <a href="mailto:{{ $site['email'] }}">Email the organising team</a>.</p>
+    </div>
+@endif
+@if ($edition['status'] !== 'open' && ! $submitted)
+    <p class="application__context">{{ $audience === 'makers' ? 'Makers contribute their time voluntarily. Selection happens in advance so that teams can be matched around each organisation’s challenge.' : 'Social organisations take part for free. Each application should focus on a concrete communication, design, or digital challenge.' }}</p>
+@endif

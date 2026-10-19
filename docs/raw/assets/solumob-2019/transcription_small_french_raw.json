@@ -1,0 +1,316 @@
+{
+  "text": " C'est une des pertinences, je suis responsable de l'SBR sur les mobs volontaires. Je suis chier et je suis chauffeur, accompagnateur chez Solimop. Analyse, clearmaker. Elle a non peur.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 2.100000000000001,
+      "end": 5.48,
+      "text": " C'est une des pertinences, je suis responsable de l'SBR sur les mobs volontaires.",
+      "tokens": [
+        50364,
+        383,
+        6,
+        377,
+        2251,
+        730,
+        13269,
+        259,
+        2667,
+        11,
+        1506,
+        7624,
+        2914,
+        712,
+        368,
+        287,
+        6,
+        50,
+        11609,
+        1022,
+        1512,
+        705,
+        929,
+        40005,
+        10840,
+        13,
+        50646
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6339138746261597,
+      "compression_ratio": 1.2867132867132867,
+      "no_speech_prob": 0.10968541353940964,
+      "words": [
+        {
+          "word": " C",
+          "start": 2.100000000000001,
+          "end": 2.56,
+          "probability": 0.402587890625
+        },
+        {
+          "word": "'est",
+          "start": 2.56,
+          "end": 2.6,
+          "probability": 0.8095703125
+        },
+        {
+          "word": " une",
+          "start": 2.6,
+          "end": 2.66,
+          "probability": 0.951171875
+        },
+        {
+          "word": " des",
+          "start": 2.66,
+          "end": 2.74,
+          "probability": 0.24560546875
+        },
+        {
+          "word": " pertinences,",
+          "start": 2.74,
+          "end": 3.16,
+          "probability": 0.403076171875
+        },
+        {
+          "word": " je",
+          "start": 3.18,
+          "end": 3.22,
+          "probability": 0.91552734375
+        },
+        {
+          "word": " suis",
+          "start": 3.22,
+          "end": 3.26,
+          "probability": 0.982421875
+        },
+        {
+          "word": " responsable",
+          "start": 3.26,
+          "end": 3.72,
+          "probability": 0.9619140625
+        },
+        {
+          "word": " de",
+          "start": 3.72,
+          "end": 3.9,
+          "probability": 0.96630859375
+        },
+        {
+          "word": " l",
+          "start": 3.9,
+          "end": 4.28,
+          "probability": 0.708984375
+        },
+        {
+          "word": "'SBR",
+          "start": 4.28,
+          "end": 4.58,
+          "probability": 0.6689453125
+        },
+        {
+          "word": " sur",
+          "start": 4.58,
+          "end": 4.8,
+          "probability": 0.64306640625
+        },
+        {
+          "word": " les",
+          "start": 4.8,
+          "end": 4.86,
+          "probability": 0.734375
+        },
+        {
+          "word": " mobs",
+          "start": 4.86,
+          "end": 4.98,
+          "probability": 0.4580078125
+        },
+        {
+          "word": " volontaires.",
+          "start": 4.98,
+          "end": 5.48,
+          "probability": 0.99169921875
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.64,
+      "end": 9.66,
+      "text": " Je suis chier et je suis chauffeur, accompagnateur chez Solimop.",
+      "tokens": [
+        50646,
+        2588,
+        7624,
+        417,
+        811,
+        1030,
+        1506,
+        7624,
+        49211,
+        13629,
+        11,
+        18037,
+        4535,
+        15540,
+        17855,
+        7026,
+        332,
+        404,
+        13,
+        50854
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6339138746261597,
+      "compression_ratio": 1.2867132867132867,
+      "no_speech_prob": 0.10968541353940964,
+      "words": [
+        {
+          "word": " Je",
+          "start": 5.64,
+          "end": 5.82,
+          "probability": 0.658203125
+        },
+        {
+          "word": " suis",
+          "start": 5.82,
+          "end": 5.88,
+          "probability": 0.908203125
+        },
+        {
+          "word": " chier",
+          "start": 5.88,
+          "end": 6.14,
+          "probability": 0.2802734375
+        },
+        {
+          "word": " et",
+          "start": 6.14,
+          "end": 6.9,
+          "probability": 0.67529296875
+        },
+        {
+          "word": " je",
+          "start": 6.9,
+          "end": 7.14,
+          "probability": 0.465576171875
+        },
+        {
+          "word": " suis",
+          "start": 7.14,
+          "end": 7.4,
+          "probability": 0.99072265625
+        },
+        {
+          "word": " chauffeur,",
+          "start": 7.4,
+          "end": 8.16,
+          "probability": 0.9921875
+        },
+        {
+          "word": " accompagnateur",
+          "start": 8.18,
+          "end": 8.9,
+          "probability": 0.96728515625
+        },
+        {
+          "word": " chez",
+          "start": 8.9,
+          "end": 9.18,
+          "probability": 0.64208984375
+        },
+        {
+          "word": " Solimop.",
+          "start": 9.18,
+          "end": 9.66,
+          "probability": 0.37939453125
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 10.24,
+      "end": 11.24,
+      "text": " Analyse, clearmaker.",
+      "tokens": [
+        50854,
+        1107,
+        5222,
+        405,
+        11,
+        1850,
+        18821,
+        13,
+        50938
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6339138746261597,
+      "compression_ratio": 1.2867132867132867,
+      "no_speech_prob": 0.10968541353940964,
+      "words": [
+        {
+          "word": " Analyse,",
+          "start": 10.24,
+          "end": 10.7,
+          "probability": 0.76416015625
+        },
+        {
+          "word": " clearmaker.",
+          "start": 10.86,
+          "end": 11.24,
+          "probability": 0.375
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 11.62,
+      "end": 12.2,
+      "text": " Elle a non peur.",
+      "tokens": [
+        50938,
+        16227,
+        257,
+        2107,
+        30071,
+        13,
+        50988
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.6339138746261597,
+      "compression_ratio": 1.2867132867132867,
+      "no_speech_prob": 0.10968541353940964,
+      "words": [
+        {
+          "word": " Elle",
+          "start": 11.62,
+          "end": 11.74,
+          "probability": 0.68115234375
+        },
+        {
+          "word": " a",
+          "start": 11.74,
+          "end": 11.82,
+          "probability": 0.8515625
+        },
+        {
+          "word": " non",
+          "start": 11.82,
+          "end": 11.98,
+          "probability": 0.0821533203125
+        },
+        {
+          "word": " peur.",
+          "start": 11.98,
+          "end": 12.2,
+          "probability": 0.7568359375
+        }
+      ]
+    }
+  ],
+  "language": "fr",
+  "source_clip_start_seconds": 46
+}

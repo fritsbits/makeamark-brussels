@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-lavish-annotate="off">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Say it once, make it clear | Make a Mark Brussels</title>
+<style>
+@font-face{font-family:Big Shoulders Display;src:url('assets/messaging/display.woff2')}@font-face{font-family:Plus Jakarta Sans;src:url('assets/messaging/body.woff2')}
+:root{--paper:#f5e2ca;--light:#fff6ea;--inset:#ebd5bb;--red:#c33f40;--ink:#1e1a16;--rule:rgba(195,63,64,.35)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--paper);color:var(--ink)}body{margin:0;font:15px/1.65 Plus Jakarta Sans,Arial,sans-serif}a{color:inherit;text-underline-offset:4px}button,input,select,textarea{font:inherit}button,select{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+main{max-width:1160px;margin:auto;padding:0 30px 60px}header{padding:24px 0;border-bottom:1px solid var(--rule);display:flex;gap:20px;justify-content:space-between;align-items:center}.brand,h1,h2,h3,.big{font-family:Big Shoulders Display,Impact,sans-serif;font-weight:600;line-height:.98;text-transform:uppercase}.brand{font-size:25px;color:var(--red);text-decoration:none}.eyebrow{font-size:13px;font-weight:bold;letter-spacing:.02em;text-transform:none}.scope{font-size:13px}h1{font-size:clamp(64px,9vw,110px);color:var(--red);max-width:850px;margin:24px 0}h2{font-size:clamp(35px,5vw,55px);color:var(--red);margin:0 0 22px}h3{font-size:29px;margin:0 0 12px}p{margin:0 0 15px}.lede{font-size:20px;max-width:760px;line-height:1.55}.muted,small{font-size:13px}.intro{padding:48px 0 38px}.intro .eyebrow{color:var(--ink)}nav{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;padding-top:12px}section{padding:40px 0;border-top:1px solid var(--rule);scroll-margin-top:20px}.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}.split>*{min-width:0}.paper{background:var(--light);padding:27px;border-radius:10px}.red{background:var(--red);color:var(--light);padding:30px;border-radius:18px}.red h2,.red h3{color:var(--light)}.screenshot{height:465px;overflow:auto;background:var(--inset);border:1px solid var(--rule);border-radius:10px}.screenshot img{width:100%;display:block}.caption{margin:9px 0 0;font-size:13px}.quote{border-left:2px solid var(--red);padding:0 0 0 15px;margin:19px 0}.quote p{margin:3px 0}.quote small{color:var(--ink)}.cite{font-size:13px;white-space:nowrap}.flag{display:inline-block;font-size:13px;border:1px solid currentColor;border-radius:99px;padding:4px 10px;margin-bottom:12px}.warning{background:var(--inset);padding:20px 24px;border-top:1px solid var(--rule);margin-top:25px}.warning p:last-child{margin-bottom:0}.decision{display:grid;grid-template-columns:75px minmax(0,1fr) 190px;gap:20px;padding:27px 0;border-top:1px solid var(--rule)}.decision>*{min-width:0}.decision:first-of-type{border-top:0}.number{font-family:Big Shoulders Display,Impact,sans-serif;font-size:44px;color:var(--red)}.decision h3{color:var(--red)}.decision p{margin-bottom:9px}.decision select{width:100%;background:var(--light);color:var(--ink);border:1px solid var(--red);border-radius:6px;padding:10px;font-size:13px}.decision label{display:block;font-size:13px;margin-bottom:7px}.tradeoff{font-size:13px}.sample h3{font-size:46px;color:var(--red)}.sample .eyebrow{margin:15px 0 8px}.sample .routes{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.pill,button{border:1px solid var(--red);border-radius:99px;background:transparent;color:var(--ink);padding:10px 17px;text-decoration:none;font-size:13px}.sample .divider{height:1px;background:var(--rule);margin:23px 0}.sample p:last-child{margin-bottom:0}.compact-list{margin:0;padding-left:20px}.compact-list li{padding:4px 0}.compare{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}.compare>*{min-width:0}.compare h3{font-size:25px;color:var(--red)}blockquote{margin:8px 0 20px;padding-left:15px;border-left:1px solid var(--rule)}table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.06em}th,td{border-bottom:1px solid var(--rule);padding:13px 10px 13px 0;vertical-align:top}td:first-child{width:24%}details{margin:22px 0 0}summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px;font-size:13px}textarea{width:100%;padding:12px;border:1px solid var(--red);background:var(--light);border-radius:6px;resize:vertical}button.primary{background:var(--red);color:var(--light)}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px}.sources{font-size:13px;columns:2;column-gap:30px;padding-left:20px}.sources li{break-inside:avoid;margin-bottom:13px;overflow-wrap:anywhere}.footer{font-size:13px;border-top:1px solid var(--rule);padding-top:18px;display:flex;justify-content:space-between;gap:20px}.receipt{font-size:13px;min-height:22px;margin-top:12px}.note-label{display:block;margin:14px 0 7px;font-size:13px}
+@media(max-width:760px){main{padding:0 20px 35px}header{align-items:start}.scope{max-width:115px;text-align:right}.intro{padding-top:32px}.lede{font-size:18px}.split,.compare{grid-template-columns:minmax(0,1fr)}.decision{grid-template-columns:50px minmax(0,1fr);gap:12px}.decision .choice{grid-column:2}.decision select{max-width:250px}.sources{columns:1}.paper,.red{padding:22px}.screenshot{height:380px}table{font-size:13px}th,td{padding-right:12px}.footer{flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+<header><a class="brand" href="#">Make a Mark Brussels</a><span class="scope">Messaging review<br>18 October 2026 · Proposals only</span></header>
+<div class="intro">
+<h1>Say it once.<br>Make it clear.</h1>
+<p class="lede">My recommendation: give each section one job. Explain the event once, help people choose their route, then give them the facts they need to apply.</p>
+<p>The page keeps returning to the same promise: makers and organisations working together on a real challenge. Keep the warmth. Cut the repeated setup.</p>
+<nav aria-label="Review sections"><a href="#diagnosis">What repeats</a><a href="#decisions">Four decisions</a><a href="#copy">Suggested copy</a><a href="#support">What moves where</a></nav>
+</div>
+<section id="diagnosis">
+<div class="split">
+<div>
+<div class="eyebrow">Observation</div><h2>The same explanation in five places.</h2>
+<p>The hero, process, organisation panel, edition text and About intro all explain the collaboration again. Each adds little to that basic explanation. <a class="cite" href="#sources">[1–4]</a></p>
+<div class="quote"><small>Hero</small><p>“brings creative makers and Brussels social organisations together”</p></div>
+<div class="quote"><small>Organisation panel</small><p>“Work alongside a team of makers on a communication, design, or digital challenge”</p></div>
+<div class="quote"><small>Edition block</small><p>“brings volunteer makers together with Brussels social organisations for one day of creative work”</p></div>
+<p class="muted">Interpretation: the sequence feels busy because several large headings restart the pitch. Shorter sentences alone would leave that pattern intact.</p>
+</div>
+<div><div class="screenshot" tabindex="0" aria-label="Scrollable screenshot of the current homepage"><img src="assets/messaging/current-desktop.png" alt="Current homepage, showing the hero, process, audience panels, youth focus, stories, edition details, FAQ and organisers"></div><p class="caption">Current local homepage, captured during this review. Scroll inside the image, or <a href="assets/messaging/current-desktop.png" target="_blank" rel="noopener">open full size</a>. <a href="assets/messaging/current-mobile.png" target="_blank" rel="noopener">Mobile capture</a>.</p></div>
+</div>
+<div class="warning"><span class="flag">Correctness before cutting</span><p><strong>“Applications open” conflicts with “application details are still being prepared.”</strong> Both appear on the current page. Keep the open status and remove the obsolete application caveat. Verify the venue separately before replacing its caveat. <a class="cite" href="assets/messaging/sources/edition.txt">[3, lines 8–13]</a></p></div>
+</section>
+<section id="decisions">
+<div class="eyebrow">Editorial recommendations · awaiting your review</div><h2>Make these four cuts.</h2>
+<p>These keep the two equal applicant routes and the existing page boundaries. They change how much each section says. The agreed structure explicitly left content reduction open. <a class="cite" href="#sources">[5–6]</a></p>
+<form id="review" data-lavish-question="messaging-direction">
+<article class="decision"><div class="number">D01</div><div><h3>Combine the youth and edition blocks.</h3><p>Use one 2027 block for the date, youth focus, application status and available practical details. Delete the second explanation of the event.</p><p class="tradeoff"><strong>Keep:</strong> the focus on organisations working with young people. <strong>Cost:</strong> less standalone emphasis on the theme. Young people's participation format still needs clarification. <a class="cite" href="#sources">[1,3,7]</a></p></div><div class="choice"><label for="d01">D01 · Your preference</label><select id="d01" name="D01"><option value="Support the recommendation">Support recommendation</option value="Adjust the recommendation">Adjust recommendation</option value="Keep the current approach">Keep current approach</option></select></div></article>
+<article class="decision"><div class="number">D02</div><div><h3>Keep one invitation. Shorten the setup.</h3><p>Keep the current hero headline as the playful line. Make its explanation concrete. Replace “Good work starts with a real brief” with “How it works.” Remove “Two sides of the same team” and “Who will you be making a mark with?” above the audience cards.</p><p class="tradeoff"><strong>Keep:</strong> equal cards, each with one reason to take part and a clear detail link. <strong>Cost:</strong> fewer campaign-style lines. The hero carries the personality. <a class="cite" href="#sources">[1–2,7]</a></p></div><div class="choice"><label for="d02">D02 · Your preference</label><select id="d02" name="D02"><option value="Support the recommendation">Support recommendation</option><option value="Adjust the recommendation">Adjust recommendation</option><option value="Keep the current approach">Keep current approach</option></select></div></article>
+<article class="decision"><div class="number">D03</div><div><h3>Use audience pages for the decision facts.</h3><p>Replace the second motivational headline with “What you commit to.” State unpaid maker time, free organisation participation, preparation and selection plainly. Explain concrete types of work before another invitation.</p><p class="tradeoff"><strong>Keep:</strong> application buttons near the top and bottom. Repeating the action helps; repeating the pitch adds little. Do not cut planning commitments that currently appear in the forms. <a class="cite" href="#sources">[8–10]</a></p></div><div class="choice"><label for="d03">D03 · Your preference</label><select id="d03" name="D03"><option value="Support the recommendation">Support recommendation</option><option value="Adjust the recommendation">Adjust recommendation</option><option value="Keep the current approach">Keep current approach</option></select></div></article>
+<article class="decision"><div class="number">D04</div><div><h3>Make supporting content quieter.</h3><p>Give past editions one concise evidence moment. Move the BRUZZ link beside it. Put the global “organise in your city” link in the footer. Shorten About to names, short roles and contact; remove its repeated event explanation.</p><p class="tradeoff"><strong>Keep:</strong> credit and provenance. For this cut, use the existing Brussels group image; the international hero placeholders remain clearly labelled until replaced. <strong>Cost:</strong> fewer photos in the main story. <a class="cite" href="#sources">[2,4,11–12]</a></p></div><div class="choice"><label for="d04">D04 · Your preference</label><select id="d04" name="D04"><option value="Support the recommendation">Support recommendation</option><option value="Adjust the recommendation">Adjust recommendation</option><option value="Keep the current approach">Keep current approach</option></select></div></article>
+<label class="note-label" for="notes">Anything you want to preserve or change?</label><textarea id="notes" name="notes" rows="2" placeholder="For example: keep the photo strip, but shorten the rest."></textarea>
+<div class="actions"><button type="submit" class="primary">Queue editorial preferences</button><button type="button" id="copy-answers">Copy preferences</button></div>
+<p class="receipt" id="receipt" role="status" aria-live="polite">Selections stay local until queued. Queuing records feedback only; it does not authorise implementation.</p>
+</form>
+</section>
+<section id="copy">
+<div class="eyebrow">Proposed wording · not a new wireframe</div><h2>The messages worth keeping.</h2>
+<div class="split">
+<div class="paper sample">
+<span class="flag">Hero · keep the existing headline</span>
+<h3>One day. Many ways to make a mark.</h3>
+<p>Volunteer makers and Brussels social organisations team up for one day to work on communication, design and digital challenges.</p>
+<p class="muted">27 March 2027 · Brussels · Applications open</p>
+<div class="routes"><span class="pill">For makers</span><span class="pill">For social organisations</span></div>
+<div class="divider"></div>
+<div class="eyebrow">How it works</div>
+<p>Organisations bring a challenge. We select and match teams before the day. Together, they work on a practical direction or first materials.</p>
+<div class="divider"></div>
+<div class="eyebrow">The 2027 edition</div>
+<p>This year, we're working with organisations that support young people in Brussels.</p>
+</div>
+<div>
+<h3>Each audience gets a distinct reason.</h3>
+<div class="quote"><small>Maker card</small><p>Give your creative skills to a local project and meet other makers.</p><p class="muted">Link: Maker details</p></div>
+<div class="quote"><small>Organisation card</small><p>Work with a maker team on one communication, design or digital challenge.</p><p class="muted">Link: Organisation details</p></div>
+<h3>Then explain the commitment.</h3>
+<p class="muted">Suggested audience-page copy, before the application ask:</p>
+<p><strong>Makers:</strong> Volunteer a full day and join a planning meeting beforehand. We select makers and match teams in advance.</p>
+<p><strong>Organisations:</strong> Taking part is free. Prepare your brief and materials, join a planning meeting, and take part in feedback and the evening presentation.</p>
+<p class="muted">The current forms request these commitments. Their requiredness is still under review. Keep that uncertainty in the review record; confirm the final schedule before publishing specifics. <a class="cite" href="#sources">[9–10,12]</a></p>
+</div>
+</div>
+<p class="caption">Drafts draw on the current brief, process and forms. They promise a day of collaboration, without guaranteeing a finished product. Maker motivation is an editorial hypothesis, not validated current audience research. <a href="#sources">[1,3,5,7–10]</a></p>
+</section>
+<section id="support">
+<h2>Give each fact a home.</h2>
+<table><thead><tr><th>Message</th><th>Main home</th><th>What to remove or retain</th></tr></thead><tbody>
+<tr><td>What Make a Mark does</td><td>Hero</td><td>Cut full restatements in the edition block and About.</td></tr>
+<tr><td>How teams work</td><td>Short homepage process</td><td>Keep detailed selection and preparation on audience pages.</td></tr>
+<tr><td>Why take part</td><td>One line per audience card</td><td>Use different benefits for each audience. Keep route links in the hero and navigation.</td></tr>
+<tr><td>Date, youth focus, status</td><td>One edition block</td><td>Repeat date/status where needed to apply. Remove the separate youth pitch and obsolete application caveat.</td></tr>
+<tr><td>Cost and time</td><td>Audience pages, then form reminder</td><td>Replace “Kind of” with “No. Makers volunteer their time and skills.” Keep practical repetition at the decision point. <a class="cite" href="#sources">[11]</a></td></tr>
+<tr><td>Past work and atmosphere</td><td>One evidence moment</td><td>Use a real Brussels image and a descriptive BRUZZ link. More photos can live on Instagram.</td></tr>
+<tr><td>Team and global movement</td><td>About and footer</td><td>Keep people and contact details; say the global affiliation once.</td></tr>
+</tbody></table>
+<details><summary>Scope, evidence and limits</summary>
+<p style="margin-top:18px">This is an editorial review of the running homepage, both audience pages and application introductions. Forms were read for commitments; field removal is outside this review. No product copy, routes, styles or forms were changed.</p>
+<p>These are recommendations, not tested conversion improvements. Unknowns remain around venue, detailed schedule, review timing, eligible maker roles and how young people take part. The draft does not invent answers. <a href="assets/messaging/sources/voice.txt">[7]</a></p>
+<p>The overview uses the project's own design system: Big Shoulders Display, Plus Jakarta Sans, red ink and cream paper. Current homepage screenshots were captured with the project's existing Playwright helper at desktop and mobile sizes.</p>
+<ol class="sources" id="sources">
+<li><a href="assets/messaging/sources/home.txt">Homepage template</a>, lines 26–57. Process, audience panels and separate youth block.</li>
+<li><a href="assets/messaging/sources/site.txt">Shared content</a>, lines 36–38 and 63–77. Hero, About and footer copy.</li>
+<li><a href="assets/messaging/sources/edition.txt">2027 edition content</a>, lines 5–13. Date, open status and conflicting body text.</li>
+<li><a href="assets/messaging/sources/about.txt">About template</a> and <a href="assets/messaging/sources/stories.txt">story strip</a>. Current supporting content.</li>
+<li><a href="assets/messaging/sources/strategy.txt">UX Strategy</a>, equal applicant audiences and application objective.</li>
+<li><a href="assets/messaging/sources/structure.txt">UX Structure</a>, open question about retained content; <a href="assets/messaging/sources/skeleton.txt">UX Skeleton</a>, homepage and audience-page hierarchy.</li>
+<li><a href="assets/messaging/sources/voice.txt">Tone of voice</a>, practical answers, commitments, youth participation and factual limits.</li>
+<li><a href="assets/messaging/sources/audience.txt">Audience template</a>, lines 8–45. Repeated invitations, selection and application buttons.</li>
+<li><a href="assets/messaging/sources/maker-form.txt">Maker form</a>, practical details. Full day and planning availability.</li>
+<li><a href="assets/messaging/sources/organisation-form.txt">Organisation form</a>, time commitment. Materials, planning, feedback and presentation.</li>
+<li><a href="assets/messaging/sources/faq.txt">Current FAQs</a>, payment answer, BRUZZ and global organiser links.</li>
+<li><a href="assets/messaging/sources/concerns.txt">Build concerns snapshot</a>, B-001 field review and B-007 temporary international photography.</li>
+</ol>
+</details>
+</section>
+<div class="footer"><span>Review only. No implementation authorised.</span><span>Four editorial decisions. Existing identity and two audience routes preserved.</span></div>
+</main>
+<script>
+const form=document.getElementById('review'),receipt=document.getElementById('receipt');
+const labels={D01:'Combine youth and edition blocks',D02:'Shorten repeated setup and headings',D03:'Put decision facts on audience pages',D04:'Quiet supporting content'};
+const getAnswers=()=>{const fd=new FormData(form);return {items:Object.entries(labels).map(([id,label])=>({id,label,disposition:fd.get(id)})),notes:fd.get('notes').trim()}};
+const message=a=>'Record these editorial preferences for the messaging review. Do not implement site changes. Account for every submitted decision ID in your response.\n'+a.items.map(i=>i.id+' '+i.label+': '+i.disposition).join('\n')+(a.notes?'\nNotes: '+a.notes:'');
+form.addEventListener('submit',e=>{e.preventDefault();const a=getAnswers();if(!window.lavish?.queuePrompt){receipt.textContent='Open in Lavish to queue feedback, or use Copy preferences.';return}window.lavish.queuePrompt(message(a),{tag:'messaging-review',queueKey:'messaging-direction',text:'Editorial preferences for D01–D04; review only',element:form,data:a});receipt.textContent='Preferences queued. Use Send to Agent in Lavish to send them. No site changes authorised.'});
+document.getElementById('copy-answers').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(message(getAnswers()));receipt.textContent='Preferences copied. Paste them into the conversation when ready.'}catch{receipt.textContent='Copy unavailable. Open this overview through Lavish to queue preferences.'}});
+</script>
+</body></html>

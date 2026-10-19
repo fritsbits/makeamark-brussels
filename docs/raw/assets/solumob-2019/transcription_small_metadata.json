@@ -1,0 +1,13 @@
+{
+  "engine": "mlx-whisper",
+  "version": "0.4.3",
+  "model": "mlx-community/whisper-small-mlx",
+  "source": ".bloom/attachments/KbiE5E/8 hrs to help local non-profits with design.mp4",
+  "source_duration_seconds": 189.28907,
+  "language": "nl",
+  "word_timestamps": true,
+  "condition_on_previous_text": false,
+  "manually_verified": false,
+  "audio_uploaded": false,
+  "model_downloaded_from": "https://huggingface.co/mlx-community/whisper-small-mlx"
+}

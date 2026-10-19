@@ -1,0 +1,168 @@
+{
+  "captured": "2026-10-19",
+  "sources": {
+    "video": {
+      "path": ".bloom/attachments/KbiE5E/8 hrs to help local non-profits with design.mp4",
+      "sha256": "9d26779cf96ba1198fa1dae232aa3c23c1acd8aae53309e462fd13a78a83d6ee",
+      "bytes": 43437698
+    },
+    "supplied_transcript": {
+      "path": ".bloom/attachments/WyjMy3/8 hrs to help local non-profits with design.txt",
+      "sha256": "795a06657b8c8216f3c1ce3497123c49b53083217cde93979468e3f8611735fb",
+      "bytes": 585
+    },
+    "application": {
+      "path": ".bloom/attachments/ehULvZ/2020 Make a Mark Brussels social profit Application (Responses) - Copy of Form Responses 1.csv",
+      "sha256": "7d9aa0c1eeb6216cf3108d24104145779900b2e195f6e8906c1b2ffb64d590af",
+      "bytes": 6355
+    }
+  },
+  "video": {
+    "duration_seconds": 189.28907,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "file_creation_time_utc": "2024-08-20T21:56:53Z",
+    "creation_time_is_not_event_date": true
+  },
+  "stills": [
+    {
+      "file": "0035-duration-correction.jpg",
+      "seconds": 35,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0038-team.jpg",
+      "seconds": 38.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0044-team-board.jpg",
+      "seconds": 44.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0045-structure-tone.jpg",
+      "seconds": 45.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0047-baseline-board.jpg",
+      "seconds": 47.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0105-audience.jpg",
+      "seconds": 65.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0108-existing-flyer.jpg",
+      "seconds": 68.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0110-communication-plan.jpg",
+      "seconds": 70.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0112-baseline-ideas.jpg",
+      "seconds": 72.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0118-filming.jpg",
+      "seconds": 78.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0121-transport-scene.jpg",
+      "seconds": 81.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0125-car-scene.jpg",
+      "seconds": 85.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0132-editing.jpg",
+      "seconds": 92.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0138-photoshoot.jpg",
+      "seconds": 98.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0144-flyer-work.jpg",
+      "seconds": 104.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0152-computer-date.jpg",
+      "seconds": 112.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0158-homepage-work.jpg",
+      "seconds": 118.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0202-template-editing.jpg",
+      "seconds": 122,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0209-output-map.jpg",
+      "seconds": 129.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0216-evening-venue.jpg",
+      "seconds": 136.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0226-film-player.jpg",
+      "seconds": 146.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0234-film-screening.jpg",
+      "seconds": 154.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    },
+    {
+      "file": "0238-presented-baseline.jpg",
+      "seconds": 158.5,
+      "source": "video",
+      "transformation": "Uncropped original-resolution JPEG frame extracted with ffmpeg -ss, -frames:v 1, -q:v 2"
+    }
+  ]
+}

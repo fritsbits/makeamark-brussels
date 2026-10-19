@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-19T10:35:04.063Z",
+  "selectedIds": [
+    "L-01",
+    "L-02",
+    "L-03",
+    "L-04",
+    "L-05",
+    "L-06"
+  ],
+  "outcomes": [
+    {
+      "id": "L-01",
+      "outcome": "implemented and verified"
+    },
+    {
+      "id": "L-02",
+      "outcome": "implemented and verified"
+    },
+    {
+      "id": "L-03",
+      "outcome": "implemented and verified"
+    },
+    {
+      "id": "L-04",
+      "outcome": "implemented and verified"
+    },
+    {
+      "id": "L-05",
+      "outcome": "implemented and verified"
+    },
+    {
+      "id": "L-06",
+      "outcome": "implemented and verified"
+    }
+  ],
+  "browser": {
+    "date": "2026-10-19T10:28:55.819Z",
+    "pages": [
+      {
+        "width": 1440,
+        "route": "/",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": null,
+        "fieldBorder": null,
+        "date": "- time: Saturday 27 March 2027",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "route": "/makers",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "route": "/organisations",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027",
+        "youthText": "For the 2027 edition, we're teaming up with Brussels organisations that work with young people aged roughly 12–25.",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "route": "/privacy",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": null,
+        "leadColor": null,
+        "fieldBorder": null,
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "route": "/",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": null,
+        "fieldBorder": null,
+        "date": "- time: Saturday 27 March 2027",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "route": "/makers",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "route": "/organisations",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027",
+        "youthText": "For the 2027 edition, we're teaming up with Brussels organisations that work with young people aged roughly 12–25.",
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "route": "/privacy",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": null,
+        "leadColor": null,
+        "fieldBorder": null,
+        "axe": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".footer__wordmark"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "width": 320,
+        "route": "/",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": null,
+        "fieldBorder": null,
+        "date": "- time: Saturday 27 March 2027"
+      },
+      {
+        "width": 320,
+        "route": "/makers",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027"
+      },
+      {
+        "width": 320,
+        "route": "/organisations",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": "rgb(255, 246, 234)",
+        "leadColor": "rgb(255, 246, 234)",
+        "fieldBorder": "rgb(107, 86, 69)",
+        "date": "- time: Saturday 27 March 2027",
+        "youthText": "For the 2027 edition, we're teaming up with Brussels organisations that work with young people aged roughly 12–25."
+      },
+      {
+        "width": 320,
+        "route": "/privacy",
+        "overflow": 0,
+        "og": "https://letsmakeamark.brussels/og-2027.png",
+        "ogWidth": "1200",
+        "ogHeight": "630",
+        "dateColor": null,
+        "leadColor": null,
+        "fieldBorder": null
+      }
+    ],
+    "menu": {
+      "forward": [
+        "For makers",
+        "For organisations",
+        "About",
+        "Menu"
+      ],
+      "backward": "About",
+      "resizeRestoresBackground": true,
+      "linkCloses": true
+    },
+    "validation": {
+      "message": "Some details need your attention.\nThe email field is required.\nThe organisation name field is required.\nPlease confirm that your organisation works with young people in Brussels.\nThe mission field is required.\nThe challenge field is required.\nThe contact name field is required.\nThe phone field is required.\nThe languages field is required.\nThe assets ready field must be accepted.\nThe planning meeting field must be accepted.\nThe feedback session field must be accepted.\nThe evening presentation field must be accepted.",
+      "errorLinks": 1,
+      "focus": true
+    },
+    "asset": {
+      "status": 200,
+      "sameAsApproved": true
+    },
+    "errors": []
+  },
+  "buildPassed": true,
+  "tests": {
+    "tests": 115,
+    "passed": 111,
+    "failed": 4,
+    "assertions": 844,
+    "failures": [
+      {
+        "test": "Tests\\Feature\\EditionWebsiteTest::test_homepage_introduces_the_current_edition_and_both_applicant_journeys",
+        "file": "tests/Feature/EditionWebsiteTest.php",
+        "line": 17
+      },
+      {
+        "test": "Tests\\Feature\\EditionWebsiteTest::test_audience_pages_explain_each_groups_commitment_and_include_their_application",
+        "file": "tests/Feature/EditionWebsiteTest.php",
+        "line": 33
+      },
+      {
+        "test": "Tests\\Feature\\MessagingPreviewTest::test_selected_home_has_no_process_and_original_is_preserved",
+        "file": "tests/Feature/MessagingPreviewTest.php",
+        "line": 19
+      },
+      {
+        "test": "Tests\\Feature\\MessagingPreviewTest::test_preview_audience_pages_keep_preparation_and_selection_visible",
+        "file": "tests/Feature/MessagingPreviewTest.php",
+        "line": 38
+      }
+    ],
+    "samePreexistingFailures": true
+  },
+  "securityReview": {
+    "scope": "L-06 required youth-work confirmation and historical answer preservation",
+    "passed": true,
+    "findings": []
+  },
+  "detector": {
+    "existing": 18,
+    "baseline": 18,
+    "newFindings": [],
+    "triage": "Existing product notations retained as documented in initial audit. Report-only tab indicator and typography exceptions do not apply to product files."
+  },
+  "noLiveEmailsSent": true,
+  "noSuccessfulBrowserSubmissions": true
+}
