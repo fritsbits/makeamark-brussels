@@ -6,6 +6,11 @@ stale test corrections. All 115 PHP tests, five JavaScript tests and the
 production build pass on main. Running desktop/mobile checks pass and the
 Herd preview points to main; L-07 is resolved.
 
+Production rollout: [live host checks](build/46-production-rollout.md) confirm
+the production URL, migrations, and organizer accounts. Mail is still disabled,
+Forge database backups require a plan upgrade, DigitalOcean backup status is
+unknown, and the shared server has 96% disk use.
+
 Case-study research: [Solumob video evidence](build/44-solumob-video-analysis.md)
 records the 16 March 2019 make-a-thon, visible communication work, the
 presented short film and baseline, timecodes and preserved stills. The
@@ -37,7 +42,7 @@ room above and below, with a slightly tighter gap before the hero title.
 
 Homepage application action: [Apply now scribble](build/42-homepage-apply-now-scribble-options.md)
 uses the owner's vector with Ink lettering and a Marker Red oval and arrow;
-the single link leads to both application routes when applications are open.
+on mobile it follows the hero photo and points to the two audience blocks.
 
 Homepage details: the hero photo archive caption and carousel counter are
 removed, the edition section reuses the Makers date lockup, and dividers are

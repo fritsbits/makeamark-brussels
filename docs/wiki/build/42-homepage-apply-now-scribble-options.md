@@ -4,6 +4,7 @@ tags: [homepage, applications, illustration, review]
 sources:
   - "../../raw/2026-10-19-homepage-apply-now-scribble-request.md"
   - "../../raw/2026-10-19-homepage-apply-now-scribble-selection.md"
+  - "../../raw/2026-10-19-mobile-hero-cta-order-request.md"
   - "../../../.bloom/attachments/Xy4Daz/scribble.pdf"
   - "../../../.lavish/homepage-apply-now-options.html"
   - "../../../public/images/apply-now-ink-red.svg"
@@ -32,16 +33,20 @@ for each treatment. [Review page](../../../.lavish/homepage-apply-now-options.ht
 | C | All Ink | Quietest and highest-contrast treatment. |
 
 The selected SVG replaces the status copy and prior arrows as one complete
-link under the homepage introduction. It links to `#take-part`, where both
+link. On desktop it sits below the homepage introduction; at the mobile stack
+breakpoint it follows the hero photo and points toward `#take-part`, where both
 application routes begin. The artwork appears only while applications are
 open; other edition states retain the dynamic status wording. The link has an
-accessible name and visible keyboard focus treatment. The running homepage
-was reviewed after implementation.
+accessible name and visible keyboard focus treatment. The owner requested the
+mobile order so the arrow points toward the two audience blocks. A 390px
+running-page capture confirms the photo → CTA → audience-block sequence.
 [Owner selection](../../raw/2026-10-19-homepage-apply-now-scribble-selection.md);
+[mobile order request](../../raw/2026-10-19-mobile-hero-cta-order-request.md);
 [edition state labels](../../../resources/content/site.json);
 [design palette](../../../DESIGN.md)
 
 ## Concern status
 
 B-034 is closed: the owner selected A, with Ink lettering and a Marker Red
-oval and arrow. The selected vector is implemented on the running homepage.
+oval and arrow. The selected vector links to both application routes; the
+mobile position now places it after the hero photo. [Implementation](../../raw/2026-10-19-mobile-hero-cta-order-request.md)

@@ -9,13 +9,6 @@
                     @endforeach
                 </flux:heading>
                 <flux:text class="hero__intro distilled__lead">{{ $site['hero']['intro'] }}</flux:text>
-                <a class="hero__status" href="#take-part" aria-label="{{ $edition['status'] === 'open' ? 'Apply now. Explore ways to take part.' : $edition['pill']['label'].'. Explore ways to take part.' }}">
-                    @if ($edition['status'] === 'open')
-                        <span class="hero__status-art" aria-hidden="true"></span>
-                    @else
-                        <span class="hero__status-label"><span class="status-dot" aria-hidden="true"></span>{{ $edition['pill']['label'] }}</span>
-                    @endif
-                </a>
             </div>
             <figure class="hero__visual">
                 <div class="hero__photos">
@@ -26,6 +19,13 @@
                     @endforeach
                 </div>
             </figure>
+            <a class="hero__status" href="#take-part" aria-label="{{ $edition['status'] === 'open' ? 'Apply now. Explore ways to take part.' : $edition['pill']['label'].'. Explore ways to take part.' }}">
+                @if ($edition['status'] === 'open')
+                    <span class="hero__status-art" aria-hidden="true"></span>
+                @else
+                    <span class="hero__status-label"><span class="status-dot" aria-hidden="true"></span>{{ $edition['pill']['label'] }}</span>
+                @endif
+            </a>
         </section>
 
 

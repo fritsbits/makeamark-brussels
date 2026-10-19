@@ -729,7 +729,6 @@ Append one dated, concise entry whenever the synthesis changes.
   database and private preview files outside Git.
   [Integration record](build/45-worktree-integration.md);
   [test output](../raw/2026-10-19-worktree-merge-tests.json).
-
 - 2026-10-19: Verified the squash-merged main checkout: 115 PHP tests, 887
   assertions, five JavaScript tests and the production build pass. Chromium
   checks pass four public routes at desktop/mobile widths plus embedded forms,
@@ -738,3 +737,22 @@ Append one dated, concise entry whenever the synthesis changes.
   worktree files are preserved before archive is requested.
   [Merged verification](../raw/2026-10-19-main-integration-verification.json);
   [integration record](build/45-worktree-integration.md).
+
+- 2026-10-19: Completed production rollout checks on Forge. Set APP_URL to the
+  production hostname and refreshed the config cache. Verified production mode,
+  debug off, six migrations, the four active organizer accounts, TLS, and direct
+  origin routes. Mail remains on log with no Resend key or verified sender;
+  Cloudflare Email Routing awaits a destination mailbox. Forge database backups
+  require Business, DigitalOcean backup/restore remains unknown, and the shared
+  server has 96% disk use. Cloudflare/public resolvers point to Forge while this
+  workstation's resolver still returned stale one.com/Netlify data. No forms
+  were submitted and no mail was sent. B-035 remains partly resolved.
+  [Rollout record](build/46-production-rollout.md);
+  [captured observations](../raw/2026-10-19-production-rollout-observations.md).
+
+- 2026-10-19: Moved the homepage hand-drawn CTA after the hero image at the
+  mobile stack breakpoint. The arrow now leads toward the Makers and Social
+  organisations blocks; a 390px running-page capture confirms the order, while
+  desktop placement stays beneath the intro. Updated the selected CTA record
+  and B-034. [Owner request](../raw/2026-10-19-mobile-hero-cta-order-request.md);
+  [implementation record](build/42-homepage-apply-now-scribble-options.md).
