@@ -39,6 +39,9 @@ Homepage navigation: [Wordmark scale and color](build/39-homepage-wordmark.md)
 uses dark Ink, starts large on desktop, and shrinks when scrolling begins.
 The [spacing refinement](build/40-homepage-wordmark-spacing.md) gives it more
 room above and below, with a slightly tighter gap before the hero title.
+[Scroll stability](build/48-homepage-wordmark-scroll-stability.md) adds a
+dead band wider than the animated header-height change so scroll corrections do
+not switch states repeatedly.
 
 Homepage application action: [Apply now scribble](build/42-homepage-apply-now-scribble-options.md)
 uses the owner's vector with Ink lettering and a Marker Red oval and arrow;
@@ -143,6 +146,8 @@ Visual refinement: [Global Make a Mark design review](build/12-global-design-rev
 | [Homepage wordmark request](../raw/2026-10-19-homepage-wordmark-scroll-request.md) | Owner asked for a large-to-compact homepage wordmark and suggested dark brown instead of red. | Source capture | Build |
 | [Homepage wordmark spacing](build/40-homepage-wordmark-spacing.md) | Adds breathing room above and below the expanded logo and reduces hero top spacing slightly. | Implementation | Build |
 | [Homepage wordmark spacing request](../raw/2026-10-19-homepage-wordmark-spacing-request.md) | Owner requested generous logo spacing and a small reduction in space before the title. | Source capture | Build |
+| [Homepage wordmark jump report](../raw/2026-10-20-homepage-wordmark-jump-request.md) | Owner reported repeated large/small logo jumps at one scroll position. | Source capture | Build |
+| [Homepage wordmark scroll stability](build/48-homepage-wordmark-scroll-stability.md) | Hysteresis keeps small reversals near the scroll trigger from toggling the logo repeatedly. | Fix and implementation | Build |
 | [Homepage lead feedback](../raw/2026-10-19-homepage-lead-feedback.md) | Owner requested the Makers lead settings for both homepage text areas and removal of the hero date. | Source capture | Build |
 | [Homepage detail feedback](../raw/2026-10-19-homepage-detail-feedback.md) | Owner requested the Makers date lockup in the edition section, and removal of the hero caption, carousel counter, evidence-link borders and team dividers. | Source capture | Build |
 | [Audience-led titles and copy](build/28-copywriting-benefits.md) | Owner-selected titles and revised audience leads implemented and verified in the running app. | Copy decision and implementation | Build |

@@ -6,7 +6,7 @@ function register() {
 
         return {
             open: false,
-            compact: window.scrollY > 24,
+            compact: window.scrollY > 64,
 
             init() {
                 mobile = window.matchMedia('(max-width: 760px)');
@@ -18,6 +18,11 @@ function register() {
             toggle() {
                 if (this.open) this.close();
                 else this.open = true;
+            },
+
+            updateCompact() {
+                const scrollY = window.scrollY;
+                this.compact = this.compact ? scrollY > 8 : scrollY > 64;
             },
 
             close(restoreFocus = true) {

@@ -3,11 +3,12 @@ title: Homepage navigation wordmark scale and color
 tags: [homepage, navigation, typography, implementation]
 sources:
   - "../../raw/2026-10-19-homepage-wordmark-scroll-request.md"
+  - "../../raw/2026-10-20-homepage-wordmark-jump-request.md"
   - "../../../resources/views/sections/nav.blade.php"
   - "../../../resources/css/app.css"
   - "../../../resources/css/tokens.css"
 phase: Build
-updated: 2026-10-19
+updated: 2026-10-20
 status: implemented and browser-verified
 ---
 
@@ -16,6 +17,11 @@ status: implemented and browser-verified
 The owner asked for a prominent homepage navigation wordmark that reduces in
 size as scrolling begins, and selected dark brown over red to keep the logo
 from competing with the red homepage title. [Request](../../raw/2026-10-19-homepage-wordmark-scroll-request.md).
+
+The initial 24px scroll threshold caused repeated large/small changes near the
+boundary. The current controller enters compact above 64px and expands at or
+below 8px so the state remains stable while the sticky header changes height.
+See the [stability fix and running-page verification](48-homepage-wordmark-scroll-stability.md).
 
 The shared navigation wordmark now uses the primary Ink token (`#29231D`). On
 the homepage, it scales visually to 2.5 times its compact size on wide screens,

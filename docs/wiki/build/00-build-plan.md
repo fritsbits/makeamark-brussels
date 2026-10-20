@@ -29,6 +29,7 @@ sources:
   - "../../raw/2026-10-19-organisation-invitation-direction.md"
   - "../../raw/2026-10-19-homepage-wordmark-scroll-request.md"
   - "../../raw/2026-10-19-homepage-wordmark-spacing-request.md"
+  - "../../raw/2026-10-20-homepage-wordmark-jump-request.md"
   - "../../raw/2026-10-19-audience-arrangement-selection.md"
   - "../../raw/2026-10-18-homepage-carousel-sizing-feedback.md"
   - "../../raw/2026-10-18-homepage-carousel-request.md"
@@ -200,6 +201,10 @@ smaller to fit beside the menu control; the effect respects reduced motion.
 The homepage wordmark now has generous vertical breathing room while expanded,
 with a shorter sticky row after scrolling. Hero top spacing is slightly reduced
 to balance the enlarged navigation. [Spacing receipt](40-homepage-wordmark-spacing.md).
+
+The wordmark scroll state now has hysteresis: it compacts after 64px and
+expands at or below 8px, preventing small reversals at the threshold from repeatedly
+switching the logo and header height. [Stability receipt](48-homepage-wordmark-scroll-stability.md).
 
 ## Purpose
 
