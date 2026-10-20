@@ -1,5 +1,12 @@
 # Cascade change log
 
+- 2026-10-20: Fixed the homepage wordmark jumping at its scroll trigger. The
+  single 24px boundary now uses hysteresis, entering compact above 64px and
+  returning to large at or below 8px. The production build, 115 PHP tests
+  (887 assertions), and running-page checks at desktop and phone widths pass.
+  B-038 is closed. [Request](../raw/2026-10-20-homepage-wordmark-jump-request.md);
+  [implementation and verification](build/48-homepage-wordmark-scroll-stability.md).
+
 - 2026-10-19: Applied the owner's final Lavish selection, superseding the earlier
   six-item selection: L-02 through L-06 remain implemented; L-01's original
   Paper Cream text is restored. The visual receipt now shows this distinction.
