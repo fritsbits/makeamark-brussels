@@ -3,6 +3,7 @@ title: Build plan
 tags: [plan, build, website]
 sources:
   - "../../raw/2026-10-20-fathom-analytics-request.md"
+  - "../../raw/2026-10-20-fathom-production-deployment.md"
   - "../../raw/2026-10-19-worktree-merge-tests.json"
   - "../../raw/2026-10-19-launch-review-final-feedback.json"
   - "../../raw/2026-10-19-launch-final-fixes-verification.json"
@@ -92,9 +93,11 @@ B-036 carries the remaining final-asset, credits, usage and outcome questions.
 
 ## Analytics
 
-Fathom Analytics is installed on production public pages only. The privacy
-notice describes its analytics purpose and data processing; the owner's DPA
-and lawful-basis review remain open under B-039. [Implementation record](49-fathom-analytics.md).
+Fathom Analytics is deployed on production public pages only; the homepage
+response and privacy disclosure were checked. The owner's DPA and lawful-basis
+review remain open under B-039. GitHub CI failed before tests because the
+workflow's PHP 8.3 conflicts with the lockfile's PHP 8.4.1 dependency
+requirements. [Implementation and production record](49-fathom-analytics.md).
 
 ## Livegang-audit
 

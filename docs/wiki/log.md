@@ -1,5 +1,14 @@
 # Cascade change log
 
+- 2026-10-20: Deployed Fathom to Forge from main commit `2a64388`. The
+  production homepage returns the Fathom script with site ID `UDIIHURW`, and
+  `/privacy` serves the analytics disclosure. The Fathom dashboard was not
+  checked. GitHub Actions failed before tests because its PHP 8.3 setup is
+  incompatible with the lockfile's PHP 8.4.1 dependency requirement. B-039
+  remains partly resolved for the controller's balancing assessment and DPA.
+  [Observation](../raw/2026-10-20-fathom-production-deployment.md);
+  [implementation](build/49-fathom-analytics.md).
+
 - 2026-10-20: Installed the owner-provided Fathom script on production public
   pages only and updated the privacy notice with its purpose and stated data
   processing. Recorded the remaining lawful-basis and DPA confirmation under

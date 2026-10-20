@@ -3,6 +3,7 @@ title: Build concerns
 tags: [concerns, build, website]
 sources:
   - "../../raw/2026-10-20-fathom-analytics-request.md"
+  - "../../raw/2026-10-20-fathom-production-deployment.md"
   - "https://usefathom.com/docs/start/policy"
   - "https://usefathom.com/legal/dpa"
   - "https://usefathom.com/docs/start/dpa"
