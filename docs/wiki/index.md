@@ -6,6 +6,10 @@ stale test corrections. All 115 PHP tests, five JavaScript tests and the
 production build pass on main. Running desktop/mobile checks pass and the
 Herd preview points to main; L-07 is resolved.
 
+Fathom analytics: [production public-page integration](build/49-fathom-analytics.md)
+uses site ID `UDIIHURW` and adds a privacy-notice disclosure. DPA and lawful-basis
+review remain open under B-039.
+
 Production rollout: [live host checks](build/46-production-rollout.md) confirm
 the production URL, migrations, and organizer accounts. Mail is still disabled,
 Forge database backups require a plan upgrade, DigitalOcean backup status is

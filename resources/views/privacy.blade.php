@@ -6,11 +6,11 @@
             <p class="kicker">Application information</p>
             <flux:heading level="1" class="h-display privacy__title">Privacy notice</flux:heading>
             <div class="privacy__body">
-                <p class="privacy__updated">Last updated 18 October 2026</p>
+                <p class="privacy__updated">Last updated 20 October 2026</p>
 
                 <section aria-labelledby="privacy-controller">
                     <h2 id="privacy-controller">Who is responsible</h2>
-                    <p>Impact Studio BV (BE 0652.723.886), Kasteeldreef 47, 1083 Ganshoren, is responsible for personal information submitted through the Make a Mark Brussels maker and organisation applications.</p>
+                    <p>Impact Studio BV (BE 0652.723.886), Kasteeldreef 47, 1083 Ganshoren, is responsible for personal information submitted through the Make a Mark Brussels maker and organisation applications and processed for public website analytics.</p>
                     <p>For privacy questions or requests, contact Frederik Vincx at <a href="mailto:hi@frederikvincx.com">hi@frederikvincx.com</a>.</p>
                 </section>
 
@@ -19,6 +19,12 @@
                     <p>We use contact details, application answers, and basic technical request logs to assess applications, select participants, secure the application site, organise the edition, and keep prior answers available so you can refer to them if you apply again within three years. If you apply again, the team will ask you to review and update your information. We will not submit an old application for you or use your answers for marketing.</p>
                     <p>Our legal basis is our legitimate interest in running Make a Mark and managing applications across editions. We have weighed this against your privacy: access is limited to the internal Make a Mark team listed on this site, applications are reviewed manually, and we review retained applications yearly and delete or anonymise them three years after your latest application.</p>
                     <p>You can object to processing based on legitimate interests. You do not have to apply, but required answers are necessary for the team to assess your application.</p>
+                </section>
+
+                <section aria-labelledby="privacy-analytics">
+                    <h2 id="privacy-analytics">Website analytics</h2>
+                    <p>We use Fathom Analytics to understand how visitors use the public website and improve it. Fathom does not use tracking cookies or build advertising profiles across websites. To produce site statistics, it briefly processes request information including your IP address and browser user-agent to create a site-specific visitor signature. Fathom says this personal data is processed and anonymised on EU servers before it reaches its US-controlled infrastructure.</p>
+                    <p>Our purpose is to understand and improve the public website. You can object to processing based on our legitimate interests by contacting us using the details below. Read more in <a href="https://usefathom.com/docs/start/policy">Fathom's privacy information</a> and its <a href="https://usefathom.com/legal/dpa">data processing agreement</a>.</p>
                 </section>
 
                 <section aria-labelledby="privacy-data">
@@ -33,6 +39,7 @@
                     <ul>
                         <li><strong>DigitalOcean</strong> hosts the application on a server in Amsterdam. <strong>Laravel Forge</strong> is used to manage that server.</li>
                         <li><strong>Resend</strong> sends confirmation emails when email is enabled. It receives your name, email address, application type, and edition year, but not your application answers. Resend processes email data in the United States under contractual transfer safeguards.</li>
+                        <li><strong>Fathom Analytics</strong> provides statistics about use of the public website. It briefly processes IP address and browser user-agent data for site-specific analytics; see the <a href="https://usefathom.com/legal/dpa">Fathom data processing agreement</a>.</li>
                         <li><strong>Cloudflare and one.com</strong> support our domain and email. If you email us, they may handle your message and delivery details.</li>
                     </ul>
                 </section>

@@ -2,6 +2,7 @@
 title: Build plan
 tags: [plan, build, website]
 sources:
+  - "../../raw/2026-10-20-fathom-analytics-request.md"
   - "../../raw/2026-10-19-worktree-merge-tests.json"
   - "../../raw/2026-10-19-launch-review-final-feedback.json"
   - "../../raw/2026-10-19-launch-final-fixes-verification.json"
@@ -74,7 +75,7 @@ sources:
   - "../../raw/2026-10-19-maker-form-copy-request.md"
   - "../../raw/2026-10-19-organisation-page-parity-selection.md"
 phase: Build
-updated: 2026-10-19
+updated: 2026-10-20
 status: implementation underway; 2027 signup open, privacy notice implemented, provider configuration remains
 ---
 
@@ -88,6 +89,12 @@ records visible work, presented results, elapsed timecodes and preserved
 stills. It separates the filmed 16 March 2019 edition from the repeat
 application for 2020. This is content research; no case-study route is built.
 B-036 carries the remaining final-asset, credits, usage and outcome questions.
+
+## Analytics
+
+Fathom Analytics is installed on production public pages only. The privacy
+notice describes its analytics purpose and data processing; the owner's DPA
+and lawful-basis review remain open under B-039. [Implementation record](49-fathom-analytics.md).
 
 ## Livegang-audit
 

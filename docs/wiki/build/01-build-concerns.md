@@ -2,6 +2,10 @@
 title: Build concerns
 tags: [concerns, build, website]
 sources:
+  - "../../raw/2026-10-20-fathom-analytics-request.md"
+  - "https://usefathom.com/docs/start/policy"
+  - "https://usefathom.com/legal/dpa"
+  - "https://usefathom.com/docs/start/dpa"
   - "../../raw/2026-10-20-homepage-wordmark-jump-request.md"
   - "../../raw/2026-10-19-worktree-merge-tests.json"
   - "../../raw/2026-10-19-launch-review-final-feedback.json"
@@ -74,7 +78,7 @@ sources:
   - "../image-map.md"
   - "../image-map-new-site.md"
 phase: Build
-updated: 2026-10-19
+updated: 2026-10-20
 ---
 
 # Build concerns
@@ -104,10 +108,11 @@ Local [admin test records](31-admin-workspace.md#local-test-data) are fictional;
 B-004 remains open for the actual Airtable migration. Real account setup in
 B-009 is unchanged.
 
-**Status:** 3 Open · 8 Partly · 23 Closed
+**Status:** 3 Open · 9 Partly · 23 Closed
 
 | ID | Concern | Why it remains open | Next step |
 | --- | --- | --- | --- |
+| B-039 | Partly: are the lawful basis and processor terms for Fathom website analytics documented? | Fathom is installed on production public pages and the privacy notice identifies legitimate interests as the website-improvement basis and describes Fathom's stated data processing. Fathom recommends GDPR-subject customers sign its DPA; the controller must document the balancing assessment. [Implementation and sources](49-fathom-analytics.md). | Confirm and document the legitimate-interest balancing assessment for website improvement, then sign and retain Fathom's DPA. |
 | B-038 | Closed: why did the homepage wordmark jump between large and compact near one scroll position? | The 24px threshold switched logo scale and header height on small reversals; the animated height could also shift scroll position by 48px. Added hysteresis: compact above 64px, expand at or below 8px. [Request and implementation](48-homepage-wordmark-scroll-stability.md). | Running-page checks at 1440px and 390px confirm stable state through the height transition and expansion at or below 8px. |
 | B-036 | Partly: what can the Solumob case study claim about the 2019 work and its effect? | The video analysis resolves visible activities, the presented 56-second film and baseline, and the distinction between the 2019 event and 2020 repeat application. The latter reports good reactions to four experts' work. Original final files, exact 2019 brief, full credits, publication/use and measurable outcomes remain unverified. [Evidence and research questions](44-solumob-video-analysis.md). | Confirm the original brief and final assets with the makers and Solumob; establish subsequent use and a concrete outcome before publishing an impact claim. Keep logo changes, hours and event counts qualified as recorded in the dossier. |
 | B-035 | Partly: is the 2027 site ready to accept real applications in production? | Resolution: finally selected L-02 through L-06 are implemented and running-page verified. Field borders use Ink Brown, menu focus stays visible, dates expose readable text, sharing uses the approved 2027 image, and a new required youth-work answer preserves older eligibility meanings. L-01's original Cream text is restored by owner choice; its contrast concern remains. Build and all 115 tests pass; stale copy and markup checks are corrected, resolving L-07. Production APP_URL, debug-off mode, migrations, organizer roles, and direct-origin routes are now verified. Mail is still disabled; Forge database backups are plan-locked, DigitalOcean backup/restore is unknown, and the shared server is at 96% disk use. [Decision and receipt](43-launch-audit.md#goedgekeurde-wijzigingen); [integration verification](45-worktree-integration.md); [production rollout](46-production-rollout.md). | Configure outgoing and incoming email, verify forms and receipts, establish and restore-test off-server backups, address disk pressure, and close R-01 through R-05 and selected remaining launch findings before real intake. Keep B-001/B-002/B-007/B-009 as detailed owners. |

@@ -29,6 +29,11 @@
         <link rel="preload" href="/fonts/plus-jakarta-sans-light-300.woff2" as="font" type="font/woff2" crossorigin>
     @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (app()->environment('production') && $publicTypography)
+        <!-- Fathom - beautiful, simple website analytics -->
+        <script src="https://cdn.usefathom.com/script.js" data-site="UDIIHURW" defer></script>
+        <!-- / Fathom -->
+    @endif
     @livewireStyles
 </head>
 <body @class(['public-site' => $publicTypography])>

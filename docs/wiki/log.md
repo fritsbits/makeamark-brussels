@@ -1,5 +1,12 @@
 # Cascade change log
 
+- 2026-10-20: Installed the owner-provided Fathom script on production public
+  pages only and updated the privacy notice with its purpose and stated data
+  processing. Recorded the remaining lawful-basis and DPA confirmation under
+  B-039. Running production and dashboard verification remain outstanding.
+  [Request](../raw/2026-10-20-fathom-analytics-request.md);
+  [implementation](build/49-fathom-analytics.md).
+
 - 2026-10-20: Fixed the homepage wordmark jumping at its scroll trigger. The
   single 24px boundary now uses hysteresis, entering compact above 64px and
   returning to large at or below 8px. The production build, 115 PHP tests
