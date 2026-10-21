@@ -1,5 +1,11 @@
 # Cascade change log
 
+- 2026-10-21: Deployed `13d772f` by a manual release over SSH after Forge
+  accepted the push webhooks but created no release. Production now shows
+  "Applications open soon" without forms; it held zero applications.
+  Disk use is 40%. Forge push to deploy needs checking.
+  [Observation](../raw/2026-10-21-applications-closed-deployment.md).
+
 - 2026-10-21: Applied the owner's selections for the closed period. The
   preparing label reads "Applications open soon"; audience pages add an
   Instagram follow pill and a clearer notice; stale submissions say

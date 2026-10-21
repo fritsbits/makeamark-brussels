@@ -5,9 +5,10 @@ sources:
   - "../../raw/2026-10-21-applications-closed-decision.md"
   - "46-production-rollout.md"
   - "../strategy/10-tone-of-voice.md"
+  - "../../raw/2026-10-21-applications-closed-deployment.md"
 phase: Build
 updated: 2026-10-21
-status: implemented; opening date unknown
+status: deployed; opening date unknown
 ---
 
 # Applications closed until opening
@@ -38,9 +39,16 @@ Before the change, production served both forms with edition status `open`, whil
 All 116 PHP tests pass.
 A local run at 1440px and 390px showed the homepage, makers and organisations pages without browser errors or horizontal overflow.
 
+## Production
+
+`13d772f` runs in production from a manual release.
+Forge received the push webhooks but created no release, so push to deploy needs checking in Forge.
+Production held zero applications when intake closed.
+[Deployment observation](../../raw/2026-10-21-applications-closed-deployment.md)
+
 ## Opening-day checklist
 
-Opening stays a content change plus a push to `main`, which Forge deploys.
+Opening stays a content change plus a push to `main`. Confirm afterwards that Forge actually created a release.
 
 1. Outgoing mail works in production and a test receipt arrives (B-035).
 2. An off-server database backup exists and one restore is tested (B-035).
