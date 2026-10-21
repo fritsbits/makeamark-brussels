@@ -23,7 +23,9 @@ class ApplicationSubmissionController extends Controller
         $edition = $homepage->data()['edition'];
 
         if ($edition['status'] !== 'open') {
-            return ApplicationForm::recover($request, $audience, 'Applications are now closed. Your application has not been sent. Contact the organising team if you need help.');
+            return ApplicationForm::recover($request, $audience, $edition['status'] === 'preparing'
+                ? 'Applications aren’t open yet, so your application has not been sent. Contact the organising team if you need help.'
+                : 'Applications are now closed. Your application has not been sent. Contact the organising team if you need help.');
         }
 
         $submissionKey = ApplicationForm::submissionKey($request, $audience, $edition['year']);

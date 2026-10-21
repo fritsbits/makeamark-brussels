@@ -196,9 +196,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
     public function test_closed_edition_explains_the_rejection_without_saving(): void
     {
         $answers = $this->answers();
-        $data = app(Homepage::class)->data();
-        $data['edition']['status'] = 'closed';
-        $this->mock(Homepage::class)->shouldReceive('data')->andReturn($data);
+        $this->withEditionStatus('closed');
         $this->post('/organisations/apply', $answers)->assertRedirect('/organisations#application')
             ->assertSessionHasErrors('submission')->assertSessionHasInput('organisation_name', 'Test Organisation');
         $this->assertDatabaseCount('applications', 0);

@@ -583,6 +583,7 @@ a.pill:hover .pill__sweep, a.pill:focus-visible .pill__sweep { clip-path: inset(
 .application__notice { max-width: 720px; padding: 16px 0; border-top: 1px solid var(--cream-rule); border-bottom: 1px solid var(--cream-rule); }
 .application__notice p { margin: 10px 0 0; }
 .application__notice a { font-weight: 600; }
+.application__notice .pill { margin: 16px 0 8px; }
 .application__context { max-width: 680px; margin-top: 26px; }
 .application__privacy-note { max-width: 680px; margin: -12px 0 24px; font-size: var(--fs-small); }
 .application__privacy-note a { font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }

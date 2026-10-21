@@ -155,13 +155,25 @@ class MakerSubmissionHardeningTest extends TestCase
     public function test_closed_edition_explains_the_rejection_without_saving(): void
     {
         $answers = $this->answers();
-        $data = app(Homepage::class)->data();
-        $data['edition']['status'] = 'closed';
-        $this->mock(Homepage::class)->shouldReceive('data')->andReturn($data);
+        $this->withEditionStatus('closed');
         $this->post('/makers/apply', $answers)->assertRedirect('/makers#application')
             ->assertSessionHasErrors('submission')->assertSessionHasInput('name', 'Test Maker');
         $this->assertDatabaseCount('applications', 0);
         $this->post('/organisations/apply', [])->assertRedirect('/organisations#application')->assertSessionHasErrors('submission');
+    }
+
+    public function test_preparing_edition_says_applications_are_not_open_yet(): void
+    {
+        $answers = $this->answers();
+        $this->withEditionStatus('preparing');
+        $this->post('/makers/apply', $answers)->assertRedirect('/makers#application')
+            ->assertSessionHasErrors(['submission' => 'Applications aren’t open yet, so your application has not been sent. Contact the organising team if you need help.']);
+        $this->assertDatabaseCount('applications', 0);
+        $this->followRedirects($this->post('/makers/apply', $answers))
+            ->assertSee('Applications aren’t open yet', false)
+            ->assertSee('Applications open soon')
+            ->assertSee('Follow us on Instagram')
+            ->assertDontSee('Send maker application');
     }
 
     public function test_unique_submission_key_is_enforced_by_the_database(): void

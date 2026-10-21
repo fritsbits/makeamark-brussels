@@ -1,5 +1,13 @@
 # Cascade change log
 
+- 2026-10-21: Applied the owner's selections for the closed period. The
+  preparing label reads "Applications open soon"; audience pages add an
+  Instagram follow pill and a clearer notice; stale submissions say
+  applications aren't open yet. Tests now pin edition status instead of
+  reading the live file. 116 tests pass; local desktop and phone checks pass.
+  Added the opening-day checklist under B-040.
+  [Implementation](build/50-applications-closed.md).
+
 - 2026-10-21: Closed 2027 applications in production until an opening date is
   set. The edition status changed from `open` to `preparing`; the server now
   rejects submissions and pages show the preparing label. Copy, follow link,

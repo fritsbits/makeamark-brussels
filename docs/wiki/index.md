@@ -1,5 +1,9 @@
 # Product knowledge index
 
+Applications: [closed until opening](build/50-applications-closed.md). Status
+`preparing` shows "Applications open soon" with an Instagram follow link; the
+page includes the opening-day checklist (B-040).
+
 Worktree integration: [merge record](build/45-worktree-integration.md) records
 the all-work transfer to local `main`, preservation of local files and the
 stale test corrections. All 115 PHP tests, five JavaScript tests and the

@@ -23,6 +23,9 @@
                         <x-pill :href="$applicationUrl" :solid="true">Start your application</x-pill>
                     @else
                         <flux:text>{{ $edition['pill']['label'] }}</flux:text>
+                        @if ($edition['status'] === 'preparing')
+                            <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
+                        @endif
                     @endif
                 </div>
             </div>

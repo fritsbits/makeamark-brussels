@@ -33,8 +33,13 @@
 @else
     <div class="application__notice" role="status">
         <strong>{{ $edition['pill']['label'] }}</strong>
-        <p>Applications are not open right now. Please check this page for updates.</p>
         @if ($errors->has('submission'))<p role="alert">{{ $errors->first('submission') }}</p>@endif
+        @if ($edition['status'] === 'preparing')
+            <p>We'll open the {{ $edition['year'] }} {{ $audience === 'makers' ? 'maker' : 'organisation' }} applications in the coming weeks. Follow us on Instagram to hear first. Read what you commit to above, so you're ready to apply.</p>
+            <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
+        @else
+            <p>Applications are not open right now. Please check this page for updates.</p>
+        @endif
         <p>Questions? <a href="mailto:{{ $site['email'] }}">Email the organising team</a>.</p>
     </div>
 @endif
