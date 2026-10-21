@@ -1,5 +1,11 @@
 # Cascade change log
 
+- 2026-10-21: Closed 2027 applications in production until an opening date is
+  set. The edition status changed from `open` to `preparing`; the server now
+  rejects submissions and pages show the preparing label. Copy, follow link,
+  stale-form message and opening checklist follow in a second deploy.
+  [Decision](../raw/2026-10-21-applications-closed-decision.md).
+
 - 2026-10-20: Deployed Fathom to Forge from main commit `2a64388`. The
   production homepage returns the Fathom script with site ID `UDIIHURW`, and
   `/privacy` serves the analytics disclosure. The Fathom dashboard was not
