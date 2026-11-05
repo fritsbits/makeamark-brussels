@@ -1,0 +1,38 @@
+/* One print stylesheet for the team briefing (admin) and the organisation's printable answers. */
+@layer components {
+.print-page { min-height: 100vh; margin: 0; background: var(--cream-light); color: var(--ink); font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.5; }
+.print-sheet { max-width: 760px; margin-inline: auto; padding: clamp(24px, 5vw, 56px) var(--gutter); }
+.print-sheet--inline { margin: 28px 0; padding: clamp(20px, 3vw, 32px); max-width: none; border-radius: var(--radius-block); background: var(--cream-light); }
+.print-sheet__toolbar { margin-bottom: 24px; }
+.application-receipt:has(.print-sheet--inline) { align-items: start; }
+.print-sheet__kicker { margin: 0 0 8px; color: var(--ink-brown); font-size: 12px; font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; }
+.print-sheet .print-sheet__title { margin: 0 0 32px; font-family: var(--font-display); font-size: clamp(40px, 7vw, 64px); font-weight: 600; line-height: .98; text-transform: uppercase; }
+.print-sheet__section { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--cream-rule); break-inside: avoid; }
+.print-sheet .print-sheet__heading { margin: 0 0 12px; font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: .01em; text-transform: uppercase; }
+.print-sheet__body { white-space: pre-line; overflow-wrap: anywhere; }
+.print-sheet__empty { margin: 0; color: var(--ink-brown); }
+.print-sheet__list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.print-sheet__list li { padding: 4px 12px; border: 1px solid var(--ink-brown); border-radius: var(--radius-pill); font-size: 15px; }
+.print-sheet__intro { display: grid; justify-items: start; gap: 12px; margin-bottom: 24px; }
+.print-sheet__intro > * { margin: 0; }
+.print-sheet__answers { display: grid; gap: 0; margin: 0; }
+.print-sheet__row { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 4px 24px; padding: 14px 0; border-top: 1px solid var(--cream-rule); break-inside: avoid; }
+.print-sheet__row dt { color: var(--ink-brown); font-size: 15px; font-weight: 600; }
+.print-sheet__row dd { margin: 0; white-space: pre-line; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .print-sheet__row { grid-template-columns: minmax(0, 1fr); } }
+
+@media print {
+  @page { margin: 18mm; }
+  html, body, .print-page { background: #fff !important; color: #000 !important; }
+  .print-sheet { max-width: none; padding: 0; }
+  .print-sheet--inline { margin: 0; padding: 0; border-radius: 0; background: none; }
+  .print-sheet__toolbar { display: none !important; }
+  .print-sheet__kicker { color: #000; }
+  .print-sheet__section, .print-sheet__row { border-color: #999; }
+  .print-sheet__list li { border-color: #000; }
+  /* The confirmation page prints only the answers, not the site around them. */
+  body:has(.print-sheet--inline) :is(.skip-link, header, footer, .audience-hero, .commitment, .application-receipt__celebration, .application-receipt__details > :not(.print-sheet)) { display: none !important; }
+  body:has(.print-sheet--inline) .application-receipt { display: block; }
+  body:has(.print-sheet--inline) .application { margin: 0; padding: 0; }
+}
+}

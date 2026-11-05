@@ -5,7 +5,7 @@ from 20 October. Owner decisions: ten to build including a volunteer form,
 logo and keywords skipped; organisations use the Makers' ten themes. Tracked as B-041 to B-048.
 Batch A is [built and verified locally](build/51-gwen-form-requests.md#batch-a-implementation):
 Maker capitalisation, deadline field (date pending), language hint,
-organisation language and required Maker mobile number. Batches B and C wait.
+organisation language and required Maker mobile number. The printable team briefing (G-09, B-045) and organisation answers (G-08, B-046) are built and verified locally; shared themes and batch C wait.
 
 Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the

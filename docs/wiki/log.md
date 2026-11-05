@@ -1,5 +1,12 @@
 # Cascade change log
 
+- 2026-11-05: Built the two print views of batch B: a "Print briefing" action per
+  team and organisation in the admin (G-09) and a printable copy of the submitted
+  answers on the organisation confirmation page (G-08), sharing one print
+  stylesheet. B-045 and B-046 are partly resolved; shared themes (G-11) wait for
+  batch A. 122 PHP tests and the build pass.
+  [Plan](build/51-gwen-form-requests.md).
+
 - 2026-11-05: Built batch A of Gwen's form requests (G-02, G-01, G-05, G-06,
   G-12). Capitalised Maker(s) across rendered copy and admin, added the
   optional `applicationDeadline`, the organisation language question with

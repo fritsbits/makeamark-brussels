@@ -14,6 +14,23 @@
                 <flux:heading level="3" class="h-display application-receipt__subtitle">What happens next</flux:heading>
                 <flux:text>The organising team will review {{ $audience === 'makers' ? 'your skills and availability' : 'your organisation and challenge' }} as part of selection. Applying does not guarantee a place.</flux:text>
             </div>
+        @if (! empty($printableAnswers))
+            <section class="print-sheet print-sheet--inline" aria-labelledby="print-answers-heading">
+                <div class="print-sheet__intro">
+                    <flux:heading level="3" id="print-answers-heading" class="print-sheet__heading">Your answers</flux:heading>
+                    <flux:text>Keep a copy of what you submitted. We don’t email your answers.</flux:text>
+                    <x-pill action="window.print()" class="print-sheet__toolbar">Print your answers</x-pill>
+                </div>
+                <dl class="print-sheet__answers">
+                    @foreach ($printableAnswers as $row)
+                        <div class="print-sheet__row">
+                            <dt>{{ $row['label'] }}</dt>
+                            <dd>{{ $row['value'] }}</dd>
+                        </div>
+                    @endforeach
+                </dl>
+            </section>
+        @endif
             <div class="application-receipt__delivery">
                 @if ($emailSent)
                     <flux:text>A receipt email has been sent to the address you provided.</flux:text>

@@ -16,7 +16,7 @@ class EditTeam extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        return [DeleteAction::make()->modalDescription('Remove this team and its assignments. Applications and reviews are kept.')];
+        return [TeamResource::printAction(), DeleteAction::make()->modalDescription('Remove this team and its assignments. Applications and reviews are kept.')];
     }
 
     protected function mutateFormDataBeforeFill(array $data): array

@@ -5,6 +5,7 @@ namespace App\Filament\Support;
 use App\Models\Application;
 use App\Support\ApplicationStatus;
 use App\Support\Skills;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -139,6 +140,13 @@ abstract class ApplicationResource extends Resource
         return $entries;
     }
 
+    /** Labelled on edit pages; icon-only with a tooltip in tables, where width is tight. */
+    public static function printAction(bool $compact = false): Action
+    {
+        return Action::make('printBriefing')->label('Print briefing')->icon('heroicon-o-printer')->iconButton($compact)->tooltip($compact ? 'Print briefing' : null)
+            ->url(fn (Application $record): string => route('filament.admin.print.organisation', $record))->openUrlInNewTab();
+    }
+
     public static function table(Table $table): Table
     {
         $organisation = static::$audience === 'organisations';
@@ -149,11 +157,11 @@ abstract class ApplicationResource extends Resource
                     ->searchable(query: fn (Builder $query, string $search): Builder => $query->where(fn (Builder $query): Builder => $query
                         ->where('contact_name', 'like', '%'.$search.'%')->orWhere('email', 'like', '%'.$search.'%')
                         ->orWhere('answers->organisation_name', 'like', '%'.$search.'%'))),
-                TextColumn::make('edition_year')->label('Edition')->sortable(),
+                TextColumn::make('edition_year')->label('Edition')->sortable()->toggleable(isToggledHiddenByDefault: $organisation),
                 TextColumn::make('status')->badge()->formatStateUsing(fn (string $state): string => ApplicationStatus::options()[$state] ?? $state)
                     ->color(fn (string $state): string => ApplicationStatus::color($state))->sortable(),
                 TextColumn::make('reviews_avg_rating')->label('Average')->numeric(decimalPlaces: 1)->placeholder('—')->sortable()->visible($organisation),
-                TextColumn::make('reviews_count')->label('Reviews')->visible($organisation),
+                TextColumn::make('reviews_count')->label('Reviews')->visible($organisation)->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('my_rating')->label('My rating')->state(fn (Application $record) => $record->reviews->firstWhere('user_id', auth()->id())?->rating)->placeholder('Not reviewed')->visible($organisation),
                 TextColumn::make('skills_needed')->label('Skills needed')->badge()->formatStateUsing(fn (string $state): string => Skills::options()[$state] ?? $state)->visible($organisation)->limitList(3)->expandableLimitedList(),
                 TextColumn::make('main_skills')->badge()->formatStateUsing(fn (string $state): string => Skills::options()[$state] ?? $state)->visible(! $organisation)->limitList(3)->expandableLimitedList(),
@@ -174,7 +182,7 @@ abstract class ApplicationResource extends Resource
                 TernaryFilter::make('assigned')->label('Team assignment')->placeholder('All applications')->trueLabel('Assigned to a team')->falseLabel('Not assigned')
                     ->queries(true: fn (Builder $query): Builder => $query->has($organisation ? 'organisationTeam' : 'teams'), false: fn (Builder $query): Builder => $query->doesntHave($organisation ? 'organisationTeam' : 'teams')),
             ])
-            ->recordActions([EditAction::make()->label($organisation ? 'Review' : 'Open')])
+            ->recordActions([EditAction::make()->label($organisation ? 'Review' : 'Open'), ...($organisation ? [static::printAction(compact: true)] : [])])
             ->defaultSort('created_at', 'desc')
             ->emptyStateHeading($organisation ? 'No organisation applications yet' : 'No Maker applications yet')
             ->emptyStateDescription('Applications submitted through the website will appear here.')

@@ -16,6 +16,7 @@ class EditOrganisation extends EditApplication
     protected function getHeaderActions(): array
     {
         return [
+            OrganisationResource::printAction(),
             Action::make('review')->label('My review')->icon('heroicon-o-star')
                 ->fillForm(fn (): array => $this->getRecord()->reviews()->where('user_id', auth()->id())->first()?->only(['rating', 'comment']) ?? [])
                 ->schema([

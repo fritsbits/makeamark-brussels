@@ -12,7 +12,7 @@ sources:
   - "../../raw/2026-10-18-airtable-forms.md"
 phase: Build
 updated: 2026-11-05
-status: batch A implemented and verified locally; batches B and C planned
+status: batch A and print views (G-08, G-09) built locally; shared themes and batch C planned
 ---
 
 # Gwen's 2027 form requests
@@ -200,4 +200,15 @@ Decisions made while building:
 
 Batch A: 131 PHP tests and the production build pass.
 Running-page checks at 1440px and 390px passed for the home page, both audience pages in preparing and open states, the privacy notice, the organisation validation states, and the admin organisation, team and Maker screens, with no horizontal overflow.
-Batches B and C are not started.
+
+Batch B print views (G-08, G-09) are built on branch `fritsbits/building-part-batch-mark-brussels`.
+Shared themes (G-11) and batch C are not started.
+
+- G-09: `/admin/print/organisations/{id}` and `/admin/print/teams/{id}` behind the admin panel login.
+  "Print briefing" sits on the Organisations list and edit page, and the Teams list and edit page.
+  It shows no contact name, email or phone; `tests/Feature/PrintViewsTest.php` pins that.
+- G-08: the organisation confirmation page shows the submitted answers with a "Print your answers" control.
+  The answers live only in the session confirmation, so a reload loses them.
+  Makers see no answers copy.
+- One stylesheet, `resources/css/print.css`, under `@layer components`, serves both views.
+- Print output was checked as PDF from Chromium print emulation, not a manual print dialog.

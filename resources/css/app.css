@@ -5,6 +5,7 @@
 @import './fonts.css';
 @import './tokens.css';
 @import './makers.css';
+@import './print.css';
 @import './public-typography.css';
 @source '../views';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
@@ -250,12 +251,12 @@ main:focus { outline: none; }
   color: inherit;
 }
 /* R02: each contrasting label is painted with its own background layer. */
-a.pill, a.pill:hover, a.pill:focus-visible { position: relative; isolation: isolate; overflow: hidden; min-height: 48px; background: var(--pill-base-fill); color: var(--pill-base-label); border-color: var(--pill-outline); }
-a.pill:focus-visible { outline: 3px solid var(--pill-focus-ring); outline-offset: 5px; }
+:is(a, button).pill, :is(a, button).pill:hover, :is(a, button).pill:focus-visible { position: relative; isolation: isolate; overflow: hidden; min-height: 48px; background: var(--pill-base-fill); color: var(--pill-base-label); border-color: var(--pill-outline); }
+:is(a, button).pill:focus-visible { outline: 3px solid var(--pill-focus-ring); outline-offset: 5px; }
 .pill__content { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-width: 0; }
 .pill__icon { width: 18px; height: 18px; flex: 0 0 18px; }
 .pill__sweep { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; padding: inherit; border-radius: inherit; background: var(--pill-sweep-fill); color: var(--pill-sweep-label); pointer-events: none; clip-path: inset(0 100% 0 0); transition: clip-path 260ms cubic-bezier(.16, 1, .3, 1); }
-a.pill:hover .pill__sweep, a.pill:focus-visible .pill__sweep { clip-path: inset(0 0 0 0); }
+:is(a, button).pill:hover .pill__sweep, :is(a, button).pill:focus-visible .pill__sweep { clip-path: inset(0 0 0 0); }
 .block--red .pill:not(.pill--solid) { --pill-base-label: var(--cream-light); --pill-outline: var(--cream-light); --pill-sweep-fill: var(--cream-light); --pill-sweep-label: var(--red); --pill-focus-ring: var(--cream-light); }
 .pill--solid { --pill-base-fill: var(--red); --pill-base-label: var(--cream-light); --pill-sweep-fill: var(--cream-light); --pill-sweep-label: var(--red); background: var(--red); color: var(--cream-light); }
 

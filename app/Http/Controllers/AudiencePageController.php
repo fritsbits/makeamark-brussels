@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Content\Homepage;
+use App\Models\Application;
 use App\Support\ApplicationForm;
+use App\Support\ApplicationPrint;
 use Illuminate\View\View;
 
 class AudiencePageController extends Controller
@@ -16,12 +18,18 @@ class AudiencePageController extends Controller
         $confirmation = request()->session()->pull('application_confirmations.'.$audience);
         $submitted = is_array($confirmation) && ($confirmation['expires_at'] ?? 0) >= time();
 
+        // Organisations print their own answers from this one view; nothing is emailed.
+        $printable = $submitted && $audience === 'organisations'
+            ? Application::query()->where('audience', 'organisations')->find($confirmation['application_id'] ?? null)
+            : null;
+
         return view('audience', [
             ...$data,
             'audience' => $audience,
             'makerHeroDate' => new \DateTimeImmutable($data['edition']['startDate']),
             'applicationUrl' => '#application',
             'submitted' => $submitted,
+            'printableAnswers' => $printable ? ApplicationPrint::answers($printable) : [],
             'emailSent' => $submitted && ($confirmation['email_sent'] ?? false),
             'submissionToken' => ApplicationForm::token(request(), $audience),
             'pageTitle' => ($audience === 'makers' ? 'For Makers' : 'For social organisations').' · Make a Mark Brussels',

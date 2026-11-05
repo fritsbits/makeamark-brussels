@@ -125,6 +125,7 @@ class ApplicationSubmissionController extends Controller
         // Retain each audience's confirmation until its own page consumes it, including other-tab navigation.
         $request->session()->put('application_confirmations.'.$audience, [
             'email_sent' => $receiptSent,
+            'application_id' => $application->id,
             'expires_at' => time() + 600,
         ]);
 

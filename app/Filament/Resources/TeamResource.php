@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Models\Team;
 use App\Support\Skills;
 use BackedEnum;
+use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
@@ -138,6 +139,13 @@ class TeamResource extends Resource
         return array_values(array_map(fn (string $skill): string => Skills::options()[$skill] ?? $skill, $skills));
     }
 
+    /** Labelled on edit pages; icon-only with a tooltip in tables, where width is tight. */
+    public static function printAction(bool $compact = false): Action
+    {
+        return Action::make('printBriefing')->label('Print briefing')->icon('heroicon-o-printer')->iconButton($compact)->tooltip($compact ? 'Print briefing' : null)
+            ->url(fn (Team $record): string => route('filament.admin.print.team', $record))->openUrlInNewTab();
+    }
+
     public static function table(Table $table): Table
     {
         return $table->columns([
@@ -150,7 +158,7 @@ class TeamResource extends Resource
         ])->filters([
             SelectFilter::make('edition_year')->label('Edition')->options(fn (): array => Team::query()->distinct()->orderByDesc('edition_year')->pluck('edition_year', 'edition_year')->all()),
             SelectFilter::make('status')->options(['draft' => 'Draft', 'confirmed' => 'Confirmed']),
-        ])->recordActions([EditAction::make()->label('Match team')])
+        ])->recordActions([EditAction::make()->label('Match team'), static::printAction(compact: true)])
             ->emptyStateHeading('No teams yet')->emptyStateDescription('Select an organisation and Makers first, then create a team for their edition.')
             ->defaultSort('name')->recordUrl(fn (Team $record): string => static::getUrl('edit', ['record' => $record]));
     }
