@@ -1,5 +1,10 @@
 # Cascade change log
 
+- 2026-11-05: Updated the public privacy notice for live mail.
+  Resend now sends from its Ireland region and may also process data in the US; one.com is named as registrar and Cloudflare as DNS; mail to `hello@` is forwarded to Google (Gmail).
+  Dated 5 November 2026; a feature test pins the wording; 117 tests pass and the section renders without overflow at desktop and phone widths.
+  [Notice copy](build/21-application-privacy.md#collection-notice-copy).
+
 - 2026-11-05: Set up production outgoing mail with the owner.
   Resend sends from `hello@letsmakeamark.brussels` (Ireland region); Cloudflare publishes its DKIM, `send` and `rsend` records and a `p=none` DMARC record.
   Forge now uses the `resend` mailer, and a `database` queue worker sends Filament's queued password resets.

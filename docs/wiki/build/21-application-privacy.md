@@ -76,12 +76,17 @@ we cannot fulfil a request. You may also complain to the [Belgian Data
 Protection Authority](https://www.autoriteprotectiondonnees.be/citoyen/agir/introduire-une-plainte).
 
 Our app is hosted on the existing DigitalOcean server in Amsterdam and managed
-with Laravel Forge. Resend sends confirmation emails and receives only the
-recipient address, applicant name, audience type, and edition year, not
-application answers. Resend processes email data in the United States under
-contractual transfer safeguards. Cloudflare and one.com support our domain and
-email; they may handle messages sent to us. We keep application content out of
-email notifications.
+with Laravel Forge. Resend sends confirmation emails from its Ireland region
+and receives only the recipient address, applicant name, audience type, and
+edition year, not application answers. Resend may also process email data in
+the United States under contractual transfer safeguards. One.com registers our
+domain and Cloudflare runs its DNS. Cloudflare forwards mail sent to
+`hello@letsmakeamark.brussels` to our team mailbox at Google (Gmail), so both
+handle those messages. We keep application content out of email
+notifications.
+
+The public notice at `/privacy` carries this provider wording since 2026-11-05.
+One.com is the registrar per the `.brussels` RDAP record; the Resend region and Gmail destination come from the [mail setup](../../raw/2026-11-05-production-mail-setup.md).
 
 Providing required application information is necessary for the team to review
 your application. If you leave required answers blank, the team cannot assess
@@ -98,7 +103,7 @@ are introduced.
   The receipt test carried only name, audience and year; open and click tracking are off.
   [Mail setup](46-production-rollout.md#outgoing-mail)
 - The owner chose `makeamarkbxl@gmail.com` as the `hello@` destination; Email Routing waits on its verification.
-  Interpretation: mail sent to `hello@` will then also pass through Google, which the notice's provider sentence does not name.
+  The public notice now names Google (Gmail) for mail sent to `hello@`.
 - At the annual retention review, delete or anonymise applications reaching
   the three-year limit. This is a manual process; no automatic purge is active.
 
