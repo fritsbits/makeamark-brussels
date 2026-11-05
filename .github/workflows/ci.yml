@@ -14,17 +14,17 @@ jobs:
       COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           extensions: mbstring, pdo_sqlite, sqlite3
           coverage: none
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22.12'
           cache: npm
@@ -40,8 +40,8 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
-      - name: Run Laravel tests
-        run: php artisan test
-
       - name: Build frontend assets
         run: npm run build
+
+      - name: Run Laravel tests
+        run: php artisan test
