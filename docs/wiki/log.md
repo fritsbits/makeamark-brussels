@@ -1,5 +1,12 @@
 # Cascade change log
 
+- 2026-11-05: Updated the build plan to the closed-applications state
+  (`preparing` since 2026-10-21, B-040); the earlier "signup is active"
+  statements stay as dated history. Fixed CI: PHP 8.4 and assets built before
+  tests. The run now stops at the Flux Pro download (HTTP 401) because the
+  repository has no `COMPOSER_AUTH` secret; the owner must add it.
+  [Plan](build/00-build-plan.md); [applications closed](build/50-applications-closed.md).
+
 - 2026-11-05: Owner decision in the themes review: youth is the frame of the
   2027 edition, set by the eligibility checkbox, not a theme, and never
   pre-filled. The organisation theme question now starts "Within your work with

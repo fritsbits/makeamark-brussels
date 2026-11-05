@@ -2,6 +2,8 @@
 title: Build plan
 tags: [plan, build, website]
 sources:
+  - "50-applications-closed.md"
+  - "../../raw/2026-10-21-applications-closed-decision.md"
   - "../../raw/2026-10-20-fathom-analytics-request.md"
   - "../../raw/2026-10-20-fathom-production-deployment.md"
   - "../../raw/2026-10-19-worktree-merge-tests.json"
@@ -76,8 +78,8 @@ sources:
   - "../../raw/2026-10-19-maker-form-copy-request.md"
   - "../../raw/2026-10-19-organisation-page-parity-selection.md"
 phase: Build
-updated: 2026-10-20
-status: implementation underway; 2027 signup open, privacy notice implemented, provider configuration remains
+updated: 2026-11-05
+status: implementation underway; 2027 applications closed (preparing), privacy notice implemented, provider configuration remains
 ---
 
 # Build plan
@@ -95,9 +97,13 @@ B-036 carries the remaining final-asset, credits, usage and outcome questions.
 
 Fathom Analytics is deployed on production public pages only; the homepage
 response and privacy disclosure were checked. The owner's DPA and lawful-basis
-review remain open under B-039. GitHub CI failed before tests because the
-workflow's PHP 8.3 conflicts with the lockfile's PHP 8.4.1 dependency
-requirements. [Implementation and production record](49-fathom-analytics.md).
+review remain open under B-039. GitHub CI failed before tests on 2026-10-20
+because the workflow's PHP 8.3 conflicted with the lockfile's PHP 8.4.1
+dependency requirements. On 2026-11-05 the workflow moved to PHP 8.4 and builds
+assets before the tests; the run now stops at Flux Pro download (HTTP 401)
+because the repository has no `COMPOSER_AUTH` secret. Local install, 116 tests
+and build pass. [Implementation and production record](49-fathom-analytics.md);
+[CI run](https://github.com/fritsbits/makeamark-brussels/actions/runs/42021460858).
 
 ## Livegang-audit
 
@@ -269,7 +275,10 @@ public homepage photo selects Riso. The previous saved treatment remains in the 
   [Inline application decision](20-application-intake.md#forms-on-the-information-pages)
 - Edition content remains file-based. Application submissions are stored in
   Laravel and gated by Edition status. The owner set the 2027 status to
-  `open`; maker and organisation signup is active. [Owner instruction;
+  `open` on 2026-10-19, and closed it again on 2026-10-21. It is now
+  `preparing`: both forms are hidden, pages read "Applications open soon" and
+  link to Instagram, and the controller rejects every POST. The opening date is
+  unknown. [Owner instruction; Applications closed; B-040;
   Application intake]
 - The maker dietary-requirements field was removed. The footer credits Impact
   Studio. Application receipts are prepared through Resend, pending the API
@@ -383,7 +392,10 @@ Frederik's mailbox. [Workflow](30-admin-discovery.md#confirmed-handoffs)
 
 This phase is not complete while application requiredness, mail configuration,
 real admin-account provisioning, later phase mapping, and import completeness remain
-open. Signup is active by owner instruction. The owner's screenshots confirm
-the existing Amsterdam 3 server and Forge setup. Configure Resend and confirm
+open. Applications are closed (`preparing`) since 2026-10-21 by owner
+instruction; earlier "signup is active" statements are dated history. The
+owner's screenshots confirm the existing Amsterdam 3 server and Forge setup.
+Configure Resend and confirm
 the destination mailbox before enabling production email.
-[Scope; Build concerns; Application intake; Application privacy and retention]
+[Scope; Build concerns; Application intake; Application privacy and retention;
+Applications closed]
