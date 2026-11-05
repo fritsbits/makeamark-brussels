@@ -42,6 +42,7 @@ class ApplicationSubmissionController extends Controller
             ? [
                 ...$common,
                 'name' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'string', 'max:80'],
                 'motivation' => ['required', 'string', 'max:5000'],
                 'referral' => ['nullable', 'string', 'max:1000'],
                 'dutch' => ['nullable', Rule::in(['1', '2', '3', '4', '5'])],
@@ -70,6 +71,8 @@ class ApplicationSubmissionController extends Controller
                 'challenge' => ['required', 'string', 'max:5000'],
                 'contact_name' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:80'],
+                'organisation_languages' => ['required', 'array', 'min:1', 'max:3'],
+                'organisation_languages.*' => ['string', 'distinct', Rule::in(['English', 'Dutch', 'French'])],
                 'languages' => ['required', 'array', 'min:1', 'max:3'],
                 'languages.*' => ['string', 'distinct', Rule::in(['English', 'Dutch', 'French'])],
                 'assets_ready' => ['accepted'],
@@ -80,6 +83,8 @@ class ApplicationSubmissionController extends Controller
 
         $applicationUrl = route('audience.show', $audience).'#application';
         $validator = Validator::make($request->all(), $rules, [
+            'organisation_languages.required' => 'Choose at least one language your organisation works in.',
+            'languages.required' => 'Choose at least one language your contact person can work in.',
             'youth_brussels_eligibility.accepted' => 'Please confirm that your organisation works with young people in Brussels.',
         ]);
 

@@ -12,7 +12,7 @@ sources:
   - "../../raw/2026-10-18-airtable-forms.md"
 phase: Build
 updated: 2026-11-05
-status: planned; not implemented
+status: batch A implemented and verified locally; batches B and C planned
 ---
 
 # Gwen's 2027 form requests
@@ -175,7 +175,29 @@ Start after batch A is merged.
 G-04 logo upload and G-07 keywords were skipped by the owner.
 Shared themes (G-11) cover part of the keywords need.
 
+### Batch A implementation
+
+Built on 2026-11-05 on branch `fritsbits/review-gwen-website-requests`.
+Screenshots were taken with a sample deadline of 31 January 2027 and status `open` to show the forms; neither is committed.
+
+| ID | What changed | Where to look |
+| --- | --- | --- |
+| G-02 | "Maker" and "Makers" capitalised in public pages, content JSON, mail, privacy page, controller strings, Filament labels (`$modelLabel`) and validation messages. Routes, slugs, classes, identifiers and the preserved original-homepage preview are unchanged. A test fails on any lowercase maker word in the rendered home, Maker, organisation and privacy pages. | `/`, `/makers`, `/organisations`, `/privacy`, `/admin/makers` |
+| G-01 | Optional `applicationDeadline` in the edition JSON, rendered as "Apply by 31 January 2027" by `<x-application-deadline>`. It shows in the homepage edition band, the audience hero, the preparing notice and, when open, the form context. It hides when unset or when the status is not `preparing` or `open`. The Maker date confirmation now reads `dates` from the edition. | Homepage edition band, audience heroes, `/organisations#application` |
+| G-05 | "You can answer in English, French or Dutch." under the organisation introduction. | `/organisations`, left column of the application |
+| G-06 | Required `organisation_languages[]` at the end of "About the organisation", above the contact-person question, with client and server validation. Admin labels distinguish the two language answers. The Team editor lists the organisation languages and pre-fills a now multi-select language filter. | `/organisations#application`; `/admin/teams/{id}/edit` |
+| G-12 | Required `type=tel` "Mobile number" with the stated hint. Privacy notice updated to 5 November 2026 and the assessment gained a mobile-number section. | `/makers#application`, `/privacy`, [assessment](22-legitimate-interest-assessment.md#maker-mobile-number) |
+| G-03 | Not part of the build; the reply is drafted in Gmail. | |
+
+Decisions made while building:
+
+- The deadline sits in the form context only while the status is `open`, because the preparing notice already shows it on the same page.
+- The language filter is multi-select and lists Makers at level 3 or higher in any chosen language.
+- Fixed in passing: the organisation hero stayed two columns on phones, squeezing its copy to 196px.
+- Left alone: `bootstrap/providers.php` and `routes/console.php` fail the Pint style check; not touched here.
+
 ## Verification
 
-Nothing is implemented yet.
-Each wave needs the PHP suite, the production build and running-page checks at desktop and phone widths before it is marked done.
+Batch A: 131 PHP tests and the production build pass.
+Running-page checks at 1440px and 390px passed for the home page, both audience pages in preparing and open states, the privacy notice, the organisation validation states, and the admin organisation, team and Maker screens, with no horizontal overflow.
+Batches B and C are not started.

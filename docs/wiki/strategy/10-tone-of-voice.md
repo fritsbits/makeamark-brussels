@@ -80,12 +80,12 @@ Do not invent response times, acceptance criteria, accessibility provisions, lan
 
 ## 4. Terminology
 
-TOV-003 confirms social organisation on first mention and organisation after. Other naming details, including maker capitalisation, remain proposed defaults. Evidence confidence is medium for observed names; the selected organisation term is an explicit owner preference. [Owner decision](../../raw/2026-10-18-tone-of-voice-feedback-round-1.md)
+TOV-003 confirms social organisation on first mention and organisation after. Maker capitalisation is confirmed (always a capital M, per Gwen). Other naming details remain proposed defaults. Evidence confidence is medium for observed names; the selected organisation term is an explicit owner preference. [Owner decision](../../raw/2026-10-18-tone-of-voice-feedback-round-1.md)
 
 | Prefer | Avoid or qualify | Reason |
 | --- | --- | --- |
 | Make a Mark Brussels on first mention; Make a Mark after | Invented abbreviations such as MAM in public copy | Matches the site's name and short name. [E1](#sources) |
-| maker / makers in prose; Maker in an existing official title | Creatives as the only explanation of who can apply | Proposed casing. Explain makers as people volunteering creative skills; confirm eligible roles before listing them. The current site capitalises Makers. [E1](#sources) [E3](#sources) |
+| Maker / Makers, always capitalised | Lowercase maker in any rendered copy; creatives as the only explanation of who can apply | Confirmed casing: Gwen's rule, from the Make a Mark guidelines, replaces the earlier lowercase default. [Request](../../raw/2026-11-05-gwen-form-requests.md) Explain Makers as people volunteering creative skills; confirm eligible roles before listing them. [E1](#sources) [E3](#sources) |
 | social organisation on first mention; organisation after | Beneficiary, needy organisation, client | Owner-selected term in TOV-003. Existing sources vary between social-profits, social organisations, and nonprofits. [E1](#sources) [E2](#sources) [E6](#sources) |
 | make-a-thon, explained as a day of collaborative creative work | Hackathon without explanation | Uses the event's existing term while explaining it for newcomers. [E1](#sources) [E2](#sources) |
 | apply / application for selection | Register / book your place before acceptance | Avoid suggesting a guaranteed place. [E3](#sources) [E4](#sources) |

@@ -13,7 +13,7 @@ class ApplicationForm
     {
         $fields = match ($audience) {
             'makers' => [
-                'name' => 255, 'email' => 255, 'motivation' => 5000, 'referral' => 1000,
+                'name' => 255, 'email' => 255, 'phone' => 80, 'motivation' => 5000, 'referral' => 1000,
                 'dutch' => 255, 'english' => 255, 'french' => 255, 'other_languages' => 1000,
                 'portfolio' => 2000, 'social_media' => 2000, 'main_skills' => 3000,
                 'backup_skills' => 3000, 'other_skills' => 3000, 'team_preferences' => 2000,
@@ -39,10 +39,13 @@ class ApplicationForm
             $values[$field] = in_array($input[$field] ?? null, ['yes', 'on', '1', 1, true, 'true'], true) ? '1' : '';
         }
 
-        $list = $audience === 'makers' ? 'themes' : 'languages';
-        $values[$list] = is_array($input[$list] ?? null)
-            ? array_values(array_filter(array_slice($input[$list], 0, $audience === 'makers' ? 10 : 3), fn ($value) => is_string($value) && mb_strlen($value) <= 255))
-            : [];
+        $lists = $audience === 'makers' ? ['themes' => 10] : ['organisation_languages' => 3, 'languages' => 3];
+
+        foreach ($lists as $list => $limit) {
+            $values[$list] = is_array($input[$list] ?? null)
+                ? array_values(array_filter(array_slice($input[$list], 0, $limit), fn ($value) => is_string($value) && mb_strlen($value) <= 255))
+                : [];
+        }
 
         if (self::wellFormedToken($input['_submission_token'] ?? null)) {
             $values['_submission_token'] = $input['_submission_token'];

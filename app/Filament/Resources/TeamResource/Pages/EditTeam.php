@@ -22,6 +22,7 @@ class EditTeam extends EditRecord
     protected function mutateFormDataBeforeFill(array $data): array
     {
         $data['maker_ids'] = $this->getRecord()->makers()->pluck('applications.id')->all();
+        $data['candidate_language'] = $this->getRecord()->organisation?->organisation_language_keys ?? [];
 
         return $data;
     }

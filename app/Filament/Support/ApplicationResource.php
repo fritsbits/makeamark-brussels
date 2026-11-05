@@ -69,7 +69,7 @@ abstract class ApplicationResource extends Resource
                     ? 'Refine the brief after your meeting. Gwen uses this and the skills needed for matchmaking.'
                     : 'Use the shared skill labels to find suitable teams. The original application stays below.')
                 ->schema($organisation ? [
-                    Textarea::make('refined_brief')->label('Briefing for makers')->rows(7)->maxLength(20000),
+                    Textarea::make('refined_brief')->label('Briefing for Makers')->rows(7)->maxLength(20000),
                     Select::make('skills_needed')->label('Skills needed')->options(Skills::options())->multiple()->searchable(),
                     Textarea::make('internal_notes')->label('Contact and internal notes')->helperText('Organisation contact stays in your own mailbox.')->rows(4)->maxLength(20000),
                 ] : [
@@ -107,6 +107,8 @@ abstract class ApplicationResource extends Resource
             TextEntry::make('created_at')->label('Applied')->dateTime('j M Y, H:i'),
         ];
 
+        $organisationAnswers = $record->audience === 'organisations';
+
         foreach ($record->answers ?? [] as $key => $value) {
             if (in_array($key, ['name', 'email', 'contact_name'], true)) {
                 continue;
@@ -120,6 +122,8 @@ abstract class ApplicationResource extends Resource
             $label = match ($key) {
                 'brussels_eligibility' => 'Supports people in Brussels (original confirmation)',
                 'youth_brussels_eligibility' => 'Works with young people in Brussels',
+                'organisation_languages' => 'Languages the organisation works in',
+                'languages' => $organisationAnswers ? 'Languages the contact person works in' : 'Languages',
                 default => Str::headline($key),
             };
             $entry = TextEntry::make('submitted_'.$key)->label($label)->state($value)->placeholder('Not supplied');
@@ -172,7 +176,7 @@ abstract class ApplicationResource extends Resource
             ])
             ->recordActions([EditAction::make()->label($organisation ? 'Review' : 'Open')])
             ->defaultSort('created_at', 'desc')
-            ->emptyStateHeading($organisation ? 'No organisation applications yet' : 'No maker applications yet')
+            ->emptyStateHeading($organisation ? 'No organisation applications yet' : 'No Maker applications yet')
             ->emptyStateDescription('Applications submitted through the website will appear here.')
             ->recordUrl(fn (Application $record): string => static::getUrl('edit', ['record' => $record]));
     }

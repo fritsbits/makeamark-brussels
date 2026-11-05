@@ -8,11 +8,11 @@
   "firstEditionYear": 2016,
   "meta": {
     "title": "Make a Mark Brussels",
-    "description": "A one-day make-a-thon where creative makers and Brussels social organisations work together on communication, design, and digital challenges. Join the 2027 edition."
+    "description": "A one-day make-a-thon where creative Makers and Brussels social organisations work together on communication, design, and digital challenges. Join the 2027 edition."
   },
   "nav": [
     {
-      "label": "For makers",
+      "label": "For Makers",
       "href": "/makers"
     },
     {
@@ -38,7 +38,7 @@
     "photoSourceLabel": "From the Make a Mark 2020 archive",
     "photoSourceUrl": "https://www.instagram.com/lets_makeamarkbxl/",
     "headline": "Design and creativity are for everyone",
-    "intro": "Volunteer makers and Brussels social organisations team up for one day to work on communication, design and digital challenges.",
+    "intro": "Volunteer Makers and Brussels social organisations team up for one day to work on communication, design and digital challenges.",
     "instagramLabel": "See their work on Instagram"
   },
   "makers": {
@@ -77,7 +77,7 @@
   },
   "about": {
     "heading": "The people behind Make a Mark",
-    "intro": "Make a Mark Brussels is part of the global Make a Mark movement. The local team brings volunteer makers and social organisations together for a day of shared creative work.",
+    "intro": "Make a Mark Brussels is part of the global Make a Mark movement. The local team brings volunteer Makers and social organisations together for a day of shared creative work.",
     "organisers": [
       {
         "name": "Gwen Dubois",

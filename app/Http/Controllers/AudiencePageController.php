@@ -24,9 +24,9 @@ class AudiencePageController extends Controller
             'submitted' => $submitted,
             'emailSent' => $submitted && ($confirmation['email_sent'] ?? false),
             'submissionToken' => ApplicationForm::token(request(), $audience),
-            'pageTitle' => ($audience === 'makers' ? 'For makers' : 'For social organisations').' · Make a Mark Brussels',
+            'pageTitle' => ($audience === 'makers' ? 'For Makers' : 'For social organisations').' · Make a Mark Brussels',
             'pageDescription' => $audience === 'makers'
-                ? 'Learn what to expect when you volunteer as a maker for the Make a Mark Brussels 2027 edition.'
+                ? 'Learn what to expect when you volunteer as a Maker for the Make a Mark Brussels 2027 edition.'
                 : 'Learn how your Brussels social organisation can bring a communication, design, or digital challenge to Make a Mark.',
         ]);
     }

@@ -25,6 +25,7 @@
     line-height: 1.4;
   }
   .public-site :is(strong, b) { font-weight: 600; }
+  .public-site p.application-deadline { font-weight: 600; }
   .public-site :is(.edition__body, .privacy__body) { max-width: 65ch; }
   .public-site .audience-panel { min-width: 0; }
   .public-site .audience-panel p { overflow-wrap: anywhere; }
@@ -66,7 +67,7 @@
   .public-site :is(.application-form__field, .application-form__label, [data-flux-label]) { font-size: var(--reading-size); font-weight: 600; }
   .public-site .application-form :is(input, select, textarea) { font-size: var(--reading-size); font-weight: 400; }
   .public-site .application-form__checks label, .public-site .application-form__check { font-weight: 400; }
-  .public-site :is(.application-form__hint, .application-form__required, .application__privacy-note) {
+  .public-site :is(.application-form__hint, .application-form__required, .application__privacy-note, .application__hint) {
     color: var(--ink-brown);
     font-size: var(--reading-size);
     font-weight: 300;

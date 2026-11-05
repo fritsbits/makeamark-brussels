@@ -7,8 +7,9 @@ sources:
   - "../../raw/2026-10-18-application-operations-update.md"
   - "../../raw/2026-10-18-airtable-forms.md"
   - "../../raw/2026-10-18-legitimate-interest-and-retention-guidance.md"
+  - "../../raw/2026-11-05-gwen-form-requests.md"
 phase: Build
-updated: 2026-10-18
+updated: 2026-11-05
 status: legitimate interests selected for current application lifecycle; annual review required
 ---
 
@@ -47,6 +48,24 @@ decision instruction; operations update]
   selection. Applicants are informed of and can exercise the right to object.
   Free-text fields could still invite unnecessary sensitive details; tell
   applicants not to include them. These safeguards support the balance.
+
+## Maker mobile number
+
+Added 2026-11-05 on Gwen's request (G-12). The Maker form requires a mobile
+number. The stated purpose is reaching a Maker during selection and on the
+day itself, if email does not get through. The notice and the form hint state
+this purpose; the number is not used for marketing or shared outside the
+internal team. [Gwen's requests](../../raw/2026-11-05-gwen-form-requests.md);
+[plan](51-gwen-form-requests.md)
+
+- **Necessity:** interpretation: a phone call is the fallback on the event day
+  when an email goes unread. Making it required, rather than optional, is the
+  owner's decision. The earlier Airtable Maker form had no phone field, so
+  there is no prior practice to compare with.
+- **Balancing:** the number joins data already collected, with the same
+  internal access, retention and right to object. The hint tells applicants
+  the limited purpose before they enter it. Reassess if the number is used for
+  anything beyond selection and the day itself.
 
 ## Gaps before approval
 

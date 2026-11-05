@@ -10,7 +10,7 @@ class MessagingPreviewTest extends TestCase
     {
         $this->withoutVite()->get('/tools/messaging')->assertOk()
             ->assertHeader('X-Robots-Tag', 'noindex, nofollow')
-            ->assertSee('Volunteer makers and Brussels social organisations team up')
+            ->assertSee('Volunteer Makers and Brussels social organisations team up')
             ->assertDontSee('How it works')
             ->assertSee('Venue to be confirmed')
             ->assertSee('href="/makers"', false)

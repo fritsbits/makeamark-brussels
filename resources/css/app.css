@@ -585,6 +585,13 @@ a.pill:hover .pill__sweep, a.pill:focus-visible .pill__sweep { clip-path: inset(
 .application__notice a { font-weight: 600; }
 .application__notice .pill { margin: 16px 0 8px; }
 .application__context { max-width: 680px; margin-top: 26px; }
+.application__hint { max-width: 680px; margin: 14px 0 0; }
+[role="group"] > .application-form__hint { margin: 4px 0 12px; }
+.application-deadline { font-weight: 600; }
+.application-deadline time { white-space: nowrap; }
+.audience-hero__deadline { margin: 0; }
+.distilled-edition .edition__deadline { margin: 8px 0 0; }
+.application__notice .application-deadline { margin-top: 10px; }
 .application__privacy-note { max-width: 680px; margin: -12px 0 24px; font-size: var(--fs-small); }
 .application__privacy-note a { font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .application-form { max-width: 760px; margin-top: 44px; }

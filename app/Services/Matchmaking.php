@@ -22,7 +22,7 @@ class Matchmaking
         ])->validate();
         $makerIds = array_map('intval', array_values($makerIds));
         if (count($makerIds) !== count(array_unique($makerIds))) {
-            throw ValidationException::withMessages(['maker_ids' => 'Choose each maker only once.']);
+            throw ValidationException::withMessages(['maker_ids' => 'Choose each Maker only once.']);
         }
 
         try {
@@ -54,12 +54,12 @@ class Matchmaking
                 }
                 foreach ($makerIds as $makerId) {
                     if (! $this->eligible($applications->get($makerId), 'makers', (int) $data['edition_year'])) {
-                        throw ValidationException::withMessages(['maker_ids' => 'Choose selected or confirmed makers from this edition.']);
+                        throw ValidationException::withMessages(['maker_ids' => 'Choose selected or confirmed Makers from this edition.']);
                     }
                 }
                 if (DB::table('application_team')->whereIn('application_id', $makerIds)
                     ->when($record->exists, fn ($query) => $query->where('team_id', '!=', $record->id))->exists()) {
-                    throw ValidationException::withMessages(['maker_ids' => 'A selected maker already belongs to another team. Remove that assignment first.']);
+                    throw ValidationException::withMessages(['maker_ids' => 'A selected Maker already belongs to another team. Remove that assignment first.']);
                 }
 
                 $record->fill($data);

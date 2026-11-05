@@ -93,7 +93,8 @@
 .audience-page .application__intro { max-height:calc(100dvh - 140px); overflow:auto; }
 @media(max-width:860px) {
  .audience-page .audience-hero,
- .audience-page.makers-page .audience-hero { grid-template-columns:minmax(0,1fr); gap:24px; padding:56px calc(var(--gutter) - var(--block-margin)) 56px; margin-bottom:40px; }
+ .audience-page.makers-page .audience-hero,
+ .audience-page.organisations-page .audience-hero { grid-template-columns:minmax(0,1fr); gap:24px; padding:56px calc(var(--gutter) - var(--block-margin)) 56px; margin-bottom:40px; }
  .audience-page .audience-hero > * { grid-column:1!important; grid-row:auto!important; }
  .audience-page.makers-page .audience-hero__support { grid-column:1!important; grid-row:auto!important; gap:24px; }
  .audience-page.makers-page .audience-hero__details { margin-top:0; }

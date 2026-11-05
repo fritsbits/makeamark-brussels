@@ -50,6 +50,15 @@ class Application extends Model
         return Attribute::get(fn () => $this->answers['organisation_name'] ?? $this->contact_name);
     }
 
+    /** Languages the organisation works in, as the lowercase keys the Maker language filter uses. */
+    protected function organisationLanguageKeys(): Attribute
+    {
+        return Attribute::get(fn () => array_values(array_intersect(
+            ['english', 'dutch', 'french'],
+            array_map('strtolower', array_filter((array) ($this->answers['organisation_languages'] ?? []), 'is_string')),
+        )));
+    }
+
     protected function averageRating(): Attribute
     {
         return Attribute::get(fn () => $this->reviews()->avg('rating'));

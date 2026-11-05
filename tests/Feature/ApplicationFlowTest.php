@@ -44,14 +44,14 @@ class ApplicationFlowTest extends TestCase
             'makers' => [
                 'name' => 'Test Maker', 'email' => 'maker@example.com',
                 'motivation' => 'Contribute to a local project.', 'portfolio' => 'https://example.com/work',
-                'main_skills' => 'Design', 'date_confirmed' => '1',
+                'phone' => '0470 12 34 56', 'main_skills' => 'Design', 'date_confirmed' => '1',
                 'meeting_availability' => 'Weekday evenings', 'full_commitment' => '1',
             ],
             'organisations' => [
                 'organisation_name' => 'Test Organisation', 'email' => 'organisation@example.com',
                 'youth_brussels_eligibility' => '1', 'mission' => 'Support local youth.',
                 'challenge' => 'Improve our communication.', 'contact_name' => 'Test Contact',
-                'phone' => '0123456789', 'languages' => ['English'], 'assets_ready' => '1',
+                'phone' => '0123456789', 'organisation_languages' => ['French'], 'languages' => ['English'], 'assets_ready' => '1',
                 'planning_meeting' => '1', 'feedback_session' => '1', 'evening_presentation' => '1',
             ],
         ];

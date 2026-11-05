@@ -11,6 +11,6 @@ class ListMakers extends ListRecords
 
     public function getSubheading(): ?string
     {
-        return 'Select makers, review their skills and find who still needs a team.';
+        return 'Select Makers, review their skills and find who still needs a team.';
     }
 }

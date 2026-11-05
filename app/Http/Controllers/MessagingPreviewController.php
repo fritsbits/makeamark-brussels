@@ -22,7 +22,7 @@ class MessagingPreviewController extends Controller
             'submitted' => false,
             'emailSent' => false,
             'submissionToken' => ApplicationForm::token(request(), $audience),
-            'pageTitle' => ($audience === 'makers' ? 'For makers' : 'For social organisations').' · Make a Mark Brussels',
+            'pageTitle' => ($audience === 'makers' ? 'For Makers' : 'For social organisations').' · Make a Mark Brussels',
             'pageDescription' => $homepage->site()['meta']['description'],
         ]);
     }

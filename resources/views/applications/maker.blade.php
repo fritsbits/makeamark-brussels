@@ -47,6 +47,7 @@
             <x-application.field name="name" label="Your name" autocomplete="name" required maxlength="255" />
             <x-application.field name="email" label="Email address" type="email" autocomplete="email" required maxlength="255" />
         </div>
+        <x-application.field name="phone" label="Mobile number" type="tel" autocomplete="tel" required maxlength="80" hint="Only for reaching you during selection and on the day itself, if email doesn't get through." />
         <x-application.field name="motivation" label="Why would you like to take part?" rows="4" required maxlength="5000" />
         <x-application.field name="referral" label="Where did you hear about Make a Mark?" maxlength="1000" />
     </fieldset>
@@ -93,14 +94,14 @@
 
     <fieldset class="application-form__group">
         <legend>Practical details</legend>
-        <x-application.checkbox name="date_confirmed" id="date_confirmed" required :checked="in_array(old('date_confirmed'), ['1', 1, true], true)">I have Saturday 27 March 2027 in my calendar.</x-application.checkbox>
+        <x-application.checkbox name="date_confirmed" id="date_confirmed" required :checked="in_array(old('date_confirmed'), ['1', 1, true], true)">I have {{ $edition['dates'] }} in my calendar.</x-application.checkbox>
         <x-application.field name="meeting_availability" label="When could you join a planning meeting before the event?" rows="3" required maxlength="2000" />
         <x-application.checkbox name="full_commitment" id="full_commitment" required :checked="in_array(old('full_commitment'), ['1', 1, true], true)">If selected, I can take part for the full event and join a planning meeting.</x-application.checkbox>
     </fieldset>
 
     <div class="application-form__send">
         <flux:button class="application-form__submit" type="submit" variant="primary" :loading="false" x-bind:disabled="submitting" x-bind:aria-busy="submitting.toString()">
-            <span x-text="submitting ? 'Sending application…' : 'Send maker application'">Send maker application</span>
+            <span x-text="submitting ? 'Sending application…' : 'Send Maker application'">Send Maker application</span>
         </flux:button>
         <flux:text class="application-form__sending" role="status" x-cloak x-show="submitting">Sending your application. Please wait for confirmation.</flux:text>
     </div>

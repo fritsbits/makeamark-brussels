@@ -8,21 +8,23 @@
                 </div>
             @else
                 <div class="audience-hero__heading audience-hero__heading--organisations">
-                    <flux:heading level="1" class="h-display audience-hero__title">Get a maker team to bring a long-waiting project to life.</flux:heading>
+                    <flux:heading level="1" class="h-display audience-hero__title">Get a Maker team to bring a long-waiting project to life.</flux:heading>
                 </div>
             @endif
             <div class="audience-hero__support">
                 <x-edition-date :date="$edition['startDate']" />
                 <div class="audience-hero__details">
                     @if ($audience === 'makers')
-                        <flux:text class="audience-hero__intro">Join a team of makers to work on a communication, design or digital challenge from a Brussels social organisation.</flux:text>
+                        <flux:text class="audience-hero__intro">Join a team of Makers to work on a communication, design or digital challenge from a Brussels social organisation.</flux:text>
                     @else
                         <flux:text class="audience-hero__intro audience-hero__intro--lead">For the 2027 edition, we're teaming up with Brussels organisations that work with young people aged roughly 12–25.</flux:text>
                     @endif
                     @if ($edition['status'] === 'open')
+                        <x-application-deadline :edition="$edition" class="audience-hero__deadline" />
                         <x-pill :href="$applicationUrl" :solid="true">Start your application</x-pill>
                     @else
                         <flux:text>{{ $edition['pill']['label'] }}</flux:text>
+                        <x-application-deadline :edition="$edition" class="audience-hero__deadline" />
                         @if ($edition['status'] === 'preparing')
                             <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
                         @endif
@@ -35,7 +37,7 @@
             <div class="commitment__lead">
                 <flux:heading level="2" class="h-display">What you commit to</flux:heading>
                 @if ($audience === 'makers')
-                    <flux:text>Contribute a full day pro-bono and join a planning meeting beforehand. We select makers and match teams in advance.</flux:text>
+                    <flux:text>Contribute a full day pro-bono and join a planning meeting beforehand. We select Makers and match teams in advance.</flux:text>
                 @else
                     <flux:text>Taking part is free. Prepare your brief and materials, join a planning meeting, and take part in feedback and the evening presentation.</flux:text>
                 @endif

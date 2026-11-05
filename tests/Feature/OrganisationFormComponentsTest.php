@@ -46,6 +46,24 @@ class OrganisationFormComponentsTest extends TestCase
         }
     }
 
+    public function test_organisation_languages_are_a_separate_required_choice_group_above_the_contact_person_languages(): void
+    {
+        $xpath = $this->form();
+        $this->assertCount(1, $xpath->query('//*[@id="organisation_languages" and @aria-labelledby="organisation_languages-label"]'));
+        $this->assertCount(3, $xpath->query('//ui-checkbox[@name="organisation_languages[]" and not(@required)]'));
+        foreach (['English', 'Dutch', 'French'] as $language) {
+            $this->assertCount(1, $xpath->query('//ui-checkbox[@name="organisation_languages[]" and @value="'.$language.'"]'));
+        }
+        $order = array_map(fn ($node) => $node->getAttribute('id'), iterator_to_array($xpath->query('//*[@id="organisation_languages" or @id="languages"]')));
+        $this->assertSame(['organisation_languages', 'languages'], $order);
+    }
+
+    public function test_the_introduction_says_answers_may_be_in_english_french_or_dutch(): void
+    {
+        $this->withoutVite()->get('/organisations')->assertOk()->assertSee('You can answer in English, French or Dutch.');
+        $this->withoutVite()->get('/makers')->assertOk()->assertDontSee('You can answer in English, French or Dutch.');
+    }
+
     private function form(): DOMXPath
     {
         $document = new DOMDocument;

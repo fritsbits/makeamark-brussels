@@ -9,7 +9,7 @@
             <flux:text class="application-receipt__thanks">{{ $audience === 'makers' ? 'Thanks for putting your hand up.' : 'Thanks for bringing your challenge.' }}</flux:text>
         </div>
         <div class="application-receipt__details">
-            <flux:text class="application-receipt__saved" role="status">Your {{ $audience === 'makers' ? 'maker' : 'organisation' }} application has been saved for the {{ $edition['year'] }} edition.</flux:text>
+            <flux:text class="application-receipt__saved" role="status">Your {{ $audience === 'makers' ? 'Maker' : 'organisation' }} application has been saved for the {{ $edition['year'] }} edition.</flux:text>
             <div class="application-receipt__next">
                 <flux:heading level="3" class="h-display application-receipt__subtitle">What happens next</flux:heading>
                 <flux:text>The organising team will review {{ $audience === 'makers' ? 'your skills and availability' : 'your organisation and challenge' }} as part of selection. Applying does not guarantee a place.</flux:text>
@@ -33,9 +33,10 @@
 @else
     <div class="application__notice" role="status">
         <strong>{{ $edition['pill']['label'] }}</strong>
+        <x-application-deadline :edition="$edition" />
         @if ($errors->has('submission'))<p role="alert">{{ $errors->first('submission') }}</p>@endif
         @if ($edition['status'] === 'preparing')
-            <p>We'll open the {{ $edition['year'] }} {{ $audience === 'makers' ? 'maker' : 'organisation' }} applications in the coming weeks. Follow us on Instagram to hear first. Read what you commit to above, so you're ready to apply.</p>
+            <p>We'll open the {{ $edition['year'] }} {{ $audience === 'makers' ? 'Maker' : 'organisation' }} applications in the coming weeks. Follow us on Instagram to hear first. Read what you commit to above, so you're ready to apply.</p>
             <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
         @else
             <p>Applications are not open right now. Please check this page for updates.</p>

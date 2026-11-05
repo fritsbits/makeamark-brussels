@@ -20,6 +20,10 @@ class Homepage
         $edition['imageLarge'] = '/images/'.$photo.'.880.webp';
         [$width, $height] = getimagesize(public_path($edition['image']));
         $edition['photoHeight'] = (int) round(440 * $height / $width);
+        // The deadline only makes sense while applications are, or are about to be, open; changing the status closes it.
+        $edition['deadline'] = in_array($edition['status'], ['preparing', 'open'], true) && filled($edition['applicationDeadline'] ?? null)
+            ? new \DateTimeImmutable($edition['applicationDeadline'])
+            : null;
         $edition['pill'] = EditionStatus::pill($edition['status'], $edition['year'], $edition['applyUrl'] ?? null, $site['instagramUrl'], $site['edition']['statusLabels']);
 
         $faq = collect(glob(resource_path('content/faq/*.json')))

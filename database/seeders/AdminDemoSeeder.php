@@ -39,6 +39,7 @@ class AdminDemoSeeder extends Seeder
                             'email' => $email, 'mission' => $data['mission'], 'challenge' => $data['challenge'],
                             'website' => 'https://example.org/', 'social_media' => 'No real account (demo)',
                             'phone' => 'No real phone number (demo)', 'languages' => $data['languages'],
+                            'organisation_languages' => $data['organisation_languages'] ?? $data['languages'],
                             'brussels_eligibility' => '1', 'assets_ready' => $data['status'] === 'needs_information' ? '0' : '1',
                             'planning_meeting' => '1', 'feedback_session' => '1', 'evening_presentation' => '1',
                             'demo_record' => 'Fictional application for local testing; not imported from Airtable.',
@@ -66,7 +67,7 @@ class AdminDemoSeeder extends Seeder
                         'contact_name' => $name.' (demo)', 'status' => $status,
                         'main_skills' => $main, 'backup_skills' => $backup,
                         'answers' => [
-                            'name' => $name.' (demo)', 'email' => $email, 'motivation' => $motivation,
+                            'name' => $name.' (demo)', 'email' => $email, 'phone' => 'No real phone number (demo)', 'motivation' => $motivation,
                             'portfolio' => 'https://example.org/', 'social_media' => 'No real account (demo)',
                             'main_skills' => $main, 'backup_skills' => $backup, 'other_skills' => '',
                             'english' => (string) $languages[0], 'dutch' => (string) $languages[1], 'french' => (string) $languages[2],
@@ -79,7 +80,7 @@ class AdminDemoSeeder extends Seeder
                         ],
                         'internal_notes' => match ($status) {
                             'selected', 'confirmed' => 'Demo: ready for matching; check language, skills and preferences.',
-                            'waitlisted' => 'Demo: keep available if another maker withdraws.',
+                            'waitlisted' => 'Demo: keep available if another Maker withdraws.',
                             'needs_information' => 'Demo: ask for clarification of portfolio and availability.',
                             'rejected' => 'Demo: not selected for this edition.',
                             'withdrawn' => 'Demo: applicant can no longer attend.',

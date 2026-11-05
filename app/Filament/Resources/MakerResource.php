@@ -12,7 +12,7 @@ class MakerResource extends ApplicationResource
 
     protected static ?string $slug = 'makers';
 
-    protected static ?string $modelLabel = 'maker';
+    protected static ?string $modelLabel = 'Maker';
 
     protected static ?string $pluralModelLabel = 'Makers';
 

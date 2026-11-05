@@ -216,6 +216,39 @@ class AdminPanelTest extends TestCase
             });
     }
 
+    public function test_the_team_editor_prefills_the_language_filter_from_the_organisation(): void
+    {
+        $organisation = $this->application('organisations', ['status' => 'selected', 'answers' => ['organisation_name' => 'Example organisation', 'organisation_languages' => ['French', 'Dutch']]]);
+        $french = $this->application('makers', ['status' => 'selected', 'answers' => ['french' => '4', 'english' => '2']]);
+        $dutch = $this->application('makers', ['status' => 'selected', 'answers' => ['dutch' => '3']]);
+        $englishOnly = $this->application('makers', ['status' => 'selected', 'answers' => ['english' => '5']]);
+        $this->actingAs($this->admin());
+        Filament::setCurrentPanel(Filament::getPanel('admin'));
+
+        $create = Livewire::test(CreateTeam::class)
+            ->fillForm(['edition_year' => 2027])
+            ->set('data.organisation_application_id', $organisation->id)
+            ->assertSet('data.candidate_language', ['dutch', 'french'])
+            ->assertFormFieldExists('maker_ids', function (Select $field) use ($french, $dutch, $englishOnly): bool {
+                $options = $field->getOptions();
+
+                return isset($options[$french->id], $options[$dutch->id]) && ! isset($options[$englishOnly->id]);
+            });
+        $create->set('data.candidate_language', [])
+            ->assertFormFieldExists('maker_ids', fn (Select $field): bool => isset($field->getOptions()[$englishOnly->id]));
+
+        $team = app(Matchmaking::class)->save(new Team, ['name' => 'Youth team', 'edition_year' => 2027, 'organisation_application_id' => $organisation->id, 'status' => 'draft'], [$french->id]);
+        Livewire::test(EditTeam::class, ['record' => $team->id])
+            ->assertSet('data.candidate_language', ['dutch', 'french'])
+            ->assertSee('Languages the organisation works in');
+    }
+
+    public function test_organisations_without_languages_leave_the_filter_empty(): void
+    {
+        $this->assertSame([], $this->application('organisations')->organisation_language_keys);
+        $this->assertSame(['english', 'french'], $this->application('organisations', ['answers' => ['organisation_languages' => ['French', 'English', 'Klingon']]])->organisation_language_keys);
+    }
+
     private function admin(): User
     {
         return User::factory()->create(['is_admin' => true, 'is_active' => true]);

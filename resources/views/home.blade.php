@@ -32,12 +32,12 @@
         <section id="take-part" class="audience-pair container" aria-label="Take part">
             <article class="audience-panel">
                 <flux:heading level="2" class="h-display">Makers,</flux:heading>
-                <flux:text>Give your creative skills to a local project and meet other makers.</flux:text>
+                <flux:text>Give your creative skills to a local project and meet other Makers.</flux:text>
                 <x-pill href="/makers">Maker details</x-pill>
             </article>
             <article class="audience-panel">
                 <flux:heading level="2" class="h-display">Social organisations,</flux:heading>
-                <flux:text>Work with a maker team on one communication, design or digital challenge.</flux:text>
+                <flux:text>Work with a Maker team on one communication, design or digital challenge.</flux:text>
                 <x-pill href="/organisations">Organisation details</x-pill>
             </article>
         </section>
@@ -53,6 +53,7 @@
                     @if ($edition['status'] !== 'open')
                         <flux:text>{{ $edition['pill']['label'] }}</flux:text>
                     @endif
+                    <x-application-deadline :edition="$edition" class="edition__deadline" />
                 </div>
             </div>
         </section>

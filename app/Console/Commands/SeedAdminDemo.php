@@ -20,7 +20,7 @@ class SeedAdminDemo extends Command
         }
 
         app(AdminDemoSeeder::class)->run();
-        $this->info('Demo data ready for 2027: 6 organisations, 18 makers, 12 reviews and 2 starter teams.');
+        $this->info('Demo data ready for 2027: 6 organisations, 18 Makers, 12 reviews and 2 starter teams.');
         $this->line('Existing applications, login credentials and edits to demo records are preserved.');
         $this->line(url('/admin/organisations'));
 

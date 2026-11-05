@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Content\Homepage;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -22,6 +21,10 @@ class OrganisationSubmissionHardeningTest extends TestCase
             'duplicate languages' => [['languages' => ['English', 'English']], 'languages.0'],
             'too many languages' => [['languages' => ['English', 'Dutch', 'French', 'English']], 'languages'],
             'unknown language' => [['languages' => ['Spanish']], 'languages.0'],
+            'missing organisation languages' => [['organisation_languages' => []], 'organisation_languages'],
+            'scalar organisation languages' => [['organisation_languages' => 'French'], 'organisation_languages'],
+            'duplicate organisation languages' => [['organisation_languages' => ['French', 'French']], 'organisation_languages.0'],
+            'unknown organisation language' => [['organisation_languages' => ['Spanish']], 'organisation_languages.0'],
             'array name' => [['organisation_name' => ['nested']], 'organisation_name'],
             'array mission' => [['mission' => ['nested']], 'mission'],
             'array optional text' => [['social_media' => ['nested']], 'social_media'],
@@ -130,7 +133,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
             '_submission_token' => $organisation['_submission_token'],
             'name' => 'Test Maker', 'email' => 'maker@example.com',
             'motivation' => 'Contribute to a local project.', 'portfolio' => 'https://example.com/work',
-            'main_skills' => 'Design', 'date_confirmed' => '1',
+            'phone' => '0470 12 34 56', 'main_skills' => 'Design', 'date_confirmed' => '1',
             'meeting_availability' => 'Weekday evenings', 'full_commitment' => '1',
         ];
         $this->post('/makers/apply', $maker)->assertRedirect('/makers#application')->assertSessionHasErrors('submission');
@@ -230,7 +233,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
             'organisation_name' => 'Test Organisation', 'email' => 'organisation@example.com',
             'youth_brussels_eligibility' => '1', 'mission' => 'Support local youth.',
             'challenge' => 'Improve our communication.', 'contact_name' => 'Test Contact',
-            'phone' => '0123456789', 'languages' => ['English', 'Dutch', 'French'], 'assets_ready' => '1',
+            'phone' => '0123456789', 'organisation_languages' => ['French', 'Dutch'], 'languages' => ['English', 'Dutch', 'French'], 'assets_ready' => '1',
             'planning_meeting' => '1', 'feedback_session' => '1', 'evening_presentation' => '1',
         ];
     }

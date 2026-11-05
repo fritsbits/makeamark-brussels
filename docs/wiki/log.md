@@ -1,5 +1,14 @@
 # Cascade change log
 
+- 2026-11-05: Built batch A of Gwen's form requests (G-02, G-01, G-05, G-06,
+  G-12). Capitalised Maker(s) across rendered copy and admin, added the
+  optional `applicationDeadline`, the organisation language question with
+  Team editor pre-fill, the language hint and the required Maker mobile number.
+  Updated the privacy notice and the legitimate-interests assessment. 131 PHP
+  tests and the production build pass; running-page checks at 1440px and 390px
+  pass. B-042 and B-043 closed, B-041 partly (date pending).
+  [Plan and build record](build/51-gwen-form-requests.md#batch-a-implementation).
+
 - 2026-11-05: Owner answered two questions meant for Gwen. Organisations pick
   from the same ten themes as Makers (B-044 ready for batch B). Volunteers
   apply through the site with their own form; S-001 now includes them and

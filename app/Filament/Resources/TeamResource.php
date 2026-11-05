@@ -49,6 +49,7 @@ class TeamResource extends Resource
                         $set('maker_ids', []);
                     }),
                 Select::make('organisation_application_id')->label('Organisation')->required()->searchable()->live()
+                    ->afterStateUpdated(fn (Set $set, Get $get): mixed => $set('candidate_language', static::selectedOrganisation($get)?->organisation_language_keys ?? []))
                     ->options(fn (Get $get, ?Team $record): array => Application::query()->where('audience', 'organisations')
                         ->where('edition_year', $get('edition_year'))->whereIn('status', ['selected', 'confirmed'])
                         ->whereNotIn('id', Team::query()->when($record, fn (Builder $query): Builder => $query->whereKeyNot($record->id))->select('organisation_application_id'))
@@ -57,24 +58,28 @@ class TeamResource extends Resource
                 Hidden::make('lock_version')->default(0),
             ])->columnSpanFull(),
             Section::make('Organisation briefing')->schema([
-                TextEntry::make('briefing')->label('Briefing for makers')
+                TextEntry::make('briefing')->label('Briefing for Makers')
                     ->state(fn (Get $get): ?string => static::selectedOrganisation($get)?->refined_brief)
                     ->placeholder('No refined briefing saved yet. Add it on the organisation application.'),
                 TextEntry::make('needs')->label('Skills needed')->badge()
                     ->state(fn (Get $get): array => static::skillLabels(static::selectedOrganisation($get)?->skills_needed ?? [])),
+                TextEntry::make('organisation_languages')->label('Languages the organisation works in')->badge()
+                    ->state(fn (Get $get): array => array_map('ucfirst', static::selectedOrganisation($get)?->organisation_language_keys ?? []))
+                    ->placeholder('Not supplied'),
                 TextEntry::make('organisation_link')->label('Organisation application')->state('Open briefing and submitted application')
                     ->url(fn (Get $get): ?string => ($organisation = static::selectedOrganisation($get)) ? OrganisationResource::getUrl('edit', ['record' => $organisation]) : null)
                     ->visible(fn (Get $get): bool => static::selectedOrganisation($get) !== null),
             ])->columnSpanFull(),
-            Section::make('Match makers')->description('Gwen leads matchmaking after the briefings are ready. All organisers can adjust teams.')
+            Section::make('Match Makers')->description('Gwen leads matchmaking after the briefings are ready. All organisers can adjust teams.')
                 ->columns(2)->schema([
                     Select::make('candidate_skill')->label('Filter candidates by skill')->options(Skills::options())->searchable()->live()->dehydrated(false),
-                    Select::make('candidate_language')->label('Filter candidates by language')->options(['english' => 'English · level 3 or higher', 'dutch' => 'Dutch · level 3 or higher', 'french' => 'French · level 3 or higher'])->live()->dehydrated(false),
+                    Select::make('candidate_language')->label('Filter candidates by language')->options(['english' => 'English · level 3 or higher', 'dutch' => 'Dutch · level 3 or higher', 'french' => 'French · level 3 or higher'])->multiple()->live()->dehydrated(false)
+                        ->helperText('Pre-filled from the organisation. Makers who reach level 3 in any chosen language are listed; clear it to see everyone.'),
                     Select::make('maker_ids')->label('Makers')->multiple()->searchable()->live()->columnSpanFull()
                         ->options(fn (Get $get, ?Team $record): array => static::makerOptions($get, $record))
                         ->getOptionLabelsUsing(fn (array $values): array => Application::query()->where('audience', 'makers')->whereIn('id', $values)->get()
                             ->mapWithKeys(fn (Application $maker): array => [$maker->id => static::makerLabel($maker)])->all())
-                        ->helperText('Only selected or confirmed makers in this edition are available. Makers assigned to another team must be removed there first.'),
+                        ->helperText('Only selected or confirmed Makers in this edition are available. Makers assigned to another team must be removed there first.'),
                     TextEntry::make('main_coverage')->label('Main skills in this team')->badge()
                         ->state(fn (Get $get): array => static::skillLabels(static::selectedMakers($get)->flatMap(fn (Application $maker): array => $maker->main_skills ?? [])->unique()->all())),
                     TextEntry::make('backup_coverage')->label('Backup skills in this team')->badge()
@@ -109,8 +114,14 @@ class TeamResource extends Resource
             ->when($get('candidate_skill') || $get('candidate_language'), fn (Builder $query): Builder => $query->where(function (Builder $query) use ($get): void {
                 $query->where(function (Builder $query) use ($get): void {
                     $query->when($get('candidate_skill'), fn (Builder $query, string $skill): Builder => $query->where(fn (Builder $query): Builder => $query->whereJsonContains('main_skills', $skill)->orWhereJsonContains('backup_skills', $skill)))
-                        ->when($get('candidate_language'), function (Builder $query, string $language): Builder {
-                            return in_array($language, ['english', 'dutch', 'french'], true) ? $query->where('answers->'.$language, '>=', '3') : $query->whereRaw('1 = 0');
+                        ->when($get('candidate_language'), function (Builder $query, array $languages): Builder {
+                            $languages = array_intersect($languages, ['english', 'dutch', 'french']);
+
+                            return $languages === [] ? $query->whereRaw('1 = 0') : $query->where(function (Builder $query) use ($languages): void {
+                                foreach ($languages as $language) {
+                                    $query->orWhere('answers->'.$language, '>=', '3');
+                                }
+                            });
                         });
                 })->orWhereIn('id', $get('maker_ids') ?? []);
             }))
@@ -140,7 +151,7 @@ class TeamResource extends Resource
             SelectFilter::make('edition_year')->label('Edition')->options(fn (): array => Team::query()->distinct()->orderByDesc('edition_year')->pluck('edition_year', 'edition_year')->all()),
             SelectFilter::make('status')->options(['draft' => 'Draft', 'confirmed' => 'Confirmed']),
         ])->recordActions([EditAction::make()->label('Match team')])
-            ->emptyStateHeading('No teams yet')->emptyStateDescription('Select an organisation and makers first, then create a team for their edition.')
+            ->emptyStateHeading('No teams yet')->emptyStateDescription('Select an organisation and Makers first, then create a team for their edition.')
             ->defaultSort('name')->recordUrl(fn (Team $record): string => static::getUrl('edit', ['record' => $record]));
     }
 

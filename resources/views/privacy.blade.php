@@ -6,11 +6,11 @@
             <p class="kicker">Application information</p>
             <flux:heading level="1" class="h-display privacy__title">Privacy notice</flux:heading>
             <div class="privacy__body">
-                <p class="privacy__updated">Last updated 20 October 2026</p>
+                <p class="privacy__updated">Last updated 5 November 2026</p>
 
                 <section aria-labelledby="privacy-controller">
                     <h2 id="privacy-controller">Who is responsible</h2>
-                    <p>Impact Studio BV (BE 0652.723.886), Kasteeldreef 47, 1083 Ganshoren, is responsible for personal information submitted through the Make a Mark Brussels maker and organisation applications and processed for public website analytics.</p>
+                    <p>Impact Studio BV (BE 0652.723.886), Kasteeldreef 47, 1083 Ganshoren, is responsible for personal information submitted through the Make a Mark Brussels Maker and organisation applications and processed for public website analytics.</p>
                     <p>For privacy questions or requests, contact Frederik Vincx at <a href="mailto:hi@frederikvincx.com">hi@frederikvincx.com</a>.</p>
                 </section>
 
@@ -29,7 +29,7 @@
 
                 <section aria-labelledby="privacy-data">
                     <h2 id="privacy-data">What we collect</h2>
-                    <p>We collect contact information and the answers you provide in the maker or organisation application. Our site and hosting providers may also log basic technical details, such as IP address and request time, to maintain and secure the service. We do not ask about dietary requirements. Please do not include health details, identity documents, or other sensitive information in free-text answers.</p>
+                    <p>We collect contact information and the answers you provide in the Maker or organisation application. Makers also give a mobile number. We use it only to reach a Maker during selection and on the day itself, if email doesn't get through. Our site and hosting providers may also log basic technical details, such as IP address and request time, to maintain and secure the service. We do not ask about dietary requirements. Please do not include health details, identity documents, or other sensitive information in free-text answers.</p>
                     <p>We do not use automated decisions to select applicants.</p>
                 </section>
 

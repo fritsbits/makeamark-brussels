@@ -20,6 +20,9 @@ class MakerSubmissionHardeningTest extends TestCase
         return [
             'scalar themes' => [['themes' => 'invalid'], 'themes'],
             'nested themes' => [['themes' => [['nested']]], 'themes.0'],
+            'missing mobile number' => [['phone' => ''], 'phone'],
+            'array mobile number' => [['phone' => ['nested']], 'phone'],
+            'overlong mobile number' => [['phone' => str_repeat('1', 81)], 'phone'],
             'array name' => [['name' => ['nested']], 'name'],
             'array motivation' => [['motivation' => ['nested']], 'motivation'],
             'array optional text' => [['referral' => ['nested']], 'referral'],
@@ -173,7 +176,7 @@ class MakerSubmissionHardeningTest extends TestCase
             ->assertSee('Applications aren’t open yet', false)
             ->assertSee('Applications open soon')
             ->assertSee('Follow us on Instagram')
-            ->assertDontSee('Send maker application');
+            ->assertDontSee('Send Maker application');
     }
 
     public function test_unique_submission_key_is_enforced_by_the_database(): void
@@ -194,7 +197,7 @@ class MakerSubmissionHardeningTest extends TestCase
             '_submission_token' => $page->original->getData()['submissionToken'] ?? 'unissued-fixture',
             'name' => 'Test Maker', 'email' => 'maker@example.com',
             'motivation' => 'Contribute to a local project.', 'portfolio' => 'https://example.com/work',
-            'main_skills' => 'Design', 'date_confirmed' => '1',
+            'phone' => '0470 12 34 56', 'main_skills' => 'Design', 'date_confirmed' => '1',
             'meeting_availability' => 'Weekday evenings', 'full_commitment' => '1',
         ];
     }

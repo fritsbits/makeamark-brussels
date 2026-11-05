@@ -4,8 +4,8 @@
     $invalid = $errors->has($errorKey) || $errors->has($errorKey.'.*');
     $descriptionExpression = $required
         ? "missing.includes('{$id}') ? '{$id}-error {$id}-client-error' : '{$id}-error'"
-        : ($groupError === 'languages-error'
-            ? "missing.includes('languages') ? 'languages-error languages-client-error' : 'languages-error'"
+        : ($groupError !== 'themes-error'
+            ? "missing.includes('".substr($groupError, 0, -6)."') ? '{$groupError} ".substr($groupError, 0, -6)."-client-error' : '{$groupError}'"
             : \Illuminate\Support\Js::from($showError ? $id.'-error' : $groupError)->toHtml());
 @endphp
 <div id="{{ $id }}" class="application-form__choice" tabindex="-1">
