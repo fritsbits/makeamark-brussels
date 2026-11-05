@@ -1,5 +1,11 @@
 # Cascade change log
 
+- 2026-11-05: Owner answered two questions meant for Gwen. Organisations pick
+  from the same ten themes as Makers (B-044 ready for batch B). Volunteers
+  apply through the site with their own form; S-001 now includes them and
+  B-047 is partly resolved, pending scoping.
+  [Source](../raw/2026-11-05-gwen-form-requests.md).
+
 - 2026-11-05: Reviewed Gwen's twelve 2027 form requests against the code and
   recorded the owner's decisions: deadline, capital M Makers, language hint
   and organisation language, Maker mobile number, shared themes, printable

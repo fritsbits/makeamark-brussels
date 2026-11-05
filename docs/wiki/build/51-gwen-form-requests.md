@@ -18,7 +18,7 @@ status: planned; not implemented
 # Gwen's 2027 form requests
 
 Gwen Dubois sent twelve requests for the 2027 application forms on 20 October 2026.
-The owner decided on each one on 5 November 2026: nine to build now, two skipped, one to discuss.
+The owner decided on each one on 5 November 2026: ten to build, two skipped.
 [Emails and decisions](../../raw/2026-11-05-gwen-form-requests.md)
 
 Applications are closed with status `preparing`, so all changes can land before opening day.
@@ -37,7 +37,7 @@ Applications are closed with status `preparing`, so all changes can land before 
 | G-11 | Shared themes on the organisation form | Do now | B-044 |
 | G-09 | Printable team briefing | Do now | B-045 |
 | G-08 | Organisation copy of answers | Do now, option B | B-046 |
-| G-10 | Volunteer application form | Discuss | B-047 |
+| G-10 | Volunteer application form | Do, own form | B-047 |
 | G-04 | Organisation logo upload | Skip | B-048 |
 | G-07 | Organisation keywords | Skip | B-048 |
 
@@ -56,7 +56,7 @@ These were checked against the code at `ebfcf2c`.
 - The Maker form already has ten fixed theme checkboxes (`resources/views/applications/maker.blade.php:83-91`).
   The organisation form has no theme field.
   Interpretation: Gwen's "free field" note most likely means organisations, so Maker interests can be matched against them.
-  Unknown until Gwen confirms.
+  The owner settled it: organisations pick from the same ten themes.
 - The Maker form has no phone field; the organisation form requires one.
   The old Airtable Maker form had none either.
   [Airtable forms](../../raw/2026-10-18-airtable-forms.md)
@@ -94,18 +94,18 @@ These were checked against the code at `ebfcf2c`.
 
 7. **G-11.** Create an `App\Support\Themes` catalogue following `Skills`, used by both forms and the controller.
    Add the same checkboxes to the organisation form, a `themes` column with a backfill from `answers.themes`, admin filters and theme overlap in the Team editor.
-   Confirm with Gwen whether the ten themes still fit the youth-work focus.
+   Both forms use the same ten themes (owner, 2026-11-05).
 8. **G-09.** Add a "Print briefing" action per team and per organisation.
    It opens a print page with the refined brief, skills needed, themes and languages.
    It omits contact name, email and phone, so it stays within the current notice.
 9. **G-08.** On the organisation confirmation page, show the submitted answers with a print control.
    No email copy, so the Resend statement in the notice stays true.
 
-### To discuss
+### Volunteers
 
-10. **G-10.** A volunteer form reopens S-001 ("person signup: Makers only").
-    The options are a third audience on an audience registry, a role on the Maker form, or recruiting directly without the site.
-    The agent recommended a third audience if the answer is yes; a Maker-form role was advised against.
+10. **G-10.** The owner decided on 2026-11-05 that volunteers apply through the site with their own form; S-001 now includes them.
+    Build it as a third audience on an audience registry, so the two-way audience code is refactored once.
+    Fields, roles and availability still need scoping.
     A year-round case-study role also needs a retention check, and photo and video roles touch B-007 and B-036.
 
 ## Work batches
@@ -116,8 +116,8 @@ Each build batch is one thread, one branch and one curated commit.
 | Batch | Requests | Concerns | Waits on |
 | --- | --- | --- | --- |
 | A. Copy and fields | G-02, G-01, G-05, G-06, G-12 | B-041, B-042, B-043 | Nothing |
-| B. Matching and print | G-11, G-09, G-08 | B-044, B-045, B-046 | Batch A merged; Gwen confirms the themes meaning and list |
-| C. Volunteers | G-10 | B-047 | A decision on S-001, worked as a Wayfinder map |
+| B. Matching and print | G-11, G-09, G-08 | B-044, B-045, B-046 | Batch A merged |
+| C. Volunteers | G-10 | B-047 | Scoping as a Wayfinder map |
 
 G-03 is the reply to Gwen, drafted in Gmail on 2026-11-05.
 
@@ -149,7 +149,7 @@ The curated commit can collapse them.
 ### Batch B: matching and print
 
 Plan steps 7 to 9.
-Start only after batch A is merged and Gwen has answered on themes.
+Start after batch A is merged.
 
 - **Shared themes (G-11).**
   An `App\Support\Themes` catalogue following `Skills`, used by both forms and the controller.

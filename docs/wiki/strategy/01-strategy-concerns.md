@@ -1,9 +1,9 @@
 ---
 title: Strategy concerns
 tags: [concerns, strategy]
-sources: ["../discovery/10-discovery.md", "../discovery/01-concerns.md", "../../raw/2026-10-18-airtable-data-model.md", "../../raw/2026-10-18-airtable-forms.md", "10-tone-of-voice.md", "11-voice-copy-review.md", "../../raw/2026-10-18-tone-of-voice-feedback-round-1.md", "../../raw/2026-10-18-notion-make-a-mark-2027.md", "../../raw/2026-10-18-previous-website-copy.md", "12-previous-website-messaging.md"]
+sources: ["../discovery/10-discovery.md", "../discovery/01-concerns.md", "../../raw/2026-10-18-airtable-data-model.md", "../../raw/2026-10-18-airtable-forms.md", "10-tone-of-voice.md", "11-voice-copy-review.md", "../../raw/2026-10-18-tone-of-voice-feedback-round-1.md", "../../raw/2026-10-18-notion-make-a-mark-2027.md", "../../raw/2026-10-18-previous-website-copy.md", "12-previous-website-messaging.md", "../../raw/2026-11-05-gwen-form-requests.md"]
 phase: Strategy
-updated: 2026-10-18
+updated: 2026-11-05
 ---
 
 # Strategy concerns
@@ -14,7 +14,7 @@ updated: 2026-10-18
 
 | ID | Concern | Resolution |
 | --- | --- | --- |
-| S-001 | Does “people” signup mean makers only, or should young people have a signup journey too? | Owner selected makers-only person signup for v1. Youth participation remains a program question, not a signup route in this version. [Strategy](../../ux/_strategy.md) |
+| S-001 | Does “people” signup mean makers only, or should young people have a signup journey too? | Owner selected makers-only person signup for v1. Youth participation remains a program question, not a signup route in this version. [Strategy](../../ux/_strategy.md) On 2026-11-05 the owner added volunteers (photo, video, social media, case studies) as a second person signup; young people still have no signup route. [Decision](../../raw/2026-11-05-gwen-form-requests.md); [B-047](../build/01-build-concerns.md) |
 | S-002 | How should makers and organisations be prioritized? | Owner selected co-primary applicants. [Strategy](../../ux/_strategy.md) |
 | S-003 | How far should the first version's website role extend beyond applications? | Owner selected an edition-cycle guide covering open, closed, and after-event states; signup admin remains later. [Strategy](../../ux/_strategy.md) |
 | S-004 | What user behavior should define website success? | Owner selected review-ready applications across both tracks as the candidate North Star. Reviewer definition and target values remain to be set in Scope. [Strategy](../../ux/_strategy.md) |

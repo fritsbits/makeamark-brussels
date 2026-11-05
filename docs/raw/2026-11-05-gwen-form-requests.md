@@ -66,3 +66,11 @@ The review listed each request with the agent's recommendation pre-selected; the
 | G-10 | Volunteer application form | Discuss |
 | G-11 | Shared themes catalogue on the organisation form | Do now |
 | G-12 | Required Maker mobile number | Do now |
+
+## Follow-up answers
+
+Owner answers in chat on 5 November 2026, to questions that were going to Gwen:
+
+- Themes: organisations pick from the same ten themes as Makers.
+- Volunteers: yes, volunteers apply through the site with their own form.
+- Application deadline and opening date: ask Gwen.

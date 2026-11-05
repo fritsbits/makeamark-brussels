@@ -1,8 +1,8 @@
 # Product knowledge index
 
 Gwen's form requests: [plan for twelve requests](build/51-gwen-form-requests.md)
-from 20 October. Owner decisions: nine to build, logo and keywords skipped,
-volunteer form to discuss. Tracked as B-041 to B-048; nothing implemented yet.
+from 20 October. Owner decisions: ten to build including a volunteer form,
+logo and keywords skipped; organisations use the Makers' ten themes. Tracked as B-041 to B-048; nothing implemented yet.
 
 Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the
