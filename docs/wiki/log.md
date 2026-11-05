@@ -1,5 +1,15 @@
 # Cascade change log
 
+- 2026-11-05: Set up production outgoing mail with the owner.
+  Resend sends from `hello@letsmakeamark.brussels` (Ireland region); Cloudflare publishes its DKIM, `send` and `rsend` records and a `p=none` DMARC record.
+  Forge now uses the `resend` mailer, and a `database` queue worker sends Filament's queued password resets.
+  A reset and an `ApplicationReceived` test reached the owner's inbox with DKIM, SPF and DMARC passing; no application was created.
+  The owner replaced the Resend key and `APP_KEY` after the environment was pasted into chat.
+  Incoming `hello@` forwarding to `makeamarkbxl@gmail.com` waits on Gwen's verification.
+  B-002, B-010 and B-035 updated; the opening checklist's mail step is done for outgoing mail.
+  [Verification](../raw/2026-11-05-production-mail-setup.md);
+  [synthesis](build/46-production-rollout.md#outgoing-mail).
+
 - 2026-10-21: Deployed `13d772f` by a manual release over SSH after Forge
   accepted the push webhooks but created no release. Production now shows
   "Applications open soon" without forms; it held zero applications.

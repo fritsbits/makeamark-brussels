@@ -6,8 +6,9 @@ sources:
   - "46-production-rollout.md"
   - "../strategy/10-tone-of-voice.md"
   - "../../raw/2026-10-21-applications-closed-deployment.md"
+  - "../../raw/2026-11-05-production-mail-setup.md"
 phase: Build
-updated: 2026-10-21
+updated: 2026-11-05
 status: deployed; opening date unknown
 ---
 
@@ -51,6 +52,9 @@ Production held zero applications when intake closed.
 Opening stays a content change plus a push to `main`. Confirm afterwards that Forge actually created a release.
 
 1. Outgoing mail works in production and a test receipt arrives (B-035).
+   Done on 2026-11-05: a password reset and a receipt reached the owner's inbox with DKIM, SPF and DMARC passing.
+   Incoming mail to `hello@` still waits on Email Routing.
+   [Mail setup](46-production-rollout.md#outgoing-mail)
 2. An off-server database backup exists and one restore is tested (B-035).
 3. Server disk use has room for intake (B-035).
 4. Set `status` to `open` in `resources/content/editions/2027.json`, commit and push to `main`.

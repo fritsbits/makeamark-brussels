@@ -8,8 +8,9 @@ sources:
   - "../../raw/2026-10-18-application-privacy-decision-instruction.md"
   - "../../raw/2026-10-18-application-privacy-requirements.md"
   - "../../raw/2026-10-18-airtable-forms.md"
+  - "../../raw/2026-11-05-production-mail-setup.md"
 phase: Build
-updated: 2026-10-18
+updated: 2026-11-05
 status: lawful-basis and retention decisions made; account setup verification remains
 ---
 
@@ -93,8 +94,11 @@ are introduced.
 
 ## Remaining operational checks
 
-- Set up Resend and a verified sender before sending receipts.
-- Confirm the destination mailbox for `hello@` when email routing is configured.
+- Resend and the verified `hello@letsmakeamark.brussels` sender are live since 2026-11-05.
+  The receipt test carried only name, audience and year; open and click tracking are off.
+  [Mail setup](46-production-rollout.md#outgoing-mail)
+- The owner chose `makeamarkbxl@gmail.com` as the `hello@` destination; Email Routing waits on its verification.
+  Interpretation: mail sent to `hello@` will then also pass through Google, which the notice's provider sentence does not name.
 - At the annual retention review, delete or anonymise applications reaching
   the three-year limit. This is a manual process; no automatic purge is active.
 
