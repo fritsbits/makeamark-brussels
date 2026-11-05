@@ -7,10 +7,10 @@ Batch A is [built and verified locally](build/51-gwen-form-requests.md#batch-a-i
 Maker capitalisation, deadline field (date pending), language hint,
 organisation language and required Maker mobile number. The printable team briefing (G-09, B-045) and organisation answers (G-08, B-046) are built and verified locally; shared themes (G-11, B-044) are built on the same branch; batch C waits.
 
-Volunteer form: [scoping proposal](build/52-volunteer-form-scoping.md) for the third
-audience (photo, video, social media, case studies): fields, admin without teams,
-privacy and retention, audience-registry code map and ten owner decisions
-(V-01 to V-10). Nothing built; tracked under B-047.
+Volunteer form: [scoping and owner decisions](build/52-volunteer-form-scoping.md) for the
+third audience. Three roles (photographer, videographer, social media manager),
+no teams, 3-year retention; the case-study writer role is out of scope.
+V-01 to V-10 decided on 5 November. Nothing built; tracked under B-047.
 
 Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the
@@ -217,7 +217,8 @@ Visual refinement: [Global Make a Mark design review](build/12-global-design-rev
 | [Laravel foundation](discovery/20-laravel-foundation.md) | Existing Astro one-pager migration, setup choices, and verification. | Implementation | Discovery |
 | [Build plan](build/00-build-plan.md) | Implementation scope and verification for the approved 2027 edition site. | Plan | Build |
 | [Build concerns](build/01-build-concerns.md) | Open field, data-handling, phase-mapping, and import decisions carried into implementation. | Register | Build |
-| [Volunteer form scoping](build/52-volunteer-form-scoping.md) | Proposal for the volunteer audience: roles, minimised fields, admin, privacy, code map and decisions V-01 to V-10. | Proposal | Build |
+| [Volunteer form scoping](build/52-volunteer-form-scoping.md) | Volunteer audience scope: three roles, minimised fields, admin, privacy, code map and the owner's decisions V-01 to V-10. | Scoping and decisions | Build |
+| [Volunteer form decisions](../raw/2026-11-05-volunteer-decisions.md) | Owner's V-01 to V-10 decisions, verbatim. | Source capture | Build |
 | [Application intake](build/20-application-intake.md) | Forms embedded on audience information pages, inline validation/receipts, Laravel persistence, and remaining operations work. | Implementation | Build |
 | [Makers page design suggestions](build/23-makers-polish-review.md) | Eight Lavish proposals; owner-selected M01 and M03–M08 implemented and browser-verified on makers only. | Design review and implementation | Build |
 | [Makers form hardening](build/24-makers-hardening.md) | Flux controls, corrected selects, safe draft recovery, atomic replay protection and running verification. | Implementation | Build |

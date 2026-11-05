@@ -105,8 +105,10 @@ These were checked against the code at `ebfcf2c`.
 
 10. **G-10.** The owner decided on 2026-11-05 that volunteers apply through the site with their own form; S-001 now includes them.
     Build it as a third audience on an audience registry, so the two-way audience code is refactored once.
-    Fields, roles and availability still need scoping.
-    A year-round case-study role also needs a retention check, and photo and video roles touch B-007 and B-036.
+    Scoped in [volunteer form scoping](52-volunteer-form-scoping.md); the owner decided V-01 to V-10 on 2026-11-05.
+    Three roles launch: photographer, videographer and social media manager.
+    The fourth role, writer of case studies, is out of scope by the owner's decision.
+    Photo and video roles touch B-007; B-036 is unaffected.
 
 ## Work batches
 
@@ -117,7 +119,7 @@ Each build batch is one thread, one branch and one curated commit.
 | --- | --- | --- | --- |
 | A. Copy and fields | G-02, G-01, G-05, G-06, G-12 | B-041, B-042, B-043 | Nothing |
 | B. Matching and print | G-11, G-09, G-08 | B-044, B-045, B-046 | Batch A merged |
-| C. Volunteers | G-10 | B-047 | Scoping as a Wayfinder map |
+| C. Volunteers | G-10 | B-047 | Notion sitemap and wireframe approval; batches A and B merged |
 
 G-03 is the reply to Gwen, drafted in Gmail on 2026-11-05.
 

@@ -1,5 +1,14 @@
 # Cascade change log
 
+- 2026-11-05: Recorded the owner's decisions V-01 to V-10 on the volunteer form.
+  Own page `/volunteers`, no teams, 3-year retention with roles ending at the
+  next edition, volunteer agreement on selection, no age gate, mobile number
+  required. The case-study writer role is dropped as out of scope, which leaves
+  no year-round element, so `year_round` and `adult_confirmed` are removed and
+  V-10 is closed. Four questions go to Gwen. B-036 is unaffected.
+  [Decisions](../raw/2026-11-05-volunteer-decisions.md);
+  [scoping](build/52-volunteer-form-scoping.md).
+
 - 2026-11-05: Scoped the volunteer application form (G-10, B-047) as a
   proposal; no code changed. The page defines the four roles, a minimised field
   list with a purpose for each field, an admin without teams, privacy and
