@@ -1,5 +1,13 @@
 # Cascade change log
 
+- 2026-11-05: Scoped the volunteer application form (G-10, B-047) as a
+  proposal; no code changed. The page defines the four roles, a minimised field
+  list with a purpose for each field, an admin without teams, privacy and
+  retention changes, the places where the two audiences are hard-coded and an
+  audience registry, plus ten owner decisions (V-01 to V-10). Batches A and B
+  are not yet on `main`, so batch C must branch from their merged result.
+  [Scoping](build/52-volunteer-form-scoping.md).
+
 - 2026-11-05: Updated the build plan to the closed-applications state
   (`preparing` since 2026-10-21, B-040); the earlier "signup is active"
   statements stay as dated history. Fixed CI: PHP 8.4 and assets built before
