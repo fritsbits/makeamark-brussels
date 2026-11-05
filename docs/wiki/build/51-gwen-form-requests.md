@@ -108,65 +108,67 @@ These were checked against the code at `ebfcf2c`.
     The agent recommended a third audience if the answer is yes; a Maker-form role was advised against.
     A year-round case-study role also needs a retention check, and photo and video roles touch B-007 and B-036.
 
-## Work packages
+## Work batches
 
-Each package is one thread, one branch and one curated commit.
-Packages are cut so that two running at the same time rarely edit the same lines.
-Follow up and merge them in this order.
+The work is split into three batches, each reviewed by the owner in one pass.
+Each build batch is one thread, one branch and one curated commit.
 
-| Order | Package | Requests | Concerns | Depends on |
-| --- | --- | --- | --- | --- |
-| 1 | WP-1 Makers capitalisation | G-02 | B-041 (part) | Nothing; merge first because it touches copy everywhere |
-| 2a | WP-2 Application deadline | G-01, G-05 | B-041 (rest) | WP-1 merged |
-| 2b | WP-3 New form fields | G-06, G-12 | B-042, B-043 | WP-1 merged; can run beside WP-2 |
-| 3 | WP-4 Shared themes | G-11 | B-044 | WP-3 merged; Gwen confirms the meaning and list |
-| 4 | WP-5 Print views | G-08, G-09 | B-045, B-046 | WP-3 and WP-4 merged, so briefings show languages and themes |
+| Batch | Requests | Concerns | Waits on |
+| --- | --- | --- | --- |
+| A. Copy and fields | G-02, G-01, G-05, G-06, G-12 | B-041, B-042, B-043 | Nothing |
+| B. Matching and print | G-11, G-09, G-08 | B-044, B-045, B-046 | Batch A merged; Gwen confirms the themes meaning and list |
+| C. Volunteers | G-10 | B-047 | A decision on S-001, worked as a Wayfinder map |
 
-G-03 is a reply to Gwen, not a build.
-G-10 waits for the S-001 discussion.
+G-03 is the reply to Gwen, drafted in Gmail on 2026-11-05.
 
-### WP-1 Makers capitalisation
+### Batch A: copy and fields
 
-Scope: plan step 1.
-Capitalise "Maker" and "Makers" in rendered public copy, content JSON, mail, privacy page and Filament labels.
-Leave routes, slugs, CSS classes and identifiers unchanged.
-Add a regression test for lowercase "maker" in rendered public pages.
-Update the tone-of-voice row and the tests that assert copy.
+Plan steps 1 to 5.
 
-### WP-2 Application deadline
+- **Makers capitalisation (G-02).**
+  Capitalise "Maker" and "Makers" in rendered public copy, content JSON, mail, the privacy page and Filament labels, including `$modelLabel`.
+  Leave routes, slugs, CSS classes and identifiers unchanged.
+  Add a regression test that fails on a lowercase "maker" word in rendered public pages.
+  Update the tests that assert copy and the tone-of-voice row.
+- **Application deadline (G-01).**
+  Add an optional `applicationDeadline` (ISO date) to the edition JSON and render it only when set, so Gwen's date becomes a one-line content change.
+  Show it in the homepage edition band, the audience hero, the preparing notice and the form context.
+  Closing stays manual through the status.
+- **Language hint (G-05).**
+  One line in the organisation form introduction: answers may be in English, French or Dutch.
+- **Organisation language (G-06).**
+  A required `organisation_languages[]` question above the contact-person question, stored in the answers JSON.
+  Clear admin label, shown in the Team editor, used to pre-fill the Maker language filter.
+- **Maker mobile number (G-12).**
+  A required `type=tel` field with the hint "Only for reaching you during selection and on the day itself, if email doesn't get through."
+  Record the purpose in the legitimate-interest assessment and check the privacy notice wording.
 
-Scope: plan steps 2 and 3.
-Add an optional `applicationDeadline` to the edition JSON and render it only when set, so Gwen's date becomes a one-line content change.
-Show it in the homepage edition band, the audience hero, the preparing notice and the form context.
-Add the EN/FR/NL hint to the organisation form introduction.
-Closing stays manual through the status.
+Commit order inside the branch: capitalisation first, so later copy is written with the capital M.
+The curated commit can collapse them.
 
-### WP-3 New form fields
+### Batch B: matching and print
 
-Scope: plan steps 4 and 5.
-Add the required organisation-language question and show it in the admin and the Team editor, pre-filling the Maker language filter.
-Add the required Maker mobile number with its purpose hint.
-Record the phone purpose in the legitimate-interest assessment and check the privacy notice.
+Plan steps 7 to 9.
+Start only after batch A is merged and Gwen has answered on themes.
 
-### WP-4 Shared themes
+- **Shared themes (G-11).**
+  An `App\Support\Themes` catalogue following `Skills`, used by both forms and the controller.
+  The organisation question, a `themes` column with a backfill from `answers.themes`, admin filters and theme overlap in the Team editor.
+- **Team briefing print (G-09).**
+  "Print briefing" per team and per organisation in the admin: refined brief, skills needed, themes, languages.
+  No contact name, email or phone.
+- **Printable answers (G-08).**
+  The organisation confirmation page shows the submitted answers with a print control.
+  No email copy.
+- One print stylesheet in `@layer components` serves both print views.
 
-Scope: plan step 7.
-Create the `Themes` catalogue, add the organisation question, add the `themes` column with a backfill, admin filters and Team editor overlap.
-Start only after Gwen confirms what she meant and whether the ten themes stay.
-
-### WP-5 Print views
-
-Scope: plan steps 8 and 9.
-Add "Print briefing" per team and per organisation in the admin, without contact data.
-Add a printable answers view on the organisation confirmation page, with no email copy.
-Share one print stylesheet in `@layer components`.
-
-### Done criteria for every package
+### Done criteria for every build batch
 
 - PHP suite and production build pass.
-- Running-page check at 1440px and 390px for every changed public page or admin screen.
+- Running-page check at 1440px and 390px for every changed public page and admin screen, with screenshots in the review hand-off.
 - Wiki updated in the same change: this page's status, the concern rows, `index.md` and `log.md`.
-- Concern closed or marked partly with a pointer back here.
+- Concerns closed or marked partly with a pointer back here.
+- The hand-off lists every request ID with what changed and where to look, so the owner reviews the batch in one pass.
 
 ## Not doing
 
