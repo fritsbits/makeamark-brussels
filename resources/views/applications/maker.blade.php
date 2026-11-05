@@ -1,7 +1,3 @@
-@php
-    $previousThemes = old('themes', []);
-    $previousThemes = is_array($previousThemes) ? array_filter($previousThemes, 'is_string') : [];
-@endphp
 <form class="application-form" method="POST" action="{{ route('audience.apply.submit', 'makers') }}"
     x-data="{
         submitting: false, missing: [],
@@ -81,15 +77,7 @@
     <fieldset class="application-form__group">
         <legend>Preferences</legend>
         <x-application.field name="team_preferences" label="Team preferences or anything that would help us match you" rows="2" maxlength="2000" />
-        <div id="themes" tabindex="-1" aria-labelledby="themes-label">
-            <flux:label id="themes-label">Are there social themes you would be especially interested in?</flux:label>
-            <div class="application-form__checks">
-                @foreach (['Poverty reduction and social security', 'Culture and community building', 'Health and well-being', 'Housing and living conditions', 'Local economy and employment', 'Environment and sustainability', 'Education and youth development', 'Social inclusion and diversity', 'Sports and recreation', 'Refugee and migrant support'] as $theme)
-                    <x-application.checkbox name="themes[]" id="theme-{{ $loop->index }}" :value="$theme" :checked="in_array($theme, $previousThemes, true)" :show-error="false">{{ $theme }}</x-application.checkbox>
-                @endforeach
-            </div>
-            <flux:error name="themes" id="themes-error" :icon="false" />
-        </div>
+        <x-application.theme-group label="Are there social themes you would be especially interested in?" />
     </fieldset>
 
     <fieldset class="application-form__group">

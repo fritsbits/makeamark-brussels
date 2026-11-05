@@ -6,6 +6,7 @@ use App\Content\Homepage;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
 use App\Support\ApplicationForm;
+use App\Support\Themes;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -56,7 +57,7 @@ class ApplicationSubmissionController extends Controller
                 'other_skills' => ['nullable', 'string', 'max:3000'],
                 'team_preferences' => ['nullable', 'string', 'max:2000'],
                 'themes' => ['sometimes', 'array', 'max:10'],
-                'themes.*' => ['string', 'distinct', Rule::in($this->themes())],
+                'themes.*' => ['string', 'distinct', Rule::in(Themes::all())],
                 'date_confirmed' => ['accepted'],
                 'meeting_availability' => ['required', 'string', 'max:2000'],
                 'full_commitment' => ['accepted'],
@@ -71,6 +72,8 @@ class ApplicationSubmissionController extends Controller
                 'challenge' => ['required', 'string', 'max:5000'],
                 'contact_name' => ['required', 'string', 'max:255'],
                 'phone' => ['required', 'string', 'max:80'],
+                'themes' => ['sometimes', 'array', 'max:10'],
+                'themes.*' => ['string', 'distinct', Rule::in(Themes::all())],
                 'organisation_languages' => ['required', 'array', 'min:1', 'max:3'],
                 'organisation_languages.*' => ['string', 'distinct', Rule::in(['English', 'Dutch', 'French'])],
                 'languages' => ['required', 'array', 'min:1', 'max:3'],
@@ -130,15 +133,5 @@ class ApplicationSubmissionController extends Controller
         ]);
 
         return redirect($applicationUrl);
-    }
-
-    private function themes(): array
-    {
-        return [
-            'Poverty reduction and social security', 'Culture and community building',
-            'Health and well-being', 'Housing and living conditions', 'Local economy and employment',
-            'Environment and sustainability', 'Education and youth development',
-            'Social inclusion and diversity', 'Sports and recreation', 'Refugee and migrant support',
-        ];
     }
 }

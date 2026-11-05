@@ -19,7 +19,7 @@ class ApplicationPrint
             'edition' => $organisation->edition_year,
             'brief' => $organisation->refined_brief,
             'skills' => array_map(fn (string $skill): string => Skills::options()[$skill] ?? $skill, $organisation->skills_needed ?? []),
-            'themes' => self::list($answers['themes'] ?? []),
+            'themes' => $organisation->themes ?? [],
             'languages' => self::list($languages),
         ];
     }

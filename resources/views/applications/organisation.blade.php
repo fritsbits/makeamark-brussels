@@ -65,6 +65,7 @@
         <legend>Your challenge</legend>
         <flux:text class="application-form__hint">For example, a visual identity, campaign, communications strategy or social media assets.</flux:text>
         <x-application.field name="challenge" label="What would you like Makers to help you work on?" rows="6" required maxlength="5000" />
+        <x-application.theme-group label="Within your work with young people, which themes does your work address?" />
     </fieldset>
 
     <fieldset class="application-form__group">

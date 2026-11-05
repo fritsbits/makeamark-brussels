@@ -78,7 +78,7 @@ class MakerSubmissionHardeningTest extends TestCase
         $answers['themes'] = [
             'Poverty reduction and social security', 'Culture and community building',
             'Health and well-being', 'Housing and living conditions', 'Local economy and employment',
-            'Environment and sustainability', 'Education and youth development',
+            'Environment and sustainability', 'Education and learning',
             'Social inclusion and diversity', 'Sports and recreation', 'Refugee and migrant support',
         ];
         $this->post('/makers/apply', $answers)->assertRedirect('/makers#application')->assertSessionHasNoErrors();

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\Skills;
+use App\Support\Themes;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Validation\ValidationException;
 
-#[Fillable(['audience', 'edition_year', 'contact_name', 'email', 'answers', 'status', 'internal_notes', 'refined_brief', 'skills_needed', 'main_skills', 'backup_skills', 'submission_key'])]
+#[Fillable(['audience', 'edition_year', 'contact_name', 'email', 'answers', 'status', 'internal_notes', 'refined_brief', 'skills_needed', 'main_skills', 'backup_skills', 'themes', 'submission_key'])]
 class Application extends Model
 {
     protected $attributes = ['status' => 'applied'];
@@ -19,6 +20,9 @@ class Application extends Model
     protected static function booted(): void
     {
         static::creating(function (Application $application) {
+            if (! array_key_exists('themes', $application->getAttributes())) {
+                $application->themes = Themes::normalise($application->answers['themes'] ?? []);
+            }
             foreach (['skills_needed', 'main_skills', 'backup_skills'] as $field) {
                 if (! array_key_exists($field, $application->getAttributes())) {
                     $application->{$field} = $application->audience === 'makers' && $field !== 'skills_needed'
@@ -42,7 +46,7 @@ class Application extends Model
 
     protected function casts(): array
     {
-        return ['answers' => 'array', 'edition_year' => 'integer', 'skills_needed' => 'array', 'main_skills' => 'array', 'backup_skills' => 'array', 'receipt_sent_at' => 'datetime'];
+        return ['answers' => 'array', 'edition_year' => 'integer', 'skills_needed' => 'array', 'main_skills' => 'array', 'backup_skills' => 'array', 'themes' => 'array', 'receipt_sent_at' => 'datetime'];
     }
 
     protected function displayName(): Attribute

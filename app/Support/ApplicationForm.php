@@ -39,7 +39,7 @@ class ApplicationForm
             $values[$field] = in_array($input[$field] ?? null, ['yes', 'on', '1', 1, true, 'true'], true) ? '1' : '';
         }
 
-        $lists = $audience === 'makers' ? ['themes' => 10] : ['organisation_languages' => 3, 'languages' => 3];
+        $lists = $audience === 'makers' ? ['themes' => 10] : ['organisation_languages' => 3, 'languages' => 3, 'themes' => 10];
 
         foreach ($lists as $list => $limit) {
             $values[$list] = is_array($input[$list] ?? null)

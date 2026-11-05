@@ -27,7 +27,7 @@ class PrintViewsTest extends TestCase
                 ->assertSee('Zinneke Youth House')
                 ->assertSee('Help us reach teenagers who left school.')
                 ->assertSee('Graphic design')
-                ->assertSee('Education and youth development')
+                ->assertSee('Education and learning')
                 ->assertSee('French')
                 ->assertDontSee('Dutch')
                 ->assertSee('Print briefing')
@@ -116,7 +116,7 @@ class PrintViewsTest extends TestCase
             'answers' => [
                 'organisation_name' => 'Zinneke Youth House', 'challenge' => 'Youth communication challenge',
                 'contact_name' => 'Marie Contact', 'email' => 'marie@zinneke.example', 'phone' => '0470 12 34 56',
-                'organisation_languages' => ['French'], 'languages' => ['Dutch'], 'themes' => ['Education and youth development'],
+                'organisation_languages' => ['French'], 'languages' => ['Dutch'], 'themes' => ['Education and learning'],
             ],
         ]);
     }

@@ -1,5 +1,20 @@
 # Cascade change log
 
+- 2026-11-05: Owner decision in the themes review: youth is the frame of the
+  2027 edition, set by the eligibility checkbox, not a theme, and never
+  pre-filled. The organisation theme question now starts "Within your work with
+  young people", and "Education and youth development" became "Education and
+  learning" on both forms with a rename migration. B-044 updated.
+  [Plan](build/51-gwen-form-requests.md#batch-b-shared-themes-g-11).
+
+- 2026-11-05: Rebased the print views onto batch A and built the shared themes
+  of batch B (G-11): a `Themes` catalogue used by both forms, an optional
+  organisation themes question, a `themes` column with backfill, Theme filters on
+  the Organisations and Makers lists and theme overlap in the Team editor. B-044
+  is partly resolved. 146 PHP tests and the build pass; running-page checks at
+  1440px and 390px pass.
+  [Plan](build/51-gwen-form-requests.md#batch-b-shared-themes-g-11).
+
 - 2026-11-05: Built the two print views of batch B: a "Print briefing" action per
   team and organisation in the admin (G-09) and a printable copy of the submitted
   answers on the organisation confirmation page (G-08), sharing one print

@@ -12,7 +12,7 @@ sources:
   - "../../raw/2026-10-18-airtable-forms.md"
 phase: Build
 updated: 2026-11-05
-status: batch A and print views (G-08, G-09) built locally; shared themes and batch C planned
+status: batches A and B built locally; batch C planned
 ---
 
 # Gwen's 2027 form requests
@@ -202,7 +202,7 @@ Batch A: 131 PHP tests and the production build pass.
 Running-page checks at 1440px and 390px passed for the home page, both audience pages in preparing and open states, the privacy notice, the organisation validation states, and the admin organisation, team and Maker screens, with no horizontal overflow.
 
 Batch B print views (G-08, G-09) are built on branch `fritsbits/building-part-batch-mark-brussels`.
-Shared themes (G-11) and batch C are not started.
+Batch B shared themes (G-11) are built on the same branch; batch C is not started.
 
 - G-09: `/admin/print/organisations/{id}` and `/admin/print/teams/{id}` behind the admin panel login.
   "Print briefing" sits on the Organisations list and edit page, and the Teams list and edit page.
@@ -212,3 +212,25 @@ Shared themes (G-11) and batch C are not started.
   Makers see no answers copy.
 - One stylesheet, `resources/css/print.css`, under `@layer components`, serves both views.
 - Print output was checked as PDF from Chromium print emulation, not a manual print dialog.
+
+### Batch B shared themes (G-11)
+
+- `App\Support\Themes` holds the ten themes; both forms, the controller validation, the migration backfill and the admin use it.
+  Themes are stored by their label, the same strings as in `answers.themes`.
+- The organisation form asks "Within your work with young people, which themes does your work address?" as an optional question after the challenge.
+  It reuses the Maker checkbox group (`x-application.theme-group`) and the same validation: up to ten distinct catalogue themes.
+- Youth is the frame of the 2027 edition, set by the required "We work with young people in Brussels." checkbox.
+  It is not a theme and is never pre-filled, because a pre-filled youth theme would carry no matching signal.
+  Themes describe what the youth work is about.
+  Source: owner decision on 2026-11-05 in the themes review.
+- The theme "Education and youth development" is now "Education and learning" on both forms.
+  A second migration rewrites the old label in the `themes` column and in `answers.themes`, for both audiences, because themes match by exact label.
+- A `themes` JSON column on applications is backfilled from `answers.themes` by the migration and set on creation.
+  `answers.themes` stays as submitted.
+- The Organisations and Makers lists have a Theme filter.
+- The Team editor lists the organisation's themes, marks each candidate Maker with the themes shared with the organisation, and shows the themes shared with the selected Makers.
+- The print briefing reads the `themes` column.
+- Checks: 146 PHP tests and the production build pass; `tests/Feature/SharedThemesTest.php` covers the catalogue, validation, backfill, filters and overlap.
+  Running-page checks at 1440px and 390px covered both forms, an organisation submission with themes, both admin lists with the filter open and the Team editor.
+- The row "Print briefing" action is an icon button with a tooltip and accessible label on the Organisations and Teams lists, and a labelled button on the edit pages.
+  On the Organisations list the Reviews and Edition columns are hidden by default (toggleable), so the table fits without sideways scroll at 1440px and 1280px.

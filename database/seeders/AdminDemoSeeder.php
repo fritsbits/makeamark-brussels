@@ -74,7 +74,7 @@ class AdminDemoSeeder extends Seeder
                             'other_languages' => $index % 3 === 0 ? 'Arabic (demo)' : '',
                             'meeting_availability' => $index % 2 === 0 ? '18:30–19:30' : '19:30–20:30',
                             'team_preferences' => $index % 2 === 0 ? 'Happy to work in a mixed-discipline team.' : 'Interested in a youth-led project with a clear scope.',
-                            'themes' => ['Education and youth development', 'Culture and community building'],
+                            'themes' => ['Education and learning', 'Culture and community building'],
                             'referral' => 'Fictional demo application', 'date_confirmed' => '1', 'full_commitment' => '1',
                             'demo_record' => 'Fictional application for local testing; not imported from Airtable.',
                         ],

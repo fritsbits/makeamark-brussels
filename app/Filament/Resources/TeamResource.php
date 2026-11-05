@@ -64,6 +64,8 @@ class TeamResource extends Resource
                     ->placeholder('No refined briefing saved yet. Add it on the organisation application.'),
                 TextEntry::make('needs')->label('Skills needed')->badge()
                     ->state(fn (Get $get): array => static::skillLabels(static::selectedOrganisation($get)?->skills_needed ?? [])),
+                TextEntry::make('organisation_themes')->label('Themes')->badge()
+                    ->state(fn (Get $get): array => static::selectedOrganisation($get)?->themes ?? [])->placeholder('Not supplied'),
                 TextEntry::make('organisation_languages')->label('Languages the organisation works in')->badge()
                     ->state(fn (Get $get): array => array_map('ucfirst', static::selectedOrganisation($get)?->organisation_language_keys ?? []))
                     ->placeholder('Not supplied'),
@@ -78,8 +80,12 @@ class TeamResource extends Resource
                         ->helperText('Pre-filled from the organisation. Makers who reach level 3 in any chosen language are listed; clear it to see everyone.'),
                     Select::make('maker_ids')->label('Makers')->multiple()->searchable()->live()->columnSpanFull()
                         ->options(fn (Get $get, ?Team $record): array => static::makerOptions($get, $record))
-                        ->getOptionLabelsUsing(fn (array $values): array => Application::query()->where('audience', 'makers')->whereIn('id', $values)->get()
-                            ->mapWithKeys(fn (Application $maker): array => [$maker->id => static::makerLabel($maker)])->all())
+                        ->getOptionLabelsUsing(function (array $values, Get $get): array {
+                            $organisation = static::selectedOrganisation($get);
+
+                            return Application::query()->where('audience', 'makers')->whereIn('id', $values)->get()
+                                ->mapWithKeys(fn (Application $maker): array => [$maker->id => static::makerLabel($maker, $organisation)])->all();
+                        })
                         ->helperText('Only selected or confirmed Makers in this edition are available. Makers assigned to another team must be removed there first.'),
                     TextEntry::make('main_coverage')->label('Main skills in this team')->badge()
                         ->state(fn (Get $get): array => static::skillLabels(static::selectedMakers($get)->flatMap(fn (Application $maker): array => $maker->main_skills ?? [])->unique()->all())),
@@ -91,6 +97,9 @@ class TeamResource extends Resource
 
                             return static::skillLabels(array_diff(static::selectedOrganisation($get)?->skills_needed ?? [], $covered));
                         })->placeholder('No uncovered skill needs'),
+                    TextEntry::make('shared_themes')->label('Themes shared with the organisation')->badge()
+                        ->state(fn (Get $get): array => array_values(array_intersect(static::selectedOrganisation($get)?->themes ?? [], static::selectedMakers($get)->flatMap(fn (Application $maker): array => $maker->themes ?? [])->all())))
+                        ->placeholder('No shared themes'),
                     TextEntry::make('maker_count')->label('Makers in team')->state(fn (Get $get): int => count($get('maker_ids') ?? [])),
                     Textarea::make('notes')->label('Team notes')->rows(4)->maxLength(20000)->columnSpanFull(),
                 ])->columnSpanFull(),
@@ -109,6 +118,8 @@ class TeamResource extends Resource
 
     private static function makerOptions(Get $get, ?Team $record): array
     {
+        $organisation = static::selectedOrganisation($get);
+
         return Application::query()->where('audience', 'makers')->where('edition_year', $get('edition_year'))
             ->whereIn('status', ['selected', 'confirmed'])
             ->whereDoesntHave('teams', fn (Builder $query): Builder => $query->when($record, fn (Builder $query): Builder => $query->whereKeyNot($record->id)))
@@ -126,12 +137,15 @@ class TeamResource extends Resource
                         });
                 })->orWhereIn('id', $get('maker_ids') ?? []);
             }))
-            ->orderBy('contact_name')->get()->mapWithKeys(fn (Application $maker): array => [$maker->id => static::makerLabel($maker)])->all();
+            ->orderBy('contact_name')->get()->mapWithKeys(fn (Application $maker): array => [$maker->id => static::makerLabel($maker, $organisation)])->all();
     }
 
-    private static function makerLabel(Application $maker): string
+    private static function makerLabel(Application $maker, ?Application $organisation = null): string
     {
-        return $maker->display_name.' · '.implode(', ', static::skillLabels($maker->main_skills ?? []));
+        $label = $maker->display_name.' · '.implode(', ', static::skillLabels($maker->main_skills ?? []));
+        $shared = array_values(array_intersect($organisation?->themes ?? [], $maker->themes ?? []));
+
+        return $shared ? $label.' · shared themes: '.implode(', ', $shared) : $label;
     }
 
     private static function skillLabels(array $skills): array

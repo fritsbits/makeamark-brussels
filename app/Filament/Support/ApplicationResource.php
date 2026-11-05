@@ -5,6 +5,7 @@ namespace App\Filament\Support;
 use App\Models\Application;
 use App\Support\ApplicationStatus;
 use App\Support\Skills;
+use App\Support\Themes;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
@@ -175,6 +176,8 @@ abstract class ApplicationResource extends Resource
                     ->query(fn (Builder $query, array $data): Builder => $query
                         ->when(($data['value'] ?? null) === 'yes', fn (Builder $query): Builder => $query->whereHas('reviews', fn (Builder $query): Builder => $query->where('user_id', auth()->id())))
                         ->when(($data['value'] ?? null) === 'no', fn (Builder $query): Builder => $query->whereDoesntHave('reviews', fn (Builder $query): Builder => $query->where('user_id', auth()->id())))),
+                SelectFilter::make('theme')->options(Themes::options())->label('Theme')->query(fn (Builder $query, array $data): Builder => $query->when($data['value'] ?? null,
+                    fn (Builder $query, string $theme): Builder => $query->whereJsonContains('themes', $theme))),
                 SelectFilter::make('skill')->options(Skills::options())->label('Skill')->query(fn (Builder $query, array $data): Builder => $query->when($data['value'] ?? null,
                     fn (Builder $query, string $skill): Builder => $query->where(fn (Builder $query): Builder => $organisation
                         ? $query->whereJsonContains('skills_needed', $skill)
