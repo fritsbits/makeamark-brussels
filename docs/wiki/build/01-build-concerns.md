@@ -2,6 +2,7 @@
 title: Build concerns
 tags: [concerns, build, website]
 sources:
+  - "../../raw/2026-11-05-gwen-form-requests.md"
   - "../../raw/2026-10-20-fathom-analytics-request.md"
   - "../../raw/2026-10-20-fathom-production-deployment.md"
   - "https://usefathom.com/docs/start/policy"
@@ -109,10 +110,18 @@ Local [admin test records](31-admin-workspace.md#local-test-data) are fictional;
 B-004 remains open for the actual Airtable migration. Real account setup in
 B-009 is unchanged.
 
-**Status:** 3 Open · 10 Partly · 23 Closed
+**Status:** 10 Open · 10 Partly · 24 Closed
 
 | ID | Concern | Why it remains open | Next step |
 | --- | --- | --- | --- |
+| B-048 | Closed: should organisations upload a logo (G-04) or add keywords (G-07)? | Resolution: the owner skipped both on 2026-11-05. Shared themes under B-044 cover part of the keywords need. [Plan](51-gwen-form-requests.md). | None. |
+| B-047 | Open: should the site take volunteer applications for photo, video, social media and case-study roles (G-10)? | Owner chose to discuss. It reopens S-001 (person signup: Makers only); a year-round role needs a retention check; image and case-study roles touch B-007 and B-036. [Plan](51-gwen-form-requests.md). | Decide S-001 with Gwen; if yes, plan a third audience on an audience registry. |
+| B-046 | Open: how does an organisation keep a copy of its submitted answers (G-08)? | Owner chose option B: a printable answers view on the confirmation page, no email copy, so the notice's Resend statement stays true. Not implemented. [Plan](51-gwen-form-requests.md). | Build in wave 2; verify print output. |
+| B-045 | Open: how do organisers prepare organisation briefings for Maker folders (G-09)? | Owner chose a print action per team and organisation, without contact name, email or phone. No export exists today. Not implemented. [Plan](51-gwen-form-requests.md). | Build in wave 2. |
+| B-044 | Open: should organisations choose from the Maker theme list so interests can be matched (G-11)? | Owner chose a shared themes catalogue, an organisation-form question, a `themes` column with backfill, admin filters and overlap in the Team editor. Gwen's meaning and the list's fit with youth work are unconfirmed. [Plan](51-gwen-form-requests.md). | Confirm with Gwen, then build in wave 2. |
+| B-043 | Open: should the Maker form ask for a mobile number (G-12)? | Owner chose required, with a stated purpose: reaching Makers during selection and on the day. Needs the purpose in the legitimate-interest assessment (B-001). Not implemented. [Plan](51-gwen-form-requests.md). | Build in wave 1; update the assessment and check the notice. |
+| B-042 | Open: does the organisation form capture the organisation's own working language for team-building (G-06)? | Today it asks only for the contact person's languages. Owner chose a separate required question, shown in the Team editor and used for the Maker language filter. Not implemented. [Plan](51-gwen-form-requests.md). | Build in wave 1. |
+| B-041 | Open: do the site and forms follow Gwen's copy, date and language requests (G-01, G-02, G-03, G-05)? | Owner chose: show an application deadline from edition data, capitalise Maker(s) everywhere, add the EN/FR/NL hint, and reply to Gwen about the backoffice. The deadline date is unknown. Not implemented. [Plan](51-gwen-form-requests.md). | Reply to Gwen and ask for deadline and opening dates; build in wave 1. |
 | B-040 | Partly: what does the site show while 2027 applications are not open yet, and how do they open? | Resolution: status `preparing` closes intake; pages say "Applications open soon" and point to Instagram; stale submissions get an accurate message. Opening date is unknown. [Decision and implementation](50-applications-closed.md). | Follow the [opening-day checklist](50-applications-closed.md#opening-day-checklist) once a date is set. |
 | B-039 | Partly: are the lawful basis and processor terms for Fathom website analytics documented? | Fathom is installed on production public pages and the privacy notice identifies legitimate interests as the website-improvement basis and describes Fathom's stated data processing. Fathom recommends GDPR-subject customers sign its DPA; the controller must document the balancing assessment. [Implementation and sources](49-fathom-analytics.md). | Confirm and document the legitimate-interest balancing assessment for website improvement, then sign and retain Fathom's DPA. |
 | B-038 | Closed: why did the homepage wordmark jump between large and compact near one scroll position? | The 24px threshold switched logo scale and header height on small reversals; the animated height could also shift scroll position by 48px. Added hysteresis: compact above 64px, expand at or below 8px. [Request and implementation](48-homepage-wordmark-scroll-stability.md). | Running-page checks at 1440px and 390px confirm stable state through the height transition and expansion at or below 8px. |
