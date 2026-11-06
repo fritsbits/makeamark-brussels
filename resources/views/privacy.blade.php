@@ -38,9 +38,9 @@
                     <p>The internal Make a Mark team listed on this site reviews applications. We do not share applications with other organisations for their own use. A few providers support the site and email:</p>
                     <ul>
                         <li><strong>DigitalOcean</strong> hosts the application on a server in Amsterdam. <strong>Laravel Forge</strong> is used to manage that server.</li>
-                        <li><strong>Resend</strong> sends confirmation emails when email is enabled. It receives your name, email address, application type, and edition year, but not your application answers. Resend processes email data in the United States under contractual transfer safeguards.</li>
+                        <li><strong>Resend</strong> sends confirmation emails from its Ireland region. It receives your name, email address, application type, and edition year, but not your application answers. Resend may also process email data in the United States under contractual transfer safeguards.</li>
                         <li><strong>Fathom Analytics</strong> provides statistics about use of the public website. It briefly processes IP address and browser user-agent data for site-specific analytics; see the <a href="https://usefathom.com/legal/dpa">Fathom data processing agreement</a>.</li>
-                        <li><strong>Cloudflare and one.com</strong> support our domain and email. If you email us, they may handle your message and delivery details.</li>
+                        <li><strong>One.com</strong> registers our domain and <strong>Cloudflare</strong> runs its DNS. If you email <a href="mailto:hello@letsmakeamark.brussels">hello@letsmakeamark.brussels</a>, Cloudflare forwards your message to our team mailbox at <strong>Google</strong> (Gmail), so both handle your message and delivery details.</li>
                     </ul>
                 </section>
 

@@ -90,6 +90,15 @@ class EditionWebsiteTest extends TestCase
         $this->get('/organisations/apply')->assertRedirect('/organisations#application');
     }
 
+    public function test_privacy_notice_names_the_live_email_providers(): void
+    {
+        $this->withoutVite()->get('/privacy')->assertOk()
+            ->assertSee('sends confirmation emails from its Ireland region')
+            ->assertDontSee('when email is enabled')
+            ->assertSeeText('One.com registers our domain and Cloudflare runs its DNS.')
+            ->assertSeeText('Cloudflare forwards your message to our team mailbox at Google (Gmail)');
+    }
+
     public function test_search_engine_endpoints_list_the_public_edition_pages(): void
     {
         $this->get('/sitemap-0.xml')->assertOk()

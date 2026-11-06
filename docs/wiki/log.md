@@ -1,5 +1,25 @@
 # Cascade change log
 
+- 2026-11-06: The owner added the `COMPOSER_AUTH` repository secret. GitHub
+  Actions now passes every step, including tests and the build; `composer.json`
+  requires PHP `^8.4` and the checkout and setup-node actions run on Node 24.
+  [Run](https://github.com/fritsbits/makeamark-brussels/actions/runs/42179208164).
+
+- 2026-11-05: Updated the public privacy notice for live mail.
+  Resend now sends from its Ireland region and may also process data in the US; one.com is named as registrar and Cloudflare as DNS; mail to `hello@` is forwarded to Google (Gmail).
+  Dated 5 November 2026; a feature test pins the wording; 117 tests pass and the section renders without overflow at desktop and phone widths.
+  [Notice copy](build/21-application-privacy.md#collection-notice-copy).
+
+- 2026-11-05: Set up production outgoing mail with the owner.
+  Resend sends from `hello@letsmakeamark.brussels` (Ireland region); Cloudflare publishes its DKIM, `send` and `rsend` records and a `p=none` DMARC record.
+  Forge now uses the `resend` mailer, and a `database` queue worker sends Filament's queued password resets.
+  A reset and an `ApplicationReceived` test reached the owner's inbox with DKIM, SPF and DMARC passing; no application was created.
+  The owner replaced the Resend key and `APP_KEY` after the environment was pasted into chat.
+  Incoming `hello@` forwarding to `makeamarkbxl@gmail.com` waits on Gwen's verification.
+  B-002, B-010 and B-035 updated; the opening checklist's mail step is done for outgoing mail.
+  [Verification](../raw/2026-11-05-production-mail-setup.md);
+  [synthesis](build/46-production-rollout.md#outgoing-mail).
+
 - 2026-11-05: Recorded the owner's decisions V-01 to V-10 on the volunteer form.
   Own page `/volunteers`, no teams, 3-year retention with roles ending at the
   next edition, volunteer agreement on selection, no age gate, mobile number

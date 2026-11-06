@@ -28,7 +28,9 @@ uses site ID `UDIIHURW` and adds a privacy-notice disclosure. The production
 response is verified; DPA and lawful-basis review remain open under B-039.
 
 Production rollout: [live host checks](build/46-production-rollout.md) confirm
-the production URL, migrations, and organizer accounts. Mail is still disabled,
+the production URL, migrations, and organizer accounts.
+[Outgoing mail](build/46-production-rollout.md#outgoing-mail) works through Resend from `hello@` with DKIM, SPF and DMARC passing; a queue worker sends admin resets.
+Incoming `hello@` forwarding waits on Gwen's verification.
 Forge database backups require a plan upgrade, DigitalOcean backup status is
 unknown, and the shared server has 96% disk use.
 
