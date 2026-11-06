@@ -111,7 +111,7 @@ Local [admin test records](31-admin-workspace.md#local-test-data) are fictional;
 B-004 remains open for the actual Airtable migration. Real account setup in
 B-009 is unchanged.
 
-**Status:** 6 Open · 14 Partly · 24 Closed
+**Status:** 3 Open · 14 Partly · 32 Closed
 
 | ID | Concern | Why it remains open | Next step |
 | --- | --- | --- | --- |
