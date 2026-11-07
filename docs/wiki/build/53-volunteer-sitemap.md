@@ -10,7 +10,7 @@ sources:
   - "../../../.lavish/volunteers-sitemap.html"
 phase: Build
 updated: 2026-11-07
-status: approved by the owner on 2026-11-07 (A1, B1, C1, D1); wireframe next
+status: approved 2026-11-07 (A1, B1, C1, D1); built and verified locally
 ---
 
 # Volunteer page sitemap
@@ -63,10 +63,11 @@ Make a Mark Brussels
 The owner also answered one of the questions for Gwen: volunteers don't pick themes.
 [Approval](../../raw/2026-11-07-volunteer-sitemap-approval.md)
 
-## Checks for the wireframe
+## Checks for the header
 
 From the owner's note on B1, the header is checked at 1440px, around 1024px and 900px, and in the 390px menu.
 In the review page's mock the four links wrapped and ran together; that mock was narrower than the real header, but the owner asked for the real one to be checked.
+In the built site the four links stay on one row with 28px between them at 1440px, 1024px and 900px; on phones the menu shows them on four lines ([52 §8](52-volunteer-form-scoping.md#8-build)).
 
 ## Where Gwen's answers would change this
 

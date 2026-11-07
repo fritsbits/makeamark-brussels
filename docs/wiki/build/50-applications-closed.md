@@ -8,7 +8,7 @@ sources:
   - "../../raw/2026-10-21-applications-closed-deployment.md"
   - "../../raw/2026-11-05-production-mail-setup.md"
 phase: Build
-updated: 2026-11-05
+updated: 2026-11-07
 status: deployed; opening date unknown
 ---
 
@@ -34,6 +34,7 @@ Before the change, production served both forms with edition status `open`, whil
   Other closed states keep the generic notice.
 - A form left open in a tab and submitted while `preparing` explains that applications aren't open yet and that nothing was sent.
 - Tests pin the edition status in `tests/TestCase.php` through `withEditionStatus()`, so the suite no longer follows the live content file.
+- Volunteers are the exception since 2026-11-07: their applications are open while the status is `preparing` and close after the event day ([52 §8](52-volunteer-form-scoping.md#8-build)).
 
 ## Verification
 

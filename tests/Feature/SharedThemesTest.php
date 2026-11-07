@@ -71,7 +71,7 @@ class SharedThemesTest extends TestCase
 
     public function test_the_migration_backfills_existing_rows_and_keeps_answers_as_submitted(): void
     {
-        Artisan::call('migrate:rollback', ['--step' => 2]);
+        $this->rollBackThrough('2026_11_05_000000_add_themes_to_applications');
         $this->assertFalse(Schema::hasColumn('applications', 'themes'));
         $row = ['audience' => 'makers', 'edition_year' => 2027, 'contact_name' => 'A', 'email' => 'a@example.com', 'status' => 'applied', 'created_at' => now(), 'updated_at' => now()];
         DB::table('applications')->insert([
@@ -90,7 +90,7 @@ class SharedThemesTest extends TestCase
     {
         $this->assertContains('Education and learning', Themes::all());
         $this->assertNotContains('Education and youth development', Themes::all());
-        Artisan::call('migrate:rollback', ['--step' => 1]);
+        $this->rollBackThrough('2026_11_05_010000_rename_education_theme');
         $row = ['edition_year' => 2027, 'contact_name' => 'A', 'status' => 'applied', 'created_at' => now(), 'updated_at' => now()];
         $themes = ['Health and well-being', 'Education and youth development'];
         DB::table('applications')->insert([
@@ -185,5 +185,11 @@ class SharedThemesTest extends TestCase
     private function admin(): User
     {
         return User::factory()->create(['is_admin' => true, 'is_active' => true]);
+    }
+
+    /** Roll back the named migration and every later one, so new migrations don't shift these tests. */
+    private function rollBackThrough(string $migration): void
+    {
+        Artisan::call('migrate:rollback', ['--step' => DB::table('migrations')->where('migration', '>=', $migration)->count()]);
     }
 }

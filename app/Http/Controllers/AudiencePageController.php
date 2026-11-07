@@ -6,15 +6,13 @@ use App\Content\Homepage;
 use App\Models\Application;
 use App\Support\ApplicationForm;
 use App\Support\ApplicationPrint;
+use App\Support\Audiences;
 use Illuminate\View\View;
 
 class AudiencePageController extends Controller
 {
     public function __invoke(string $audience, Homepage $homepage): View
     {
-        abort_unless(in_array($audience, ['makers', 'organisations'], true), 404);
-
-        $data = $homepage->data();
         $confirmation = request()->session()->pull('application_confirmations.'.$audience);
         $submitted = is_array($confirmation) && ($confirmation['expires_at'] ?? 0) >= time();
 
@@ -24,18 +22,30 @@ class AudiencePageController extends Controller
             : null;
 
         return view('audience', [
-            ...$data,
-            'audience' => $audience,
-            'makerHeroDate' => new \DateTimeImmutable($data['edition']['startDate']),
-            'applicationUrl' => '#application',
+            ...self::pageData($audience, $homepage->data()),
             'submitted' => $submitted,
             'printableAnswers' => $printable ? ApplicationPrint::answers($printable) : [],
             'emailSent' => $submitted && ($confirmation['email_sent'] ?? false),
-            'submissionToken' => ApplicationForm::token(request(), $audience),
-            'pageTitle' => ($audience === 'makers' ? 'For Makers' : 'For social organisations').' · Make a Mark Brussels',
-            'pageDescription' => $audience === 'makers'
-                ? 'Learn what to expect when you volunteer as a Maker for the Make a Mark Brussels 2027 edition.'
-                : 'Learn how your Brussels social organisation can bring a communication, design, or digital challenge to Make a Mark.',
         ]);
+    }
+
+    /** Shared with the local messaging preview, which renders the same page. */
+    public static function pageData(string $audience, array $data): array
+    {
+        $definition = Audiences::find($audience);
+
+        return [
+            ...$data,
+            'audience' => $audience,
+            'definition' => $definition,
+            'applicationsOpen' => $definition->isOpen($data['edition']),
+            'applicationUrl' => '#application',
+            'submitted' => false,
+            'printableAnswers' => [],
+            'emailSent' => false,
+            'submissionToken' => ApplicationForm::token(request(), $audience),
+            'pageTitle' => $definition->pageTitle.' · Make a Mark Brussels',
+            'pageDescription' => $definition->pageDescription,
+        ];
     }
 }

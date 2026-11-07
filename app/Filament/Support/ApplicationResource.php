@@ -6,6 +6,7 @@ use App\Models\Application;
 use App\Support\ApplicationStatus;
 use App\Support\Skills;
 use App\Support\Themes;
+use App\Support\VolunteerRoles;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
@@ -96,7 +97,7 @@ abstract class ApplicationResource extends Resource
         ]);
     }
 
-    private static function answerEntries(?Application $record): array
+    protected static function answerEntries(?Application $record): array
     {
         if (! $record) {
             return [];
@@ -116,7 +117,12 @@ abstract class ApplicationResource extends Resource
                 continue;
             }
 
-            $value = is_array($value) ? implode(', ', array_filter($value, 'is_scalar')) : (is_scalar($value) ? (string) $value : '');
+            $options = match ($key) {
+                'roles' => VolunteerRoles::options(),
+                'day_parts' => VolunteerRoles::dayParts(),
+                default => [],
+            };
+            $value = is_array($value) ? implode(', ', array_map(fn ($item) => $options[$item] ?? $item, array_filter($value, 'is_scalar'))) : (is_scalar($value) ? (string) $value : '');
             if (in_array($key, $checks, true)) {
                 $value = in_array($value, ['1', 'true', 'yes'], true) ? 'Yes' : 'No';
             }
@@ -126,13 +132,16 @@ abstract class ApplicationResource extends Resource
                 'youth_brussels_eligibility' => 'Works with young people in Brussels',
                 'organisation_languages' => 'Languages the organisation works in',
                 'languages' => $organisationAnswers ? 'Languages the contact person works in' : 'Languages',
+                'roles' => 'Roles requested',
+                'day_parts' => 'Can be there',
+                'role_notes' => 'Notes for the role',
                 default => Str::headline($key),
             };
             $entry = TextEntry::make('submitted_'.$key)->label($label)->state($value)->placeholder('Not supplied');
             if (in_array($key, ['portfolio', 'website'], true) && filter_var($value, FILTER_VALIDATE_URL) && in_array(strtolower(parse_url($value, PHP_URL_SCHEME) ?? ''), ['http', 'https'], true)) {
                 $entry->url($value)->openUrlInNewTab();
             }
-            if (in_array($key, ['mission', 'challenge', 'motivation', 'other_skills', 'team_preferences'], true)) {
+            if (in_array($key, ['mission', 'challenge', 'motivation', 'other_skills', 'team_preferences', 'role_notes'], true)) {
                 $entry->columnSpanFull();
             }
             $entries[] = $entry;

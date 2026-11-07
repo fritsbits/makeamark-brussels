@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-lavish-annotate="on">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volunteers wireframe · Make a Mark Brussels</title>
+<style>
+@font-face{font-family:"Big Shoulders Display";src:url("assets/volunteers-wireframe/a3481c02dc63831a.woff2") format("woff2");font-weight:600;}
+@font-face{font-family:"Plus Jakarta Sans";src:url("assets/volunteers-wireframe/23310fc1bc6aca45.woff2") format("woff2");font-weight:400;}
+:root{--font-display:"Big Shoulders Display",Impact,sans-serif;--font-body:"Plus Jakarta Sans",system-ui,sans-serif;--cream:#F5E2CA;--cream-light:#FFF6EA;--cream-inset:#EBD5BB;--cream-rule:#DFC3A3;--red:#C33F40;--ink:#29231D;--ink-brown:#6B5645;--radius-block:18px;--radius-card:10px;--radius-pill:999px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 var(--font-body)}
+.wrap{max-width:1180px;margin:0 auto;padding:48px 28px 96px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercase;line-height:.95;margin:0}
+h1{font-size:clamp(48px,7vw,84px);color:var(--red)}
+h2{font-size:clamp(32px,4vw,48px);color:var(--red);margin-bottom:12px}
+h3{font-size:24px}
+section{margin-top:64px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-brown);font-weight:600}
+.lede{font-size:19px;max-width:64ch;margin-top:14px}
+.muted{color:var(--ink-brown)}.small{font-size:14px}
+.card{background:var(--cream-light);border-radius:var(--radius-block);padding:22px;min-width:0}
+.shots{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.shots{grid-template-columns:minmax(0,1fr)}}
+figure{margin:0}figcaption{font-size:13px;color:var(--ink-brown);margin-top:6px}
+.scroll{max-height:900px;overflow:auto;border:1px solid var(--cream-rule);border-radius:var(--radius-card);background:#fff}
+.scroll img{display:block;width:100%;height:auto}
+.tabs{display:flex;gap:8px;margin:10px 0 16px;flex-wrap:wrap}
+.tabs button{font:600 12px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);background:transparent;border-radius:var(--radius-pill);padding:10px 16px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--cream-light)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-top:1px solid var(--cream-rule)}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-brown)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:14px}
+.opt{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--cream-light);border:2px solid transparent;border-radius:var(--radius-block);padding:20px;cursor:pointer;min-width:0}
+.opt:has(input:checked){border-color:var(--red)}
+.opt input{position:absolute;top:20px;right:18px;accent-color:var(--red);width:18px;height:18px}
+.opt .say{font-family:var(--font-display);font-weight:600;font-size:30px;line-height:1;text-transform:uppercase;color:var(--red);padding-right:28px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border-radius:var(--radius-pill);padding:3px 10px;background:var(--red);color:var(--cream-light);width:max-content}
+.pros,.cons{margin:0;padding-left:18px;font-size:14px}
+.pros li::marker{content:"+ ";color:#3c7a3c}.cons li::marker{content:"– ";color:var(--red)}
+textarea{width:100%;min-height:60px;border:1px solid var(--ink-brown);border-radius:10px;padding:10px;font:inherit;background:#fff;margin-top:12px}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}
+button.queue{font:600 12px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;background:var(--red);color:var(--cream-light);border:0;border-radius:var(--radius-pill);padding:12px 20px;cursor:pointer}
+.status{font-size:13px;color:var(--ink-brown)}
+.gwen{border:1px solid var(--cream-rule);padding:14px 18px;background:var(--cream-light);border-radius:var(--radius-card)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:820px){.grid3{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">B-047 · Stage 2 of 3 · wireframe gate</div>
+  <h1>Volunteers wireframe</h1>
+  <p class="lede"><b>Round 2:</b> volunteer applications are open from today and close after the event; the copy now leads with what volunteers get from the day. Content and structure of <b>/volunteers</b> and its form, using Flux defaults and no custom styling. In the build it gets the site's look, matching the Makers and organisations pages. It runs locally at <code>/tools/wireframes/volunteers</code>.</p>
+</header>
+
+<section>
+  <h2>1. The page</h2>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" onclick="show(this,'open')">Applications open</button>
+    <button role="tab" aria-selected="false" onclick="show(this,'closed')">After the event</button>
+  </div>
+  <div class="shots">
+    <figure><div class="scroll"><img id="shot-d" src="assets/volunteers-wireframe/wireframe-open-desktop.png" alt="Wireframe at 1440px"></div><figcaption>1440px. Scroll inside the frame. "Social media manager" is ticked to show the languages question.</figcaption></figure>
+    <figure><div class="scroll"><img id="shot-m" src="assets/volunteers-wireframe/wireframe-open-mobile.png" alt="Wireframe at 390px"></div><figcaption>390px. The header collapses to a Menu button, as on the live site.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>2. What's on it</h2>
+  <div class="card">
+    <table>
+      <tr><th>Block</th><th>Content</th><th>Source</th></tr>
+      <tr><td>Hero</td><td>Headline (question A), date, intro: the day among Makers and organisations, portfolio material, your name when we publish. Open: "Start your application". After the event: "Volunteer applications are closed for 2027" + Instagram.</td><td>Your message: open from today, close after the event</td></tr>
+      <tr><td>What's in it for you <b>(new)</b></td><td>Work you'll want to show · Your name on it · A room full of creative Brussels · The next edition starts with your pictures</td><td>Your message: copy needs the benefit</td></tr>
+      <tr><td>Three roles</td><td>Each card: what you do and what you get from it. Photographer: published and credited. Videographer: your footage shows future Makers what it's like. Social media: live content for a real audience, good practice for students.</td><td>V-02, V-03; the brief prefers students for social media</td></tr>
+      <tr><td>What you commit to</td><td>Unpaid, like Makers; "We provide food, drinks and good company" (question B). 01 Apply · 02 Selection + volunteer agreement · 03 The day. Then: "Want to work on a challenge in a team? Apply as a Maker."</td><td>V-07, sitemap C1</td></tr>
+      <tr><td>Form: About you</td><td>Name, email, mobile (required, Maker hint), roles (one or more)</td><td>V-09, page 52 §2</td></tr>
+      <tr><td>Form: About your work</td><td>Examples of your work (URL, required), notes for your role (optional, no sensitive details), languages: only when social media is chosen</td><td>Page 52 §2</td></tr>
+      <tr><td>Form: Availability</td><td>Date in calendar (required), daytime and/or evening (at least one)</td><td>Page 52 §2</td></tr>
+      <tr><td>Form: Credit</td><td>How to credit your work (optional; defaults to your name)</td><td>V-07</td></tr>
+      <tr><td>Not on the form</td><td>Motivation, referral, themes, age, teams</td><td>Minimisation, owner: no themes, V-04, V-08</td></tr>
+      <tr><td>Homepage</td><td>"Volunteers, photograph, film or post the day, and take home work you'll want to show." + Volunteer details</td><td>Sitemap A1</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>3. Copy choices</h2>
+
+  <form data-lavish-question="A-headline" onsubmit="event.preventDefault();queue(this,'A-headline','Headline')">
+    <h3>A. Headline</h3>
+    <p class="muted small">Why someone would sincerely say yes: material they're proud to show, credit, meeting creative Brussels, and helping the next edition happen. The Makers page says "Use your creative skills to make a difference."</p>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="A" value="Capture a day of creative work for Brussels." checked><span class="tag">Recommended</span><span class="say">Capture a day of creative work for Brussels.</span><ul class="pros"><li>Says what you do and why it matters</li><li>Fits all three roles</li></ul><ul class="cons"><li>The personal gain is in the intro, not the headline</li></ul></label>
+      <label class="opt"><input type="radio" name="A" value="Make work you'll want to show, on a day that matters."><span class="say">Make work you'll want to show, on a day that matters.</span><ul class="pros"><li>Leads with the portfolio benefit</li></ul><ul class="cons"><li>Vaguer about what the day is</li></ul></label>
+      <label class="opt"><input type="radio" name="A" value="Show Brussels what the day makes."><span class="say">Show Brussels what the day makes.</span><ul class="pros"><li>Brussels-rooted; the volunteer's work as the window</li></ul><ul class="cons"><li>Less clear for a first-time reader</li></ul></label>
+    </div>
+    <textarea name="note" placeholder="Optional note or your own line"></textarea>
+    <div class="actions"><button class="queue" type="submit">Queue answer A</button><span class="status" role="status"></span></div>
+  </form>
+
+
+  <form data-lavish-question="B-claims" onsubmit="event.preventDefault();queue(this,'B-claims','Promises on the page')" style="margin-top:36px">
+    <h3>B. Promises I need you to confirm</h3>
+    <p class="muted small">The benefit copy promises three things I can't verify in the sources. Tick the ones that are true; I drop the others.</p>
+    <div class="opts">
+      <label class="opt"><input type="checkbox" name="B" value="Credit on every publication" checked><h3>Credit every time</h3><p class="small">"We credit you whenever we publish your work." Page 52 plans a credit line (V-07), but the stories file credits only some photos today.</p></label>
+      <label class="opt"><input type="checkbox" name="B" value="Food and drinks for volunteers" checked><h3>Food and drinks</h3><p class="small">"We provide food, drinks and good company." The Makers info says so for Makers; I assume volunteers get the same.</p></label>
+      <label class="opt"><input type="checkbox" name="B" value="Uses: website, Instagram, press, grant applications" checked><h3>Where photos go</h3><p class="small">"On our website and Instagram, in the press and in grant applications." From the Notion brief; the agreement (V-07) would confirm it.</p></label>
+    </div>
+    <textarea name="note" placeholder="Optional note"></textarea>
+    <div class="actions"><button class="queue" type="submit">Queue answer B</button><span class="status" role="status"></span></div>
+  </form>
+
+
+  <form data-lavish-question="C-approval" onsubmit="event.preventDefault();queue(this,'C-approval','Wireframe')" style="margin-top:36px">
+    <h3>C. The wireframe as a whole</h3>
+    <div class="opts">
+      <label class="opt"><input type="radio" name="C" value="Approved: go ahead and build with the site's visual system" checked><h3>Approve</h3><p class="small">I build it with the Makers and organisations look, using your answers to A and B. Volunteer applications open regardless of edition status and close after the event day.</p></label>
+      <label class="opt"><input type="radio" name="C" value="Changes needed first (see note and annotations)"><h3>Changes first</h3><p class="small">Annotate the screenshots or write below; I update the wireframe and show it again.</p></label>
+    </div>
+    <textarea name="note" placeholder="Copy edits, fields to add or drop, anything else"></textarea>
+    <div class="actions"><button class="queue" type="submit">Queue answer C</button><span class="status" role="status"></span></div>
+  </form>
+</section>
+
+<section>
+  <h2>4. Waiting on Gwen</h2>
+  <div class="grid3">
+    <div class="gwen"><b>Brackets, Nena</b><p class="small">If photo and video are filled, the roles section shrinks to one card and the headline may change. Roles come from one catalogue, so a role can be hidden without changing the page.</p></div>
+    <div class="gwen"><b>Under 18, insurance</b><p class="small">Might add one line under "What you commit to". No form field (V-08: no age gate).</p></div>
+    <div class="gwen"><b>Themes</b><p class="small">Settled by you: volunteers don't pick themes.</p></div>
+  </div>
+</section>
+</div>
+<script>
+function show(btn,state){
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b===btn));
+  document.getElementById('shot-d').src='assets/volunteers-wireframe/wireframe-'+state+'-desktop.png';
+  document.getElementById('shot-m').src='assets/volunteers-wireframe/wireframe-'+state+'-mobile.png';
+}
+function queue(form,key,label){
+  const checked=[...form.querySelectorAll('input:checked')];
+  const c={value: checked.length ? checked.map(i=>i.value).join('; ') : 'none of these'};
+  const note=form.querySelector('textarea').value.trim();
+  const text=label+': '+c.value+(note?' (note: '+note+')':'');
+  const s=form.querySelector('.status');
+  if(window.lavish?.queuePrompt){window.lavish.queuePrompt('Wireframe decision '+text,{tag:'choice',text,element:form,queueKey:key,data:{question:key,answer:c.value,note}});s.textContent='Queued: '+c.value;}
+  else s.textContent='Lavish not running.';
+}
+</script>
+</body>
+</html>

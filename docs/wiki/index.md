@@ -10,8 +10,8 @@ organisation language and required Maker mobile number. The printable team brief
 Volunteer form: [scoping and owner decisions](build/52-volunteer-form-scoping.md) for the
 third audience. Three roles (photographer, videographer, social media manager),
 no teams, 3-year retention; the case-study writer role is out of scope.
-V-01 to V-10 decided on 5 November. Nothing built; tracked under B-047.
-[Sitemap](build/53-volunteer-sitemap.md) for `/volunteers` approved on 7 November: header link, a line under the homepage pair, a link to `/makers`. Sitemaps now live in `docs/ux/_structure.md`, not Notion. Wireframe next.
+V-01 to V-10 decided on 5 November. Built and verified locally on 7 November on an audience registry; open now, until the event; not deployed. Tracked under B-047.
+[Sitemap](build/53-volunteer-sitemap.md) for `/volunteers` approved on 7 November: header link, a line under the homepage pair, a link to `/makers`. Sitemaps now live in `docs/ux/_structure.md`, not Notion.
 
 Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the
@@ -223,6 +223,7 @@ Visual refinement: [Global Make a Mark design review](build/12-global-design-rev
 | [Volunteer form scoping](build/52-volunteer-form-scoping.md) | Volunteer audience scope: three roles, minimised fields, admin, privacy, code map and the owner's decisions V-01 to V-10. | Scoping and decisions | Build |
 | [Volunteer form decisions](../raw/2026-11-05-volunteer-decisions.md) | Owner's V-01 to V-10 decisions, verbatim. | Source capture | Build |
 | [Volunteer page sitemap](build/53-volunteer-sitemap.md) | Approved place of `/volunteers` in the site: homepage line, header link, cross-link, and the sitemap's move from Notion to the wiki. | Decision, gate | Build |
+| [Volunteer wireframe approval](../raw/2026-11-07-volunteer-wireframe-approval.md) | Owner's wireframe feedback and approval: open now until the event, benefit-led copy, no credit field, verbatim. | Source capture | Build |
 | [Volunteer sitemap approval](../raw/2026-11-07-volunteer-sitemap-approval.md) | Owner's answers A1, B1, C1, D1 and "volunteers don't pick themes", verbatim. | Source capture | Build |
 | [Volunteer sitemap request](../raw/2026-11-07-volunteer-sitemap-request.md) | Owner's request to review the sitemap in Lavish and save it in the wiki, verbatim. | Source capture | Build |
 | [Application intake](build/20-application-intake.md) | Forms embedded on audience information pages, inline validation/receipts, Laravel persistence, and remaining operations work. | Implementation | Build |

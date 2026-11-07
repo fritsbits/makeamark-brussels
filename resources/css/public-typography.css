@@ -49,10 +49,10 @@
   .public-site .back-link:hover { text-decoration: underline; text-underline-offset: 4px; }
   .public-site .back-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   .public-site .commitment__lead h2 { text-wrap: balance; max-width: 11ch; }
-  .organisations-page .audience-hero__heading { grid-column: 1; grid-row: 1; min-width: 0; container-type: inline-size; }
-  .organisations-page .audience-hero__heading .audience-hero__title { max-width: none; font-size: min(var(--fs-hero), 18cqi); }
+  :is(.organisations-page, .volunteers-page) .audience-hero__heading { grid-column: 1; grid-row: 1; min-width: 0; container-type: inline-size; }
+  :is(.organisations-page, .volunteers-page) .audience-hero__heading .audience-hero__title { max-width: none; font-size: min(var(--fs-hero), 18cqi); }
   @media (max-width: 860px) {
-    .organisations-page .audience-hero__heading { grid-column: auto; grid-row: auto; }
+    :is(.organisations-page, .volunteers-page) .audience-hero__heading { grid-column: auto; grid-row: auto; }
   }
 
   /* Display headings wrap at spaces; prose/URLs own emergency word wrapping. */

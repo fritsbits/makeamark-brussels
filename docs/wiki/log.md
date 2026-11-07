@@ -1,5 +1,13 @@
 # Cascade change log
 
+- 2026-11-07: Built the volunteer application form (G-10, B-047) after the owner approved the wireframe.
+  Volunteer applications are open now and close after the event day; the copy leads with what volunteers get back; the credit field is dropped.
+  An audience registry (`App\Support\Audiences`) replaces the hard-coded Maker and organisation branches; Maker tokens stay valid.
+  Added `/volunteers`, the form, the receipt wording, the header link, the homepage line, the `VolunteerResource` with role assignment and the "Also applied as Maker" hint, and the privacy notice and assessment updates.
+  168 tests pass; verified locally at 1440px, 1024px, 900px and 390px, including a browser submission and the admin; not deployed.
+  [Approval](../raw/2026-11-07-volunteer-wireframe-approval.md);
+  [build](build/52-volunteer-form-scoping.md#8-build).
+
 - 2026-11-07: The owner approved the `/volunteers` sitemap (stage 1 of B-047) in a Lavish review.
   "For volunteers" becomes the fourth header link, the homepage gets a line under the Makers and organisations pair, and `/volunteers` links to `/makers`.
   The Notion connector reaches another workspace, so the owner asked to keep the sitemap in this wiki; `AGENTS.md` now names `docs/ux/_structure.md` as the sitemap's home.

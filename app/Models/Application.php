@@ -4,15 +4,17 @@ namespace App\Models;
 
 use App\Support\Skills;
 use App\Support\Themes;
+use App\Support\VolunteerRoles;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Validation\ValidationException;
 
-#[Fillable(['audience', 'edition_year', 'contact_name', 'email', 'answers', 'status', 'internal_notes', 'refined_brief', 'skills_needed', 'main_skills', 'backup_skills', 'themes', 'submission_key'])]
+#[Fillable(['audience', 'edition_year', 'contact_name', 'email', 'answers', 'status', 'internal_notes', 'refined_brief', 'skills_needed', 'main_skills', 'backup_skills', 'themes', 'roles', 'assigned_roles', 'submission_key'])]
 class Application extends Model
 {
     protected $attributes = ['status' => 'applied'];
@@ -22,6 +24,9 @@ class Application extends Model
         static::creating(function (Application $application) {
             if (! array_key_exists('themes', $application->getAttributes())) {
                 $application->themes = Themes::normalise($application->answers['themes'] ?? []);
+            }
+            if (! array_key_exists('roles', $application->getAttributes())) {
+                $application->roles = $application->audience === 'volunteers' ? VolunteerRoles::normalise($application->answers['roles'] ?? []) : [];
             }
             foreach (['skills_needed', 'main_skills', 'backup_skills'] as $field) {
                 if (! array_key_exists($field, $application->getAttributes())) {
@@ -46,7 +51,7 @@ class Application extends Model
 
     protected function casts(): array
     {
-        return ['answers' => 'array', 'edition_year' => 'integer', 'skills_needed' => 'array', 'main_skills' => 'array', 'backup_skills' => 'array', 'themes' => 'array', 'receipt_sent_at' => 'datetime'];
+        return ['answers' => 'array', 'edition_year' => 'integer', 'skills_needed' => 'array', 'main_skills' => 'array', 'backup_skills' => 'array', 'themes' => 'array', 'roles' => 'array', 'assigned_roles' => 'array', 'receipt_sent_at' => 'datetime'];
     }
 
     protected function displayName(): Attribute
@@ -66,6 +71,13 @@ class Application extends Model
     protected function averageRating(): Attribute
     {
         return Attribute::get(fn () => $this->reviews()->avg('rating'));
+    }
+
+    /** Maker applications from the same email address, for the volunteer "Also applied as Maker" hint. */
+    public function makerApplicationsWithSameEmail(): Collection
+    {
+        return static::query()->where('audience', 'makers')->whereRaw('lower(email) = ?', [mb_strtolower($this->email)])
+            ->orderByDesc('edition_year')->get(['id', 'edition_year', 'status']);
     }
 
     public function reviews(): HasMany

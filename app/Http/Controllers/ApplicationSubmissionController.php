@@ -6,27 +6,23 @@ use App\Content\Homepage;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
 use App\Support\ApplicationForm;
-use App\Support\Themes;
+use App\Support\Audiences;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class ApplicationSubmissionController extends Controller
 {
     public function __invoke(Request $request, string $audience, Homepage $homepage): RedirectResponse
     {
-        abort_unless(in_array($audience, ['makers', 'organisations'], true), 404);
-
+        $definition = Audiences::find($audience);
         $edition = $homepage->data()['edition'];
 
-        if ($edition['status'] !== 'open') {
-            return ApplicationForm::recover($request, $audience, $edition['status'] === 'preparing'
-                ? 'Applications aren’t open yet, so your application has not been sent. Contact the organising team if you need help.'
-                : 'Applications are now closed. Your application has not been sent. Contact the organising team if you need help.');
+        if (! $definition->isOpen($edition)) {
+            return ApplicationForm::recover($request, $audience, $definition->closedMessage($edition));
         }
 
         $submissionKey = ApplicationForm::submissionKey($request, $audience, $edition['year']);
@@ -35,61 +31,8 @@ class ApplicationSubmissionController extends Controller
             return ApplicationForm::recover($request, $audience, 'Your form has expired. Please review your answers and send your application again.');
         }
 
-        $common = [
-            'email' => ['required', 'email:rfc', 'max:255'],
-        ];
-
-        $rules = $audience === 'makers'
-            ? [
-                ...$common,
-                'name' => ['required', 'string', 'max:255'],
-                'phone' => ['required', 'string', 'max:80'],
-                'motivation' => ['required', 'string', 'max:5000'],
-                'referral' => ['nullable', 'string', 'max:1000'],
-                'dutch' => ['nullable', Rule::in(['1', '2', '3', '4', '5'])],
-                'english' => ['nullable', Rule::in(['1', '2', '3', '4', '5'])],
-                'french' => ['nullable', Rule::in(['1', '2', '3', '4', '5'])],
-                'other_languages' => ['nullable', 'string', 'max:1000'],
-                'portfolio' => ['required', 'url', 'max:2000'],
-                'social_media' => ['nullable', 'string', 'max:2000'],
-                'main_skills' => ['required', 'string', 'max:3000'],
-                'backup_skills' => ['nullable', 'string', 'max:3000'],
-                'other_skills' => ['nullable', 'string', 'max:3000'],
-                'team_preferences' => ['nullable', 'string', 'max:2000'],
-                'themes' => ['sometimes', 'array', 'max:10'],
-                'themes.*' => ['string', 'distinct', Rule::in(Themes::all())],
-                'date_confirmed' => ['accepted'],
-                'meeting_availability' => ['required', 'string', 'max:2000'],
-                'full_commitment' => ['accepted'],
-            ]
-            : [
-                ...$common,
-                'organisation_name' => ['required', 'string', 'max:255'],
-                'youth_brussels_eligibility' => ['accepted'],
-                'mission' => ['required', 'string', 'max:5000'],
-                'social_media' => ['nullable', 'string', 'max:2000'],
-                'website' => ['nullable', 'url', 'max:2000'],
-                'challenge' => ['required', 'string', 'max:5000'],
-                'contact_name' => ['required', 'string', 'max:255'],
-                'phone' => ['required', 'string', 'max:80'],
-                'themes' => ['sometimes', 'array', 'max:10'],
-                'themes.*' => ['string', 'distinct', Rule::in(Themes::all())],
-                'organisation_languages' => ['required', 'array', 'min:1', 'max:3'],
-                'organisation_languages.*' => ['string', 'distinct', Rule::in(['English', 'Dutch', 'French'])],
-                'languages' => ['required', 'array', 'min:1', 'max:3'],
-                'languages.*' => ['string', 'distinct', Rule::in(['English', 'Dutch', 'French'])],
-                'assets_ready' => ['accepted'],
-                'planning_meeting' => ['accepted'],
-                'feedback_session' => ['accepted'],
-                'evening_presentation' => ['accepted'],
-            ];
-
         $applicationUrl = route('audience.show', $audience).'#application';
-        $validator = Validator::make($request->all(), $rules, [
-            'organisation_languages.required' => 'Choose at least one language your organisation works in.',
-            'languages.required' => 'Choose at least one language your contact person can work in.',
-            'youth_brussels_eligibility.accepted' => 'Please confirm that your organisation works with young people in Brussels.',
-        ]);
+        $validator = Validator::make($request->all(), $definition->rules($request->all()), $definition->messages);
 
         if ($validator->fails()) {
             if (! $request->expectsJson()) {
@@ -100,7 +43,7 @@ class ApplicationSubmissionController extends Controller
         }
 
         $answers = $validator->validated();
-        $name = $audience === 'makers' ? $answers['name'] : $answers['contact_name'];
+        $name = $answers[$definition->nameField];
 
         $attributes = [
             'audience' => $audience,

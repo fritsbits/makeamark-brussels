@@ -14,7 +14,7 @@ sources:
   - "../raw/2026-11-07-volunteer-sitemap-approval.md"
 phase: Strategy
 updated: 2026-11-07
-status: agreed sitemap; volunteers approved 2026-11-07, not built
+status: agreed sitemap; volunteers added 2026-11-07
 ---
 
 # Structure
@@ -30,15 +30,15 @@ The owner moved the sitemap's home from Notion to this file on 7 November 2026.
 Make a Mark Brussels
 ├── Home (/)
 │   ├── Take part: Makers panel, organisations panel
-│   │   └── volunteers line under the pair (approved, not built)
+│   │   └── volunteers line under the pair
 │   └── About (/#about)
 ├── For Makers (/makers) + embedded form
 ├── For organisations (/organisations) + embedded form
-├── For volunteers (/volunteers) + embedded form (approved, not built)
+├── For volunteers (/volunteers) + embedded form
 └── Privacy (/privacy)
 ```
 
-Header and footer: For Makers, For organisations, For volunteers (approved, not built), About.
+Header and footer: For Makers, For organisations, For volunteers, About.
 The footer adds the global site, Instagram, Privacy and email.
 `/{audience}/apply` redirects to the form on each audience page.
 Local tools under `/tools` and the Filament admin are outside the public sitemap.

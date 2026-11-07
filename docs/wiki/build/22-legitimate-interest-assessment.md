@@ -8,8 +8,10 @@ sources:
   - "../../raw/2026-10-18-airtable-forms.md"
   - "../../raw/2026-10-18-legitimate-interest-and-retention-guidance.md"
   - "../../raw/2026-11-05-gwen-form-requests.md"
+  - "../../raw/2026-11-05-volunteer-decisions.md"
+  - "../../raw/2026-11-07-volunteer-wireframe-approval.md"
 phase: Build
-updated: 2026-11-05
+updated: 2026-11-07
 status: legitimate interests selected for current application lifecycle; annual review required
 ---
 
@@ -66,6 +68,23 @@ internal team. [Gwen's requests](../../raw/2026-11-05-gwen-form-requests.md);
   internal access, retention and right to object. The hint tells applicants
   the limited purpose before they enter it. Reassess if the number is used for
   anything beyond selection and the day itself.
+
+## Volunteer applications
+
+Added 2026-11-07 with the volunteer form (G-10, B-047).
+Purpose: assess volunteer applications, assign the photographer, videographer and social media roles, and coordinate volunteers for the edition.
+The basis stays Article 6(1)(f), as for Makers and organisations.
+[Scoping](52-volunteer-form-scoping.md#4-privacy-and-retention); [owner decisions](../../raw/2026-11-05-volunteer-decisions.md)
+
+- **Necessity:** each field has a stated purpose in the [scoping](52-volunteer-form-scoping.md#2-form-fields).
+  Name, email and mobile number reach the volunteer; roles, examples of work and day parts decide the assignment; languages are asked only of social media managers.
+  The optional notes field carries equipment and experience, and its hint asks applicants to leave out sensitive details.
+  Left out on purpose: motivation, referral, themes, age, teams, and the credit line, which the owner dropped from the form on 2026-11-07 ([approval](../../raw/2026-11-07-volunteer-wireframe-approval.md)).
+- **Balancing:** the same internal-only access, manual review, no automated selection, no marketing and the same right to object as the other audiences.
+  Volunteers get no admin access.
+  Use and credit of the photos, film and posts is agreed separately in the volunteer agreement on selection (V-07), not through the form.
+- **Retention:** the three-year rule applies unchanged; a volunteer role ends when the next edition opens, and volunteering again means a new application (V-06).
+- **Reassess if** volunteers get system access, the data feeds anything beyond role assignment, or a year-round role returns.
 
 ## Gaps before approval
 

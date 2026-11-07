@@ -6,13 +6,13 @@
         <div class="application-receipt__celebration">
             <span class="application-receipt__stamp" aria-hidden="true"><flux:icon.check class="application-receipt__check" /></span>
             <flux:heading level="2" id="application-heading" class="h-display application-receipt__title">Application received.</flux:heading>
-            <flux:text class="application-receipt__thanks">{{ $audience === 'makers' ? 'Thanks for putting your hand up.' : 'Thanks for bringing your challenge.' }}</flux:text>
+            <flux:text class="application-receipt__thanks">{{ $definition->receiptThanks }}</flux:text>
         </div>
         <div class="application-receipt__details">
-            <flux:text class="application-receipt__saved" role="status">Your {{ $audience === 'makers' ? 'Maker' : 'organisation' }} application has been saved for the {{ $edition['year'] }} edition.</flux:text>
+            <flux:text class="application-receipt__saved" role="status">Your {{ $definition->noun }} application has been saved for the {{ $edition['year'] }} edition.</flux:text>
             <div class="application-receipt__next">
                 <flux:heading level="3" class="h-display application-receipt__subtitle">What happens next</flux:heading>
-                <flux:text>The organising team will review {{ $audience === 'makers' ? 'your skills and availability' : 'your organisation and challenge' }} as part of selection. Applying does not guarantee a place.</flux:text>
+                <flux:text>The organising team will review {{ $definition->reviewFocus }} as part of selection. Applying does not guarantee a place.</flux:text>
             </div>
         @if (! empty($printableAnswers))
             <section class="print-sheet print-sheet--inline" aria-labelledby="print-answers-heading">
@@ -42,25 +42,28 @@
             <x-pill href="/">Back to the edition</x-pill>
         </div>
     </div>
-@elseif ($edition['status'] === 'open')
+@elseif ($applicationsOpen)
     @unless ($introRendered ?? false)
         @include('applications.context')
     @endunless
-    @include($audience === 'makers' ? 'applications.maker' : 'applications.organisation')
+    @include($definition->formView())
 @else
     <div class="application__notice" role="status">
-        <strong>{{ $edition['pill']['label'] }}</strong>
+        <strong>{{ $definition->followsEditionStatus ? $edition['pill']['label'] : 'Volunteer applications are closed for '.$edition['year'] }}</strong>
         <x-application-deadline :edition="$edition" />
         @if ($errors->has('submission'))<p role="alert">{{ $errors->first('submission') }}</p>@endif
-        @if ($edition['status'] === 'preparing')
-            <p>We'll open the {{ $edition['year'] }} {{ $audience === 'makers' ? 'Maker' : 'organisation' }} applications in the coming weeks. Follow us on Instagram to hear first. Read what you commit to above, so you're ready to apply.</p>
+        @unless ($definition->followsEditionStatus)
+            <p>Follow us on Instagram to hear when volunteer applications open for the next edition.</p>
+            <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
+        @elseif ($edition['status'] === 'preparing')
+            <p>We'll open the {{ $edition['year'] }} {{ $definition->noun }} applications in the coming weeks. Follow us on Instagram to hear first. Read what you commit to above, so you're ready to apply.</p>
             <x-pill :href="$site['instagramUrl']">Follow us on Instagram</x-pill>
         @else
             <p>Applications are not open right now. Please check this page for updates.</p>
-        @endif
+        @endunless
         <p>Questions? <a href="mailto:{{ $site['email'] }}">Email the organising team</a>.</p>
     </div>
 @endif
-@if (! ($introRendered ?? false) && $edition['status'] !== 'open' && ! $submitted)
+@if (! ($introRendered ?? false) && ! $applicationsOpen && ! $submitted)
     @include('applications.context')
 @endif

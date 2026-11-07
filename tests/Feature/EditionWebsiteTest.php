@@ -71,7 +71,7 @@ class EditionWebsiteTest extends TestCase
 
     public function test_maker_is_capitalised_in_rendered_public_pages(): void
     {
-        foreach (['/', '/makers', '/organisations', '/privacy'] as $path) {
+        foreach (['/', '/makers', '/organisations', '/volunteers', '/privacy'] as $path) {
             $html = $this->withoutVite()->get($path)->assertOk()->getContent();
             $html = preg_replace('#<(script|style)\b.*?</\1>#is', '', $html);
             preg_match_all('/\b(?:alt|aria-label|title|content|placeholder)="([^"]*)"/i', $html, $attributes);
@@ -96,13 +96,16 @@ class EditionWebsiteTest extends TestCase
             ->assertSee('sends confirmation emails from its Ireland region')
             ->assertDontSee('when email is enabled')
             ->assertSeeText('One.com registers our domain and Cloudflare runs its DNS.')
-            ->assertSeeText('Cloudflare forwards your message to our team mailbox at Google (Gmail)');
+            ->assertSeeText('Cloudflare forwards your message to our team mailbox at Google (Gmail)')
+            ->assertSeeText('Maker, volunteer and organisation applications')
+            ->assertSeeText('a volunteer role ends when the next edition opens');
     }
 
     public function test_search_engine_endpoints_list_the_public_edition_pages(): void
     {
         $this->get('/sitemap-0.xml')->assertOk()
             ->assertSee('https://letsmakeamark.brussels/makers', false)
-            ->assertSee('https://letsmakeamark.brussels/organisations', false);
+            ->assertSee('https://letsmakeamark.brussels/organisations', false)
+            ->assertSee('https://letsmakeamark.brussels/volunteers', false);
     }
 }

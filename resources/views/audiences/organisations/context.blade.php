@@ -1,0 +1,2 @@
+<p class="application__context application__context--lead">{{ $applicationsOpen ? 'Tell us about your organisation and the creative challenge you would like to work on. Taking part is free.' : 'Social organisations take part for free. Each application should focus on a concrete communication, design, or digital challenge.' }}</p>
+<p class="application__hint">You can answer in English, French or Dutch.</p>

@@ -40,6 +40,10 @@
                 <flux:text>Work with a Maker team on one communication, design or digital challenge.</flux:text>
                 <x-pill href="/organisations">Organisation details</x-pill>
             </article>
+            <div class="audience-line">
+                <flux:text><span class="audience-line__lead h-display">Volunteers,</span> photograph, film or post the day, and take home work you'll want to show.</flux:text>
+                <x-pill href="/volunteers">Volunteer details</x-pill>
+            </div>
         </section>
 
         <section id="edition" class="section-block block--red" aria-labelledby="edition-heading">

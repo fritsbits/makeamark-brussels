@@ -1,0 +1,1 @@
+<p class="application__context application__context--lead">{{ $applicationsOpen ? 'Tell us what you bring and when you can take part. Makers contribute their time voluntarily.' : 'Makers contribute their time voluntarily. Selection happens in advance so that teams can be matched around each organisation’s challenge.' }}</p>

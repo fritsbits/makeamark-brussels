@@ -8,40 +8,21 @@ use Illuminate\Support\Str;
 
 class ApplicationForm
 {
-    /** Bound flashed drafts and replace invalid shapes before rendering either form. */
+    /** Bound flashed drafts and replace invalid shapes before rendering any form. */
     public static function normalize(array $input, string $audience): array
     {
-        $fields = match ($audience) {
-            'makers' => [
-                'name' => 255, 'email' => 255, 'phone' => 80, 'motivation' => 5000, 'referral' => 1000,
-                'dutch' => 255, 'english' => 255, 'french' => 255, 'other_languages' => 1000,
-                'portfolio' => 2000, 'social_media' => 2000, 'main_skills' => 3000,
-                'backup_skills' => 3000, 'other_skills' => 3000, 'team_preferences' => 2000,
-                'meeting_availability' => 2000,
-            ],
-            'organisations' => [
-                'organisation_name' => 255, 'email' => 255, 'mission' => 5000,
-                'social_media' => 2000, 'website' => 2000, 'challenge' => 5000,
-                'contact_name' => 255, 'phone' => 80,
-            ],
-        };
+        $definition = Audiences::find($audience);
         $values = [];
 
-        foreach ($fields as $field => $limit) {
+        foreach ($definition->fields as $field => $limit) {
             $values[$field] = is_string($input[$field] ?? null) ? mb_substr($input[$field], 0, $limit) : '';
         }
 
-        $checkboxes = $audience === 'makers'
-            ? ['date_confirmed', 'full_commitment']
-            : ['youth_brussels_eligibility', 'assets_ready', 'planning_meeting', 'feedback_session', 'evening_presentation'];
-
-        foreach ($checkboxes as $field) {
+        foreach ($definition->checkboxes as $field) {
             $values[$field] = in_array($input[$field] ?? null, ['yes', 'on', '1', 1, true, 'true'], true) ? '1' : '';
         }
 
-        $lists = $audience === 'makers' ? ['themes' => 10] : ['organisation_languages' => 3, 'languages' => 3, 'themes' => 10];
-
-        foreach ($lists as $list => $limit) {
+        foreach ($definition->lists as $list => $limit) {
             $values[$list] = is_array($input[$list] ?? null)
                 ? array_values(array_filter(array_slice($input[$list], 0, $limit), fn ($value) => is_string($value) && mb_strlen($value) <= 255))
                 : [];
@@ -57,7 +38,7 @@ class ApplicationForm
     /** Independent nonces avoid an ever-growing registry; separate secrets bind each audience. */
     public static function token(Request $request, string $audience): string
     {
-        $secretKey = self::secretKey($audience);
+        $secretKey = Audiences::find($audience)->secretKey;
         $secret = $request->session()->get($secretKey);
 
         if (! is_string($secret) || strlen($secret) !== 64) {
@@ -79,10 +60,10 @@ class ApplicationForm
     public static function submissionKey(Request $request, string $audience, int $editionYear): ?string
     {
         $token = $request->input('_submission_token');
-        $secret = $request->session()->get(self::secretKey($audience));
+        $secret = $request->session()->get(Audiences::find($audience)->secretKey);
 
         // Keep existing maker replay keys stable across the shared-helper rollout.
-        $scope = $audience === 'makers' ? (string) $editionYear : $audience.':'.$editionYear;
+        $scope = Audiences::find($audience)->tokenScope((string) $editionYear);
 
         return self::validToken($token, $secret, $audience)
             ? hash_hmac('sha256', $scope.':'.$token, $secret)
@@ -97,18 +78,10 @@ class ApplicationForm
             ->withInput(self::normalize($request->input(), $audience));
     }
 
-    private static function secretKey(string $audience): string
-    {
-        return match ($audience) {
-            'makers' => 'maker_submission_secret',
-            'organisations' => 'organisation_submission_secret',
-        };
-    }
-
     private static function signature(string $nonce, string $secret, string $audience): string
     {
         // Maker forms already in browsers remain valid; their secret is audience-specific.
-        return hash_hmac('sha256', $audience === 'makers' ? $nonce : $audience.':'.$nonce, $secret);
+        return hash_hmac('sha256', Audiences::find($audience)->tokenScope($nonce), $secret);
     }
 
     private static function validToken(mixed $token, mixed $secret, string $audience): bool

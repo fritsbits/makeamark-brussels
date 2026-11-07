@@ -9,8 +9,9 @@ sources:
   - "../../raw/2026-10-18-application-privacy-requirements.md"
   - "../../raw/2026-10-18-airtable-forms.md"
   - "../../raw/2026-11-05-production-mail-setup.md"
+  - "../../raw/2026-11-05-volunteer-decisions.md"
 phase: Build
-updated: 2026-11-05
+updated: 2026-11-07
 status: lawful-basis and retention decisions made; account setup verification remains
 ---
 
@@ -56,11 +57,11 @@ features are outside this notice's current scope.
 
 Impact Studio BV (BE 0652.723.886), Kasteeldreef 47, 1083 Ganshoren, is
 responsible for personal information submitted through the Make a Mark
-Brussels maker and organisation applications. Privacy contact: Frederik
+Brussels Maker, volunteer and organisation applications. Privacy contact: Frederik
 Vincx at hi@frederikvincx.com.
 
 We use contact information, application answers, and basic technical request
-logs to assess applications, select participants, secure the application site,
+logs to assess applications, select participants, assign volunteer roles, secure the application site,
 organise the 2027 edition, and keep prior application answers available for a
 returning applicant for up to three years after their latest application. If
 you apply again, the team will ask you to review and update the information.
@@ -93,6 +94,15 @@ your application. If you leave required answers blank, the team cannot assess
 it. The dietary-requirements question is not collected. Please do not include
 health, identity-document, or other sensitive information in free-text answers.
 
+Makers and volunteers give a mobile number, used only to reach them during
+selection and on the day itself. A selected volunteer receives a separate
+volunteer agreement on how their photos, film or posts are used and credited.
+A volunteer role ends when the next edition opens; volunteering again means a
+new application.
+
+The public notice at `/privacy` names volunteers since 2026-11-07
+([scoping](52-volunteer-form-scoping.md#privacy-notice-changes)).
+
 This notice does not cover future user accounts or self-service reuse tools;
 those features will receive a separate purpose and privacy review before they
 are introduced.
@@ -106,6 +116,8 @@ are introduced.
   The public notice now names Google (Gmail) for mail sent to `hello@`.
 - At the annual retention review, delete or anonymise applications reaching
   the three-year limit. This is a manual process; no automatic purge is active.
+  Include volunteer applications (`/admin/volunteers`); their roles end when the
+  next edition opens, but the records follow the same three-year rule.
 
 This is a product privacy notice and internal processing decision based on the
 owner's instructions and official provider documentation reviewed on

@@ -20,6 +20,10 @@
       "href": "/organisations"
     },
     {
+      "label": "For volunteers",
+      "href": "/volunteers"
+    },
+    {
       "label": "About",
       "href": "/#about"
     }

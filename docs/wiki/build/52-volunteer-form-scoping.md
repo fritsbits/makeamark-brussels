@@ -14,9 +14,10 @@ sources:
   - "../image-map-new-site.md"
   - "../../raw/2026-11-07-volunteer-sitemap-approval.md"
   - "53-volunteer-sitemap.md"
+  - "../../raw/2026-11-07-volunteer-wireframe-approval.md"
 phase: Build
 updated: 2026-11-07
-status: owner decided V-01 to V-10 on 2026-11-05; sitemap approved 2026-11-07; three roles; nothing built
+status: built and verified locally 2026-11-07, not deployed; owner decided V-01 to V-10, sitemap and wireframe approved
 ---
 
 # Volunteer application form scoping
@@ -29,7 +30,7 @@ Gwen asked for four roles: photographer, videographer, social media manager, and
 The owner dropped the case-study writer role, so the form launches with three roles.
 [Owner decisions](../../raw/2026-11-05-volunteer-decisions.md)
 Code references were checked at commit `957b615`.
-No application code changes with this page.
+The build is recorded in [section 8](#8-build); sections 1 to 7 are the scope as agreed before it.
 
 The owner decided V-01 to V-10 on 5 November 2026; see [section 6](#6-owner-decisions).
 The rest of the page is the agreed scope.
@@ -106,7 +107,7 @@ A checkbox set is enough to place a social media manager.
 
 | Field | Purpose | Required | Reason |
 | --- | --- | --- | --- |
-| `credit_as` | Credit line if the volunteer's work is published | Optional | Existing credits use a name or Instagram handle (`resources/content/stories.json`). Defaults to the applicant's name. Not a rights grant; see section 4 |
+| `credit_as` | Credit line if the volunteer's work is published | Dropped | The owner removed this field at wireframe review on 2026-11-07 ([approval](../../raw/2026-11-07-volunteer-wireframe-approval.md)). Credit is settled in the volunteer agreement instead |
 
 There is no age field or age gate, as on the Maker form (V-08).
 Whether minors may volunteer, and how the agreement applies to them, is an open question for Gwen.
@@ -202,7 +203,7 @@ Decided (V-07): a one-page volunteer agreement, sent on selection, not collected
 It would cover, as interpretation and not legal advice:
 
 - **Copyright and licence.** The volunteer keeps copyright and licenses Make a Mark Brussels and Impact Studio to use the work on the website, social channels, press and grant applications. The Notion brief names press and grant uses.
-- **Credit.** The format the volunteer asked for in `credit_as`, defaulting to their name.
+- **Credit.** By the volunteer's name, or a format agreed in the agreement; the form no longer asks for one.
 - **Who decides** what is published: the organisers.
 - **People in the images.** Attendees include young people around 12 to 25 ([Notion brief](../../raw/2026-10-18-notion-make-a-mark-2027.md)). Consent from people shown, and from parents for minors, is a separate on-site process. Not determined here.
 It is an open question for Gwen whether minors may volunteer and how the agreement applies to them.
@@ -358,6 +359,45 @@ Batch C is one thread and one branch from the merged A and B result, collapsed t
 9. **Wiki:** this page's status, B-047, `index.md`, `log.md`.
 
 The volunteer agreement (V-07) and the on-site consent process for people in images are not code; they must exist before the event.
+
+## 8. Build
+
+Built on 2026-11-07 after the sitemap ([53](53-volunteer-sitemap.md)) and wireframe approvals; verified locally, not deployed.
+[Wireframe approval](../../raw/2026-11-07-volunteer-wireframe-approval.md)
+
+**Changes from the scope above, by the owner's decision on 2026-11-07:**
+
+- Volunteer applications are open now and close after the event day, regardless of the edition status.
+  Makers and organisations still open only when the edition status is `open` ([50](50-applications-closed.md)).
+  Volunteers close when the edition status is `done` or the date in Brussels is past the edition's `endDate`.
+- The `credit_as` field is dropped.
+- The page copy leads with what volunteers get back: work to show, their name on it, and meeting creative Brussels without joining a team.
+
+**Code.**
+
+- `App\Support\Audiences` is the registry, with one `App\Support\Audience` definition per audience: fields, checkboxes, lists, rules and messages, session secret, token scope, name field, page title and description, receipt wording and whether it follows the edition status.
+  Unknown slugs throw.
+  Routes, the XML sitemap, `ApplicationForm`, the submission, page and messaging-preview controllers and the receipt mail read it.
+  Maker tokens keep their unprefixed scope and signature (`legacyTokens`), so forms already open in browsers stay valid.
+  `MakerApplicationForm` had no callers and is deleted.
+- Per-audience copy lives in Blade partials under `resources/views/audiences/{slug}/` (heading, intro, sections, context).
+- `App\Support\VolunteerRoles` holds the three roles and the two day parts.
+  Migration `2026_11_07_000000_add_volunteer_roles_to_applications` adds `roles` (requested, filled from the answers) and `assigned_roles`.
+- The form is `resources/views/applications/volunteer.blade.php`; the languages question shows only when "Social media manager" is ticked, and the server drops languages for other roles.
+  A shared `x-application.choice-group` component now also backs the language groups.
+- `VolunteerResource` lists requested and assigned roles, day parts and an "Also Maker" mark; the edit page assigns roles and shows "Also applied as Maker" with the Maker application's edition and status, matched on email without regard to case.
+- Navigation gets "For volunteers"; the homepage gets the line under the pair; the organisation hero styles are shared with `.volunteers-page`.
+- The privacy notice names volunteers, examples of work, the volunteer agreement and the role ending at the next edition, dated 7 November 2026.
+  The assessment has a [volunteer section](22-legitimate-interest-assessment.md#volunteer-applications).
+
+**Verification.**
+
+- 168 PHP tests pass, including `VolunteerApplicationTest` (registry, page, navigation, sitemap, open and closed moments, validation, replay, languages rule, admin roles and Maker hint).
+  Two theme migration tests now roll back to a named migration instead of a fixed step count.
+- In the running app at 1440px, 1024px, 900px and 390px: no horizontal overflow and no console errors on `/volunteers`, `/` and `/organisations`.
+  The header keeps its four links on one row with 28px between them; on phones the menu shows them on four lines.
+- A browser submission at 1440px and 390px saved the application and showed the receipt; group validation names missing roles, languages and day parts.
+- The admin list and edit pages render, with the Maker hint for a matching email.
 
 ## Open questions for Gwen
 

@@ -17,9 +17,11 @@ abstract class EditApplication extends EditRecord
 
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
-        $fields = $record->audience === 'organisations'
-            ? ['status', 'refined_brief', 'skills_needed', 'internal_notes']
-            : ['status', 'main_skills', 'backup_skills', 'internal_notes'];
+        $fields = match ($record->audience) {
+            'organisations' => ['status', 'refined_brief', 'skills_needed', 'internal_notes'],
+            'makers' => ['status', 'main_skills', 'backup_skills', 'internal_notes'],
+            'volunteers' => ['status', 'assigned_roles', 'internal_notes'],
+        };
 
         try {
             $this->record = DB::transaction(function () use ($record, $data, $fields): Model {

@@ -555,6 +555,12 @@ main:focus { outline: none; }
 .commitment__number { grid-row: span 2; color: var(--red-2); font-size: var(--fs-num); }
 .commitment__steps h3 { color: var(--red-2); font-size: var(--fs-h3); }
 .commitment__steps p { margin: 4px 0 0; }
+.commitment__steps--plain article { grid-template-columns: minmax(0, 1fr); }
+.commitment__aside { padding-top: 14px; border-top: 1px solid var(--cream-rule); }
+.commitment__aside a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.audience-line { grid-column: 1 / -1; margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 24px clamp(24px, 3vw, 40px) 0; border-top: 1px solid var(--cream-rule); }
+.audience-line p { max-width: 60ch; margin: 0; }
+.audience-line__lead { color: var(--red-2); font-size: var(--fs-h3); }
 .audience-cta__inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
 .audience-cta__inner h2 { margin-top: 12px; color: var(--cream); font-size: var(--fs-h2); }
 .application { min-height: 60vh; padding-block: 30px var(--section-y); }

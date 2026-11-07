@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Content\Homepage;
-use App\Support\ApplicationForm;
 use Illuminate\Http\Response;
 
 class MessagingPreviewController extends Controller
@@ -15,16 +14,7 @@ class MessagingPreviewController extends Controller
 
     public function audience(string $audience, Homepage $homepage): Response
     {
-        return $this->preview('audience', [
-            ...$homepage->data(),
-            'audience' => $audience,
-            'applicationUrl' => '#application',
-            'submitted' => false,
-            'emailSent' => false,
-            'submissionToken' => ApplicationForm::token(request(), $audience),
-            'pageTitle' => ($audience === 'makers' ? 'For Makers' : 'For social organisations').' · Make a Mark Brussels',
-            'pageDescription' => $homepage->site()['meta']['description'],
-        ]);
+        return $this->preview('audience', AudiencePageController::pageData($audience, $homepage->data()));
     }
 
     public function compare(Homepage $homepage): Response

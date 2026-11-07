@@ -1,0 +1,1 @@
+<p class="application__context application__context--lead">{{ $applicationsOpen ? 'Tell us which roles you’d like, show us your work and let us know when you can be there.' : 'Volunteers photograph, film or post the day. Applications open again for the next edition.' }}</p>
