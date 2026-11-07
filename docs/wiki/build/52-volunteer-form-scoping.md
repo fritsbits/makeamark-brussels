@@ -12,9 +12,11 @@ sources:
   - "../../raw/2026-10-18-notion-make-a-mark-2027.md"
   - "44-solumob-video-analysis.md"
   - "../image-map-new-site.md"
+  - "../../raw/2026-11-07-volunteer-sitemap-approval.md"
+  - "53-volunteer-sitemap.md"
 phase: Build
-updated: 2026-11-05
-status: owner decided V-01 to V-10 on 2026-11-05; three roles; nothing built
+updated: 2026-11-07
+status: owner decided V-01 to V-10 on 2026-11-05; sitemap approved 2026-11-07; three roles; nothing built
 ---
 
 # Volunteer application form scoping
@@ -115,7 +117,8 @@ Whether minors may volunteer, and how the agreement applies to them, is an open 
   Volunteers are not matched to organisations, so a theme list has no matching purpose.
   Gwen's themes bullet sits under the volunteer list in her email (`docs/raw/2026-11-05-gwen-form-requests.md` lines 31 to 36), but the owner settled it for organisations.
   [Follow-up answers](../../raw/2026-11-05-gwen-form-requests.md)
-  Volunteers do not join teams (V-04), and whether volunteers should pick themes is an open question for Gwen.
+  Volunteers do not join teams (V-04), and the owner decided on 7 November 2026 that volunteers don't pick themes.
+  [Approval](../../raw/2026-11-07-volunteer-sitemap-approval.md)
 - Social media links, other languages, referral, planning-meeting availability, full-commitment statement, year-round availability and age confirmation: no selection or planning use found.
 
 ### Status flow
@@ -344,7 +347,7 @@ The owner decided all ten on 5 November 2026.
 Batch C is one thread and one branch from the merged A and B result, collapsed to one commit.
 [Work batches](51-gwen-form-requests.md#work-batches)
 
-1. **Gate (next step):** save the volunteer sitemap entry in Notion and get wireframe approval before any custom styling, as `AGENTS.md` requires for new pages. Update `docs/ux/_structure.md`.
+1. **Gate:** sitemap approved on 7 November 2026 and saved in `docs/ux/_structure.md` ([53](53-volunteer-sitemap.md)). Next: wireframe approval before any custom styling, as `AGENTS.md` requires for new pages.
 2. **Merge A and B** to the base branch.
 3. **Registry refactor with no behaviour change.** Add `Audiences`, move Maker and organisation onto it, delete `MakerApplicationForm`, keep legacy token values. The existing suite must pass unchanged apart from audience wiring.
 4. **Volunteer audience.** Role catalogue, migration, rules and form view, receipt copy, mail, route, sitemap.
@@ -359,11 +362,11 @@ The volunteer agreement (V-07) and the on-site consent process for people in ima
 ## Open questions for Gwen
 
 The owner left these unanswered; they go to Gwen.
+The fourth, whether volunteers pick themes, the owner answered on 7 November 2026: they don't ([approval](../../raw/2026-11-07-volunteer-sitemap-approval.md)).
 
 - What her parentheses around photographer and videographer mean.
 - Whether volunteers under 18 are allowed, and whether insurance covers volunteers.
 - Whether Nena is confirmed as photographer. The notes say "Confirm Nena as photographer", with Dominique also considered for the evening; they do not record a confirmation.
-- Whether volunteers should pick themes. Her themes bullet sits under the volunteer list in her email; the owner settled themes for organisations.
 
 ## Not determined
 

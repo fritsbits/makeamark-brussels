@@ -1,5 +1,13 @@
 # Cascade change log
 
+- 2026-11-07: The owner approved the `/volunteers` sitemap (stage 1 of B-047) in a Lavish review.
+  "For volunteers" becomes the fourth header link, the homepage gets a line under the Makers and organisations pair, and `/volunteers` links to `/makers`.
+  The Notion connector reaches another workspace, so the owner asked to keep the sitemap in this wiki; `AGENTS.md` now names `docs/ux/_structure.md` as the sitemap's home.
+  The owner also decided volunteers don't pick themes, which closes that question for Gwen.
+  [Request](../raw/2026-11-07-volunteer-sitemap-request.md);
+  [approval](../raw/2026-11-07-volunteer-sitemap-approval.md);
+  [sitemap](build/53-volunteer-sitemap.md).
+
 - 2026-11-06: The owner added the `COMPOSER_AUTH` repository secret. GitHub
   Actions now passes every step, including tests and the build; `composer.json`
   requires PHP `^8.4` and the checkout and setup-node actions run on Node 24.

@@ -32,8 +32,9 @@ Source: [New Laravel project setup playbook](https://app.notion.com/p/334d3ecc47
   `@layer components`. Reuse named classes. Use `@apply` where useful.
   Cosmetic utilities belong in these definitions, not in Blade markup.
   Layout utilities are allowed inline.
-- New pages require an agreed sitemap saved in Notion. Build content-first
-  wireframes with Flux defaults; get wireframe approval before custom styling.
+- New pages require an agreed sitemap in `docs/ux/_structure.md`, approved by
+  the owner. Build content-first wireframes with Flux defaults; get wireframe
+  approval before custom styling.
   The migrated Astro one-pager preserves its existing structure and design.
 - Use Alpine for local UI state and Livewire for server data and actions.
   Do not duplicate state or install Alpine separately.

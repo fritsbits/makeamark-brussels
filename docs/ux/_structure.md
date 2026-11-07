@@ -11,14 +11,40 @@ sources:
   - "../raw/2026-10-18-scope-feedback.md"
   - "../raw/2026-10-18-structure-feedback.md"
   - "../raw/2026-10-18-messaging-selection.md"
+  - "../raw/2026-11-07-volunteer-sitemap-approval.md"
 phase: Strategy
-updated: 2026-10-18
-status: owner direction recorded; sitemap implemented in Build
+updated: 2026-11-07
+status: agreed sitemap; volunteers approved 2026-11-07, not built
 ---
 
 # Structure
 
-## Proposed site map
+## Site map
+
+This is the agreed public sitemap.
+New pages are added here and approved by the owner before they are built, as `AGENTS.md` requires.
+The owner moved the sitemap's home from Notion to this file on 7 November 2026.
+[Approval](../raw/2026-11-07-volunteer-sitemap-approval.md)
+
+```text
+Make a Mark Brussels
+├── Home (/)
+│   ├── Take part: Makers panel, organisations panel
+│   │   └── volunteers line under the pair (approved, not built)
+│   └── About (/#about)
+├── For Makers (/makers) + embedded form
+├── For organisations (/organisations) + embedded form
+├── For volunteers (/volunteers) + embedded form (approved, not built)
+└── Privacy (/privacy)
+```
+
+Header and footer: For Makers, For organisations, For volunteers (approved, not built), About.
+The footer adds the global site, Instagram, Privacy and email.
+`/{audience}/apply` redirects to the form on each audience page.
+Local tools under `/tools` and the Filament admin are outside the public sitemap.
+The volunteer change and its reasons are in [volunteer page sitemap](../wiki/build/53-volunteer-sitemap.md).
+
+## Proposed site map (Strategy, 18 October)
 
 The owner selected one stable phase-aware edition page, separate maker and
 organisation information pages with dedicated forms, and a current-edition-only

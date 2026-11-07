@@ -19,6 +19,8 @@ playbook](https://app.notion.com/p/334d3ecc475c81719bdcc15d82bd5b23).
 It calls for a clean install without a starter kit, Tailwind, Livewire,
 Flux Pro, and Alpine bundled through Livewire. It requires an approved sitemap
 in Notion before product pages and approved wireframes before custom styling.
+On 7 November 2026 the owner moved the sitemap's home for this project to
+`docs/ux/_structure.md` ([approval](../../raw/2026-11-07-volunteer-sitemap-approval.md)).
 
 The owner then identified the existing Astro one-pager in `/site`. It lives
 in the main checkout's separate repository and was absent from this worktree.
