@@ -1,0 +1,13 @@
+{
+  "source": "Final feedback from Lavish session dcbc21e943d7ffdc",
+  "sessionEnded": true,
+  "endedBy": "user",
+  "prompt": "Solumob review: P01 — Approve the case-study wireframe and proposed sitemap; L01 — Homepage featured case after the day photos; L02 — Contextual case link before the organisation application; L03 — Contextual case link before the maker application\nAccount for every submitted ID. Keep publication gated on Solumob factual review and media permissions.",
+  "items": [
+    {"id": "P01", "disposition": "approve-wireframe-and-sitemap"},
+    {"id": "L01", "disposition": "implement-after-page-approval"},
+    {"id": "L02", "disposition": "implement-after-page-approval"},
+    {"id": "L03", "disposition": "implement-after-page-approval"}
+  ],
+  "notes": ""
+}

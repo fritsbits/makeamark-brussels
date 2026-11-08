@@ -12,9 +12,11 @@ sources:
   - "../raw/2026-10-18-structure-feedback.md"
   - "../raw/2026-10-18-messaging-selection.md"
   - "../raw/2026-11-07-volunteer-sitemap-approval.md"
+  - "../raw/2026-11-08-solumob-link-approval.md"
+  - "../raw/2026-10-19-solumob-build-approval.md"
 phase: Strategy
 updated: 2026-11-07
-status: agreed sitemap; volunteers added 2026-11-07
+status: agreed sitemap; volunteers added 2026-11-07; Solumob case study added 2026-11-08
 ---
 
 # Structure
@@ -35,6 +37,8 @@ Make a Mark Brussels
 ├── For Makers (/makers) + embedded form
 ├── For organisations (/organisations) + embedded form
 ├── For volunteers (/volunteers) + embedded form
+├── Case study: Solumob (/case-studies/solumob)
+│   └── linked from Home (feature block), /makers and /organisations
 └── Privacy (/privacy)
 ```
 
@@ -43,6 +47,8 @@ The footer adds the global site, Instagram, Privacy and email.
 `/{audience}/apply` redirects to the form on each audience page.
 Local tools under `/tools` and the Filament admin are outside the public sitemap.
 The volunteer change and its reasons are in [volunteer page sitemap](../wiki/build/53-volunteer-sitemap.md).
+The Solumob case page was approved on 19 October 2026 (P01, L01 to L03) and is recorded in [the case-study page](../wiki/build/47-solumob-case-study.md).
+`/volunteers` has no invitation to it.
 
 ## Proposed site map (Strategy, 18 October)
 

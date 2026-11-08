@@ -1,0 +1,31 @@
+{
+  "checked": "2026-10-19T19:23:21.816Z",
+  "base": "http://127.0.0.1:8127",
+  "results": [
+    {
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 10
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 10
+    },
+    {
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 10
+    }
+  ],
+  "video": "keyboard click creates the expected privacy-enhanced player; third-party playback not tested",
+  "links": "homepage, makers and organisations lead to the shared case; audience links precede forms",
+  "noJavaScript": "video and participation links available",
+  "reducedMotion": "static layout and links usable"
+}

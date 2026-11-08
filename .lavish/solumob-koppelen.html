@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solumob koppelen · implementatie</title>
+<style>
+@font-face{font-family:"Big Shoulders Display";src:url('solumob-link-assets/a3481c02dc63831a.woff2')}
+@font-face{font-family:"Plus Jakarta Sans";src:url('solumob-link-assets/23310fc1bc6aca45.woff2');font-weight:400}
+@font-face{font-family:"Plus Jakarta Sans";src:url('solumob-link-assets/plus-jakarta-sans-light-300.woff2');font-weight:300}
+:root{--cream:#f5e2ca;--paper:#fff6ea;--red:#c33f40;--red2:#d14b4c;--ink:#29231d;--brown:#6b5645;--rule:#dfc3a3;--ok:#3f7a4a;--display:"Big Shoulders Display",Impact,sans-serif;--body:"Plus Jakarta Sans",system-ui,sans-serif}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--cream);color:var(--ink);font:300 16px/1.6 var(--body)}
+h1,h2,h3,p,figure,ul{margin:0}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;line-height:1;color:var(--red);font-weight:600}
+a{color:inherit}
+strong{font-weight:600}
+code{font:500 .86em ui-monospace,Menlo,monospace;background:var(--paper);padding:1px 5px;border-radius:4px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+header.top{padding:56px 0 28px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);margin-bottom:14px}
+h1{font-size:clamp(48px,8vw,96px)}
+.lead{font-size:19px;max-width:62ch;margin-top:18px}
+.finding{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:34px 0 10px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brown)}
+section{padding:46px 0 10px;border-top:1px solid var(--rule);margin-top:30px}
+section>h2{font-size:clamp(34px,5vw,54px);margin-bottom:12px}
+section>p.sub{max-width:68ch;margin-bottom:22px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;border:1px solid currentColor}
+.tag.ok{color:var(--ok)}.tag.warn{color:var(--red)}.tag.n{color:var(--brown)}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:var(--body);fill:var(--ink)}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px;align-items:start}
+.shot{background:var(--paper);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-size:13px;padding:10px 14px;border-top:1px solid var(--rule);color:var(--brown)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.scroll{max-height:560px;overflow:auto;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+.scroll img{width:100%;display:block}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--rule);border-radius:10px;overflow:hidden;font-size:14.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brown);font-weight:600;background:#f9ead6}
+tr:last-child td{border-bottom:0}
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:14px 18px}
+.steps li::before{content:counter(s);font:600 34px/1 var(--display);color:var(--red)}
+.steps b{font-weight:600}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.opt.rec{border:2px solid var(--red)}
+.q{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+footer{padding:40px 0 60px;font-size:13px;color:var(--brown)}
+@media(max-width:820px){.finding,.opts,.pair{grid-template-columns:minmax(0,1fr)}.shots{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Make a Mark Brussels · Solumob case study · 8 november 2026</div>
+  <h1>De case study staat klaar.<br>Hij is nooit gemerged.</h1>
+  <p class="lead">De Solumob-pagina is gebouwd, getest en gepubliceerd op de oude werkbranch. Daarna is <code>main</code> zonder die commit verder gegaan. Hieronder: wat er ligt en hoe het terugkomt op de site.</p>
+
+  <div class="finding">
+    <div class="card"><div class="k">Waar staat hij</div><h3>Commit 6d53641</h3><p>Op <code>setup-cascade-digital-product</code>, 19 oktober. Niet in <code>main</code>, niet in deze branch.</p></div>
+    <div class="card"><div class="k">Wat zit erin</div><h3>Pagina + 3 links</h3><p>Pagina <code>/case-studies/solumob</code>, uitgelicht blok op de homepage, uitnodiging op /makers en /organisations.</p></div>
+    <div class="card"><div class="k">Wat ontbreekt</div><h3>Alleen invoegen</h3><p>Code past op 2 plekken niet meer: <code>routes/web.php</code> en <code>audience.blade.php</code>. De rest past schoon.</p></div>
+  </div>
+</header>
+
+<section id="map">
+  <h2>Waar komt hij in de site?</h2>
+  <p class="sub">Eén pagina, drie ingangen. Nieuw is rood. De hoofdnavigatie blijft ongewijzigd, zoals in het goedgekeurde voorstel (P01, L01 tot L03).</p>
+  <svg viewBox="0 0 1000 400" role="img" aria-label="Sitemap met de nieuwe Solumob-pagina">
+    <title>Sitemap met de nieuwe Solumob-pagina</title>
+    <g id="n-home"><rect x="400" y="14" width="200" height="54" rx="10" fill="#fff6ea" stroke="#dfc3a3" stroke-width="2"/><text x="500" y="38" text-anchor="middle" font-weight="600" font-size="17">Home /</text><text x="500" y="57" text-anchor="middle" font-size="12">na "A feel for the day"</text></g>
+    <g id="n-makers"><rect x="60" y="170" width="220" height="54" rx="10" fill="#fff6ea" stroke="#dfc3a3" stroke-width="2"/><text x="170" y="194" text-anchor="middle" font-weight="600" font-size="17">/makers</text><text x="170" y="213" text-anchor="middle" font-size="12">tussen commitment en formulier</text></g>
+    <g id="n-orgs"><rect x="390" y="170" width="220" height="54" rx="10" fill="#fff6ea" stroke="#dfc3a3" stroke-width="2"/><text x="500" y="194" text-anchor="middle" font-weight="600" font-size="17">/organisations</text><text x="500" y="213" text-anchor="middle" font-size="12">tussen commitment en formulier</text></g>
+    <g id="n-vols"><rect x="720" y="170" width="220" height="54" rx="10" fill="#fff6ea" stroke="#dfc3a3" stroke-width="2" stroke-dasharray="6 5"/><text x="830" y="194" text-anchor="middle" font-weight="600" font-size="17">/volunteers</text><text x="830" y="213" text-anchor="middle" font-size="12">nieuw sinds de case: geen link (vraag 1)</text></g>
+    <g id="n-case"><rect x="360" y="318" width="280" height="64" rx="10" fill="#c33f40"/><text x="500" y="346" text-anchor="middle" font-weight="600" font-size="18" style="fill:#fff6ea">/case-studies/solumob</text><text x="500" y="368" text-anchor="middle" font-size="12" style="fill:#fff6ea">pagina + media + sitemap-0.xml</text></g>
+    <g fill="none" stroke="#c33f40" stroke-width="3"><path id="e-home" d="M470 68 C 400 200 440 260 470 318"/><path id="e-makers" d="M170 224 C 170 280 360 330 360 345"/><path id="e-orgs" d="M500 224 L500 318"/></g>
+    <g fill="#c33f40"><polygon points="470,318 462,304 480,306"/><polygon points="360,345 345,336 345,354"/><polygon points="500,318 492,304 508,304"/></g>
+    <text x="310" y="150" font-size="12" font-weight="600" style="fill:#c33f40">L01 uitgelicht blok</text>
+    <text x="140" y="300" font-size="12" font-weight="600" style="fill:#c33f40">L03 uitnodiging</text>
+    <text x="510" y="275" font-size="12" font-weight="600" style="fill:#c33f40">L02 uitnodiging</text>
+    <path d="M530 318 C 640 300 780 300 830 224" fill="none" stroke="#6b5645" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="640" y="290" font-size="12" style="fill:#6b5645">terugwijzen naar /makers en /organisations (bestaat al)</text>
+  </svg>
+  <p style="font-size:13px;color:var(--brown);margin-top:6px">Bron: <code>docs/wiki/build/47-solumob-case-study.md</code> in commit 6d53641 (te herstellen) en <code>docs/ux/_structure.md</code> (sitemap staat daar nog zonder deze pagina).</p>
+</section>
+
+<section id="screens">
+  <h2>Hoe het eruit komt te zien</h2>
+  <p class="sub">Schermafbeeldingen uit de oude verificatie (1440 en 390 px). Pixel-check op de huidige branch volgt na het invoegen.</p>
+  <div class="shots">
+    <figure class="shot"><img src="solumob-link-assets/homepage-feature-1440.png" width="1360" height="568" alt="Homepage-blok: One day. Work out in the world."><figcaption><strong>L01 homepage.</strong> Na het fotobewijs, vóór het organisatie-rooster. Knop: "See what we made for Solumob".</figcaption></figure>
+    <figure class="shot"><img src="solumob-link-assets/homepage-feature-390.png" width="390" height="634" alt="Hetzelfde blok op 390 px"><figcaption>Op 390 px.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure class="shot"><img src="solumob-link-assets/organisations-invitation.png" width="1360" height="194" alt="Uitnodiging op /organisations"><figcaption><strong>L02 /organisations.</strong> "What can a day make?"</figcaption></figure>
+    <figure class="shot"><img src="solumob-link-assets/makers-invitation.png" width="1360" height="194" alt="Uitnodiging op /makers"><figcaption><strong>L03 /makers.</strong> "Get a feel for the creative sprint."</figcaption></figure>
+  </div>
+  <h3 style="margin:30px 0 12px;font-size:28px">De case-pagina zelf (scrollbaar)</h3>
+  <div class="scroll"><img src="solumob-link-assets/built-1440.jpg" width="900" height="4975" alt="Volledige Solumob-pagina op 1440 px" loading="lazy"></div>
+</section>
+
+<section id="how">
+  <h2>Hoe we het invoegen</h2>
+  <p class="sub">Cherry-pick van 6d53641 op de huidige branch, daarna conflicten oplossen. Dit is de volgorde.</p>
+  <ol class="steps">
+    <li><div><b>Cherry-pick 6d53641.</b> Binaire media (7 jpg's, PDF), <code>SolumobCaseStudy</code>, <code>CaseStudyPreviewController</code>, <code>config/case-studies.php</code>, view, component, ~93 regels in <code>app.css</code>, test en preview-script komen schoon binnen.</div></li>
+    <li><div><b>Route + sitemap herschrijven.</b> <code>routes/web.php</code> bouwt de sitemap nu uit <code>Audiences::slugs()</code>. De case-URL komt als extra item bij die collectie, niet als hardcoded string zoals in het oude commit.</div></li>
+    <li><div><b>Component beperken tot makers en organisations.</b> De oude <code>case-study-invitation</code> kent alleen die twee. Sinds <code>/volunteers</code> bestaat zou die pagina anders de organisatietekst krijgen. Guard op <code>$audience</code>, of volunteers krijgt een eigen tekst (vraag 1).</div></li>
+    <li><div><b>Invoegen in <code>audience.blade.php</code>.</b> Tussen <code>@include('audiences.'.$audience.'.sections')</code> en <code>#application</code>. Het oude ankerpunt bestaat niet meer.</div></li>
+    <li><div><b>Sitemap goedkeuren.</b> <code>AGENTS.md</code> eist een goedgekeurde sitemap in <code>docs/ux/_structure.md</code>. De oude goedkeuring zit in Notion en <code>docs/raw/2026-10-19-solumob-build-approval.md</code>. Regel toevoegen en jij bevestigt.</div></li>
+    <li><div><b>Docs bijwerken.</b> Wiki-pagina 47, index, log, build-plan en concerns B-036 en B-037 handmatig samenvoegen, want die bestanden zijn sindsdien veranderd.</div></li>
+    <li><div><b>Verifiëren in het draaiende product.</b> Volledige testsuite, build, browsercheck op 1440, 1024, 390 en 320 px, vier-links-header, gesloten-staat. Pas dan "klaar".</div></li>
+  </ol>
+</section>
+
+<section id="files">
+  <h2>Wat past, wat niet</h2>
+  <table>
+    <thead><tr><th>Onderdeel</th><th>Status</th><th>Opmerking</th></tr></thead>
+    <tbody>
+      <tr><td><code>app/Content/SolumobCaseStudy.php</code>, controller, config</td><td><span class="tag ok">schoon</span></td><td>Nieuwe bestanden, geen overlap.</td></tr>
+      <tr><td>view, component, <code>app.css</code>, layout (canonical, og:type)</td><td><span class="tag ok">schoon</span></td><td>Layout-diff past nog (Fathom zat er al in).</td></tr>
+      <tr><td>7 afbeeldingen, PDF, <code>.lavish</code>-bestanden</td><td><span class="tag ok">schoon</span></td><td>Raw-docs van de video-analyse staan al in <code>main</code>.</td></tr>
+      <tr><td><code>home.blade.php</code></td><td><span class="tag ok">schoon</span></td><td>Eén regel na de evidence-sectie.</td></tr>
+      <tr><td><code>routes/web.php</code></td><td><span class="tag warn">conflict</span></td><td>Audience-registry en nieuwe sitemap-generator.</td></tr>
+      <tr><td><code>audience.blade.php</code></td><td><span class="tag warn">conflict</span></td><td>Pagina is herbouwd rond includes.</td></tr>
+      <tr><td>index, log, build-plan, concerns</td><td><span class="tag warn">conflict</span></td><td>Handmatig samenvoegen.</td></tr>
+      <tr><td><code>CaseStudyPreviewTest</code></td><td><span class="tag n">aanpassen</span></td><td>Controleert sitemap en volunteers-uitsluiting nog niet.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="decide">
+  <h2>Jouw keuzes</h2>
+  <div class="q"><strong>1. Krijgt /volunteers ook een uitnodiging?</strong> De case gaat over werving van vrijwilligers en toont foto, film en socials. Dat is precies wat de volunteer-pagina zoekt. Niet eerder besloten.
+    <div class="opts" style="margin-top:12px">
+      <div class="card opt rec"><span class="tag ok">aanbevolen</span><h3 style="margin-top:8px">Nu niet</h3><p>Houd L01 tot L03 zoals goedgekeurd. Volunteers apart voorleggen als de rollen vaststaan.</p></div>
+      <div class="card opt"><h3>Wel, met eigen tekst</h3><p>Korte zin over foto, film en social media op de dag. Vraagt een extra goedkeuring van de sitemap.</p></div>
+    </div>
+  </div>
+  <div class="q"><strong>2. Merge-route.</strong> Aanbeveling: cherry-pick op deze branch (<code>solumob-case-study-koppelen</code>), daarna als één curated commit naar <code>main</code>. Alternatief: de hele oude branch mergen is te breed (904 bestanden verschil).</div>
+  <div class="q"><strong>3. Claims en rechten.</strong> Wiki 47 zegt: publicatie is door jou geautoriseerd op 19 oktober. Concern B-036 staat in <code>main</code> nog "Partly" (rechten, originele bestanden, effect onbekend). Ik sluit B-036 niet zonder jouw bevestiging dat dit nog geldt.</div>
+  <div class="q"><strong>4. Gesloten periode.</strong> Aanvragen zijn dicht. De case-pagina verwijst naar /makers en /organisations, die al "Applications open soon" tonen. Geen extra werk nodig.</div>
+</section>
+
+<footer>
+  Ontwerpbron: eigen tokens van het project (crème, rood, Big Shoulders Display, Plus Jakarta Sans), omdat het artefact de site zelf toont. Bewijs: <code>git show 6d53641</code>, <code>git apply --check</code> op de code-diff, <code>routes/web.php</code>, <code>resources/views/audience.blade.php</code>, <code>docs/wiki/build/47-solumob-case-study.md</code>.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "checked": "2026-11-08",
+  "branch": "fritsbits/solumob-case-study-koppelen",
+  "php": "175 tests, 175 passed, 1399 assertions",
+  "build": "npm run build passes",
+  "browser": {
+    "server": "php artisan serve, local environment, case study published by config",
+    "widths": [1440, 1024, 390, 320],
+    "routes": ["/", "/makers", "/organisations", "/volunteers", "/case-studies/solumob"],
+    "results": "no horizontal overflow, no console or page errors, no failed local responses; the homepage feature follows the evidence block and precedes the organisation roster; the invitations on /makers and /organisations precede #application; /volunteers has no invitation; the homepage link opens the case page"
+  },
+  "notStarted": "production deployment"
+}

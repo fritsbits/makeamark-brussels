@@ -1,0 +1,72 @@
+{
+  "source": "/Users/frederikvincx/Downloads/makeamark/solumob.pdf",
+  "preservedSource": "docs/raw/assets/solumob-2019/presentation.pdf",
+  "sourceSha256": "c9441031ab8163390e4036a3c4b9b50146319fde20ac22115025bf1d90f47d2d",
+  "method": "Native JPEG extraction with pdfimages -all; hero rendered from slide 8 using pdftoppm -scale-to 1200 -jpeg. No generated or reconstructed artwork.",
+  "assets": [
+    {
+      "alias": "website-before",
+      "page": 7,
+      "pdfObject": 118,
+      "width": 1247,
+      "height": 2500,
+      "path": "resources/images/case-studies/solumob/website-before.jpg",
+      "sha256": "0cfee1b557ae5660643233051a61be56b75fc086fc32bdbebbf68363b34e1ff4"
+    },
+    {
+      "alias": "website-after",
+      "page": 7,
+      "pdfObject": 116,
+      "width": 658,
+      "height": 2500,
+      "path": "resources/images/case-studies/solumob/website-after.jpg",
+      "sha256": "92518c85f0c5ee789e0290468d7c334443a7d0dbbf8656d568f44920e7e6a53a"
+    },
+    {
+      "alias": "facebook-cover",
+      "page": 3,
+      "pdfObject": 33,
+      "width": 2358,
+      "height": 1530,
+      "path": "resources/images/case-studies/solumob/facebook-cover.jpg",
+      "sha256": "643a337feff2b219a2b201a46b719586e7b06f69904d936053d946b3c826ccb8"
+    },
+    {
+      "alias": "beneficiary-story",
+      "page": 4,
+      "pdfObject": 41,
+      "width": 940,
+      "height": 788,
+      "path": "resources/images/case-studies/solumob/beneficiary-story.jpg",
+      "sha256": "a9f9e85179c87ac5d6b3329c02ab890739fea2f8ba78ba010e79a43d491e4eb4"
+    },
+    {
+      "alias": "volunteer-story",
+      "page": 5,
+      "pdfObject": 54,
+      "width": 940,
+      "height": 788,
+      "path": "resources/images/case-studies/solumob/volunteer-story.jpg",
+      "sha256": "b6b204f999774ee940c94224e5f5553a434c8b70484b2877453cd1dc5d23fddb"
+    },
+    {
+      "alias": "recruitment-post",
+      "page": 6,
+      "pdfObject": 66,
+      "width": 940,
+      "height": 788,
+      "path": "resources/images/case-studies/solumob/recruitment-post.jpg",
+      "sha256": "397f5e1ae2d0060da7330ff47cd4adc8357f2e240fc6fa326040d9496a6a315f"
+    },
+    {
+      "alias": "hero",
+      "page": 8,
+      "pdfObject": null,
+      "width": 1200,
+      "height": 675,
+      "path": "resources/images/case-studies/solumob/hero.jpg",
+      "sha256": "5b8b48c0704a48157d793b65f163f55a5975f3523cfe2dc15983f0dd00bf8eda"
+    }
+  ],
+  "publication": "pending organisation factual/media review"
+}

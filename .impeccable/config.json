@@ -458,6 +458,15 @@
         ],
         "createdAt": "2026-10-19T10:41:41.781Z",
         "reason": "Agent review: source declares Plus Jakarta Sans exactly as DESIGN.md typography specifies; detector truncates the leading Plus in font shorthand. Scoped to the sharing-image source."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".lavish/solumob-case-study.html"
+        ],
+        "createdAt": "2026-10-19T16:32:06.014Z",
+        "reason": "Agent verified: full-width approval section contains .wrap with 32px side margins, 18px on mobile; detector mistakes the section background for its inner text boundary. Existing screenshots and 390px overflow check confirm inset text."
       }
     ]
   }

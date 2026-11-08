@@ -1,5 +1,12 @@
 # Cascade change log
 
+- 2026-11-08: Linked the Solumob case study on the site.
+  Cherry-picked `6d53641` from the old worktree branch, where it had never been merged.
+  The sitemap generator, the audience view and the volunteer page needed adaptation; `/volunteers` carries no invitation by the owner's choice.
+  Added the case page to `docs/ux/_structure.md`. B-037 closed; B-036 stays partly open, which corrects the 19 October entry below.
+  [Go-ahead](../raw/2026-11-08-solumob-link-approval.md);
+  [record](build/47-solumob-case-study.md#merge-into-the-current-branch-8-november-2026).
+
 - 2026-11-07: Built the volunteer application form (G-10, B-047) after the owner approved the wireframe.
   Volunteer applications are open now and close after the event day; the copy leads with what volunteers get back; the credit field is dropped.
   An audience registry (`App\Support\Audiences`) replaces the hard-coded Maker and organisation branches; Maker tokens stay valid.
@@ -147,6 +154,39 @@
   (887 assertions), and running-page checks at desktop and phone widths pass.
   B-038 is closed. [Request](../raw/2026-10-20-homepage-wordmark-jump-request.md);
   [implementation and verification](build/48-homepage-wordmark-scroll-stability.md).
+
+- 2026-10-19: Published the Solumob case study on the owner's instruction.
+  Removed the local-preview banner, the note distinguishing the vlog from the
+  service film, and the recollection review note. Publication is enabled for
+  the page, selected media, inbound links and sitemap; internal evidence notes
+  preserve chronology and impact limits. B-036 closed. No external deployment.
+  [Instruction](../raw/2026-10-19-solumob-publication-instruction.md);
+  [implementation](build/47-solumob-case-study.md).
+
+- 2026-10-19: Applied owner approval of P01/L01–L03. Styled the Solumob case
+  at its canonical path and added the homepage feature plus both contextual
+  audience links. Recovered the original presentation and native output images,
+  with provenance; retained documentary stills and click-to-load making-of.
+  Publication defaults off and gates production page/media/links/sitemap
+  consistently. All 121 PHP tests / 970 assertions, build and three-width
+  browser checks pass. Fixed the independent review's draft-media cache-header
+  finding. B-037 closed; B-036 retains factual/media validation. No deployment.
+  [Implementation](build/47-solumob-case-study.md);
+  [approval](../raw/2026-10-19-solumob-build-approval.md) and
+  [final Lavish selection](../raw/2026-10-19-solumob-lavish-selection.json);
+  [original assets](../raw/2026-10-19-solumob-presentation-assets.json);
+  [browser verification](../raw/2026-10-19-solumob-build-verification.json).
+
+- 2026-10-19: Built the requested Solumob content wireframe at the local-only
+  `/tools/case-studies/solumob` route, retaining draft copy, marked documentary
+  stills, original-asset slots and both participation links. Saved a private
+  Notion sitemap proposal and opened Lavish review for P01 and L01–L04.
+  All 118 tests / 909 assertions and build pass; running checks pass at 1440,
+  390 and 320px, plus no-JavaScript links. B-036 retains source/rights validation;
+  B-037 records pending wireframe and link choices. No public changes deployed.
+  [Record](build/47-solumob-case-study.md);
+  [source capture](../raw/2026-10-19-solumob-page-request.md);
+  [browser evidence](../raw/2026-10-19-solumob-preview-verification.json).
 
 - 2026-10-19: Applied the owner's final Lavish selection, superseding the earlier
   six-item selection: L-02 through L-06 remain implemented; L-01's original

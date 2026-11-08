@@ -91,6 +91,8 @@
             </div>
         </section>
 
+        <x-case-study-invitation />
+
         @include('sections.organisations')
 
         <section id="about" class="about container">

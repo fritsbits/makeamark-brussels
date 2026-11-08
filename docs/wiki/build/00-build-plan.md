@@ -6,6 +6,12 @@ sources:
   - "../../raw/2026-10-21-applications-closed-decision.md"
   - "../../raw/2026-10-20-fathom-analytics-request.md"
   - "../../raw/2026-10-20-fathom-production-deployment.md"
+  - "../../raw/2026-10-19-solumob-publication-instruction.md"
+  - "../../raw/2026-10-19-solumob-build-approval.md"
+  - "../../raw/2026-10-19-solumob-build-verification.json"
+  - "../../raw/2026-10-19-solumob-presentation-assets.json"
+  - "../../raw/2026-10-19-solumob-page-request.md"
+  - "../../raw/2026-10-19-solumob-preview-verification.json"
   - "../../raw/2026-10-19-worktree-merge-tests.json"
   - "../../raw/2026-10-19-launch-review-final-feedback.json"
   - "../../raw/2026-10-19-launch-final-fixes-verification.json"
@@ -90,8 +96,13 @@ The owner requested detailed research from the historical Solumob vlog,
 supplied transcript and application. The [evidence dossier](44-solumob-video-analysis.md)
 records visible work, presented results, elapsed timecodes and preserved
 stills. It separates the filmed 16 March 2019 edition from the repeat
-application for 2020. This is content research; no case-study route is built.
-B-036 carries the remaining final-asset, credits, usage and outcome questions.
+application for 2020. The subsequent [page request and wireframe](47-solumob-case-study.md)
+first added a wireframe. The owner subsequently approved P01 and L01–L03;
+the styled `/case-studies/solumob` page and homepage/audience invitations are
+implemented and verified using recovered native presentation images. The
+owner then directed publication and removal of temporary review notes. The
+page, media, links and sitemap are enabled; B-037 is closed and B-036 stays partly open for rights and outcome evidence. Known
+chronology and recruitment-impact limits remain documented internally.
 
 ## Analytics
 

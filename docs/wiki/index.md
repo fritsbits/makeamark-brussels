@@ -18,6 +18,13 @@ Applications: [closed until opening](build/50-applications-closed.md). Status
 page includes the opening-day checklist (B-040). Deployed by a manual release;
 Forge push to deploy created no release and needs checking.
 
+Solumob case-study page: [styled page and selected discovery links](build/47-solumob-case-study.md)
+records approved P01/L01–L03, the recovered native presentation images and
+the owner's publication instruction. Temporary review notes were removed and
+publication is enabled across the page, selected media, inbound links and
+sitemap. B-037 is closed; B-036 stays partly open for rights and outcome evidence.
+Brought into the current branch on 8 November: `/volunteers` carries no invitation by the owner's choice.
+
 Worktree integration: [merge record](build/45-worktree-integration.md) records
 the all-work transfer to local `main`, preservation of local files and the
 stale test corrections. All 115 PHP tests, five JavaScript tests and the
@@ -38,8 +45,8 @@ unknown, and the shared server has 96% disk use.
 Case-study research: [Solumob video evidence](build/44-solumob-video-analysis.md)
 records the 16 March 2019 make-a-thon, visible communication work, the
 presented short film and baseline, timecodes and preserved stills. The
-2020 repeat application is separate context. Final assets, usage and impact
-remain open under B-036.
+2020 repeat application is separate context. B-036 is closed by the owner's
+publication instruction; chronology and recruitment impact remain unknown.
 
 Livegang-audit: [five finally selected fixes](build/43-launch-audit.md#goedgekeurde-wijzigingen)
 are implemented and verified after visual review. The owner selected clearer
@@ -163,6 +170,7 @@ Visual refinement: [Global Make a Mark design review](build/12-global-design-rev
 | [Original public-site capture](../raw/2026-10-18-letsmakeamark-brussels.md) | Immutable source capture preserved from the original main-branch scaffold. | Source capture | Discovery |
 | [Worktree integration into main](build/45-worktree-integration.md) | All-work integration scope, preserved local files, corrected stale assertions and passing test evidence. | Integration and verification | Build |
 | [Solumob video evidence for the case study](build/44-solumob-video-analysis.md) | Detailed visual inventory, timeline, presented results, source differences, selected stills and follow-up questions; distinguishes 2019 video from 2020 repeat application. | Evidence analysis | Build |
+| [Solumob case-study page and links](build/47-solumob-case-study.md) | Styled `/case-studies/solumob` page, homepage and audience invitations, publication decision, claim matrix and the 8 November merge into the current branch. | Build record | Build |
 | [Solumob supplied sources](../raw/2026-10-19-solumob-video-sources.md) | Owner request, original attachment paths and hashes, exact selected application fields, original transcript and 23 preserved video frames. | Source capture | Build |
 | [Homepage audience arrangement](build/18-audience-arrangement.md) | Owner-selected A, direct audience sentence openings, 8px heading-to-copy gap and 34ch descriptions; verified at six widths. | Design review and implementation | Build |
 | [Homepage lead treatment](build/37-homepage-lead-treatment.md) | Removes the hero date and applies the Makers lead style to the hero and edition copy. | Implementation | Build |

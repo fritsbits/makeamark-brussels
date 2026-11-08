@@ -28,6 +28,8 @@
 
         @include('audiences.'.$audience.'.sections')
 
+        <x-case-study-invitation :audience="$audience" />
+
         <section id="application" class="application application--inline {{ $submitted ? 'application--submitted' : '' }} container" aria-labelledby="application-heading" tabindex="-1">
             @unless ($submitted)
             <div class="application__intro">

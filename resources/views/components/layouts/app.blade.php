@@ -1,8 +1,8 @@
-@props(['site', 'pageTitle' => null, 'pageDescription' => null, 'publicTypography' => false])
+@props(['site', 'pageTitle' => null, 'pageDescription' => null, 'publicTypography' => false, 'canonicalPath' => null, 'ogType' => 'website', 'socialImage' => '/og-2027.png', 'socialImageAlt' => 'Make a Mark for Brussels youth. Saturday 27 March 2027. The ninth edition.', 'socialImageWidth' => 1200, 'socialImageHeight' => 630, 'robots' => null])
 @php
     $pageTitle = $pageTitle ?? $site['meta']['title'];
     $pageDescription = $pageDescription ?? $site['meta']['description'];
-    $canonical = rtrim($site['domain'], '/').request()->getPathInfo();
+    $canonical = rtrim($site['domain'], '/').($canonicalPath ?? request()->getPathInfo());
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -14,14 +14,15 @@
     <link rel="canonical" href="{{ $canonical }}">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="sitemap" href="/sitemap-index.xml">
-    <meta property="og:type" content="website">
+    @if ($robots)<meta name="robots" content="{{ $robots }}">@endif
+    <meta property="og:type" content="{{ $ogType }}">
     <meta property="og:title" content="{{ $pageTitle }}">
     <meta property="og:description" content="{{ $pageDescription }}">
     <meta property="og:url" content="{{ $canonical }}">
-    <meta property="og:image" content="{{ rtrim($site['domain'], '/') }}/og-2027.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Make a Mark for Brussels youth. Saturday 27 March 2027. The ninth edition.">
+    <meta property="og:image" content="{{ rtrim($site['domain'], '/').$socialImage }}">
+    <meta property="og:image:width" content="{{ $socialImageWidth }}">
+    <meta property="og:image:height" content="{{ $socialImageHeight }}">
+    <meta property="og:image:alt" content="{{ $socialImageAlt }}">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preload" href="/fonts/a3481c02dc63831a.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/23310fc1bc6aca45.woff2" as="font" type="font/woff2" crossorigin>

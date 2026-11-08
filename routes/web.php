@@ -1,9 +1,11 @@
 <?php
 
 use App\Content\Homepage;
+use App\Content\SolumobCaseStudy;
 use App\Http\Controllers\ApplicationPageController;
 use App\Http\Controllers\ApplicationSubmissionController;
 use App\Http\Controllers\AudiencePageController;
+use App\Http\Controllers\CaseStudyPreviewController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\MessagingPreviewController;
 use App\Http\Controllers\PrivacyNoticeController;
@@ -12,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 
 // Local creative tooling, outside the public website and sitemap.
 if (app()->environment('local', 'testing')) {
+    Route::get('/tools/case-studies/solumob', [CaseStudyPreviewController::class, 'preview'])->name('tools.case-studies.solumob');
+    Route::get('/tools/case-studies/solumob/media/{image}', [CaseStudyPreviewController::class, 'media'])->name('tools.case-studies.solumob.media');
     Route::get('/tools/messaging/compare', [MessagingPreviewController::class, 'compare'])->name('tools.messaging.compare');
     Route::get('/tools/messaging/original', [MessagingPreviewController::class, 'original'])->name('tools.messaging.original');
     Route::get('/tools/messaging', [MessagingPreviewController::class, 'home'])->name('tools.messaging.home');
@@ -32,6 +36,8 @@ if (app()->environment('local', 'testing')) {
 
 Route::get('/', HomepageController::class)->name('home');
 Route::get('/privacy', PrivacyNoticeController::class)->name('privacy');
+Route::get('/case-studies/solumob', CaseStudyPreviewController::class)->name('case-studies.solumob');
+Route::get('/case-studies/solumob/media/{image}', [CaseStudyPreviewController::class, 'media'])->name('case-studies.solumob.media');
 Route::get('/{audience}/apply', ApplicationPageController::class)->whereIn('audience', Audiences::slugs())->name('audience.apply');
 Route::post('/{audience}/apply', ApplicationSubmissionController::class)->whereIn('audience', Audiences::slugs())->middleware('throttle:5,1')->name('audience.apply.submit');
 Route::get('/{audience}', AudiencePageController::class)->whereIn('audience', Audiences::slugs())->name('audience.show');
@@ -43,10 +49,14 @@ Route::get('/sitemap-index.xml', function (Homepage $homepage) {
         ->header('Content-Type', 'application/xml');
 });
 
-Route::get('/sitemap-0.xml', function (Homepage $homepage) {
+Route::get('/sitemap-0.xml', function (Homepage $homepage, SolumobCaseStudy $caseStudy) {
     $domain = rtrim($homepage->site()['domain'], '/');
 
-    $urls = collect(['', ...Audiences::slugs(), 'privacy'])->map(fn (string $path): string => '<url><loc>'.$domain.'/'.$path.'</loc></url>')->implode('');
+    $paths = collect(['', ...Audiences::slugs(), 'privacy']);
+    if ($caseStudy->isPublished()) {
+        $paths->push('case-studies/solumob');
+    }
+    $urls = $paths->map(fn (string $path): string => '<url><loc>'.$domain.'/'.$path.'</loc></url>')->implode('');
 
     return response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'.$urls.'</urlset>')
         ->header('Content-Type', 'application/xml');

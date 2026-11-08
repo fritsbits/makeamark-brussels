@@ -1,0 +1,28 @@
+{
+  "checked": "2026-10-19T16:22:46.366Z",
+  "base": "http://127.0.0.1:8127",
+  "results": [
+    {
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 3
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 3
+    },
+    {
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "pageErrors": [],
+      "imagesDecoded": 3
+    }
+  ],
+  "noJavaScript": "video and participation links available"
+}
