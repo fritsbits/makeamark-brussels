@@ -1,7 +1,7 @@
 <form class="application-form" method="POST" action="{{ route('audience.apply.submit', 'makers') }}"
     x-data="{
         submitting: false, missing: [],
-        submit(event) {
+        async submit(event) {
             if (this.submitting) { event.preventDefault(); return; }
             const required = [...this.$el.querySelectorAll('ui-checkbox[required]')];
             this.missing = required.filter(control => !control.checked).map(control => control.dataset.validationName);
@@ -11,12 +11,16 @@
                 required.find(control => !control.checked).focus();
                 return;
             }
+            event.preventDefault();
             this.submitting = true;
+            try { await window.submitVerifiedApplication(this.$el, event.submitter); }
+            catch { this.submitting = false; }
         }
     }"
-    @submit="submit($event)" @pageshow.window="submitting = false"
+    @submit="submit($event)" @pageshow.window="submitting = false; window.resetApplicationVerification($el)"
     @change="if ($event.target.matches('ui-checkbox') && $event.target.checked) { missing = missing.filter(name => name !== $event.target.dataset.validationName); $event.target.setAttribute('aria-invalid', 'false'); }">
     @csrf
+    <x-application.spam-protection :started="$spamStartedToken" :audience="$audience" />
     <input type="hidden" name="_submission_token" value="{{ $submissionToken ?? '' }}">
     <noscript><style>.application-form__enhanced { display: none !important; }</style></noscript>
     @if ($errors->any())

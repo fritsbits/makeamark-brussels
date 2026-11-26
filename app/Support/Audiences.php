@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use App\Rules\NoLinksInPersonName;
 use Illuminate\Validation\Rule;
 use InvalidArgumentException;
 
@@ -49,7 +50,7 @@ class Audiences
             lists: ['themes' => 10],
             rules: fn (array $input): array => [
                 'email' => ['required', 'email:rfc', 'max:255'],
-                'name' => ['required', 'string', 'max:255'],
+                'name' => ['required', 'string', 'max:255', new NoLinksInPersonName],
                 'phone' => ['required', 'string', 'max:80'],
                 'motivation' => ['required', 'string', 'max:5000'],
                 'referral' => ['nullable', 'string', 'max:1000'],
@@ -100,7 +101,7 @@ class Audiences
                 'social_media' => ['nullable', 'string', 'max:2000'],
                 'website' => ['nullable', 'url', 'max:2000'],
                 'challenge' => ['required', 'string', 'max:5000'],
-                'contact_name' => ['required', 'string', 'max:255'],
+                'contact_name' => ['required', 'string', 'max:255', new NoLinksInPersonName],
                 'phone' => ['required', 'string', 'max:80'],
                 'themes' => ['sometimes', 'array', 'max:10'],
                 'themes.*' => ['string', 'distinct', Rule::in(Themes::all())],
@@ -141,7 +142,7 @@ class Audiences
 
                 return [
                     'email' => ['required', 'email:rfc', 'max:255'],
-                    'name' => ['required', 'string', 'max:255'],
+                    'name' => ['required', 'string', 'max:255', new NoLinksInPersonName],
                     'phone' => ['required', 'string', 'max:80'],
                     'roles' => ['required', 'array', 'min:1', 'max:3'],
                     'roles.*' => ['string', 'distinct', Rule::in(array_keys(VolunteerRoles::options()))],

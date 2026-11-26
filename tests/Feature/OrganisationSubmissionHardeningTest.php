@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class OrganisationSubmissionHardeningTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     public static function malformedAnswers(): array
     {
@@ -188,7 +188,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
         $this->assertDatabaseCount('applications', 0);
         $freshToken = $page->viewData('submissionToken');
         $this->assertNotSame($answers['_submission_token'], $freshToken);
-        $answers['_submission_token'] = $freshToken;
+        $answers = array_replace($answers, $this->formMetadata('organisations', $page));
         $answers['_token'] = csrf_token();
         $answers['organisation_name'] = 'Recovered Organisation';
         $this->post('/organisations/apply', $answers)->assertRedirect('/organisations#application')->assertSessionHasNoErrors();
@@ -216,7 +216,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
     public function test_organisation_preview_issues_a_valid_submission_token(): void
     {
         $answers = $this->answers();
-        $answers['_submission_token'] = $this->get('/tools/messaging/organisations')->assertOk()->viewData('submissionToken');
+        $answers = array_replace($answers, $this->formMetadata('organisations', $this->get('/tools/messaging/organisations')->assertOk()));
         $this->assertNotEmpty($answers['_submission_token']);
         $this->post('/organisations/apply', $answers)->assertRedirect('/organisations#application')->assertSessionHasNoErrors();
         $this->assertDatabaseCount('applications', 1);
@@ -229,7 +229,7 @@ class OrganisationSubmissionHardeningTest extends TestCase
         $this->assertNotEmpty($page->viewData('submissionToken'));
 
         return [
-            '_submission_token' => $page->viewData('submissionToken'),
+            ...$this->formMetadata('organisations', $page),
             'organisation_name' => 'Test Organisation', 'email' => 'organisation@example.com',
             'youth_brussels_eligibility' => '1', 'mission' => 'Support local youth.',
             'challenge' => 'Improve our communication.', 'contact_name' => 'Test Contact',

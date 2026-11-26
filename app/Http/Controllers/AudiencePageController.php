@@ -7,6 +7,7 @@ use App\Models\Application;
 use App\Support\AdminPreview;
 use App\Support\ApplicationForm;
 use App\Support\ApplicationPrint;
+use App\Support\ApplicationSpamProtection;
 use App\Support\Audiences;
 use Illuminate\Http\Response;
 
@@ -39,6 +40,7 @@ class AudiencePageController extends Controller
     {
         $definition = Audiences::find($audience);
         $adminPreview = AdminPreview::active($definition, $data['edition']);
+        $submissionToken = ApplicationForm::token(request(), $audience);
 
         return [
             ...$data,
@@ -50,7 +52,8 @@ class AudiencePageController extends Controller
             'submitted' => false,
             'printableAnswers' => [],
             'emailSent' => false,
-            'submissionToken' => ApplicationForm::token(request(), $audience),
+            'submissionToken' => $submissionToken,
+            'spamStartedToken' => ApplicationSpamProtection::issue(request(), (string) $data['edition']['year'], $audience, $submissionToken),
             'pageTitle' => $definition->pageTitle.' · Make a Mark Brussels',
             'pageDescription' => $definition->pageDescription,
         ];

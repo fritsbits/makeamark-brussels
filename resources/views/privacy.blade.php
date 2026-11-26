@@ -6,7 +6,7 @@
             <p class="kicker">Application information</p>
             <flux:heading level="1" class="h-display privacy__title">Privacy notice</flux:heading>
             <div class="privacy__body">
-                <p class="privacy__updated">Last updated 7 November 2026</p>
+                <p class="privacy__updated">Last updated 26 November 2026</p>
 
                 <section aria-labelledby="privacy-controller">
                     <h2 id="privacy-controller">Who is responsible</h2>
@@ -25,6 +25,12 @@
                     <h2 id="privacy-analytics">Website analytics</h2>
                     <p>We use Fathom Analytics to understand how visitors use the public website and improve it. Fathom does not use tracking cookies or build advertising profiles across websites. To produce site statistics, it briefly processes request information including your IP address and browser user-agent to create a site-specific visitor signature. Fathom says this personal data is processed and anonymised on EU servers before it reaches its US-controlled infrastructure.</p>
                     <p>Our purpose is to understand and improve the public website. You can object to processing based on our legitimate interests by contacting us using the details below. Read more in <a href="https://usefathom.com/docs/start/policy">Fathom's privacy information</a> and its <a href="https://usefathom.com/legal/dpa">data processing agreement</a>.</p>
+                </section>
+
+                <section aria-labelledby="privacy-spam">
+                    <h2 id="privacy-spam">Application spam protection</h2>
+                    <p>We use Cloudflare Turnstile on application forms to prevent automated spam. It processes technical signals such as your IP address, browser information and the site you are visiting. Our server sends Cloudflare the verification token, without your application answers. Cloudflare processes signals on our behalf to protect the site and also uses them as a controller to improve its bot detection. Our basis for protecting these forms is our legitimate interest in keeping applications secure and available.</p>
+                    <p>Read the <a href="https://www.cloudflare.com/turnstile-privacy-policy/">Turnstile Privacy Addendum</a> and <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>. Verification requires JavaScript. If it does not work for you, <a href="mailto:hello@letsmakeamark.brussels">contact us to apply</a>.</p>
                 </section>
 
                 <section aria-labelledby="privacy-data">

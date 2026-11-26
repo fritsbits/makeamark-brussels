@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Content\Homepage;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
+use App\Services\TurnstileVerifier;
 use App\Support\AdminPreview;
 use App\Support\ApplicationForm;
+use App\Support\ApplicationSpamProtection;
 use App\Support\Audiences;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -33,6 +35,20 @@ class ApplicationSubmissionController extends Controller
         }
 
         $applicationUrl = route('audience.show', $audience).'#application';
+        $existing = Application::where('submission_key', $submissionKey)->first();
+        if ($existing) {
+            return $this->confirmation($request, $audience, $existing, $existing->receipt_sent_at !== null);
+        }
+
+        try {
+            ApplicationSpamProtection::validateLocal($request, (string) $edition['year'], $audience, $request->input('_submission_token'));
+        } catch (ValidationException $exception) {
+            if ($request->expectsJson()) {
+                throw $exception;
+            }
+
+            return ApplicationForm::recover($request, $audience, $exception->errors()['submission'][0]);
+        }
         $validator = Validator::make($request->all(), $definition->rules($request->all()), $definition->messages);
 
         if ($validator->fails()) {
@@ -44,6 +60,16 @@ class ApplicationSubmissionController extends Controller
         }
 
         $answers = $validator->validated();
+        try {
+            $token = $request->input('cf-turnstile-response');
+            app(TurnstileVerifier::class)->verify(is_string($token) ? $token : '', $audience);
+        } catch (ValidationException $exception) {
+            if ($request->expectsJson()) {
+                throw $exception;
+            }
+
+            return ApplicationForm::recover($request, $audience, $exception->errors()['submission'][0]);
+        }
         $name = $answers[$definition->nameField];
 
         $attributes = [
@@ -69,6 +95,11 @@ class ApplicationSubmissionController extends Controller
             }
         }
 
+        return $this->confirmation($request, $audience, $application, $receiptSent);
+    }
+
+    private function confirmation(Request $request, string $audience, Application $application, bool $receiptSent): RedirectResponse
+    {
         // Retain each audience's confirmation until its own page consumes it, including other-tab navigation.
         $request->session()->put('application_confirmations.'.$audience, [
             'email_sent' => $receiptSent,
@@ -76,6 +107,6 @@ class ApplicationSubmissionController extends Controller
             'expires_at' => time() + 600,
         ]);
 
-        return redirect($applicationUrl);
+        return redirect(route('audience.show', $audience).'#application');
     }
 }

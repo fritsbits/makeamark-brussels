@@ -1,5 +1,35 @@
 # Cascade change log
 
+- 2026-11-26: Continued application-spam setup in the owner's open Cloudflare
+  session. Created the canonical-host Managed widget with pre-clearance off,
+  checked account billing and saved its credentials in Forge with enforcement
+  disabled. SSH confirmed the stored settings and the unchanged production
+  revision. Cloudflare rejected a deliberately invalid token from the server.
+  Fresh verification passed 295 PHP tests, 11 JavaScript tests and the build.
+  B-049 remains open for release, production verification and observation.
+  [Setup evidence](build/evidence/application-spam-account-setup.md).
+
+- 2026-11-26: Implemented application spam protection across all three audiences:
+  signed fill timing, honeypot, targeted person-name validation and server-verified
+  Turnstile with retryable browser execution. Preserved receipt identity and added
+  volunteer CSRF/throttle recovery. Updated the privacy notice and assessment.
+  Local verification passed: 295 PHP tests, 11 JavaScript tests, build and the
+  desktop/mobile browser checks, including a 301-second form wait. The security
+  review found no material issue.
+  Cloudflare requires sign-in. No production setting or existing application was
+  changed. B-049 remains open for activation and observation.
+  [Delivery record](build/54-application-spam-protection.md);
+  [verification](build/evidence/application-spam-verification.md).
+
+- 2026-11-26: Recorded the owner's application-spam report and request to plan
+  a honeypot, Turnstile and targeted field validation. Checked public Turnstile
+  Free-tier documentation and inspected the shared submission flow. Saved a
+  technical design and implementation plan covering all audiences, verification,
+  recovery, privacy and staged activation. B-049 is open; account billing and
+  production keys remain unverified. No product code, account settings or
+  application records changed. [Request](../raw/2026-11-26-application-spam-request.md);
+  [design and plan](build/54-application-spam-protection.md).
+
 - 2026-11-26: Added an admin preview of the closed Maker and organisation forms so Gwen can try the forms and the admin before opening.
   Logged-in admins see the form with an "Admin preview" notice and can send real applications; the public still sees "Applications open soon".
   180 tests pass; verified locally at 1440px and 390px.

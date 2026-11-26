@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class AdminFormPreviewTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     protected function setUp(): void
     {
@@ -82,11 +82,11 @@ class AdminFormPreviewTest extends TestCase
     private function answers(): array
     {
         $this->actingAs(User::factory()->create(['is_admin' => true]));
-        $token = $this->withoutVite()->get('/makers')->viewData('submissionToken');
+        $metadata = $this->formMetadata('makers');
         $this->withCookie(config('session.cookie'), session()->getId());
 
         return [
-            '_submission_token' => $token,
+            ...$metadata,
             'name' => 'Test Maker', 'email' => 'maker@example.com',
             'motivation' => 'Contribute to a local project.', 'portfolio' => 'https://example.com/work',
             'phone' => '0470 12 34 56', 'main_skills' => 'Design', 'date_confirmed' => '1',

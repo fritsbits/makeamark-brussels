@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-26",
+  "environment": "isolated local SQLite, array mail, authenticated previews for closed forms",
+  "provider_boundary": "browser script and Siteverify stubbed; real production Managed challenge remains unverified",
+  "matrix": [
+    {
+      "audience": "makers",
+      "width": 1440,
+      "overflow": 0,
+      "saved_and_opened_in_admin": true
+    },
+    {
+      "audience": "organisations",
+      "width": 1440,
+      "overflow": 0,
+      "saved_and_opened_in_admin": true
+    },
+    {
+      "audience": "volunteers",
+      "width": 1440,
+      "overflow": 0,
+      "saved_and_opened_in_admin": true
+    },
+    {
+      "audience": "makers",
+      "width": 390,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    },
+    {
+      "audience": "organisations",
+      "width": 390,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    },
+    {
+      "audience": "volunteers",
+      "width": 390,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    },
+    {
+      "audience": "makers",
+      "width": 320,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    },
+    {
+      "audience": "organisations",
+      "width": 320,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    },
+    {
+      "audience": "volunteers",
+      "width": 320,
+      "overflow": 0,
+      "saved_and_opened_in_admin": false
+    }
+  ],
+  "no_javascript_notice_and_unverified_rejection": "passed",
+  "long_form": {
+    "longFormWaitSeconds": 301,
+    "saved": true
+  },
+  "screenshots": "/tmp/makeamark-spam-check/"
+}

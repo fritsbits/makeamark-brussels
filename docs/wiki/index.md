@@ -1,5 +1,13 @@
 # Product knowledge index
 
+Application spam: [protection and implementation record](build/54-application-spam-protection.md)
+covers a honeypot, signed minimum fill time, Cloudflare Turnstile and narrow
+name-field checks across all three audiences. The owner requested all three
+measures; implementation is in the isolated workspace. Local verification passed;
+the [production widget and Forge credentials are configured](build/evidence/application-spam-account-setup.md).
+Enforcement is disabled until release. Production verification and observation
+remain open under B-049. Existing-record cleanup remains separate.
+
 Gwen's form requests: [plan for twelve requests](build/51-gwen-form-requests.md)
 from 20 October. Owner decisions: ten to build including a volunteer form,
 logo and keywords skipped; organisations use the Makers' ten themes. Tracked as B-041 to B-048.

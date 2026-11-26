@@ -7,14 +7,14 @@ use Tests\TestCase;
 
 class ApplicationFlowTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     public function test_invalid_applications_return_to_the_inline_form_with_answers_and_errors(): void
     {
         foreach (['makers', 'organisations'] as $audience) {
             $input = ['email' => 'invalid'];
 
-            $input['_submission_token'] = $this->withoutVite()->get('/'.$audience)->viewData('submissionToken');
+            $input = [...$input, ...$this->formMetadata($audience)];
             $this->withCookie(config('session.cookie'), session()->getId());
 
             $this->from('/'.$audience)->post('/'.$audience.'/apply', $input)
@@ -57,7 +57,7 @@ class ApplicationFlowTest extends TestCase
         ];
 
         foreach ($applications as $audience => $answers) {
-            $answers['_submission_token'] = $this->withoutVite()->get('/'.$audience)->viewData('submissionToken');
+            $answers = [...$answers, ...$this->formMetadata($audience)];
             $this->withCookie(config('session.cookie'), session()->getId());
 
             $this->post('/'.$audience.'/apply', $answers)

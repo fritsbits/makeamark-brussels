@@ -19,7 +19,7 @@ use Tests\TestCase;
 
 class SharedThemesTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     public function test_the_catalogue_holds_the_ten_themes_and_keeps_only_known_ones_once(): void
     {
@@ -173,7 +173,7 @@ class SharedThemesTest extends TestCase
         $this->withCookie(config('session.cookie'), session()->getId());
 
         return array_replace([
-            '_submission_token' => $page->viewData('submissionToken'),
+            ...$this->formMetadata('organisations', $page),
             'organisation_name' => 'Test Organisation', 'email' => 'organisation@example.com',
             'youth_brussels_eligibility' => '1', 'mission' => 'Support local youth.',
             'challenge' => 'Improve our communication.', 'contact_name' => 'Test Contact',

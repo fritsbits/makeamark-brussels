@@ -2,6 +2,8 @@
 title: Build concerns
 tags: [concerns, build, website]
 sources:
+  - "54-application-spam-protection.md"
+  - "../../raw/2026-11-26-application-spam-request.md"
   - "../../raw/2026-11-05-gwen-form-requests.md"
   - "../../raw/2026-11-05-production-mail-setup.md"
   - "../../raw/2026-10-20-fathom-analytics-request.md"
@@ -87,7 +89,7 @@ sources:
   - "../image-map.md"
   - "../image-map-new-site.md"
 phase: Build
-updated: 2026-11-05
+updated: 2026-11-26
 ---
 
 # Build concerns
@@ -117,10 +119,11 @@ Local [admin test records](31-admin-workspace.md#local-test-data) are fictional;
 B-004 remains open for the actual Airtable migration. Real account setup in
 B-009 is unchanged.
 
-**Status:** 3 Open · 14 Partly · 33 Closed
+**Status:** 4 Open · 14 Partly · 33 Closed
 
 | ID | Concern | Why it remains open | Next step |
 | --- | --- | --- | --- |
+| B-049 | Partly resolved: how do we stop automated application spam without losing legitimate submissions? | Local checks, Turnstile server/browser verification, volunteer recovery and privacy updates are implemented. Security review found no material issue. Local tests and browser checks passed, including a 301-second form wait, as recorded in [verification](evidence/application-spam-verification.md); [delivery record](54-application-spam-protection.md) explains the design. The Managed widget and Forge credentials are configured; enforcement remains disabled and production still runs the earlier revision. [Account setup evidence](evidence/application-spam-account-setup.md). | Review the release with the owner, deploy and activate verification, verify production acceptance/rejection/retry and observe new submissions for 48 hours. |
 | B-048 | Closed: should organisations upload a logo (G-04) or add keywords (G-07)? | Resolution: the owner skipped both on 2026-11-05. Shared themes under B-044 cover part of the keywords need. [Plan](51-gwen-form-requests.md). | None. |
 | B-047 | Partly: should the site take volunteer applications for photo, video, social media and case-study roles (G-10)? | Resolution: yes, with their own form (owner, 2026-11-05); S-001 is updated. Open: fields, roles, retention for a year-round role, image rights (B-007), case-study claims (B-036) and the audience-registry refactor. [Plan](51-gwen-form-requests.md). Scoped in [volunteer form scoping](52-volunteer-form-scoping.md); the owner decided V-01 to V-10 on 2026-11-05: own page `/volunteers`, three roles (photographer, videographer, social media manager), no teams, 3-year retention, volunteer agreement on selection, no age gate, mobile number required. The case-study writer role is out of scope by the owner's decision, so B-036 is unaffected. Sitemap approved on 2026-11-07 and kept in `docs/ux/_structure.md` ([53](53-volunteer-sitemap.md)): header link, a line under the homepage pair, a link from `/volunteers` to `/makers`. The owner decided volunteers don't pick themes. Wireframe approved on 2026-11-07 with two changes: volunteer applications open now and close after the event day, and no credit field. Built on 2026-11-07 on an audience registry; 168 tests pass and the page, form, receipt and admin are verified locally at 1440px and 390px; not deployed ([52 §8](52-volunteer-form-scoping.md#8-build)). Open for Gwen: parentheses around photo and video, minors and insurance, Nena's confirmation. | Owner reviews and deploys; write the volunteer agreement (V-07) before selection. |
 | B-046 | Partly: how does an organisation keep a copy of its submitted answers (G-08)? | Owner chose option B: no email copy, so the notice's Resend statement stays true. Built: the organisation confirmation page lists the submitted answers with a "Print your answers" control and a print stylesheet that prints only the answers. The answers are shown once, on the page load right after submitting; a reload loses them (session confirmation, 10 minutes). Verified locally at 1440px and 390px and in print output; not merged or deployed. [Plan](51-gwen-form-requests.md). | Merge with batch B; check print output in a real browser dialog on production. |

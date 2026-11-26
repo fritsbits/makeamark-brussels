@@ -101,6 +101,16 @@ class EditionWebsiteTest extends TestCase
             ->assertSeeText('a volunteer role ends when the next edition opens');
     }
 
+    public function test_privacy_notice_explains_turnstile_signals_and_purpose(): void
+    {
+        $this->withoutVite()->get('/privacy')->assertOk()
+            ->assertSeeText('Cloudflare Turnstile')
+            ->assertSeeText('prevent automated spam')
+            ->assertSeeText('IP address')
+            ->assertSeeText('improve its bot detection')
+            ->assertSee('https://www.cloudflare.com/turnstile-privacy-policy/', false);
+    }
+
     public function test_search_engine_endpoints_list_the_public_edition_pages(): void
     {
         $this->get('/sitemap-0.xml')->assertOk()

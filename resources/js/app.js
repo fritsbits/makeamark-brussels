@@ -3,3 +3,4 @@ import './photo-reveal';
 import './scroll-photo';
 import './day-carousel';
 import './site-navigation';
+import './application-spam-protection';

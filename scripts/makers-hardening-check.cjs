@@ -1,17 +1,18 @@
+const stubTurnstile = require('./turnstile-stub.cjs');
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const base=process.env.BASE_URL||'https://makeamark-southern-ocean.test';
 const out='/tmp/makeamark-makers-hardened';fs.mkdirSync(out,{recursive:true});
-const contract=()=>[...document.querySelectorAll('form input:not([type=hidden]),form textarea,form select,form ui-checkbox')].filter(el=>!el.closest('noscript')).map(el=>({name:el.getAttribute('name'),type:el.localName==='ui-checkbox'?'checkbox':el.type,required:el.hasAttribute('required'),maxLength:el.localName==='ui-checkbox'?-1:el.maxLength,options:el.options?[...el.options].map(o=>o.value):null}));
-async function fill(page){for(const [name,value]of Object.entries({name:'Élodie علي 山田 🎨',email:'fixture@example.com',motivation:'A local creative project. '.repeat(50),portfolio:'https://example.com/work',main_skills:'Design',meeting_availability:'Evenings'}))await page.locator(`[name="${name}"]`).fill(value)}
+const contract=()=>[...document.querySelectorAll('form input:not([type=hidden]),form textarea,form select,form ui-checkbox')].filter(el=>!el.closest('noscript') && el.name !== 'website_confirmation').map(el=>({name:el.getAttribute('name'),type:el.localName==='ui-checkbox'?'checkbox':el.type,required:el.hasAttribute('required'),maxLength:el.localName==='ui-checkbox'?-1:el.maxLength,options:el.options?[...el.options].map(o=>o.value):null}));
+async function fill(page){for(const [name,value]of Object.entries({name:'Élodie علي 山田 🎨',email:'fixture@example.com',phone:'0470000000',motivation:'A local creative project. '.repeat(50),portfolio:'https://example.com/work',main_skills:'Design',meeting_availability:'Evenings'}))await page.locator(`[name="${name}"]`).fill(value)}
 (async()=>{
  const browser=await chromium.launch();const observations=[];
  try{
   const baseline=await browser.newPage();await baseline.goto('file://'+path.resolve('.lavish/assets/makers-polish/current.html'));const previous=await baseline.evaluate(contract);await baseline.close();
   for(const width of[1440,900,720,390,320]){
-   const context=await browser.newContext({ignoreHTTPSErrors:true,viewport:{width,height:900}});const page=await context.newPage();page.setDefaultTimeout(15000);
+   const context=await browser.newContext({ignoreHTTPSErrors:true,viewport:{width,height:900}});const page=await context.newPage();await stubTurnstile(page);await page.route('**/makers/apply', route => route.request().method() === 'POST' && !route.request().postData().includes('email=invalid') ? route.fulfill({status:204,body:''}) : route.continue());page.setDefaultTimeout(15000);
    const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'/makers');await page.waitForLoadState('networkidle');await page.evaluate(()=>document.fonts.ready);
    assert.deepEqual(await page.evaluate(contract),previous,'business fields and requiredness retained');
    assert.equal(await page.locator('[data-flux-select-native]').count(),3);assert.equal(await page.locator('ui-checkbox[data-flux-checkbox]').count(),12);assert.ok(await page.locator('input[data-flux-control]').count()>=5);assert.equal(await page.locator('textarea[data-flux-textarea]').count(),7);assert.equal(await page.locator('.application-form__submit[data-flux-button]').count(),1);
@@ -43,9 +44,9 @@ async function fill(page){for(const [name,value]of Object.entries({name:'Élodie
    if(width===390){
     await page.goto(base+'/makers');await page.waitForLoadState('networkidle');
     await Promise.all([page.waitForURL('**/makers#application'),page.locator('form').evaluate(form=>{form.noValidate=true;form.submit()})]);
-    await page.waitForLoadState('networkidle');assert.equal(await page.locator('.application-form__errors').count(),1);
-    assert.equal(await page.locator('.application-form__errors').evaluate(el=>document.activeElement===el),true);
-    for(const href of await page.locator('.application-form__errors a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))))assert.equal(await page.locator(href).count(),1);
+    await page.waitForLoadState('networkidle');assert.equal(await page.locator('.application-form__errors:not([data-verification-error])').count(),1);
+    assert.equal(await page.locator('.application-form__errors:not([data-verification-error])').evaluate(el=>document.activeElement===el),true);
+    for(const href of await page.locator('.application-form__errors:not([data-verification-error]) a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))))assert.equal(await page.locator(href).count(),1);
    }
    await page.goto(base+'/organisations');assert.equal(await page.locator('.makers-page').count(),0);assert.equal(await page.locator('.application-form__submit').evaluate(el=>getComputedStyle(el).borderRadius),'999px');
    if(width===1440||width===390){await page.goto(base+'/');assert.equal(await page.locator('.photo-reveal').count(),10);assert.equal(await page.locator('.section-block').first().evaluate(el=>parseFloat(getComputedStyle(el).paddingTop)),width===1440?96:56);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),0);}
@@ -54,7 +55,7 @@ async function fill(page){for(const [name,value]of Object.entries({name:'Élodie
   const nojs=await browser.newContext({ignoreHTTPSErrors:true,javaScriptEnabled:false,viewport:{width:390,height:900}});const p=await nojs.newPage();await p.goto(base+'/makers');
   assert.equal(await p.locator('input[type=checkbox]').count(),12);assert.equal(await p.locator('input[name=date_confirmed]').isVisible(),true);assert.equal(await p.locator('input[name=date_confirmed]').getAttribute('required'),'');
   await p.locator('input[name=date_confirmed]').check();assert.equal(await p.locator('form').evaluate(form=>new FormData(form).get('date_confirmed')),'1');
-  assert.equal(await p.locator('[data-flux-select-native]').count(),3);assert.equal(await p.getByRole('button',{name:'Send maker application'}).isEnabled(),true);await nojs.close();
+  assert.equal(await p.locator('[data-flux-select-native]').count(),3);assert.equal(await p.getByRole('button',{name:'Send maker application'}).isEnabled(),true);if(await p.locator('[data-application-verification]').getAttribute('data-enabled')==='true')assert.match(await p.locator('noscript').first().textContent(),/This form needs JavaScript for spam protection/);await nojs.close();
   const contrast=await browser.newContext({ignoreHTTPSErrors:true,forcedColors:'active',viewport:{width:720,height:900}});const c=await contrast.newPage();await c.goto(base+'/makers');assert.equal(await c.evaluate(()=>document.documentElement.scrollWidth-innerWidth),0);await contrast.close();
   fs.writeFileSync(path.join(out,'observations.json'),JSON.stringify(observations,null,2));console.log('Passed: Flux controls, selects/chevrons at five widths, field contract, Unicode drafts, checkbox FormData/keyboard/required validation, inline errors, duplicate-submit guard, pageshow, no-JS and forced-colors. '+out);
  }finally{await browser.close()}

@@ -1,3 +1,4 @@
+const stubTurnstile = require('./turnstile-stub.cjs');
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 
@@ -59,6 +60,7 @@ async function assertContract(page) {
         for (const width of [1440, 900, 720, 390, 320]) {
             const context = await browser.newContext({ ignoreHTTPSErrors: true, viewport: { width, height: 900 } });
             const page = await context.newPage();
+            await stubTurnstile(page);
             page.setDefaultTimeout(15000);
             const errors = [];
             page.on('pageerror', error => errors.push(error.message));
@@ -136,13 +138,13 @@ async function assertContract(page) {
                     page.locator('form').evaluate(form => { form.noValidate = true; form.submit(); }),
                 ]);
                 await page.waitForLoadState('networkidle');
-                assert.equal(await page.locator('.application-form__errors').count(), 1);
-                assert.equal(await page.locator('.application-form__errors').evaluate(el => document.activeElement === el), true);
+                assert.equal(await page.locator('.application-form__errors:not([data-verification-error])').count(), 1);
+                assert.equal(await page.locator('.application-form__errors:not([data-verification-error])').evaluate(el => document.activeElement === el), true);
                 assert.equal(await page.locator('[name=organisation_name]').inputValue(), 'Retained invalid fixture');
                 assert.equal(await page.locator('[name=email]').inputValue(), 'invalid');
                 assert.equal(await page.locator('[name=email]').getAttribute('aria-invalid'), 'true');
-                for (const href of await page.locator('.application-form__errors a').evaluateAll(links => links.map(link => link.getAttribute('href')))) assert.equal(await page.locator(href).count(), 1, 'summary target exists');
-                await page.locator('.application-form__errors a[href="#email"]').click();
+                for (const href of await page.locator('.application-form__errors:not([data-verification-error]) a').evaluateAll(links => links.map(link => link.getAttribute('href')))) assert.equal(await page.locator(href).count(), 1, 'summary target exists');
+                await page.locator('.application-form__errors:not([data-verification-error]) a[href="#email"]').click();
                 assert.equal(await page.locator('#email').evaluate(el => document.activeElement === el), true);
             }
             assert.deepEqual(errors, [], 'no page JavaScript errors');
@@ -170,6 +172,7 @@ async function assertContract(page) {
         assert.deepEqual(staticData.filter(([key]) => key === 'languages[]'), [['languages[]', 'English']]);
         assert.equal(await button(staticPage).isEnabled(), true);
         assert.equal(await staticPage.evaluate(() => document.documentElement.scrollWidth - innerWidth), 0);
+        if (await staticPage.locator('[data-application-verification]').getAttribute('data-enabled') === 'true') assert.match(await staticPage.locator('noscript').first().textContent(), /This form needs JavaScript for spam protection/);
         await nojs.close();
 
         const contrast = await browser.newContext({ ignoreHTTPSErrors: true, forcedColors: 'active', viewport: { width: 720, height: 900 } });

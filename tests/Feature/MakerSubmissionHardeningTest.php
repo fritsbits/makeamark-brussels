@@ -13,7 +13,7 @@ use Tests\TestCase;
 
 class MakerSubmissionHardeningTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     public static function malformedAnswers(): array
     {
@@ -147,7 +147,7 @@ class MakerSubmissionHardeningTest extends TestCase
         $this->assertDatabaseCount('applications', 0);
         $freshToken = $page->viewData('submissionToken');
         $this->assertNotSame($answers['_submission_token'], $freshToken);
-        $answers['_submission_token'] = $freshToken;
+        $answers = array_replace($answers, $this->formMetadata('makers', $page));
         $answers['_token'] = csrf_token();
         $answers['name'] = 'Recovered Maker';
         $this->post('/makers/apply', $answers)->assertRedirect('/makers#application')->assertSessionHasNoErrors();
@@ -194,7 +194,7 @@ class MakerSubmissionHardeningTest extends TestCase
         $this->withCookie(config('session.cookie'), session()->getId());
 
         return [
-            '_submission_token' => $page->original->getData()['submissionToken'] ?? 'unissued-fixture',
+            ...$this->formMetadata('makers', $page),
             'name' => 'Test Maker', 'email' => 'maker@example.com',
             'motivation' => 'Contribute to a local project.', 'portfolio' => 'https://example.com/work',
             'phone' => '0470 12 34 56', 'main_skills' => 'Design', 'date_confirmed' => '1',

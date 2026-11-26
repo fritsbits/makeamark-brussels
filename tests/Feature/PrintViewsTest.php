@@ -14,7 +14,7 @@ use Tests\TestCase;
 
 class PrintViewsTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     public function test_the_team_briefing_prints_the_brief_without_contact_details(): void
     {
@@ -96,7 +96,7 @@ class PrintViewsTest extends TestCase
             'phone' => '0123456789', 'organisation_languages' => ['Dutch'], 'languages' => ['English'], 'assets_ready' => '1',
             'planning_meeting' => '1', 'feedback_session' => '1', 'evening_presentation' => '1',
         ];
-        $answers['_submission_token'] = $this->withoutVite()->get('/organisations')->viewData('submissionToken');
+        $answers = [...$answers, ...$this->formMetadata('organisations')];
         $this->withCookie(config('session.cookie'), session()->getId());
 
         $this->post('/organisations/apply', $answers)->assertRedirect('/organisations#application');

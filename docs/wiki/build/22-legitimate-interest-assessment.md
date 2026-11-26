@@ -2,6 +2,8 @@
 title: Application legitimate-interests assessment
 tags: [privacy, lawful-basis, applications, build]
 sources:
+  - "../../../app/Services/TurnstileVerifier.php"
+  - "https://www.cloudflare.com/turnstile-privacy-policy/"
   - "../../raw/2026-10-18-application-privacy-and-operations-decisions.md"
   - "../../raw/2026-10-18-application-privacy-decision-instruction.md"
   - "../../raw/2026-10-18-application-operations-update.md"
@@ -11,11 +13,38 @@ sources:
   - "../../raw/2026-11-05-volunteer-decisions.md"
   - "../../raw/2026-11-07-volunteer-wireframe-approval.md"
 phase: Build
-updated: 2026-11-07
+updated: 2026-11-26
 status: legitimate interests selected for current application lifecycle; annual review required
 ---
 
 # Application legitimate-interests assessment
+
+## Application spam protection
+
+Assessment for this release: protecting application intake from automated spam
+supports the existing legitimate interest in operating the event. The owner
+reported gambling promotions and requested local checks plus Turnstile.
+[Request](../../raw/2026-11-26-application-spam-request.md).
+
+Interpretation on necessity and balance: honeypot and timing checks block cheap
+automation, while server-verified Turnstile adds a provider assessment. The
+integration sends no answers or optional IP parameter to Siteverify. Cloudflare
+nevertheless receives browser technical signals, including IP address, TLS
+fingerprint, user-agent and origin, and also processes signals as a controller
+to improve bot detection. The provider describes both roles in its
+[Turnstile Privacy Addendum](https://www.cloudflare.com/turnstile-privacy-policy/).
+
+Safeguards in this release: execution occurs when submitting, application
+answers survive failures, rejection logs contain reason codes only, and the
+notice links provider information and a contact route for people unable to
+complete verification. These checks make an automated intake decision, not a
+participant-selection decision. JavaScript is now required for verified web
+submission; email remains the alternative. Review false rejection and provider
+failures during production observation. Account configuration and that
+observation remain unverified; B-049 stays open.
+[Implementation](../../../app/Services/TurnstileVerifier.php);
+[browser helper](../../../resources/js/application-spam-protection.js);
+[delivery record](54-application-spam-protection.md).
 
 ## Purpose and selected basis
 

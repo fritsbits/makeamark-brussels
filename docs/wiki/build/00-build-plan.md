@@ -2,6 +2,8 @@
 title: Build plan
 tags: [plan, build, website]
 sources:
+  - "54-application-spam-protection.md"
+  - "../../raw/2026-11-26-application-spam-request.md"
   - "50-applications-closed.md"
   - "../../raw/2026-10-21-applications-closed-decision.md"
   - "../../raw/2026-10-20-fathom-analytics-request.md"
@@ -84,11 +86,25 @@ sources:
   - "../../raw/2026-10-19-maker-form-copy-request.md"
   - "../../raw/2026-10-19-organisation-page-parity-selection.md"
 phase: Build
-updated: 2026-11-05
+updated: 2026-11-26
 status: implementation underway; 2027 applications closed (preparing), privacy notice implemented, provider configuration remains
 ---
 
 # Build plan
+
+## Application spam protection
+
+The owner requested a honeypot, Turnstile and targeted field validation after
+reporting spam in volunteer applications. The [technical design](54-application-spam-protection.md)
+and [execution plan](../../superpowers/plans/2026-11-26-application-spam-protection.md)
+cover all three audiences, recovery, privacy, tests and production activation.
+The implementation now covers local checks, server verification, browser retry
+handling, volunteer recovery and privacy wording. Local verification passed in the isolated workspace, including all audiences at
+desktop/mobile widths and a real 301-second form wait. The production widget and
+Forge credentials are now configured, with enforcement disabled pending release.
+[Account setup evidence](evidence/application-spam-account-setup.md).
+B-049 remains open for production acceptance/rejection/retry checks and 48-hour observation.
+[Execution evidence](evidence/application-spam-verification.md).
 
 ## Solumob case-study evidence
 

@@ -18,11 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->render(function (HttpException $exception, Request $request) {
-            if (! $request->isMethod('POST') || ! $request->is('makers/apply', 'organisations/apply') || $request->expectsJson() || ! $request->hasSession()) {
+            if (! $request->isMethod('POST') || ! $request->is('makers/apply', 'organisations/apply', 'volunteers/apply') || $request->expectsJson() || ! $request->hasSession()) {
                 return null;
             }
 
-            $audience = $request->is('makers/apply') ? 'makers' : 'organisations';
+            $audience = $request->segment(1);
 
             if ($exception->getStatusCode() === 419) {
                 return ApplicationForm::recover($request, $audience, 'Your session has expired. Your application has not been sent. Please review your answers and send it again.');

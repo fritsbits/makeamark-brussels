@@ -2,6 +2,9 @@
 title: Application privacy and retention
 tags: [privacy, applications, build]
 sources:
+  - "../../../app/Services/TurnstileVerifier.php"
+  - "../../../resources/views/privacy.blade.php"
+  - "https://www.cloudflare.com/turnstile-privacy-policy/"
   - "../../raw/2026-10-18-application-privacy-and-operations-decisions.md"
   - "../../raw/2026-10-18-application-operations-update.md"
   - "../../raw/2026-10-18-application-provider-handling.md"
@@ -11,11 +14,30 @@ sources:
   - "../../raw/2026-11-05-production-mail-setup.md"
   - "../../raw/2026-11-05-volunteer-decisions.md"
 phase: Build
-updated: 2026-11-07
+updated: 2026-11-26
 status: lawful-basis and retention decisions made; account setup verification remains
 ---
 
 # Application privacy and retention
+
+## Application spam protection
+
+The release adds Cloudflare Turnstile to prevent automated application spam.
+The server sends the verification token and secret, without answers or the
+optional `remoteip`. The browser service still processes technical signals,
+including IP address, browser headers and site origin. Cloudflare acts as a
+processor for site protection and as a controller when improving its bot
+detection. This is separate from its DNS and mail-forwarding work.
+[Verifier](../../../app/Services/TurnstileVerifier.php);
+[Turnstile Privacy Addendum](https://www.cloudflare.com/turnstile-privacy-policy/).
+
+The [public notice](../../../resources/views/privacy.blade.php) names that
+purpose, processing and provider information. JavaScript is required when
+verification is enabled; the forms provide a contact alternative. The
+[assessment](22-legitimate-interest-assessment.md#application-spam-protection)
+records the balance and remaining production checks. Account entitlement,
+production widget configuration and activation remain open under B-049.
+[Delivery record](54-application-spam-protection.md).
 
 ## Decisions
 

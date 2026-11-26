@@ -16,7 +16,7 @@ use Tests\TestCase;
 
 class VolunteerApplicationTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, \Tests\Concerns\SubmitsApplicationForms;
 
     protected function setUp(): void
     {
@@ -176,6 +176,44 @@ class VolunteerApplicationTest extends TestCase
         $this->get('/admin/makers/'.$volunteer->id.'/edit')->assertNotFound();
     }
 
+    public function test_rate_limit_preserves_bounded_volunteer_answers_and_retry_after(): void
+    {
+        $answers = $this->answers();
+        $answers['email'] = 'invalid';
+        foreach (range(1, 5) as $attempt) {
+            $this->post('/volunteers/apply', $answers)->assertRedirect('/volunteers#application');
+        }
+        $answers['name'] = 'Latest volunteer';
+        $answers['extra_secret'] = 'never flash';
+        $this->post('/volunteers/apply', $answers)->assertRedirect('/volunteers#application')
+            ->assertSessionHasErrors('submission')->assertSessionHasInput('name', 'Latest volunteer')
+            ->assertSessionMissing('_old_input.extra_secret')->assertSessionMissing('_old_input.cf-turnstile-response')
+            ->assertHeader('Retry-After');
+        $this->get('/volunteers')->assertOk()->assertSee('Latest volunteer');
+        $this->assertDatabaseCount('applications', 0);
+    }
+
+    public function test_expired_csrf_preserves_a_safe_volunteer_draft_and_reissues_metadata(): void
+    {
+        $answers = $this->answers();
+        $answers['_token'] = 'expired';
+        $answers['name'] = ['malformed'];
+        session()->forget(['volunteer_submission_secret', '_token']);
+        session()->save();
+        app()->instance('env', 'production');
+        $this->post('/volunteers/apply', $answers)->assertRedirect('/volunteers#application')
+            ->assertSessionHasErrors('submission')->assertSessionHasInput('name', '')
+            ->assertSessionHasInput('portfolio', 'https://example.com/vera');
+        $page = $this->get('/volunteers')->assertOk()->assertSee('expired');
+        $this->assertDatabaseCount('applications', 0);
+        $fresh = $this->formMetadata('volunteers', $page);
+        $this->assertNotSame($answers['_submission_token'], $fresh['_submission_token']);
+        $answers = array_replace($answers, $fresh, ['_token' => csrf_token(), 'name' => 'Recovered Volunteer']);
+        $this->post('/volunteers/apply', $answers)->assertSessionHasNoErrors();
+        $this->assertDatabaseHas('applications', ['contact_name' => 'Recovered Volunteer']);
+        app()->instance('env', 'testing');
+    }
+
     private function answers(): array
     {
         $page = $this->withoutVite()->get('/volunteers')->assertOk();
@@ -183,7 +221,7 @@ class VolunteerApplicationTest extends TestCase
         $this->assertNotEmpty($page->viewData('submissionToken'));
 
         return [
-            '_submission_token' => $page->viewData('submissionToken'),
+            ...$this->formMetadata('volunteers', $page),
             'name' => 'Vera Volunteer', 'email' => 'vera@example.com', 'phone' => '0470000000',
             'roles' => ['photographer', 'social_media'], 'portfolio' => 'https://example.com/vera',
             'role_notes' => 'Two camera bodies.', 'languages' => ['English', 'French'],
