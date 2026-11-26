@@ -467,6 +467,24 @@
         ],
         "createdAt": "2026-10-19T16:32:06.014Z",
         "reason": "Agent verified: full-width approval section contains .wrap with 32px side margins, 18px on mobile; detector mistakes the section background for its inner text boundary. Existing screenshots and 390px overflow check confirm inset text."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "public/fonts/filament/filament/inter/index.css"
+        ],
+        "createdAt": "2026-11-26T15:14:16.820Z",
+        "reason": "Agent: byte-identical Filament-published admin asset; DESIGN.md Public typography roles explicitly leaves admin typography unchanged."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "inter variable",
+        "files": [
+          "public/fonts/filament/filament/inter/index.css"
+        ],
+        "createdAt": "2026-11-26T15:14:16.845Z",
+        "reason": "Agent: Filament default admin font from vendor/filament/filament; DESIGN.md scopes the branded type system to public pages and preserves admin typography."
       }
     ]
   }
