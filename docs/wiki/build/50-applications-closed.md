@@ -62,7 +62,7 @@ A local run at 1440px and 390px showed the homepage, makers and organisations pa
 ## Production
 
 `13d772f` runs in production from a manual release.
-Forge received the push webhooks but created no release, so push to deploy needs checking in Forge.
+Forge received the push webhooks but created no release then; on 2026-11-26 a push to `main` did create a release.
 Production held zero applications when intake closed.
 [Deployment observation](../../raw/2026-10-21-applications-closed-deployment.md)
 

@@ -16,7 +16,7 @@ V-01 to V-10 decided on 5 November. Built and verified locally on 7 November on 
 Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the
 page includes the opening-day checklist (B-040). Deployed by a manual release;
-Forge push to deploy created no release and needs checking.
+Forge push to deploy works again (release from push on 2026-11-26).
 Logged-in admins get an [admin preview](build/50-applications-closed.md#admin-preview) of the closed forms.
 
 Solumob case-study page: [styled page and selected discovery links](build/47-solumob-case-study.md)
