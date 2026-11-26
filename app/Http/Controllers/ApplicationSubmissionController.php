@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Content\Homepage;
 use App\Mail\ApplicationReceived;
 use App\Models\Application;
+use App\Support\AdminPreview;
 use App\Support\ApplicationForm;
 use App\Support\Audiences;
 use Illuminate\Http\RedirectResponse;
@@ -21,7 +22,7 @@ class ApplicationSubmissionController extends Controller
         $definition = Audiences::find($audience);
         $edition = $homepage->data()['edition'];
 
-        if (! $definition->isOpen($edition)) {
+        if (! $definition->isOpen($edition) && ! AdminPreview::allowed()) {
             return ApplicationForm::recover($request, $audience, $definition->closedMessage($edition));
         }
 

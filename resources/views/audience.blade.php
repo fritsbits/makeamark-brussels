@@ -36,6 +36,13 @@
                 <flux:heading level="2" id="application-heading" class="h-display application__title">{{ ucfirst($definition->noun) }} application</flux:heading>
                 @include('applications.context')
                 @include('applications.privacy-note')
+                @if ($adminPreview && ! $submitted)
+                    <div class="application__preview" role="status">
+                        <strong>Admin preview</strong>
+                        <p>Only logged-in admins see this form. It isn’t open to the public yet.</p>
+                        <p>Applications you send are saved, appear in the admin and send a real receipt. Delete them in the admin afterwards.</p>
+                    </div>
+                @endif
             </div>
             @endunless
             @include('applications.intake', ['introRendered' => true])

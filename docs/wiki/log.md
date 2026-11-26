@@ -1,5 +1,11 @@
 # Cascade change log
 
+- 2026-11-26: Added an admin preview of the closed Maker and organisation forms so Gwen can try the forms and the admin before opening.
+  Logged-in admins see the form with an "Admin preview" notice and can send real applications; the public still sees "Applications open soon".
+  180 tests pass; verified locally at 1440px and 390px; not deployed.
+  [Decision](../raw/2026-11-26-admin-form-preview-decision.md);
+  [record](build/50-applications-closed.md#admin-preview).
+
 - 2026-11-08: Linked the Solumob case study on the site.
   Cherry-picked `6d53641` from the old worktree branch, where it had never been merged.
   The sitemap generator, the audience view and the volunteer page needed adaptation; `/volunteers` carries no invitation by the owner's choice.

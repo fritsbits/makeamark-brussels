@@ -7,8 +7,9 @@ sources:
   - "../strategy/10-tone-of-voice.md"
   - "../../raw/2026-10-21-applications-closed-deployment.md"
   - "../../raw/2026-11-05-production-mail-setup.md"
+  - "../../raw/2026-11-26-admin-form-preview-decision.md"
 phase: Build
-updated: 2026-11-07
+updated: 2026-11-26
 status: deployed; opening date unknown
 ---
 
@@ -35,6 +36,22 @@ Before the change, production served both forms with edition status `open`, whil
 - A form left open in a tab and submitted while `preparing` explains that applications aren't open yet and that nothing was sent.
 - Tests pin the edition status in `tests/TestCase.php` through `withEditionStatus()`, so the suite no longer follows the live content file.
 - Volunteers are the exception since 2026-11-07: their applications are open while the status is `preparing` and close after the event day ([52 §8](52-volunteer-form-scoping.md#8-build)).
+
+## Admin preview
+
+Logged-in active admins see the Maker and organisation forms while the public still sees them closed, so Gwen can try the forms and the admin before opening.
+[Decision](../../raw/2026-11-26-admin-form-preview-decision.md)
+
+- `App\Support\AdminPreview` grants the preview to any user who can open the Filament panel.
+  The audience page then renders the form with an "Admin preview" notice under the privacy note.
+- The submission controller accepts posts from those admins while the audience is closed.
+  Preview applications are ordinary applications with a real receipt; admins delete them in the admin afterwards.
+- Preview pages send `Cache-Control: private, no-store`, so no cache serves the open form to the public.
+- How to preview: log in at `/admin`, then open `/makers` or `/organisations`.
+- `AdminFormPreviewTest` covers guests, inactive and non-admin users, admins, open editions and a guest post while closed.
+  All 180 PHP tests pass.
+  A local browser run at 1440px and 390px showed the closed page to a guest and the notice and form to an admin, with no browser errors or horizontal overflow.
+  Not deployed.
 
 ## Verification
 

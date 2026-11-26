@@ -692,6 +692,8 @@ main:focus { outline: none; }
 .audience-hero__deadline { margin: 0; }
 .distilled-edition .edition__deadline { margin: 8px 0 0; }
 .application__notice .application-deadline { margin-top: 10px; }
+.application__preview { max-width: 680px; margin-top: 28px; padding: 14px 18px; border: 2px dashed var(--red-2); }
+.application__preview p { margin: 6px 0 0; }
 .application__privacy-note { max-width: 680px; margin: -12px 0 24px; font-size: var(--fs-small); }
 .application__privacy-note a { font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .application-form { max-width: 760px; margin-top: 44px; }

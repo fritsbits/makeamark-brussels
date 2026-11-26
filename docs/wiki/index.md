@@ -17,6 +17,7 @@ Applications: [closed until opening](build/50-applications-closed.md). Status
 `preparing` shows "Applications open soon" with an Instagram follow link; the
 page includes the opening-day checklist (B-040). Deployed by a manual release;
 Forge push to deploy created no release and needs checking.
+Logged-in admins get an [admin preview](build/50-applications-closed.md#admin-preview) of the closed forms.
 
 Solumob case-study page: [styled page and selected discovery links](build/47-solumob-case-study.md)
 records approved P01/L01–L03, the recovered native presentation images and
