@@ -1,5 +1,15 @@
 # Cascade change log
 
+- 2026-11-26: Released and enabled application spam protection after owner approval.
+  Closed the alternate Forge hostname's forwarded-IP throttle bypass with explicit
+  proxy config and two regression tests; 297 PHP tests, 11 JavaScript tests and
+  the build pass. A real Managed verification saved marked test 5808 and delivered
+  its receipt. Direct unverified rejection and preserved answers passed; public
+  opening status stayed unchanged. Initial aggregates show seven other honeypot
+  rejections and only the marked test saved after activation. B-049 remains partly
+  resolved for 48-hour observation and an identical live POST replay.
+  [Rollout evidence](build/evidence/application-spam-production-rollout.md).
+
 - 2026-11-26: Continued application-spam setup in the owner's open Cloudflare
   session. Created the canonical-host Managed widget with pre-clearance off,
   checked account billing and saved its credentials in Forge with enforcement

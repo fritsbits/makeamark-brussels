@@ -101,9 +101,10 @@ cover all three audiences, recovery, privacy, tests and production activation.
 The implementation now covers local checks, server verification, browser retry
 handling, volunteer recovery and privacy wording. Local verification passed in the isolated workspace, including all audiences at
 desktop/mobile widths and a real 301-second form wait. The production widget and
-Forge credentials are now configured, with enforcement disabled pending release.
-[Account setup evidence](evidence/application-spam-account-setup.md).
-B-049 remains open for production acceptance/rejection/retry checks and 48-hour observation.
+Forge credentials are configured and enforcement is enabled in production.
+A real volunteer application, receipt delivery, unverified rejection and answer
+recovery passed. [Production rollout](evidence/application-spam-production-rollout.md).
+B-049 remains open for 48-hour observation and an identical live POST replay.
 [Execution evidence](evidence/application-spam-verification.md).
 
 ## Solumob case-study evidence

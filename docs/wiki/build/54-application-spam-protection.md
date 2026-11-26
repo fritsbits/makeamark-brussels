@@ -2,6 +2,7 @@
 title: Application spam protection
 tags: [applications, spam, security, plan]
 sources:
+  - "evidence/application-spam-production-rollout.md"
   - "evidence/application-spam-account-setup.md"
   - "evidence/application-spam-verification.md"
   - "../../../app/Services/TurnstileVerifier.php"
@@ -17,7 +18,7 @@ sources:
   - "https://developers.cloudflare.com/turnstile/get-started/server-side-validation/"
 phase: Build
 updated: 2026-11-26
-status: implemented and verified locally; widget configured; production release and activation pending
+status: deployed and enabled; live acceptance and rejection verified; observation and live POST replay remain
 ---
 
 # Application spam protection
@@ -25,9 +26,10 @@ status: implemented and verified locally; widget configured; production release 
 The owner wants the proposed honeypot, Turnstile and targeted field validation,
 and requested an execution plan. [Request](../../raw/2026-11-26-application-spam-request.md).
 Tracked under B-049. The design below now has an implementation in the isolated
-workspace. The production widget and credentials are configured; production
-release, activation and observation remain pending.
-[Account setup](evidence/application-spam-account-setup.md).
+workspace and is now deployed with enforcement enabled. Live volunteer
+acceptance, receipt delivery, unverified rejection and answer recovery passed.
+Observation and an identical live POST replay remain open.
+[Production rollout](evidence/application-spam-production-rollout.md).
 [Execution evidence](evidence/application-spam-verification.md).
 
 ## Evidence and limits
@@ -141,7 +143,7 @@ Existing-record cleanup is a separate operation. Prepare a count and reviewable
 candidate list and confirm a recoverable backup before proposing any deletion.
 This request does not authorize a blanket deletion of the 5,692 results.
 
-B-049 stays open until the running production forms accept a legitimate
-application, reject unverified submissions, preserve retry behavior and record
-initial monitoring results. Billing and keys are account setup dependencies,
-not reasons to delay building and testing with official test keys.
+B-049 stays open for 48-hour observation and the remaining identical live POST
+replay check. The first production checks accepted one marked test, rejected
+unverified submissions and preserved answers. A forwarded-IP spoofing regression
+was also closed before release. [Results and limits](evidence/application-spam-production-rollout.md).

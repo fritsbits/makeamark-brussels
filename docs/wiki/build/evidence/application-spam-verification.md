@@ -2,13 +2,14 @@
 title: Application spam verification
 tags: [applications, spam, verification]
 sources:
+  - "application-spam-production-rollout.md"
   - "application-spam-account-setup.md"
   - "../../../../tests/Feature/ApplicationSpamProtectionTest.php"
   - "../../../../tests/js/application-spam-protection.test.js"
   - "../../../../scripts/application-spam-check.cjs"
 phase: Build
 updated: 2026-11-26
-status: locally verified; account setup complete; production release pending
+status: locally verified; production activated; follow-up recorded separately
 ---
 
 # Application spam verification
@@ -91,6 +92,11 @@ owns this change's browser matrix; their unrelated historic snapshot assertions
 were not rerun. All three browser scripts pass Node syntax checks.
 
 ## Production dependencies
+
+The later [production rollout](application-spam-production-rollout.md) supersedes
+the activation dependencies below. Enforcement is live; the remaining limits
+are observation and an identical live POST replay. The text below records the
+pre-release state of this verification pass.
 
 Initial implementation stopped at Cloudflare sign-in. The subsequent
 [account setup](application-spam-account-setup.md) created the Managed widget,

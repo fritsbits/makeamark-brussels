@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. Keep implementation in this existing isolated workspace; request one security review before release.
 
-**Execution status (26 November 2026):** Tasks 1–3 implemented. Task 4 local verification/privacy/review passed; Managed widget and Forge credentials configured with enforcement disabled. The dashboard did not expose a region selector or explicit widget-plan label; billing listed no paid Turnstile subscription. Task 5 awaits owner release review and activation. See [local evidence](../../wiki/build/evidence/application-spam-verification.md) and [account setup](../../wiki/build/evidence/application-spam-account-setup.md).
+**Execution status (26 November 2026):** Tasks 1–4 implemented and verified; 297 PHP tests, 11 JavaScript tests and the build pass. Owner approved release. Production enforcement is enabled; a real volunteer application and receipt, unverified rejection, answer recovery and both-host IP handling passed. The 48-hour observation and identical live POST replay remain. See [production rollout](../../wiki/build/evidence/application-spam-production-rollout.md).
 
 **Goal:** Reject automated spam on all three application forms while preserving legitimate applications, answers and retry receipts.
 
@@ -10,7 +10,7 @@
 
 **Tech stack:** Existing PHP 8.4/Laravel, Blade, Flux, bundled Alpine, Vite, PHPUnit and Playwright.
 
-**Spec:** [Technical design and delivery record](../../wiki/build/54-application-spam-protection.md). Owner selected the three measures and requested this plan; implementation is locally verified and account setup is recorded. Production release and activation have not happened.
+**Spec:** [Technical design and delivery record](../../wiki/build/54-application-spam-protection.md). Owner selected the three measures, approved the release and agreed the marked live test. Production activation and remaining observation are recorded in the evidence.
 
 ## Global constraints
 
@@ -125,11 +125,12 @@
 
 **Interfaces:** release contains Tasks 1 to 4; production keys and allowlist are configured; deployment authority is checked at execution time. This planning request does not by itself perform a release.
 
-- [ ] Verify deployed revision, public hostnames, existing proxy trust and effective client IP handling. Do not trust all forwarded headers to make rate limiting work. Verify there is no alternate unprotected application POST route.
+- [x] Verify deployed revision, public hostnames, proxy trust and client IP handling. Found and fixed Laravel's automatic Forge-host proxy trust with explicit `trustedproxy.proxies=[]`; regression and deployed middleware checks pass on both hosts. One shared throttled application POST remains. [Rollout](../../wiki/build/evidence/application-spam-production-rollout.md).
 - [x] Review the concrete release and local evidence with the owner at the project's deployment boundary. Owner approved deployment and activation, plus a marked live test and receipt to the agreed mailbox. [Approval](../../raw/2026-11-26-application-spam-release-approval.md).
 - [x] Collapse this unit's own unpublished checkpoints into one curated commit before shared-branch integration, after checking authorship with `git log <upstream>..HEAD --format='%an'`. Never rewrite someone else's or already-pushed commits. Stage explicit paths and use the required body bullets plus `Why:` line.
-- [ ] Release with Turnstile explicitly disabled first, verify local protections are present, then set production keys, allowed hostname(s) and `TURNSTILE_ENABLED=true`; refresh Laravel config cache. Keep this staged interval brief and check the rendered sitekey before enforcement. An enabled but misconfigured service must reject submissions visibly.
-- [ ] Verify one controlled real application on production with agreed test details and mail destination, plus a direct request without valid verification. Check the admin record, one receipt only, recovery and unchanged public opening status. Do not change edition status to test closed audiences; use admin preview.
+- [x] Release with Turnstile explicitly disabled first and verify local protection markup, then enable the configured production keys and canonical allowlist and refresh Laravel config cache. Runtime sitekey matches the widget and a real Managed verification passed. [Rollout](../../wiki/build/evidence/application-spam-production-rollout.md).
+- [x] Verify one agreed marked application, admin record 5808 and delivered receipt. Direct unverified POST returned 422; normal recovery preserved answers. Browser back/refresh kept one record and one receipt timestamp. Public Maker/organisation opening status was unchanged. [Rollout](../../wiki/build/evidence/application-spam-production-rollout.md).
+- [ ] Verify an identical live POST replay if the original request can be retained safely. Do not use a fresh form identity or extract session secrets. Automated saved-retry/one-receipt/provider-call tests pass; the original live POST was not retained.
 - [ ] Observe aggregate rejection reasons, provider errors and new spam for 48 hours. Compare new submissions rather than the old list's total count. Record the result; tune only when evidence identifies bypasses or false rejection.
 - [ ] If Turnstile prevents legitimate applications, keep local checks active while restoring verified service or explicitly rolling back its enablement under operator control. Never turn off verification automatically on an error. Log the operational decision and keep B-049 open.
 - [ ] Close B-049 only after production acceptance/rejection/retry checks and the observation result are recorded. Separately prepare a reviewable old-spam candidate list and backup/restore check if the owner requests cleanup; do not delete records in this plan.
@@ -142,4 +143,4 @@
 - [Execution, callbacks and sizes](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/widget-configurations/)
 - [Official testing keys](https://developers.cloudflare.com/turnstile/troubleshooting/testing/)
 
-Public documentation checked 26 November 2026. Actual account billing, keys and current production traffic remain unverified.
+Public documentation checked 26 November 2026. Account observations, configured keys, activation and initial production traffic are recorded in the linked evidence. Observation through 28 November and identical live POST replay remain open.

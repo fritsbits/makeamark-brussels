@@ -3,10 +3,11 @@
 Application spam: [protection and implementation record](build/54-application-spam-protection.md)
 covers a honeypot, signed minimum fill time, Cloudflare Turnstile and narrow
 name-field checks across all three audiences. The owner requested all three
-measures; implementation is in the isolated workspace. Local verification passed;
-the [production widget and Forge credentials are configured](build/evidence/application-spam-account-setup.md).
-Enforcement is disabled until release. Production verification and observation
-remain open under B-049. Existing-record cleanup remains separate.
+measures. Protection is now [deployed and enabled](build/evidence/application-spam-production-rollout.md).
+A real volunteer application and its receipt passed; unverified requests were
+rejected with answers preserved. Local verification passed 297 PHP tests and
+11 JavaScript tests. B-049 remains open for 48-hour observation and an identical
+live POST replay. Existing-record cleanup remains separate.
 
 Gwen's form requests: [plan for twelve requests](build/51-gwen-form-requests.md)
 from 20 October. Owner decisions: ten to build including a volunteer form,

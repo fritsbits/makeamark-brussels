@@ -2,6 +2,7 @@
 title: Application spam account setup
 tags: [applications, spam, cloudflare, deployment, verification]
 sources:
+  - "application-spam-production-rollout.md"
   - "../../../raw/2026-11-26-application-spam-setup-request.md"
   - "../../../raw/2026-11-26-application-spam-release-approval.md"
   - "https://dash.cloudflare.com/"
@@ -10,10 +11,14 @@ sources:
   - "https://developers.cloudflare.com/turnstile/additional-configuration/hostname-management/"
 phase: Build
 updated: 2026-11-26
-status: widget and production credentials configured; enforcement disabled pending release
+status: account setup completed; subsequent production activation recorded separately
 ---
 
 # Application spam account setup
+
+This page records setup before release. The subsequent
+[production rollout](application-spam-production-rollout.md) enabled enforcement
+and verified a real application, receipt delivery and unverified rejection.
 
 The owner opened Cloudflare and asked to continue the spam work.
 [Request](../../../raw/2026-11-26-application-spam-setup-request.md).
