@@ -51,7 +51,8 @@ Logged-in active admins see the Maker and organisation forms while the public st
 - `AdminFormPreviewTest` covers guests, inactive and non-admin users, admins, open editions and a guest post while closed.
   All 180 PHP tests pass.
   A local browser run at 1440px and 390px showed the closed page to a guest and the notice and form to an admin, with no browser errors or horizontal overflow.
-  Not deployed.
+  Deployed on 2026-11-26: a push to `main` created a Forge release within about 80 seconds.
+  In production a guest still sees "Applications open soon" and no form on both pages; the admin view awaits Gwen's login.
 
 ## Verification
 

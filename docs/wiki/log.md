@@ -2,7 +2,8 @@
 
 - 2026-11-26: Added an admin preview of the closed Maker and organisation forms so Gwen can try the forms and the admin before opening.
   Logged-in admins see the form with an "Admin preview" notice and can send real applications; the public still sees "Applications open soon".
-  180 tests pass; verified locally at 1440px and 390px; not deployed.
+  180 tests pass; verified locally at 1440px and 390px.
+  Deployed by push to `main`; Forge created the release itself this time, so push to deploy works again.
   [Decision](../raw/2026-11-26-admin-form-preview-decision.md);
   [record](build/50-applications-closed.md#admin-preview).
 
